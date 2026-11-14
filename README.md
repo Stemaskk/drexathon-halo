@@ -30,6 +30,15 @@ Built for the **Drexathon (Nace.AI), November 14, 2026**. Decisions that would n
 - DeepInfra writes 1–2 sentences of practical advice per area, using only the scorecard and verified evidence.
 - Limits: there is no live stock-price feed (only news about stocks and investors), and advertising is judged from public coverage of the ads, not from ad-platform data.
 
+### Influencers tab
+- **Check an influencer:** Keenable finds public pages about a creator, the DeepInfra LLM pulls follower counts out of those pages (each with its source link, never from memory), and Drex returns a content-focus split in percent, an authenticity signal, how clearly the creator is identified and a sponsor-safety score.
+- **Database:** `api/_radar/data/influencers.json` holds 20 creators evaluated this way by `scripts/seed_influencers.py`. Creators you check in the app can be added (stored in the browser).
+- **Recommend N creators for a company:** uses the company's scan results (areas needing attention and strengths). Drex scores each creator's fit, then a greedy selection picks the set with the most *new* estimated reach: audience = followers × focus split per platform and topic, and creators in the same platform-and-topic segment are assumed to share 85% of their audience. So two large creators with the same audience add less than one large and one smaller creator with different audiences.
+- **Limits:** real audience-overlap data is not public, so overlap is an assumption. The authenticity signal is a model estimate of risk from public pages, not proof that an account is real or fake.
+
+### Home page
+Clicking the logo opens the home page. Type a company and press Enter: known demo companies load curated details, and any other name is filled in automatically from search results (`/api/autoprofile`). All details stay editable.
+
 ### Source selection before analysis
 - Each search runs twice: the last 30 days, and a wider window (default 6 months, selectable up to 3 years), so both recent and older context are covered.
 - Exact duplicates (same canonical URL) and near-duplicate headlines (80%+ shared words) are removed.

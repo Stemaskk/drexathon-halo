@@ -13,7 +13,7 @@ from fastapi import FastAPI, Request  # noqa: E402
 from fastapi.responses import JSONResponse  # noqa: E402
 from pydantic import BaseModel, Field  # noqa: E402
 
-from _radar import clients, config, pipeline  # noqa: E402
+from _radar import clients, config, influencers, pipeline  # noqa: E402
 
 app = FastAPI(title="Project Halo API")
 
@@ -188,3 +188,36 @@ def brief(req: BriefReq):
 @app.get("/api/benchmark")
 def benchmark():
     return _load("benchmark_latest.json") or {"available": False, "message": "No benchmark run yet. Run: python scripts/benchmark.py"}
+
+
+class NameReq(BaseModel):
+    name: str
+
+
+class RecommendReq(BaseModel):
+    profile: Profile
+    n: int = Field(3, ge=1, le=20)
+    scorecard: dict[str, Any] | None = None
+    extra: list[dict[str, Any]] = []  # creators evaluated in this browser, added to the bundled database
+
+
+@app.get("/api/influencers")
+def influencer_db():
+    return _load("influencers.json") or []
+
+
+@app.post("/api/influencer/evaluate")
+def influencer_evaluate(req: NameReq):
+    return influencers.evaluate(req.name)
+
+
+@app.post("/api/influencer/recommend")
+def influencer_recommend(req: RecommendReq):
+    db = {i["name"].lower(): i for i in (_load("influencers.json") or [])}
+    db.update({i["name"].lower(): i for i in req.extra if i.get("name")})
+    return influencers.recommend(req.profile.model_dump(), list(db.values()), req.n, req.scorecard)
+
+
+@app.post("/api/autoprofile")
+def autoprofile(req: NameReq):
+    return influencers.autoprofile(req.name)

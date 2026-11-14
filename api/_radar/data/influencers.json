@@ -1,0 +1,1668 @@
+[
+ {
+  "name": "Marques Brownlee",
+  "found": true,
+  "summary": "Marques Brownlee is a prominent technology reviewer and content creator known for his product reviews and podcast.",
+  "topics": [
+   "technology reviews",
+   "gadgets",
+   "smartphones",
+   "headphones",
+   "virtual reality"
+  ],
+  "platforms": [
+   {
+    "platform": "youtube",
+    "handle": "@mkbhd",
+    "followers": 21400000,
+    "source": 2,
+    "source_url": "https://vidiq.com/youtube-stats/channel/@mkbhd"
+   },
+   {
+    "platform": "instagram",
+    "handle": "@mkbhd",
+    "followers": 5302906,
+    "source": 6,
+    "source_url": "https://trari.com/en/c/mkbhd"
+   },
+   {
+    "platform": "tiktok",
+    "handle": "@mkbhd",
+    "followers": 2300000,
+    "source": 7,
+    "source_url": "https://tokranks.com/creator/mkbhd"
+   }
+  ],
+  "followers_total": 29002906,
+  "focus": {
+   "ai_ml": 0.0007,
+   "consumer_tech": 0.9925,
+   "gaming": 0.0016,
+   "software_dev": 0.0018,
+   "creative_design": 0.0006,
+   "business_finance": 0.0005,
+   "education_science": 0.0007,
+   "lifestyle_entertainment": 0.0011,
+   "other": 0.0006
+  },
+  "p_authentic": 0.9990544367401581,
+  "p_identifiable": 0.9986429451288806,
+  "brand_safety": 2.8094419008222804,
+  "evidence": [
+   {
+    "title": "Marques Brownlee",
+    "url": "https://en.wikipedia.org/wiki/Marques_Brownlee",
+    "snippet": "The username of his YouTube channel is a concatenation of MKB (Brownlee's initials) and HD (for high definition). As of 2025, he has more than 20 million subscribers across all channels and billions of total video views.\n\nBrownlee's logo\n# Infobox\n- **Marques Brownlee**\n- Born: Marques Keith Brownlee, December 3, 1993, Maplewood Township, New Jersey, U.S.,\n- Other name: MKBHD\n- Education: Stevens Institute"
+   },
+   {
+    "title": "Marques Brownlee YouTube Stats: Subscribers, Views & Earnings | vidIQ",
+    "url": "https://vidiq.com/youtube-stats/channel/@mkbhd",
+    "snippet": "As of 2026-11-12, Marques Brownlee has 21,400,000 subscribers, 5,894,735,997 total views, and 1,866 videos. Ranked [#693 worldwide](https://vidiq.com/youtube-stats/top/100/), [#189 in United States](https://vidiq.com/youtube-stats/top/country/us/) and [#7 in Technology](https://vidiq.com/youtube-stats/top/category/tech/) by subscribers."
+   },
+   {
+    "title": "About Marques Brownlee: YouTube Channel Profile | vidIQ",
+    "url": "https://vidiq.com/youtube-stats/channel/@mkbhd/about",
+    "snippet": "As of 2026-10-28, Marques Brownlee has 21,400,000 subscribers, 5,834,393,156 total views, and 1,862 videos. It ranks #690 by subscribers among channels tracked by vidIQ."
+   },
+   {
+    "title": "Meet Marques Brownlee, internet tech reviewer and elite ultimate frisbee player",
+    "url": "https://nbcnews.com/news/sports/marques-brownlee-ultimate-frisbee-rcna168714?cid=eml_mrd_20240829",
+    "snippet": "for Team USA at this week’s World Ultimate Championships in Gold Coast, Australia, is arguably the biggest, most influential reviewer of technology products in the world. He has 19.4 million YouTube subscribers, 5 million Instagram followers and 2.1 million TikTok followers who depend on his thoughts before they buy the latest computers, headphones, phones, virtual reality headsets and more.\n\nmade its descent into the end zone. Three players — two for Japan’s Buzz Bullets and one for PoNY — jumped at the same time.\nPoNY’s Marques Brownlee came down with it.\nUsing every inch of his 6-foot-7-inch wingspan, he leaped over both opponents and violently snatched it out of the air"
+   },
+   {
+    "title": "The internet’s favorite tech reviewer is also an elite ultimate frisbee player",
+    "url": "https://nbcnews.com/news/sports/marques-brownlee-ultimate-frisbee-rcna168714",
+    "snippet": "YouTube star Marques Brownlee, with nearly 20 million subscribers, will play for Team USA at this week's 2024 World Ultimate Championships."
+   },
+   {
+    "title": "Marques Brownlee: subscribers, views and new videos",
+    "url": "https://trari.com/en/c/mkbhd",
+    "snippet": "Growth in percent since November 3, 2026, so both lines start from the same point\n- **YouTube** · 21,400,000 subscribers 0% (0)\n- **Instagram** · 5,302,906 followers -0.03% (-1,437)\n\nYouTube channel\n# Marques Brownlee\n@mkbhd · [The channel on YouTube](https://www.youtube.com/channel/UCBJycsmduvYEL83R_U4JriQ)\n- [Technology reviews and"
+   }
+  ],
+  "engine": "drex",
+  "evaluated_at": "2026-11-14T22:17:39+00:00"
+ },
+ {
+  "name": "Linus Tech Tips",
+  "found": true,
+  "summary": "Linus Tech Tips is a consumer technology channel that produces educational and entertaining videos about hardware, software, and tech industry news.",
+  "topics": [
+   "Consumer Technology",
+   "PC Hardware",
+   "Smartphones",
+   "Tech Industry News",
+   "Video Production"
+  ],
+  "platforms": [
+   {
+    "platform": "youtube",
+    "handle": "@linustechtips",
+    "followers": 16900000,
+    "source": 4,
+    "source_url": "https://vidiq.com/youtube-stats/channel/@linustechtips"
+   },
+   {
+    "platform": "other",
+    "handle": "@linustech",
+    "followers": null,
+    "source": 8,
+    "source_url": "https://threads.com/@linustech"
+   }
+  ],
+  "followers_total": 16900000,
+  "focus": {
+   "ai_ml": 0.003,
+   "consumer_tech": 0.9713,
+   "gaming": 0.0064,
+   "software_dev": 0.0084,
+   "creative_design": 0.0022,
+   "business_finance": 0.0022,
+   "education_science": 0.0028,
+   "lifestyle_entertainment": 0.0022,
+   "other": 0.0014
+  },
+  "p_authentic": 0.9973296926407226,
+  "p_identifiable": 0.9954148327008576,
+  "brand_safety": 2.1649278141169503,
+  "evidence": [
+   {
+    "title": "Linus Sebastian",
+    "url": "https://en.wikipedia.org/wiki/Linus_Sebastian",
+    "snippet": "As of January 20, 2026, Linus Tech Tips has amassed over 16.8 million subscribers and more than 9.6 billion views. Across all his channels, Sebastian has over 32 million subscribers and more than 12 billion views.\n\nOn November 30, 2025, Linux creator Linus Torvalds appeared as guest on Linus Tech Tips."
+   },
+   {
+    "title": "About Linus Tech Tips: YouTube Channel Profile | vidIQ",
+    "url": "https://vidiq.com/youtube-stats/channel/@linustechtips/about",
+    "snippet": "Linus Tech Tips is a passionate team of \"professionally curious\" experts in consumer technology and video production who aim to educate and entertain. Sponsorship Inquiries: partnerships@linusmediagroup.com\nAs of 2026-10-24, Linus Tech Tips has 16,900,000 subscribers, 9,935,477,792 total views, and 7,964 videos. It ranks #1,097 by subscribers among channels tracked by vidIQ."
+   },
+   {
+    "title": "My Datacenter Evicted Me",
+    "url": "https://youtube.com/watch?v=u5UTIofKDGc",
+    "snippet": "Video by Linus Tech Tips (16.9M subscribers) · 2026-11-14 · 14:48 · 124,010 views · 10,084 likes\n\nLinus Sebastian is an investor in Framework Computer, Inc and HexOS by Eshtek."
+   },
+   {
+    "title": "Linus Tech Tips YouTube Stats: Subscribers, Views & Earnings | vidIQ",
+    "url": "https://vidiq.com/youtube-stats/channel/@linustechtips",
+    "snippet": "As of 2026-11-06, Linus Tech Tips has 16,900,000 subscribers, 9,973,725,723 total views, and 7,980 videos. Ranked [#1,101 worldwide](/youtube-stats/top/100/), [#10 in Canada](/youtube-stats/top/country/ca/) and [#10 in Technology](/youtube-stats/top/category/tech/) by subscribers.\n\nLinus Tech Tips is ranked #1,101 by subscribers among channels tracked by vidIQ as of 2026-11-06."
+   },
+   {
+    "title": "Linus Tech Tips YouTube Stats: 16.9M Subscribers",
+    "url": "https://subscribertrends.com/channel/UCXuqSBlHAE6Xw-yeJA0Tunw",
+    "snippet": "\nSubscribers\n16.9M\nTotal Views\n9.9B\nVideos\n7.9K\navg 1.2M views\nChannel Age\n17yr\nSince November 25, 2008\n## Channel Overview\nLinus Tech Tips is a passionate team of \"professionally curious\" experts in consumer technology and video production who aim to educate and entertain.\nSponsorship Inquiries: [[email protected]](/cdn-cgi/l/email-protection)\n1.2M"
+   },
+   {
+    "title": "Every Samsung Fold Compared",
+    "url": "https://youtube.com/watch?v=taBO0I1YBzU",
+    "snippet": "Video by Linus Tech Tips (16.9M subscribers) · 2026-11-13 · 10:43 · 20,421 views · 1,343 likes\n\nLinus Sebastian is an investor in Framework Computer, Inc and HexOS by Eshtek."
+   }
+  ],
+  "engine": "drex",
+  "evaluated_at": "2026-11-14T22:17:38+00:00"
+ },
+ {
+  "name": "Two Minute Papers",
+  "found": true,
+  "summary": "Two Minute Papers is a Hungarian YouTube channel hosted by Dr. Károly Zsolnai-Fehér that explains recent scientific papers and AI developments in short videos.",
+  "topics": [
+   "Artificial Intelligence",
+   "Deep Learning",
+   "Computer Vision",
+   "Robotics",
+   "Scientific Research"
+  ],
+  "platforms": [
+   {
+    "platform": "youtube",
+    "handle": "@twominutepapers",
+    "followers": 1840000,
+    "source": 3,
+    "source_url": "https://vidiq.com/youtube-stats/channel/@twominutepapers"
+   }
+  ],
+  "followers_total": 1840000,
+  "focus": {
+   "ai_ml": 0.8982,
+   "consumer_tech": 0.0276,
+   "gaming": 0.0098,
+   "software_dev": 0.0071,
+   "creative_design": 0.0024,
+   "business_finance": 0.0025,
+   "education_science": 0.0475,
+   "lifestyle_entertainment": 0.0022,
+   "other": 0.0026
+  },
+  "p_authentic": 0.19756250395998334,
+  "p_identifiable": 0.24410169190319914,
+  "brand_safety": 1.569335920423327,
+  "evidence": [
+   {
+    "title": "DeepMind Gemini 1.5 - An AI That Remembers!",
+    "url": "https://youtube.com/watch?v=oJVwmxTOLd8",
+    "snippet": "Video by Two Minute Papers (1.84M subscribers) · 2024-02-21 · 8:33 · 139,720 views · 5,621 likes\n\nDeepMind’s AI assistant, Gemini 1.5 also appeared, and it offers something that interestingly, not even the great GPT-4 can do. Dear Fellow Scholars, this is Two Minute Papers with Dr. Károly Zsolnai-Fehér. And the story of Gemini 1.5 is a story of context windows. What is a context window?"
+   },
+   {
+    "title": "Two Minute Papers YouTube Stats & Analytics",
+    "url": "https://ytproanalytics.com/yt-stats/channel/UCbfYPyITQ-7l4upoX8nvctg",
+    "snippet": "Two Minute Papers is a YouTube channel from Hungary that joined YouTube on Aug 18, 2006. It currently has 1,840,000 subscribers, 171,978,712 total views and 1,103 uploaded videos, publishing about 1.9 videos per week. Stats on this page come from YouTube's public data (last updated Nov 14, 2026)."
+   },
+   {
+    "title": "Two Minute Papers YouTube Stats: Subscribers & Views | vidIQ",
+    "url": "https://vidiq.com/youtube-stats/channel/@twominutepapers",
+    "snippet": "As of 2026-11-13, Two Minute Papers has 1,840,000 subscribers, 174,440,321 total views, and 1,110 videos. Ranked [#35,295 worldwide](https://vidiq.com/youtube-stats/top/100/), [#6 in Hungary](https://vidiq.com/youtube-stats/top/country/hu/) and [#547 in Technology](https://vidiq.com/youtube-stats/top/category/tech/) by subscribers."
+   },
+   {
+    "title": "We Just Turned Down Millions of Dollars. Here Is Why.",
+    "url": "https://youtube.com/watch?v=SWGBN1KvG6c&vl=en",
+    "snippet": "Video by Two Minute Papers (1.84M subscribers) · 2026-01-01 · 10:33 · 351,912 views · 43,383 likes\n\n🙏 We would like to thank our generous Patreon supporters who make Two Minute Papers possible:\nBenji Rabhan, B Shang, Christian Ahlin, Fred R, Gordon Child, Juan Benet, Michael Tedder, Owen Skarpness, Richard Sundvall, Steef, Taras Bobrovytsky, Tybie Fitzhugh, Ueli Gallizzi"
+   },
+   {
+    "title": "New Game AI Turns Photos Into Playable Worlds! | Celebrating 10 Years Of Papers! 🎂",
+    "url": "https://youtube.com/watch?v=ecRFKfNy-Ms",
+    "snippet": "Video by Two Minute Papers (1.84M subscribers) · 2025-08-05 · 6:05 · 99,432 views · 5,720 likes\n\nIt can also do three things that I was quite surprised by, and then something I did not expect at all. Dear Fellow Scholars, this is Two Minute Papers with Dr. Károly Zsolnai-Fehér. Although I am thinking about using Dr. Carroll John Alpha these days."
+   },
+   {
+    "title": "I Never Thought I’d See This Happen",
+    "url": "https://youtube.com/watch?v=mOvtumfyjCs",
+    "snippet": "🙏 We would like to thank our generous Patreon supporters who make Two Minute Papers possible:\nAdam Bridges, B Shang, Carlos Galarza, Christian Ahlin, Eric Tyson, Juan Benet, Lukas Biewald, Michael Tedder, Owen Skarpness, Ryan Stankye, Shawn Becker, Steef, Taras Bobrovytsky, Tazaur Sagenclaw, Tybie Fitzhugh, Ueli Gallizzi"
+   }
+  ],
+  "engine": "drex",
+  "evaluated_at": "2026-11-14T22:17:38+00:00"
+ },
+ {
+  "name": "Fireship",
+  "found": true,
+  "summary": "Fireship is a YouTube channel created by Jeff Delaney that produces high-intensity code tutorials and tech news to help programmers ship apps faster.",
+  "topics": [
+   "Code Tutorials",
+   "Tech News",
+   "Programming",
+   "AI",
+   "Web Development"
+  ],
+  "platforms": [
+   {
+    "platform": "youtube",
+    "handle": "@fireship",
+    "followers": 4330000,
+    "source": 2,
+    "source_url": "https://vidiq.com/youtube-stats/channel/@fireship"
+   }
+  ],
+  "followers_total": 4330000,
+  "focus": {
+   "ai_ml": 0.011,
+   "consumer_tech": 0.0126,
+   "gaming": 0.0043,
+   "software_dev": 0.9643,
+   "creative_design": 0.0017,
+   "business_finance": 0.002,
+   "education_science": 0.0019,
+   "lifestyle_entertainment": 0.0013,
+   "other": 0.001
+  },
+  "p_authentic": 0.9964207046576657,
+  "p_identifiable": 0.9943860709075728,
+  "brand_safety": 2.4137477044924633,
+  "evidence": [
+   {
+    "title": "About Fireship: YouTube Channel Profile | vidIQ",
+    "url": "https://vidiq.com/youtube-stats/channel/@fireship/about",
+    "snippet": "## Channel Description\nHigh-intensity ⚡ code tutorials and tech news to help you ship your app faster. New videos every week covering the topics every programmer should know. The original home of #100SecondsOfCode #TheCodeReport and #CodeThisNotThat. Created by Jeff Delaney. Want more Fireship? 🗞️ Newsletter – https://bytes.dev 🧠 Courses – https://fireship.dev\nAs of 2026-10-29, Fireship has"
+   },
+   {
+    "title": "Fireship YouTube Stats: Subscribers, Views & Earnings | vidIQ",
+    "url": "https://vidiq.com/youtube-stats/channel/@fireship",
+    "snippet": "As of 2026-11-13, Fireship has 4,330,000 subscribers, 805,582,579 total views, and 864 videos. Ranked [#11,072 worldwide](https://vidiq.com/youtube-stats/top/100/), [#2,498 in United States](https://vidiq.com/youtube-stats/top/country/us/) and [#137 in Technology](https://vidiq.com/youtube-stats/top/category/tech/) by subscribers."
+   },
+   {
+    "title": "Jensen Huang just pulled out of Nvidia...",
+    "url": "https://youtube.com/watch?v=SOwUWPtXQ9I",
+    "snippet": "Video by Fireship (4.33M subscribers) · 2026-11-12 · 5:35 · 204,953 views · 8,443 likes\nManufact is the easiest way to build and deploy your MCP. Get $100 in free credits: https://manufact.com/fireship\nJensen Huang just resigned as Nvidia’s CEO four days after admitting to an affair with a suspected Chinese spy whose tiny Singapore company bought $4.8 billion of Nvidia GPUs. Let's dive in."
+   },
+   {
+    "title": "Fireship YouTube Stats & Analytics",
+    "url": "https://ytproanalytics.com/yt-stats/channel/UCsBjURrPoezykLs9EqgamOA",
+    "snippet": "Silver100K Subs\nGold1M Subs\nSubscribers\n4.29M\nTotal Views\n765.89M\nVideos\n849\n\nFireship has 4.3M subscribers as of Nov 5, 2026, according to YouTube's public channel data."
+   },
+   {
+    "title": "Did Anthropic just save its $1 trillion IPO?",
+    "url": "https://youtube.com/watch?v=1FurWDiK9A4",
+    "snippet": "Perplexity, Patreon, and many other prestigious companies all trust MX, and you can try robots on your own video in the dashboard. The free plan includes 100,000 robots, units, and delivery minutes every month, and you get an extra $50 credit at mx.com/fireship or at the link below."
+   },
+   {
+    "title": "US-EAST-1 is humanity’s weakest link…",
+    "url": "https://youtube.com/watch?v=HqL0xhwDz9s",
+    "snippet": "Video by Fireship (4.33M subscribers) · 2025-10-21 · 4:26 · 1,149,533 views · 43,790 likes"
+   }
+  ],
+  "engine": "drex",
+  "evaluated_at": "2026-11-14T22:17:42+00:00"
+ },
+ {
+  "name": "Matt Wolfe",
+  "found": true,
+  "summary": "Matt Wolfe is a YouTube creator who produces content focused on AI tools, technology tutorials, and digital media creation.",
+  "topics": [
+   "AI Tools",
+   "Video Editing",
+   "Technology",
+   "Content Creation",
+   "Future Tools"
+  ],
+  "platforms": [
+   {
+    "platform": "youtube",
+    "handle": "@mreflow",
+    "followers": 1030000,
+    "source": 9,
+    "source_url": "https://vidiq.com/youtube-stats/channel/@mreflow"
+   },
+   {
+    "platform": "x",
+    "handle": "mreflow",
+    "followers": null,
+    "source": 1,
+    "source_url": "https://youtube.com/watch?v=SlRzTFx8Qtg"
+   },
+   {
+    "platform": "instagram",
+    "handle": "mr.eflow",
+    "followers": null,
+    "source": 1,
+    "source_url": "https://youtube.com/watch?v=SlRzTFx8Qtg"
+   },
+   {
+    "platform": "other",
+    "handle": "matt-wolfe-30841712",
+    "followers": null,
+    "source": 1,
+    "source_url": "https://youtube.com/watch?v=SlRzTFx8Qtg"
+   },
+   {
+    "platform": "other",
+    "handle": "mattrwolfe",
+    "followers": null,
+    "source": 1,
+    "source_url": "https://youtube.com/watch?v=SlRzTFx8Qtg"
+   }
+  ],
+  "followers_total": 1030000,
+  "focus": {
+   "ai_ml": 0.8809,
+   "consumer_tech": 0.034,
+   "gaming": 0.0098,
+   "software_dev": 0.0172,
+   "creative_design": 0.0355,
+   "business_finance": 0.0062,
+   "education_science": 0.0061,
+   "lifestyle_entertainment": 0.005,
+   "other": 0.0052
+  },
+  "p_authentic": 0.9824318932873071,
+  "p_identifiable": 0.9868465378440752,
+  "brand_safety": 2.2112655995256945,
+  "evidence": [
+   {
+    "title": "The Most Useful AI Tools Right Now in 2026",
+    "url": "https://youtube.com/watch?v=SlRzTFx8Qtg",
+    "snippet": "Socials:\n❌ Twiter/X: https://x.com/mreflow\n🖼️ Instagram: https://instagram.com/mr.eflow\n🧵 Threads: https://www.threads.net/@mr.eflow\n🟦 LinkedIn: https://www.linkedin.com/in/matt-wolfe-30841712/\n👍 Facebook: https://www.facebook.com/mattrwolfe"
+   },
+   {
+    "title": "About Matt Wolfe: YouTube Channel Profile | vidIQ",
+    "url": "https://vidiq.com/youtube-stats/channel/@mreflow/about",
+    "snippet": "vidIQ. As of 2026-11-08, Matt Wolfe has 1,030,000 subscribers, 85,564,733 total views, and 834 videos. It ranks #71,564 by subscribers among channels tracked by vidIQ."
+   },
+   {
+    "title": "Anyone Can Make Amazing Games Now (Easy)",
+    "url": "https://youtube.com/watch?v=qK4nV_LnXxQ",
+    "snippet": "Socials:\n❌ Twiter/X: https://x.com/mreflow\n🖼️ Instagram: https://instagram.com/mr.eflow\n🧵 Threads: https://www.threads.net/@mr.eflow\n🟦 LinkedIn: https://www.linkedin.com/in/matt-wolfe-30841712/\n👍 Facebook: https://www.facebook.com/mattrwolfe"
+   },
+   {
+    "title": "Ultimate Beginner's Guide to Making Viral Videos with Veo 3",
+    "url": "https://youtube.com/watch?v=803N2AHUejo",
+    "snippet": "Video by Matt Wolfe (1.02M subscribers) · 2025-07-16 · 33:17 · 69,907 views · 2,303 likes\n\nSocials:\n❌ Twiter/X: https://x.com/mreflow\n👍 Facebook: https://www.facebook.com/mattrwolfe\n🖼️ Instagram: https://instagram.com/mr.eflow\n🧵 Threads: https://www.threads.net/@mr.eflow\n🟦 LinkedIn: https://www.linkedin.com/in/matt-wolfe-30841712/"
+   },
+   {
+    "title": "Should Kids Still Go To College? (Answering All Your Questions)",
+    "url": "https://youtube.com/watch?v=oxerUfMFuCU&vl=en-US",
+    "snippet": "I also have a newsletter writer who works on the newsletter with me. Her name is Katherine. If you're subscribed to the Future Tools newsletter, you'll see that it's now signed by Katherine and Matt Wolfe. And we work together to put out the best possible newsletter we can every week."
+   },
+   {
+    "title": "Fable 5.2 Is Quite Insane!",
+    "url": "https://youtube.com/watch?v=Mt54ez7xsiI",
+    "snippet": "Video by Matt Wolfe (1.03M subscribers) · 2026-11-10 · 1:51 · 12,078 views · 390 likes\n\nSocials:\n❌ Twiter/X: https://x.com/mreflow\n🖼️ Instagram: https://instagram.com/mr.eflow\n🧵 Threads: https://www.threads.net/@mr.eflow\n🟦 LinkedIn: https://www.linkedin.com/in/matt-wolfe-30841712/\n👍 Facebook: https://www.facebook.com/mattrwolfe"
+   }
+  ],
+  "engine": "drex",
+  "evaluated_at": "2026-11-14T22:17:46+00:00"
+ },
+ {
+  "name": "Dave2D",
+  "found": true,
+  "summary": "Dave2D is a technology reviewer who creates videos covering smartphones, laptops, and gaming hardware.",
+  "topics": [
+   "iPhone Reviews",
+   "MacBook Reviews",
+   "Gaming Laptops",
+   "Smartphone Unboxings",
+   "Tech Hardware"
+  ],
+  "platforms": [
+   {
+    "platform": "youtube",
+    "handle": "Dave2D",
+    "followers": 3690000,
+    "source": 1,
+    "source_url": "https://youtube.com/watch?v=eHYaESEzFHc"
+   },
+   {
+    "platform": "x",
+    "handle": "Dave2D",
+    "followers": null,
+    "source": 1,
+    "source_url": "https://youtube.com/watch?v=eHYaESEzFHc"
+   },
+   {
+    "platform": "instagram",
+    "handle": "Dave2D",
+    "followers": null,
+    "source": 1,
+    "source_url": "https://youtube.com/watch?v=eHYaESEzFHc"
+   }
+  ],
+  "followers_total": 3690000,
+  "focus": {
+   "ai_ml": 0.0024,
+   "consumer_tech": 0.9824,
+   "gaming": 0.0074,
+   "software_dev": 0.0031,
+   "creative_design": 0.001,
+   "business_finance": 0.0008,
+   "education_science": 0.0007,
+   "lifestyle_entertainment": 0.0012,
+   "other": 0.0009
+  },
+  "p_authentic": 0.9475303853022665,
+  "p_identifiable": 0.9612131333622291,
+  "brand_safety": 2.210091803469396,
+  "evidence": [
+   {
+    "title": "iPhone 18 Pro Max Review - Apple's Hyping The Wrong Thing",
+    "url": "https://youtube.com/watch?v=eHYaESEzFHc",
+    "snippet": "Video by Dave2D (3.69M subscribers) · 2026-09-16 · 11:48 · 1,286,576 views · 16,722 likes\niPhone 18 Pro Max Review.\nIf you'd like to support the channel, consider a Dave2D membership by clicking the “Join” button above!\nhttp://twitter.com/Dave2D\nhttp://www.instagram.com/Dave2D\nhttps://discord.gg/Dave2D"
+   },
+   {
+    "title": "MacBook Pro OLED Review - Is Touch ACTUALLY Useful?",
+    "url": "https://youtube.com/watch?v=m8lhB9qFhYo",
+    "snippet": "Video by Dave2D (3.69M subscribers) · 2026-11-05 · 11:15 · 417,900 views · 6,983 likes\nMy review of the new 2026 MacBook Pro OLED Touchscreen\nIf you'd like to support the channel, consider a Dave2D membership by clicking the “Join” button above!\nhttp://twitter.com/Dave2D\nhttp://www.instagram.com/Dave2D\nhttps://discord.gg/Dave2D"
+   },
+   {
+    "title": "MacBook Pro OLED Review - Is Touch ACTUALLY Useful?",
+    "url": "https://youtu.be/m8lhB9qFhYo?is=mUMOJfryZmvGDD2x",
+    "snippet": "Video by Dave2D (3.69M subscribers) · 2026-11-05 · 11:15 · 91,837 views · 3,537 likes\nMy review of the new 2026 MacBook Pro OLED Touchscreen\nIf you'd like to support the channel, consider a Dave2D membership by clicking the “Join” button above!\nhttp://twitter.com/Dave2D\nhttp://www.instagram.com/Dave2D\nhttps://discord.gg/Dave2D"
+   },
+   {
+    "title": "These 2026 Gaming Laptops Are AMAZING!",
+    "url": "https://youtube.com/watch?v=kACGSU-SCbU",
+    "snippet": "Video by Dave2D (3.69M subscribers) · 2026-01-05 · 6:36 · 363,070 views · 9,971 likes\nFirst impressions of the ASUS ROG Gaming Laptops\nIf you'd like to support the channel, consider a Dave2D membership by clicking the “Join” button above!\nhttp://twitter.com/Dave2D\nhttp://www.instagram.com/Dave2D\nhttps://discord.gg/Dave2D"
+   },
+   {
+    "title": "iPhone Duo Review - \"Apple Knows Best\"",
+    "url": "https://youtube.com/watch?v=1vj_AHonNdA",
+    "snippet": "Video by Dave2D (3.69M subscribers) · 2026-10-21 · 16:28 · 1,046,125 views · 16,288 likes\n\nIf you'd like to support the channel, consider a Dave2D membership by clicking the “Join” button above!\nhttp://twitter.com/Dave2D\nhttp://www.instagram.com/Dave2D\nhttps://discord.gg/Dave2D"
+   },
+   {
+    "title": "iPhone Duo Impressions - They NAILED This",
+    "url": "https://youtu.be/CEgynoERrqc",
+    "snippet": "Video by Dave2D (3.69M subscribers) · 2026-09-10 · 13:00 · 2,170,299 views · 35,420 likes\n\nIf you'd like to support the channel, consider a Dave2D membership by clicking the “Join” button above!\nhttp://twitter.com/Dave2D\nhttp://www.instagram.com/Dave2D\nhttps://discord.gg/Dave2D\n\nFollow me:\nhttp://twitter.com/Dave2D\nhttp://www.instagram.com/Dave2D"
+   }
+  ],
+  "engine": "drex",
+  "evaluated_at": "2026-11-14T22:17:43+00:00"
+ },
+ {
+  "name": "NetworkChuck",
+  "found": true,
+  "summary": "NetworkChuck is a CBT Nuggets trainer and YouTuber who creates content to help people enter the IT field through certifications and technical education.",
+  "topics": [
+   "IT Certifications",
+   "Networking",
+   "Cisco",
+   "CompTIA",
+   "Cloud Computing"
+  ],
+  "platforms": [
+   {
+    "platform": "youtube",
+    "handle": "@networkchuck",
+    "followers": 5470000,
+    "source": 2,
+    "source_url": "https://vidiq.com/youtube-stats/channel/@networkchuck"
+   },
+   {
+    "platform": "instagram",
+    "handle": "networkchuck",
+    "followers": null,
+    "source": 3,
+    "source_url": "https://youtube.com/watch?v=f9IolErKgsw"
+   },
+   {
+    "platform": "x",
+    "handle": "networkchuck",
+    "followers": null,
+    "source": 3,
+    "source_url": "https://youtube.com/watch?v=f9IolErKgsw"
+   },
+   {
+    "platform": "other",
+    "handle": "NetworkChuck",
+    "followers": null,
+    "source": 3,
+    "source_url": "https://youtube.com/watch?v=f9IolErKgsw"
+   }
+  ],
+  "followers_total": 5470000,
+  "focus": {
+   "ai_ml": 0.0046,
+   "consumer_tech": 0.0538,
+   "gaming": 0.0108,
+   "software_dev": 0.7401,
+   "creative_design": 0.003,
+   "business_finance": 0.0051,
+   "education_science": 0.1591,
+   "lifestyle_entertainment": 0.0045,
+   "other": 0.019
+  },
+  "p_authentic": 0.9954148327008576,
+  "p_identifiable": 0.9939944974493397,
+  "brand_safety": 2.378540392665291,
+  "evidence": [
+   {
+    "title": "About NetworkChuck: YouTube Channel Profile | vidIQ",
+    "url": "https://vidiq.com/youtube-stats/channel/@networkchuck/about",
+    "snippet": "Welcome to NetworkChuck! I LOVE Information Technology!! My goal is to help as MANY PEOPLE AS POSSIBLE jump into a career in the IT field through obtaining IT Certifications. I talk about Cisco Certifications, CompTIA, AWS, Microsoft...pretty much EVERYTHING in IT. As a CBT Nuggets Trainer, it's also my passion to TEACH information technology and to make it FUN. If your goals are to obtain your"
+   },
+   {
+    "title": "NetworkChuck YouTube Stats: Subscribers, Views & Earnings | vidIQ",
+    "url": "https://vidiq.com/youtube-stats/channel/@networkchuck",
+    "snippet": "As of 2026-11-13, NetworkChuck has 5,470,000 subscribers, 449,068,620 total views, and 637 videos. Ranked [#7,896 worldwide](https://vidiq.com/youtube-stats/top/100/), [#1,841 in United States](https://vidiq.com/youtube-stats/top/country/us/) and [#98 in Technology](https://vidiq.com/youtube-stats/top/category/tech/) by subscribers."
+   },
+   {
+    "title": "You Need to Get Your CCNA Right Now!!",
+    "url": "https://youtube.com/watch?v=f9IolErKgsw",
+    "snippet": "FOLLOW ME EVERYWHERE:\nInstagram: https://www.instagram.com/networkchuck/\nX/Twitter: https://x.com/networkchuck\nFacebook: https://www.facebook.com/NetworkChuck/\nJoin the Discord server: https://ntck.co/discord\n\n[music] Over at Network Chuck Academy, my academy where we teach you stuff for IT to get you a job, we're doing a three-month program to help you get your CCNA before that rev."
+   },
+   {
+    "title": "you need to use Herdr RIGHT NOW!!",
+    "url": "https://youtube.com/watch?t=2m00s&v=9_FzA-J9S2E",
+    "snippet": "FOLLOW ME EVERYWHERE:\nInstagram: https://www.instagram.com/networkchuck/\nX/Twitter: https://x.com/networkchuck\nFacebook: https://www.facebook.com/NetworkChuck/\nJoin the Discord server: https://ntck.co/discord\n\nI'll label it with {dash} {dash} label, call it Big Mac. And then just like SSH, my username plus the machine's IP address. So, network Chuck at 10.77.14.204."
+   },
+   {
+    "title": "I built 24 Websites in 24 Hours",
+    "url": "https://youtube.com/watch?v=2VvWM6gdDlk&xstg=CAMSBhUDzO3xHw%3D%3D",
+    "snippet": "FOLLOW ME EVERYWHERE\n---------------------------------------------------\nInstagram: https://www.instagram.com/networkchuck/\nTwitter: https://twitter.com/networkchuck\nFacebook: https://www.facebook.com/NetworkChuck/\nJoin the Discord server: http://bit.ly/nc-discord"
+   },
+   {
+    "title": "I'm worried about Network Engineers.....",
+    "url": "https://youtube.com/watch?v=4hkJX7LBdXc&vl=en",
+    "snippet": "FOLLOW ME EVERYWHERE\n---------------------------------------------------\nInstagram: https://www.instagram.com/networkchuck/\nTwitter: https://twitter.com/networkchuck\nFacebook: https://www.facebook.com/NetworkChuck/\nJoin the Discord server: http://bit.ly/nc-discord"
+   }
+  ],
+  "engine": "drex",
+  "evaluated_at": "2026-11-14T22:17:48+00:00"
+ },
+ {
+  "name": "Lex Fridman",
+  "found": true,
+  "summary": "Lex Fridman is an American computer scientist and podcaster who hosts the Lex Fridman Podcast, interviewing notable figures on science, technology, and politics.",
+  "topics": [
+   "Podcasting",
+   "Technology",
+   "Science",
+   "AI",
+   "Interviews"
+  ],
+  "platforms": [
+   {
+    "platform": "youtube",
+    "handle": "@lexfridman",
+    "followers": 5070000,
+    "source": 3,
+    "source_url": "https://vidiq.com/youtube-stats/channel/@lexfridman"
+   },
+   {
+    "platform": "x",
+    "handle": "lexfridman",
+    "followers": null,
+    "source": 2,
+    "source_url": "https://youtube.com/watch?v=FGCP2F_7rQk"
+   },
+   {
+    "platform": "instagram",
+    "handle": "lexfridman",
+    "followers": null,
+    "source": 2,
+    "source_url": "https://youtube.com/watch?v=FGCP2F_7rQk"
+   },
+   {
+    "platform": "tiktok",
+    "handle": "lexfridman",
+    "followers": null,
+    "source": 2,
+    "source_url": "https://youtube.com/watch?v=FGCP2F_7rQk"
+   },
+   {
+    "platform": "other",
+    "handle": "lexfridman",
+    "followers": null,
+    "source": 2,
+    "source_url": "https://youtube.com/watch?v=FGCP2F_7rQk"
+   }
+  ],
+  "followers_total": 5070000,
+  "focus": {
+   "ai_ml": 0.5136,
+   "consumer_tech": 0.0489,
+   "gaming": 0.0162,
+   "software_dev": 0.0642,
+   "creative_design": 0.0041,
+   "business_finance": 0.0108,
+   "education_science": 0.2276,
+   "lifestyle_entertainment": 0.0138,
+   "other": 0.1009
+  },
+  "p_authentic": 0.9947522469391719,
+  "p_identifiable": 0.9941279513182286,
+  "brand_safety": 2.2244372159949393,
+  "evidence": [
+   {
+    "title": "Lex Fridman",
+    "url": "https://en.wikipedia.org/wiki/Lex_Fridman",
+    "snippet": "Alexei \" Lex \" Fridman ( / ˈ f r iː d m ə n /; born 15 August 1983) is an American computer scientist and podcaster. Since 2018, he has hosted the Lex Fridman Podcast, where he interviews notable figures from various fields such as science, technology, sports, the arts, and politics."
+   },
+   {
+    "title": "My First Time in Taiwan w/ Jensen Huang | Lex Fridman",
+    "url": "https://youtube.com/watch?v=FGCP2F_7rQk",
+    "snippet": "*SOCIAL LINKS:*\n- X: https://x.com/lexfridman\n- Instagram: https://instagram.com/lexfridman\n- TikTok: https://tiktok.com/@lexfridman\n- LinkedIn: https://linkedin.com/in/lexfridman\n- Facebook: https://facebook.com/lexfridman\n- Patreon: https://patreon.com/lexfridman\n- Telegram: https://t.me/lexfridman\n- Reddit: https://reddit.com/r/lexfridman\n\n# My First Time in Taiwan w/ Jensen Huang | Lex Fridman\nVideo by Lex Fridman (5.07M subscribers) · 2026-10-13 · 1:30:18 · 1,340,397 views · 27,231 likes\nI've been traveling the world a bit. One"
+   },
+   {
+    "title": "Lex Fridman YouTube Stats: Subscribers, Views & Earnings | vidIQ",
+    "url": "https://vidiq.com/youtube-stats/channel/@lexfridman",
+    "snippet": "As of 2026-11-01, Lex Fridman has 5,070,000 subscribers, 935,410,908 total views, and 870 videos. Ranked [#8,804 worldwide](/youtube-stats/top/100/), [#2,041 in United States](/youtube-stats/top/country/us/) and [#242 in News & Politics](/youtube-stats/top/category/news/) by subscribers."
+   },
+   {
+    "title": "Lex Fridman YouTube Stats & Analytics",
+    "url": "https://ytproanalytics.com/yt-stats/channel/UCSHZKyawb77ixDdsGog4iWA",
+    "snippet": "Lex Fridman is a YouTube channel from United States that joined YouTube on Sep 20, 2006. It currently has 5,060,000 subscribers, 932,168,896 total views and 869 uploaded videos, publishing about 0.3 videos per week. Stats on this page come from YouTube's public data (last updated Oct 23, 2026).\n\nLex Fridman has 5.1M subscribers as of Oct 23, 2026, according to YouTube's public channel data."
+   },
+   {
+    "title": "Jensen Huang: NVIDIA - The $4 Trillion Company & the AI Revolution | Lex Fridman Podcast #494",
+    "url": "https://youtube.com/watch?t=409s&v=vif8NQcjVf0",
+    "snippet": "NVIDIA on Instagram: https://www.instagram.com/nvidia/\n\n*SOCIAL LINKS:*\n- X: https://x.com/lexfridman\n- Instagram: https://instagram.com/lexfridman\n- TikTok: https://tiktok.com/@lexfridman\n- LinkedIn: https://linkedin.com/in/lexfridman\n- Facebook: https://facebook.com/lexfridman\n- Patreon: https://patreon.com/lexfridman\n- Telegram: https://t.me/lexfridman\n- Reddit: https://reddit.com/r/lexfridman\n\n# Jensen Huang: NVIDIA - The $4 Trillion Company & the AI Revolution | Lex Fridman Podcast #494\nVideo by Lex Fridman (5.07M subscribers) · 2026-03-23 · 2:25:58 · 1,448,709 views · 28,040 likes\nJensen Huang is the"
+   },
+   {
+    "title": "Hardest problems in complexity - explained by mathematician | Lex Fridman",
+    "url": "https://youtube.com/watch?v=stBlD7duzXQ",
+    "snippet": "*SOCIAL LINKS:*\n- X: https://x.com/lexfridman\n- Instagram: https://instagram.com/lexfridman\n- TikTok: https://tiktok.com/@lexfridman\n- LinkedIn: https://linkedin.com/in/lexfridman\n- Facebook: https://facebook.com/lexfridman\n- Patreon: https://patreon.com/lexfridman\n- Telegram: https://t.me/lexfridman\n- Reddit: https://reddit.com/r/lexfridman\n\n# Hardest problems in complexity - explained by mathematician | Lex Fridman\nVideo by Lex Clips (1.65M subscribers) · 2026-11-01 · 5:48 · 10,763 views · 48 likes\nLex Fridman Podcast full episode:"
+   }
+  ],
+  "engine": "drex",
+  "evaluated_at": "2026-11-14T22:17:52+00:00"
+ },
+ {
+  "name": "Yannic Kilcher",
+  "found": true,
+  "summary": "Yannic Kilcher creates videos explaining machine learning research papers, programming, and the broader impact of AI in society.",
+  "topics": [
+   "Machine Learning",
+   "AI Research",
+   "Programming",
+   "LLMs",
+   "AI Ethics"
+  ],
+  "platforms": [
+   {
+    "platform": "youtube",
+    "handle": "@yannickilcher",
+    "followers": 333000,
+    "source": 8,
+    "source_url": "https://vidiq.com/youtube-stats/channel/@yannickilcher"
+   },
+   {
+    "platform": "x",
+    "handle": "@ykilcher",
+    "followers": null,
+    "source": 1,
+    "source_url": "https://vidiq.com/youtube-stats/channel/@yannickilcher/about"
+   }
+  ],
+  "followers_total": 333000,
+  "focus": {
+   "ai_ml": 0.9625,
+   "consumer_tech": 0.004,
+   "gaming": 0.004,
+   "software_dev": 0.0216,
+   "creative_design": 0.0009,
+   "business_finance": 0.0008,
+   "education_science": 0.0042,
+   "lifestyle_entertainment": 0.001,
+   "other": 0.001
+  },
+  "p_authentic": 0.9924826159989442,
+  "p_identifiable": 0.992482612763819,
+  "brand_safety": 2.298833132090206,
+  "evidence": [
+   {
+    "title": "About Yannic Kilcher: YouTube Channel Profile | vidIQ",
+    "url": "https://vidiq.com/youtube-stats/channel/@yannickilcher/about",
+    "snippet": "I make videos about machine learning research papers, programming, and issues of the AI community, and the broader impact of AI in society. Twitter: https://twitter.com/ykilcher Discord: https://ykilcher.com/discord BitChute: https://www.bitchute.com/channel/yannic-kilcher LinkedIn: https://www.linkedin.com/in/ykilcher BiliBili: https://space.bilibili.com/2017636191 If you want to support me, the"
+   },
+   {
+    "title": "Mixtral of Experts (Paper Explained)",
+    "url": "https://youtube.com/watch?v=mwO6v4BlgZQ",
+    "snippet": "Links:\nHomepage: https://ykilcher.com\nMerch: https://ykilcher.com/merch\nYouTube: https://www.youtube.com/c/yannickilcher\nTwitter: https://twitter.com/ykilcher\nDiscord: https://ykilcher.com/discord\nLinkedIn: https://www.linkedin.com/in/ykilcher\n\n# Mixtral of Experts (Paper Explained)\nVideo by Yannic Kilcher (333K subscribers) · 2024-01-13 · 34:31 · 67,088 views · 1,917 likes\n#mixtral #mistral #chatgpt\nOUTLINE:\n0:00 - Introduction\n3:00 -"
+   },
+   {
+    "title": "Context Rot: How Increasing Input Tokens Impacts LLM Performance (Paper Analysis)",
+    "url": "https://youtube.com/watch?v=hpC4qjWu_aY",
+    "snippet": "Video by Yannic Kilcher (333K subscribers) · 2025-07-23 · 37:48 · 33,945 views · 1,126 likes\n\nLinks:\nHomepage: https://ykilcher.com\nMerch: https://ykilcher.com/merch\nYouTube: https://www.youtube.com/c/yannickilcher\nTwitter: https://twitter.com/ykilcher\nDiscord: https://ykilcher.com/discord\nLinkedIn: https://www.linkedin.com/in/ykilcher"
+   },
+   {
+    "title": "[Paper Analysis] On the Theoretical Limitations of Embedding-Based Retrieval (Warning: Rant)",
+    "url": "https://youtube.com/watch?v=zKohTkN0Fyk",
+    "snippet": "Video by Yannic Kilcher (333K subscribers) · 2025-10-11 · 48:57 · 37,308 views · 1,221 likes\n\nLinks:\nHomepage: https://ykilcher.com\nMerch: https://ykilcher.com/merch\nYouTube: https://www.youtube.com/c/yannickilcher\nTwitter: https://twitter.com/ykilcher\nDiscord: https://ykilcher.com/discord\nLinkedIn: https://www.linkedin.com/in/ykilcher"
+   },
+   {
+    "title": "On the Biology of a Large Language Model (Part 2)",
+    "url": "https://youtube.com/watch?v=V71AJoYAtBQ&vl=en&xstg=CAMSBhUDzO3xHw%3D%3D",
+    "snippet": "Video by Yannic Kilcher (332K subscribers) · 2025-05-03 · 56:26 · 17,741 views · 497 likes\n\nLinks:\nHomepage: https://ykilcher.com\nMerch: https://ykilcher.com/merch\nYouTube: https://www.youtube.com/c/yannickilcher\nTwitter: https://twitter.com/ykilcher\nDiscord: https://ykilcher.com/discord\nLinkedIn: https://www.linkedin.com/in/ykilcher"
+   },
+   {
+    "title": "[Video Response] What Cloudflare's code mode misses about MCP and tool calling",
+    "url": "https://youtube.com/watch?v=0bpYCxv2qhw&vl=en",
+    "snippet": "Video by Yannic Kilcher (332K subscribers) · 2025-10-19 · 13:19 · 9,838 views · 302 likes\n\nLinks:\nHomepage: https://ykilcher.com\nMerch: https://ykilcher.com/merch\nYouTube: https://www.youtube.com/c/yannickilcher\nTwitter: https://twitter.com/ykilcher\nDiscord: https://ykilcher.com/discord\nLinkedIn: https://www.linkedin.com/in/ykilcher"
+   }
+  ],
+  "engine": "drex",
+  "evaluated_at": "2026-11-14T22:17:51+00:00"
+ },
+ {
+  "name": "AI Explained",
+  "found": true,
+  "summary": "AI Explained is a YouTube channel that produces videos analyzing AI models, industry trends, and technical concepts.",
+  "topics": [
+   "AI Models",
+   "AI Industry News",
+   "LLM Architecture",
+   "AI Regulation",
+   "AI Benchmarks"
+  ],
+  "platforms": [
+   {
+    "platform": "youtube",
+    "handle": "@aiexplained-official",
+    "followers": 458000,
+    "source": 1,
+    "source_url": "https://vidiq.com/youtube-stats/channel/@aiexplained-official"
+   }
+  ],
+  "followers_total": 458000,
+  "focus": {
+   "ai_ml": 0.9924,
+   "consumer_tech": 0.0027,
+   "gaming": 0.001,
+   "software_dev": 0.0018,
+   "creative_design": 0.0003,
+   "business_finance": 0.0003,
+   "education_science": 0.0009,
+   "lifestyle_entertainment": 0.0002,
+   "other": 0.0003
+  },
+  "p_authentic": 0.9897126552357128,
+  "p_identifiable": 0.9790223076730952,
+  "brand_safety": 2.1147711719767335,
+  "evidence": [
+   {
+    "title": "AI Explained YouTube Stats: Subscribers, Views & Earnings | vidIQ",
+    "url": "https://vidiq.com/youtube-stats/channel/@aiexplained-official",
+    "snippet": "As of 2026-11-07, AI Explained has 458,000 subscribers, 23,205,180 total views, and 163 videos. Ranked [#167,639 worldwide](/youtube-stats/top/100/), [#3,684 in United Kingdom](/youtube-stats/top/country/gb/) and [#3,226 in Technology](/youtube-stats/top/category/tech/) by subscribers."
+   },
+   {
+    "title": "AI Explained YouTube Stats & Analytics",
+    "url": "https://ytproanalytics.com/yt-stats/channel/UCNJ1Ymd5yFuUPtn21xtRbbw",
+    "snippet": "AI Explained is a YouTube channel that joined YouTube on Jan 3, 2023. It currently has 451,000 subscribers, 22,487,327 total views and 160 uploaded videos, publishing about 0.6 videos per week. Stats on this page come from YouTube's public data (last updated Oct 7, 2026).\n\nAI Explained has 451K subscribers as of Oct 7, 2026, according to YouTube's public channel data."
+   },
+   {
+    "title": "Fable 5.2: The Self-Improvement Loop Keeps Loopin’ … (plus Gemini Carbon)",
+    "url": "https://youtube.com/watch?v=583ThJIqQ7k",
+    "snippet": "5.2 hundreds of times. There’s too much to cover in one video, but let’s explore everything from how fast AI is accelerating AI, five benchmarks few others will talk about, why Simple Bench got saturated but meta-simple bench might not have, Internal model 4, remote labour automation and much more\nhttps://www.assemblyai.com/aiexplained\nExclusive Vids($9!): https://www.patreon.com/AIExplained\n\n# Fable 5.2: The Self-Improvement Loop Keeps Loopin’ … (plus Gemini Carbon)\nVideo by AI Explained (458K subscribers) · 2026-11-10 · 31:41 · 15,076 views · 825 likes\nI’ve read the full Fable 5.2 report at 264 pages, the 30 page METR"
+   },
+   {
+    "title": "AI Explained's Latest YouTube Videos & Shorts | vidIQ",
+    "url": "https://vidiq.com/youtube-stats/channel/@aiexplained-official/videos",
+    "snippet": "As of 2026-11-07, AI Explained has 458,000 subscribers, 23,205,180 total views, and 163 videos. Ranked [#167,639 worldwide](/youtube-stats/top/100/), [#3,684 in United Kingdom](/youtube-stats/top/country/gb/) and [#3,226 in Technology](/youtube-stats/top/category/tech/) by subscribers."
+   },
+   {
+    "title": "AI Explained: What Does the Number of Parameters in an LLM Mean?",
+    "url": "https://youtube.com/watch?v=dPalBLlA5yQ",
+    "snippet": "Video by AI & SAP Basis Wizard (4.83K subscribers) · 2025-02-12 · 5:17 · 37,333 views · 629 likes\nWelcome to the *AI Explained* series, where I break down the basics of artificial intelligence for you. In this episode, we'll dive into why the number of parameters is so crucial in large language models. You'll discover how neural networks are constructed, what the transformer architecture entails,"
+   },
+   {
+    "title": "What AI Researchers Saw, Before Their Demand to ‘Pace’ AI",
+    "url": "https://youtube.com/watch?v=J3ljHm57yU0",
+    "snippet": "Video by AI Explained (455K subscribers) · 2026-09-16 · 24:53 · 235,642 views · 4,728 likes\n\nAI Insiders ($9!): https://www.patreon.com/AIExplained\n\nAI Explained — What’s Behind the Sudden Talk of Pacing AI? (extended previous video)\nhttps://www.patreon.com/AIExplained/posts/whats-behind-of-169507775"
+   }
+  ],
+  "engine": "drex",
+  "evaluated_at": "2026-11-14T22:17:53+00:00"
+ },
+ {
+  "name": "Matthew Berman",
+  "found": true,
+  "summary": "Matthew Berman is a content creator who produces videos and live streams covering AI news, coding tutorials, and industry developments.",
+  "topics": [
+   "AI News",
+   "AI Coding",
+   "LLMs",
+   "AI Agents",
+   "Tech Industry"
+  ],
+  "platforms": [
+   {
+    "platform": "youtube",
+    "handle": "@matthew_berman",
+    "followers": 645000,
+    "source": 9,
+    "source_url": "https://youtube.com/watch?v=ZBJV-hA-tLM"
+   },
+   {
+    "platform": "x",
+    "handle": "matthewberman",
+    "followers": null,
+    "source": 3,
+    "source_url": "https://youtube.com/watch?v=bBqP-w6DHFw"
+   },
+   {
+    "platform": "instagram",
+    "handle": "matthewberman_ai",
+    "followers": null,
+    "source": 3,
+    "source_url": "https://youtube.com/watch?v=bBqP-w6DHFw"
+   },
+   {
+    "platform": "tiktok",
+    "handle": "matthewberman_ai",
+    "followers": null,
+    "source": 10,
+    "source_url": "https://youtube.com/watch?v=IB7IW6zX-H0"
+   }
+  ],
+  "followers_total": 645000,
+  "focus": {
+   "ai_ml": 0.968,
+   "consumer_tech": 0.0073,
+   "gaming": 0.0032,
+   "software_dev": 0.0165,
+   "creative_design": 0.0009,
+   "business_finance": 0.0013,
+   "education_science": 0.0008,
+   "lifestyle_entertainment": 0.0009,
+   "other": 0.0011
+  },
+  "p_authentic": 0.9799310357925192,
+  "p_identifiable": 0.9903807182383824,
+  "brand_safety": 2.122014578372608,
+  "evidence": [
+   {
+    "title": "This AI Coder Is On Another Level (Pythagora Tutorial)",
+    "url": "https://youtube.com/watch?v=spsG4G2sbrw",
+    "snippet": "My Links 🔗\n👉🏻 Main Channel: https://www.youtube.com/@matthew_berman\n👉🏻 Twitter: https://twitter.com/matthewberman\n👉🏻 Discord: https://discord.gg/xxysSXBxFW\n👉🏻 Patreon: https://patreon.com/MatthewBerman\n👉🏻 Instagram: https://www.instagram.com/matthewberman_ai\n👉🏻 Threads: https://www.threads.net/@matthewberman_ai\n👉🏻 LinkedIn: https://www.linkedin.com/company/forward-future-ai"
+   },
+   {
+    "title": "Anthropic Revealed Secrets to Building Powerful Agents",
+    "url": "https://youtube.com/watch?v=0v7TQIh_kes",
+    "snippet": "My Links 🔗\n👉🏻 Subscribe: https://www.youtube.com/@matthew_berman\n👉🏻 Twitter: https://twitter.com/matthewberman\n👉🏻 Discord: https://discord.gg/xxysSXBxFW\n👉🏻 Patreon: https://patreon.com/MatthewBerman\n👉🏻 Instagram: https://www.instagram.com/matthewberman_ai\n👉🏻 Threads: https://www.threads.net/@matthewberman_ai\n👉🏻 LinkedIn: https://www.linkedin.com/company/forward-future-ai"
+   },
+   {
+    "title": "Kimi K3.1 Invented the Benchmark Scores",
+    "url": "https://youtube.com/watch?v=bBqP-w6DHFw",
+    "snippet": "Video by Matthew Berman (641K subscribers) · 2026-10-24 · 0:21 · 7,116 views · 55 likes\n\n👉🏻 X: https://x.com/matthewberman\n👉🏻 Forward Future X: https://x.com/forwardfuture\n👉🏻 Instagram: https://www.instagram.com/matthewberman_ai\n👉🏻 Discord: https://discord.gg/u7wTTGWhuJ\n👉🏻 Spotify: https://open.spotify.com/show/6dBxDwxtHl1hpqHhfoXmy8"
+   },
+   {
+    "title": "AI News LIVE Stream! (w/Matt Wolfe)",
+    "url": "https://youtube.com/watch?v=fy34wacvrtc",
+    "snippet": "uh Matt where can people find you yeah so the the two best places are YouTube and Twitter you've got it on the screen if you go to YouTube uh mylow or Twitter mylow you'll find me in either one of those places um those are probably the best places yeah\n\n# AI News LIVE Stream! (w/Matt Wolfe)\nVideo by Matthew Berman (644K subscribers) · 2024-08-23 · 1:33:32 · 13,014 views · 481 likes\nSpecial guest @mreflow joins the stream where we talk about the AI"
+   },
+   {
+    "title": "When AI Becomes Too Smart For Humans...",
+    "url": "https://youtube.com/watch?v=zM4jxr4FicA",
+    "snippet": "👉🏻 Subscribe: https://www.youtube.com/@matthew_berman\n👉🏻 Twitter: https://twitter.com/matthewberman\n👉🏻 Discord: https://discord.gg/xxysSXBxFW\n👉🏻 Patreon: https://patreon.com/MatthewBerman\n👉🏻 Instagram: https://www.instagram.com/matthewberman_ai\n👉🏻 Threads: https://www.threads.net/@matthewberman_ai\n👉🏻 LinkedIn: https://www.linkedin.com/company/forward-future-ai"
+   },
+   {
+    "title": "It’s starting…",
+    "url": "https://youtube.com/watch?v=XzUB8_gj6xM",
+    "snippet": "Video by Matthew Berman (643K subscribers) · 2026-06-05 · 44:52 · 85,022 views · 2,699 likes\n\n👉🏻 X: https://x.com/matthewberman\n👉🏻 Forward Future X: https://x.com/forwardfuture\n👉🏻 Instagram: https://www.instagram.com/matthewberman_ai\n👉🏻 Discord: https://discord.gg/evGThyRv\n👉🏻 Spotify: https://open.spotify.com/show/6dBxDwxtHl1hpqHhfoXmy8"
+   }
+  ],
+  "engine": "drex",
+  "evaluated_at": "2026-11-14T22:17:56+00:00"
+ },
+ {
+  "name": "ThePrimeagen",
+  "found": true,
+  "summary": "Michael Paulson is a former Netflix engineer who streams and creates content focused on programming, developer productivity, and technology.",
+  "topics": [
+   "Programming",
+   "Vim/Neovim",
+   "AI Tools",
+   "Developer Productivity",
+   "Code Review"
+  ],
+  "platforms": [
+   {
+    "platform": "youtube",
+    "handle": "@ThePrimeagen",
+    "followers": 550000,
+    "source": 4,
+    "source_url": "https://vidiq.com/youtube-stats/channel/@ThePrimeagen/videos"
+   },
+   {
+    "platform": "tiktok",
+    "handle": "@theprimeagen",
+    "followers": 79953,
+    "source": 2,
+    "source_url": "https://ttanon.com/@theprimeagen"
+   },
+   {
+    "platform": "twitch",
+    "handle": "ThePrimeagen",
+    "followers": 252701,
+    "source": 8,
+    "source_url": "https://instagram.com/reel/DHtbwiQSAPd"
+   }
+  ],
+  "followers_total": 882654,
+  "focus": {
+   "ai_ml": 0.0025,
+   "consumer_tech": 0.0033,
+   "gaming": 0.0029,
+   "software_dev": 0.9874,
+   "creative_design": 0.0007,
+   "business_finance": 0.0007,
+   "education_science": 0.0007,
+   "lifestyle_entertainment": 0.0011,
+   "other": 0.0006
+  },
+  "p_authentic": 0.9932806555986053,
+  "p_identifiable": 0.9939944974493397,
+  "brand_safety": 2.132528850191604,
+  "evidence": [
+   {
+    "title": "ThePrimeagen (@theprimeagen) – TikTok Stats: 79.7K Followers",
+    "url": "https://tokranks.com/creator/theprimeagen",
+    "snippet": "How many followers does ThePrimeagen have?\nThePrimeagen (@theprimeagen) has 79.7K TikTok followers as of 2026-10-20."
+   },
+   {
+    "title": "ThePrimeagen (@theprimeagen) TikTok Videos & Stats",
+    "url": "https://ttanon.com/@theprimeagen",
+    "snippet": "# ThePrimeagen (@theprimeagen)\nFollowers[80K followers](/extra/followers/theprimeagen?cursor=0)\nFollowing[1 following](/extra/following/theprimeagen?cursor=0)\nLikes1.5M\n\nFollowers79,953\nLikes1,470,924\nVideos625\nLikes per video2.4K\nMedian views (latest 30 posts)14K\nMedian likes per view4.1%"
+   },
+   {
+    "title": "am I becoming a real Game Dev?",
+    "url": "https://youtube.com/watch?v=tYQyh1tjSFc",
+    "snippet": "[11:35] >> The name is the Primagen. >> Look at all these engineers sitting at their neat little [music] desks. It takes dirty work to keep a code base clean. Everyday sickos are out there committing unreviewed code, and when that happens, linters won't save you. You need someone like me. >> Freeze, you freeze, scumbag.\n\n# am I becoming a real Game Dev?\nVideo by ThePrimeagen (550K subscribers) · 2026-08-06 · 13:03 · 68,285 views · 2,384 likes\nDon’t let bad code get merged without reviewing (hopefully not by"
+   },
+   {
+    "title": "ThePrimeagen's Latest YouTube Videos & Shorts | vidIQ",
+    "url": "https://vidiq.com/youtube-stats/channel/@ThePrimeagen/videos",
+    "snippet": "As of 2026-11-07, ThePrimeagen has 550,000 subscribers, 58,530,716 total views, and 109 videos. Ranked [#139,115 worldwide](/youtube-stats/top/100/), [#26,118 in United States](/youtube-stats/top/country/us/) and [#2,606 in Technology](/youtube-stats/top/category/tech/) by subscribers."
+   },
+   {
+    "title": "ThePrimeagen YouTube Stats: Subscribers, Views & Earnings | vidIQ",
+    "url": "https://vidiq.com/youtube-stats/channel/@theprimeagen",
+    "snippet": "As of 2026-11-01, ThePrimeagen has 550,000 subscribers, 58,475,579 total views, and 109 videos. Ranked [#139,036 worldwide](/youtube-stats/top/100/), [#26,086 in United States](/youtube-stats/top/country/us/) and [#2,610 in Technology](/youtube-stats/top/category/tech/) by subscribers.\n\nIn September 2026, ThePrimeagen held at 550,000 subscribers and got 529,310 views."
+   },
+   {
+    "title": "The Startup Script (@the_startup_script) • Instagram reel",
+    "url": "https://instagram.com/p/DVlZTiKEoh4",
+    "snippet": "Michael Paulson, better known online as ThePrimeagen, is a coding-focused creator with more than 250,000 Twitch followers and 450,000 YouTube subscribers. Follow @the_startup_script to stay up to date on everything business, tech and entrepreneurship. A former engineer at Netflix, he left Big Tech to stream programming full-time — diving deep into Vim, Neovim, AI tools, and developer productivity."
+   }
+  ],
+  "engine": "drex",
+  "evaluated_at": "2026-11-14T22:18:07+00:00"
+ },
+ {
+  "name": "Peter McKinnon",
+  "found": true,
+  "summary": "Peter McKinnon is a Canadian photographer and filmmaker known for creating tutorials and lifestyle content on YouTube.",
+  "topics": [
+   "Filmmaking",
+   "Photography",
+   "Lifestyle",
+   "Journaling",
+   "Productivity"
+  ],
+  "platforms": [
+   {
+    "platform": "youtube",
+    "handle": "@petermckinnon",
+    "followers": 6060000,
+    "source": 6,
+    "source_url": "https://vidiq.com/youtube-stats/channel/@petermckinnon"
+   },
+   {
+    "platform": "tiktok",
+    "handle": "@petermckinnon",
+    "followers": 290600,
+    "source": 7,
+    "source_url": "https://tokranks.com/creator/petermckinnon"
+   }
+  ],
+  "followers_total": 6350600,
+  "focus": {
+   "ai_ml": 0.0021,
+   "consumer_tech": 0.0197,
+   "gaming": 0.0057,
+   "software_dev": 0.0049,
+   "creative_design": 0.7674,
+   "business_finance": 0.0043,
+   "education_science": 0.0027,
+   "lifestyle_entertainment": 0.1889,
+   "other": 0.0042
+  },
+  "p_authentic": 0.9989414027226661,
+  "p_identifiable": 0.9968732882793649,
+  "brand_safety": 2.374406561169337,
+  "evidence": [
+   {
+    "title": "Peter McKinnon",
+    "url": "https://en.wikipedia.org/wiki/Peter_McKinnon",
+    "snippet": "McKinnon began uploading to YouTube in 2016 while working at a camera shop. He started making videos due to the lack of engaging and high-quality filmmaking videos the he had seen. He switched to working on the channel full-time when he had 800 subscribers.\n\nPeter McKinnon (born October 28, 1985) is a Canadian photographer, filmmaker, and YouTuber. He is known for his tutorials that he posts online, which he"
+   },
+   {
+    "title": "You Win Some, You Lose Some.",
+    "url": "https://youtube.com/watch?v=JMu66A3OhsY",
+    "snippet": "by Peter McKinnon (6.07M subscribers)\n\nFOLLOW ME:\nInstagram: https://www.instagram.com/petermckinnon/\nTwitter: https://twitter.com/petermckinnon\nFacebook: https://www.facebook.com/petermckinno...\nWebsite: http://www.petermckinnon.com"
+   },
+   {
+    "title": "About Peter McKinnon: YouTube Channel Profile | vidIQ",
+    "url": "https://vidiq.com/youtube-stats/channel/@petermckinnon/about",
+    "snippet": "As of 2026-10-27, Peter McKinnon has 6,060,000 subscribers, 661,486,518 total views, and 857 videos. It ranks #6,748 by subscribers among channels tracked by vidIQ."
+   },
+   {
+    "title": "How to start journaling when you don't know what to write",
+    "url": "https://youtube.com/watch?v=4Nq99I4ySqw",
+    "snippet": "by Peter McKinnon (6.06M subscribers)\n\nFOLLOW ME:\nInstagram: https://www.instagram.com/petermckinnon/\nTwitter: https://twitter.com/petermckinnon\nFacebook: https://www.facebook.com/petermckinno...\nWebsite: http://www.petermckinnon.com"
+   },
+   {
+    "title": "Ranking the worlds most popular pens",
+    "url": "https://youtube.com/watch?v=bYKPS5T4Blo",
+    "snippet": "Video by Peter McKinnon (6.06M subscribers) · 2026-11-03 · 23:28 · 337,291 views · 7,171 likes\n\nFOLLOW ME:\nInstagram: https://www.instagram.com/petermckinnon/\nTwitter: https://twitter.com/petermckinnon\nFacebook: https://www.facebook.com/petermckinno...\nWebsite: http://www.petermckinnon.com"
+   },
+   {
+    "title": "Peter McKinnon YouTube Stats: Subscribers, Views & Earnings | vidIQ",
+    "url": "https://vidiq.com/youtube-stats/channel/@petermckinnon",
+    "snippet": "As of 2026-11-08, Peter McKinnon has 6,060,000 subscribers, 663,191,070 total views, and 859 videos. Ranked [#6,758 worldwide](/youtube-stats/top/100/), [#76 in Canada](/youtube-stats/top/country/ca/) and [#1,183 in Lifestyle](/youtube-stats/top/category/lifestyle/) by subscribers.\n\nAs of 2026-11-08, Peter McKinnon has 6,060,000 subscribers, 663,191,070 total views, and 859 videos."
+   }
+  ],
+  "engine": "drex",
+  "evaluated_at": "2026-11-14T22:17:58+00:00"
+ },
+ {
+  "name": "JerryRigEverything",
+  "found": true,
+  "summary": "JerryRigEverything is an American YouTuber known for durability testing and teardown videos of tech products, particularly smartphones.",
+  "topics": [
+   "tech durability tests",
+   "smartphone teardowns",
+   "gadget reviews",
+   "repair tools",
+   "off-road wheelchairs"
+  ],
+  "platforms": [
+   {
+    "platform": "youtube",
+    "handle": "@jerryrigeverything",
+    "followers": 10200000,
+    "source": 2,
+    "source_url": "https://vidiq.com/youtube-stats/channel/@jerryrigeverything/about"
+   }
+  ],
+  "followers_total": 10200000,
+  "focus": {
+   "ai_ml": 0.0014,
+   "consumer_tech": 0.9844,
+   "gaming": 0.0037,
+   "software_dev": 0.004,
+   "creative_design": 0.0009,
+   "business_finance": 0.001,
+   "education_science": 0.0021,
+   "lifestyle_entertainment": 0.0016,
+   "other": 0.0009
+  },
+  "p_authentic": 0.9981801807338053,
+  "p_identifiable": 0.9952037840661779,
+  "brand_safety": 2.3481933403041704,
+  "evidence": [
+   {
+    "title": "JerryRigEverything",
+    "url": "https://en.wikipedia.org/wiki/JerryRigEverything",
+    "snippet": "Zack Nelson (born June 29, 1988), better known by his username JerryRigEverything, is an American YouTuber, internet personality and founder of a business that makes custom and off-road wheelchairs. He is known for teardown videos where he takes various tech products and disassembles them by any force necessary, typically resulting in the product in question getting severely damaged. He has a"
+   },
+   {
+    "title": "About JerryRigEverything: YouTube Channel Profile | vidIQ",
+    "url": "https://vidiq.com/youtube-stats/channel/@jerryrigeverything/about",
+    "snippet": "JerryRigEverything is a participant in the Amazon Services LLC Associates Program, an affiliate advertising program designed to provide a means for sites to earn advertising fees by advertising and linking to amazon.com.\nAs of 2026-10-28, JerryRigEverything has 10,200,000 subscribers, 3,141,564,634 total views, and 1,619 videos. It ranks #2,912 by subscribers among channels tracked by vidIQ."
+   },
+   {
+    "title": "Compare YouTube Channels: Subscribers, Views & Earnings | vidIQ",
+    "url": "https://vidiq.com/youtube-stats/compare?channels=@jerryrigeverything",
+    "snippet": "JerryRigEverything\n| Metric | [JerryRigEverything](/youtube-stats/channel/@jerryrigeverything/)Snapshot: 2026-10-27 (UTC) | |\n|---|---|---|\n| Overall grade | B | |\n| Subscribers | 10.2M | |\n| Subscriber growth / month | Locked - sign up to view | |\n| Total views | 3.13B | |\n| View growth / month | Locked - sign up to view | |\n| Videos | 1,618 | |\n| Worldwide rank | #2,910 | |\n| Country rank | #751"
+   },
+   {
+    "title": "JerryRigEverything YouTube Stats: Subscribers, Views & Earnings | vidIQ",
+    "url": "https://vidiq.com/youtube-stats/channel/@jerryrigeverything",
+    "snippet": "As of 2026-10-26, JerryRigEverything has 10,200,000 subscribers, 3,129,529,620 total views, and 1,617 videos. It ranks #2,911 by subscribers among channels tracked by vidIQ."
+   },
+   {
+    "title": "Trump Phone Durability Test - Its worse than we thought...",
+    "url": "https://youtube.com/watch?is=ymtS6xetf4L9ForX&v=5O-vCJW1b8g",
+    "snippet": "Video by JerryRigEverything (10.3M subscribers) · 2026-10-28 · 9:37 · 13,048,526 views · 488,058 likes"
+   },
+   {
+    "title": "AFTER 13 YEARS... I finally tried an Apple iPhone 15 Pro.",
+    "url": "https://youtube.com/watch?v=oqjWnA7J0f0",
+    "snippet": "Video by JerryRigEverything (10.3M subscribers) · 2024-01-17 · 12:00 · 4,644,982 views · 190,151 likes"
+   }
+  ],
+  "engine": "drex",
+  "evaluated_at": "2026-11-14T22:18:01+00:00"
+ },
+ {
+  "name": "Gamers Nexus",
+  "found": true,
+  "summary": "Gamers Nexus is a website and YouTube channel founded by Steve Burke that focuses on reviews, news, and documentaries about consumer computer hardware and PC gaming.",
+  "topics": [
+   "Computer Hardware",
+   "PC Gaming",
+   "Technology Reviews",
+   "NVIDIA",
+   "3D Printing"
+  ],
+  "platforms": [
+   {
+    "platform": "youtube",
+    "handle": "Gamers Nexus",
+    "followers": 2750000,
+    "source": 2,
+    "source_url": "https://youtube.com/watch?t=11s&v=YYU_geUwQoA"
+   },
+   {
+    "platform": "x",
+    "handle": "gamersnexus",
+    "followers": null,
+    "source": 1,
+    "source_url": "https://youtube.com/watch?v=rhQc2SPV3tQ"
+   },
+   {
+    "platform": "other",
+    "handle": "gamersnexus",
+    "followers": null,
+    "source": 1,
+    "source_url": "https://youtube.com/watch?v=rhQc2SPV3tQ"
+   }
+  ],
+  "followers_total": 2750000,
+  "focus": {
+   "ai_ml": 0.0046,
+   "consumer_tech": 0.8697,
+   "gaming": 0.0949,
+   "software_dev": 0.0116,
+   "creative_design": 0.0034,
+   "business_finance": 0.0054,
+   "education_science": 0.004,
+   "lifestyle_entertainment": 0.0033,
+   "other": 0.0031
+  },
+  "p_authentic": 0.9961705010713372,
+  "p_identifiable": 0.995094657407652,
+  "brand_safety": 1.6988497672153922,
+  "evidence": [
+   {
+    "title": "It's Time to Get Into 3D Printing | GN \"Factory\" Build Vlog, Pt. 1",
+    "url": "https://youtube.com/watch?v=rhQc2SPV3tQ",
+    "snippet": "Follow us in these locations for more gaming and hardware updates:\nt: http://www.twitter.com/gamersnexus\nf: http://www.facebook.com/gamersnexus\nw: http://www.gamersnexus.net/\n\n# It's Time to Get Into 3D Printing | GN \"Factory\" Build Vlog, Pt. 1\nVideo by Gamers Nexus (2.74M subscribers) · 2026-11-08 · 28:44 · 372 views · 47 likes\nGET THE GN 3D PRINTED DISC CASES! EDUCATIONAL CONTENT:"
+   },
+   {
+    "title": "The Downfall of Jensen Huang: NVIDIA’s Greed & Corruption",
+    "url": "https://youtube.com/watch?t=11s&v=YYU_geUwQoA",
+    "snippet": "Follow us in these locations for more gaming and hardware updates:\nt: http://www.twitter.com/gamersnexus\nf: http://www.facebook.com/gamersnexus\nw: http://www.gamersnexus.net/\n\n# The Downfall of Jensen Huang: NVIDIA’s Greed & Corruption\nVideo by Gamers Nexus (2.75M subscribers) · 2026-11-13 · 1:00:37 · 1,525,168 views · 64,516 likes\nSUPPORT OUR WORK: https://store.gamersnexus.net/data-dragnet"
+   },
+   {
+    "title": "NVIDIA's $2000/Year GPUs and Becoming a Defense Contractor",
+    "url": "https://youtube.com/watch?si=jPefY2HomJSHuLmL&v=KbWm2MHL2i0",
+    "snippet": "Video by Gamers Nexus (2.74M subscribers) · 2026-11-02 · 38:29 · 32,108 views · 3,032 likes\n\nFollow us in these locations for more gaming and hardware updates:\nt: http://www.twitter.com/gamersnexus\nf: http://www.facebook.com/gamersnexus\nw: http://www.gamersnexus.net/"
+   },
+   {
+    "title": "It's Time to Get Into 3D Printing | GN \"Factory\" Build Vlog, Pt. 1",
+    "url": "https://youtu.be/rhQc2SPV3tQ",
+    "snippet": "Follow us in these locations for more gaming and hardware updates:\nt: http://www.twitter.com/gamersnexus\nf: http://www.facebook.com/gamersnexus\nw: http://www.gamersnexus.net/\n\n# It's Time to Get Into 3D Printing | GN \"Factory\" Build Vlog, Pt. 1\nVideo by Gamers Nexus (2.74M subscribers) · 2026-11-08 · 28:44 · 155,860 views · 5,366 likes\nGET THE GN 3D PRINTED DISC CASES! EDUCATIONAL CONTENT:"
+   },
+   {
+    "title": "How to Hack 30,000,000+ ASUS Routers",
+    "url": "https://youtube.com/watch?v=kYnwCx2SNYY",
+    "snippet": "Follow us in these locations for more gaming and hardware updates:\nt: http://www.twitter.com/gamersnexus\nf: http://www.facebook.com/gamersnexus\nw: http://www.gamersnexus.net/\n\n# How to Hack 30,000,000+ ASUS Routers\nVideo by Gamers Nexus (2.73M subscribers) · 2026-10-22 · 39:11 · 1,664 views · 189 likes\nSUPPORT US! GET MICROSLOP:"
+   },
+   {
+    "title": "Tim Sweeney is a Lunatic | WTF Happened to Epic Games?",
+    "url": "https://youtu.be/jHT4iHJxzOI",
+    "snippet": "Follow us in these locations for more gaming and hardware updates:\nt: http://www.twitter.com/gamersnexus\nf: http://www.facebook.com/gamersnexus\nw: http://www.gamersnexus.net/\n\nSubscribe for more. You can go to store.gamersnexus.net. People can ask about that. Or you can go to patreon.com/gamersnexus to help us out directly. And subscribe for more.\n\n# Tim Sweeney is a Lunatic | WTF Happened to Epic Games?\nVideo by Gamers Nexus (2.75M subscribers) · 2026-11-14 · 39:48 · 21,370 views · 2,010 likes\nGET THE MICROSLOP SHIRT:"
+   }
+  ],
+  "engine": "drex",
+  "evaluated_at": "2026-11-14T22:18:06+00:00"
+ },
+ {
+  "name": "Ali Abdaal",
+  "found": true,
+  "summary": "Ali Abdaal is a doctor turned entrepreneur and author who creates content on productivity, personal development, and financial freedom.",
+  "topics": [
+   "productivity",
+   "personal development",
+   "entrepreneurship",
+   "finance",
+   "education"
+  ],
+  "platforms": [
+   {
+    "platform": "youtube",
+    "handle": "@aliabdaal",
+    "followers": 6710000,
+    "source": 2,
+    "source_url": "https://vidiq.com/youtube-stats/channel/@aliabdaal"
+   },
+   {
+    "platform": "instagram",
+    "handle": "aliabdaal",
+    "followers": null,
+    "source": 3,
+    "source_url": "https://youtube.com/watch?v=w0q7fsLa26E"
+   },
+   {
+    "platform": "tiktok",
+    "handle": "@aliabdaal",
+    "followers": null,
+    "source": 3,
+    "source_url": "https://youtube.com/watch?v=w0q7fsLa26E"
+   },
+   {
+    "platform": "x",
+    "handle": "aliabdaal",
+    "followers": null,
+    "source": 3,
+    "source_url": "https://youtube.com/watch?v=w0q7fsLa26E"
+   }
+  ],
+  "followers_total": 6710000,
+  "focus": {
+   "ai_ml": 0.0026,
+   "consumer_tech": 0.0108,
+   "gaming": 0.0092,
+   "software_dev": 0.0111,
+   "creative_design": 0.0045,
+   "business_finance": 0.4613,
+   "education_science": 0.2044,
+   "lifestyle_entertainment": 0.2238,
+   "other": 0.0723
+  },
+  "p_authentic": 0.9959940924253232,
+  "p_identifiable": 0.9969429668532118,
+  "brand_safety": 2.598921785086666,
+  "evidence": [
+   {
+    "title": "About Ali Abdaal: YouTube Channel Profile | vidIQ",
+    "url": "https://vidiq.com/youtube-stats/channel/@aliabdaal/about",
+    "snippet": "and [#122 in Education](/youtube-stats/top/category/education/) by subscribers.\n## Channel Description\nI'm Ali - doctor turned entrepreneur, YouTuber, and author of the New York Times bestseller Feel-Good Productivity. On this channel, we explore the skills that school didn't teach you - productivity, personal development, how to become financially free, how to\n\n# About Ali Abdaal: YouTube Channel Profile\n6.71M\n10Kin 28d\n5.4Min 28d\nDown 11%vs prior 14d\nAs of 2026-11-07, Ali Abdaal has 6,710,000 subscribers,"
+   },
+   {
+    "title": "Ali Abdaal YouTube Stats: Subscribers, Views & Earnings | vidIQ",
+    "url": "https://vidiq.com/youtube-stats/channel/@aliabdaal",
+    "snippet": "As of 2026-11-12, Ali Abdaal has 6,710,000 subscribers, 572,174,690 total views, and 1,514 videos. Ranked [#5,736 worldwide](https://vidiq.com/youtube-stats/top/100/), [#143 in United Kingdom](https://vidiq.com/youtube-stats/top/country/gb/) and [#122 in Education](https://vidiq.com/youtube-stats/top/category/education/) by subscribers."
+   },
+   {
+    "title": "If I Started a Business With No Audience, I'd Do This",
+    "url": "https://youtube.com/watch?v=w0q7fsLa26E",
+    "snippet": "CONNECT WITH ME\n💌 Join LifeNotes, my weekly email where I share what I'm reading & learning: https://go.aliabdaal.com/lifenotes/yt\n📸  Instagram: https://instagram.com/aliabdaal\n📱 TikTok: https://www.tiktok.com/@aliabdaal\n👨‍💻 Linkedin: https://www.linkedin.com/in/ali-abdaal/\n🐥 X/Twitter: https://x.com/aliabdaal\n🌍  My website / blog: https://www.aliabdaal.com/"
+   },
+   {
+    "title": "I Ranked Every Productivity Tool From Worst to Best",
+    "url": "https://youtube.com/watch?v=uRCskQbL1KY",
+    "snippet": "CONNECT WITH ME\n💌 Join LifeNotes, my weekly email where I share what I'm reading & learning: https://go.aliabdaal.com/lifenotes/yt\n📸  Instagram: https://instagram.com/aliabdaal\n📱 TikTok: https://www.tiktok.com/@aliabdaal\n👨‍💻 Linkedin: https://www.linkedin.com/in/ali-abdaal/\n🐥 X/Twitter: https://x.com/aliabdaal\n🌍  My website / blog: https://www.aliabdaal.com/"
+   },
+   {
+    "title": "How to Start a YouTube Channel - Beginners Guide (2026)",
+    "url": "https://youtube.com/watch?v=meMJdfytNI0&xstg=CAMSBhUDzO3xHw%3D%3D",
+    "snippet": "CONNECT WITH ME\n💌 Join LifeNotes, my weekly email where I share what I'm reading & learning: https://go.aliabdaal.com/lifenotes/yt\n📸 Instagram: https://instagram.com/aliabdaal\n📱 TikTok: https://www.tiktok.com/@aliabdaal\n👨‍💻 Linkedin: https://www.linkedin.com/in/ali-abdaal/\n🐥 X/Twitter: https://x.com/aliabdaal\n🌍 My website / blog: https://www.aliabdaal.com/"
+   },
+   {
+    "title": "If you're ambitious but feel stuck, please watch this",
+    "url": "https://youtube.com/watch?v=6-ZxPvpV8ec",
+    "snippet": "CONNECT WITH ME\n💌 Join LifeNotes, my weekly email where I share what I'm reading & learning: https://go.aliabdaal.com/lifenotes/yt\n📸  Instagram: https://instagram.com/aliabdaal\n📱 TikTok: https://www.tiktok.com/@aliabdaal\n👨‍💻 Linkedin: https://www.linkedin.com/in/ali-abdaal/\n🐥 X/Twitter: https://x.com/aliabdaal\n🌍  My website / blog: https://www.aliabdaal.com/"
+   }
+  ],
+  "engine": "drex",
+  "evaluated_at": "2026-11-14T22:18:07+00:00"
+ },
+ {
+  "name": "3Blue1Brown",
+  "found": true,
+  "summary": "3Blue1Brown creates educational videos that use mathematical animations to explain complex concepts in mathematics and computer science.",
+  "topics": [
+   "Mathematics",
+   "Computer Science",
+   "Machine Learning",
+   "Linear Algebra",
+   "Calculus"
+  ],
+  "platforms": [
+   {
+    "platform": "youtube",
+    "handle": "@3blue1brown",
+    "followers": 8740000,
+    "source": 2,
+    "source_url": "https://vidiq.com/youtube-stats/channel/@3blue1brown/about"
+   },
+   {
+    "platform": "instagram",
+    "handle": "3blue1brown",
+    "followers": null,
+    "source": 7,
+    "source_url": "https://youtube.com/watch?v=LPZh9BOjkQs&vl=en&xstg=CAMSBhUDze3xHw%3D%3D"
+   },
+   {
+    "platform": "x",
+    "handle": "3blue1brown",
+    "followers": null,
+    "source": 7,
+    "source_url": "https://youtube.com/watch?v=LPZh9BOjkQs&vl=en&xstg=CAMSBhUDze3xHw%3D%3D"
+   },
+   {
+    "platform": "other",
+    "handle": "3blue1brown",
+    "followers": null,
+    "source": 7,
+    "source_url": "https://youtube.com/watch?v=LPZh9BOjkQs&vl=en&xstg=CAMSBhUDze3xHw%3D%3D"
+   }
+  ],
+  "followers_total": 8740000,
+  "focus": {
+   "ai_ml": 0.015,
+   "consumer_tech": 0.0046,
+   "gaming": 0.0051,
+   "software_dev": 0.0445,
+   "creative_design": 0.002,
+   "business_finance": 0.0021,
+   "education_science": 0.9207,
+   "lifestyle_entertainment": 0.0025,
+   "other": 0.0034
+  },
+  "p_authentic": 0.9978202123729089,
+  "p_identifiable": 0.9960832864850903,
+  "brand_safety": 2.725424107542988,
+  "evidence": [
+   {
+    "title": "3Blue1Brown",
+    "url": "https://en.wikipedia.org/wiki/3Blue1Brown",
+    "snippet": "3Blue1Brown started as a personal programming project in early 2015. In an episode of the podcast Showmakers, Sanderson explained that he wanted to practice his coding skills and decided to make a graphics library in Python, which eventually became the open-source project Manim (Mathematical Animation Engine). To have a goal for the project, he decided to create a video with the library and upload"
+   },
+   {
+    "title": "About 3Blue1Brown: YouTube Channel Profile | vidIQ",
+    "url": "https://vidiq.com/youtube-stats/channel/@3blue1brown/about",
+    "snippet": "vidIQ. As of 2026-11-08, 3Blue1Brown has 8,740,000 subscribers, 792,501,581 total views, and 247 videos. It ranks #3,762 by subscribers among channels tracked by vidIQ. Source: public YouTube statistics recorded by vidIQ. https://vidiq.com/youtube-stats/channel/@3blue1brown/ Methodology: https://vidiq.com/youtube-stats/top/methodology/"
+   },
+   {
+    "title": "There's never been a better time to go into math",
+    "url": "https://youtube.com/watch?t=1151s&v=LKrwhjOI8Nc",
+    "snippet": "Video by 3Blue1Brown (8.7M subscribers) · 2026-10-16 · 40:44 · 1,922,935 views · 32,233 likes"
+   },
+   {
+    "title": "There's never been a better time to go into math",
+    "url": "https://youtu.be/LKrwhjOI8Nc?is=lWqUCNyxyre5B5Vd",
+    "snippet": "Video by 3Blue1Brown (8.74M subscribers) · 2026-10-16 · 40:44 · 2,732,272 views · 43,130 likes"
+   },
+   {
+    "title": "3Blue1Brown YouTube Stats: Subscribers, Views & Earnings | vidIQ",
+    "url": "https://vidiq.com/youtube-stats/channel/@3blue1brown",
+    "snippet": "In October 2026, 3Blue1Brown gained 60,000 subscribers and got 11,623,478 views. Each month shows its net change and the totals at its end.\n\nIn October 2026, 3Blue1Brown gained 60,000 subscribers and got 11,623,478 views.\n3Blue1Brown started their YouTube channel on March 3, 2015.\n3Blue1Brown has its channel country set to United States on YouTube."
+   },
+   {
+    "title": "3Blue1Brown YouTube Stats & Analytics",
+    "url": "https://ytproanalytics.com/yt-stats/channel/UCYO_jab_esuFRV4b17AJtAw",
+    "snippet": "3Blue1Brown is a YouTube channel that joined YouTube on Mar 3, 2015. It currently has 8,710,000 subscribers, 787,897,997 total views and 246 uploaded videos, publishing about 0.5 videos per week. Stats on this page come from YouTube's public data (last updated Nov 10, 2026).\n\n3Blue1Brown has 8.7M subscribers as of Nov 10, 2026, according to YouTube's public channel data."
+   }
+  ],
+  "engine": "drex",
+  "evaluated_at": "2026-11-14T22:18:11+00:00"
+ },
+ {
+  "name": "Theo t3.gg",
+  "found": true,
+  "summary": "Theo is a software developer and content creator who produces videos on coding, AI tools, and the T3 stack.",
+  "topics": [
+   "Software Development",
+   "AI Coding Tools",
+   "T3 Stack",
+   "Programming Tutorials",
+   "Tech Commentary"
+  ],
+  "platforms": [
+   {
+    "platform": "youtube",
+    "handle": "Theo - t3.gg",
+    "followers": 580000,
+    "source": 2,
+    "source_url": "https://youtube.com/watch?v=XtykeVoSmP8"
+   }
+  ],
+  "followers_total": 580000,
+  "focus": {
+   "ai_ml": 0.0538,
+   "consumer_tech": 0.0286,
+   "gaming": 0.0111,
+   "software_dev": 0.8879,
+   "creative_design": 0.0044,
+   "business_finance": 0.0043,
+   "education_science": 0.0033,
+   "lifestyle_entertainment": 0.004,
+   "other": 0.0027
+  },
+  "p_authentic": 0.937776169495516,
+  "p_identifiable": 0.9612131476854215,
+  "brand_safety": 2.033511177204716,
+  "evidence": [
+   {
+    "title": "How To Give Claude Unlimited Usage",
+    "url": "https://youtube.com/watch?v=NBCM_ZoWZo8",
+    "snippet": "Video by Theo - t3․gg (579K subscribers) · 2026-10-28 · 38:47 · 228,487 views · 3,497 likes\n\nCheck out my Twitch, Twitter, Discord more at https://t3.gg"
+   },
+   {
+    "title": "I think I figured it out",
+    "url": "https://youtube.com/watch?v=XtykeVoSmP8",
+    "snippet": "Video by Theo - t3․gg (580K subscribers) · 2026-11-12 · 42:19 · 187,918 views · 3,382 likes\n\nCheck out my Twitch, Twitter, Discord more at https://t3.gg"
+   },
+   {
+    "title": "My Thoughts On \"Vibe Coding\" (And Prime)",
+    "url": "https://youtube.com/watch?v=b0fv54xGOwY",
+    "snippet": "Video by Theo - t3․gg (572K subscribers) · 2025-03-19 · 2:55:15 · 142,899 views · 3,061 likes\nAccording to Y Combinator Vibe Coding is the future. I'm a YC bro, so... yeah. Prime has thoughts too.\n\nCheck out my Twitch, Twitter, Discord more at https://t3.gg"
+   },
+   {
+    "title": "Agents Sucked At UI (Until Today)",
+    "url": "https://youtube.com/watch?t=8s&v=xq0eB8vxeqk",
+    "snippet": "Video by Theo - t3․gg (577K subscribers) · 2026-11-03 · 31:44 · 314,678 views · 4,790 likes\n\nCheck out my Twitch, Twitter, Discord more at https://t3.gg"
+   },
+   {
+    "title": "T3 Code broke me",
+    "url": "https://youtube.com/watch?v=uLGxb4F3SyI",
+    "snippet": "Check out my Twitch, Twitter, Discord more at https://t3.gg\n\nThis is probably the worst part by far. It's made by Theo, which sucks. Probably the biggest issue with T3 code, honestly.\n\n# T3 Code broke me\nVideo by Theo - t3․gg (575K subscribers) · 2026-10-29 · 41:49 · 267,214 views · 5,285 likes\nT3 Code has broken over 700,000 users, so I think it's time to"
+   },
+   {
+    "title": "Coding Isn't About Code Anymore",
+    "url": "https://youtube.com/watch?v=GtJKFhztgdM",
+    "snippet": "Video by Theo - t3․gg (578K subscribers) · 2026-11-08 · 45:21 · 32,510 views · 913 likes\n\nCheck out my Twitch, Twitter, Discord more at https://t3.gg"
+   }
+  ],
+  "engine": "drex",
+  "evaluated_at": "2026-11-14T22:18:10+00:00"
+ },
+ {
+  "name": "Colin and Samir",
+  "found": true,
+  "summary": "Colin and Samir are Los Angeles-based creators who produce videos and podcasts about the creator economy and YouTube culture.",
+  "topics": [
+   "creator economy",
+   "YouTube news",
+   "creator stories",
+   "digital media",
+   "brand partnerships"
+  ],
+  "platforms": [
+   {
+    "platform": "youtube",
+    "handle": "@colinandsamir",
+    "followers": 1630000,
+    "source": 10,
+    "source_url": "https://vidiq.com/youtube-stats/channel/@colinandsamir"
+   },
+   {
+    "platform": "instagram",
+    "handle": "@colinandsamir",
+    "followers": null,
+    "source": 3,
+    "source_url": "https://youtube.com/watch?v=JxkgaB4h9HM"
+   },
+   {
+    "platform": "tiktok",
+    "handle": "@colinandsamir",
+    "followers": null,
+    "source": 3,
+    "source_url": "https://youtube.com/watch?v=JxkgaB4h9HM"
+   },
+   {
+    "platform": "x",
+    "handle": "@ColinandSamir",
+    "followers": null,
+    "source": 3,
+    "source_url": "https://youtube.com/watch?v=JxkgaB4h9HM"
+   }
+  ],
+  "followers_total": 1630000,
+  "focus": {
+   "ai_ml": 0.004,
+   "consumer_tech": 0.0473,
+   "gaming": 0.0192,
+   "software_dev": 0.0235,
+   "creative_design": 0.0679,
+   "business_finance": 0.5689,
+   "education_science": 0.0074,
+   "lifestyle_entertainment": 0.1339,
+   "other": 0.1279
+  },
+  "p_authentic": 0.9968732899040834,
+  "p_identifiable": 0.9926494152203905,
+  "brand_safety": 2.7869081371846485,
+  "evidence": [
+   {
+    "title": "Colin and Samir",
+    "url": "https://en.wikipedia.org/wiki/Colin_and_Samir",
+    "snippet": "Rosenblum and Chaudry started making videos on YouTube since 2012, but they created their current channel in September 2016.\n\nIn 2020, they became a year-long brand ambassador for Samsung. The Colin and Samir Show became available on LinkedIn in 2022. In December 2022, at the video marketing conference VidSummit, the channel hit 1 million subscribers while they were onstage speaking."
+   },
+   {
+    "title": "About Colin and Samir: YouTube Channel Profile | vidIQ",
+    "url": "https://vidiq.com/youtube-stats/channel/@colinandsamir/about",
+    "snippet": "network dedicated to lacrosse. Today they tell stories about creators and are fans of YouTube news and culture. SEND US A STORY to colinandsamir@gmail.com Follow us on TWITTER: http://www.twitter.com/@colinandsamir Subscribe to our Newsletter: https://www.thepublishpress.com/ Follow us on INSTAGRAM @ColinandSamir Colin @colinrosenblum Samir @SamirChaudry Visit our website:\n\n# About Colin and Samir: YouTube Channel Profile\n1.63M\nNo change in 28d\n1.84Min 28d\nUp 11%vs prior 14d\nAs of 2026-10-30, Colin and Samir has 1,630,000"
+   },
+   {
+    "title": "The Cold Email Expert: how to get a billionaires attention.",
+    "url": "https://youtube.com/watch?v=JxkgaB4h9HM",
+    "snippet": "JOIN OUR COMMUNITY\n📡 Discord: https://discord.com/invite/colinandsamir\n📸 Instagram: https://instagram.com/colinandsamir\n🐦 Twitter: https://twitter.com/ColinandSamir\n🎵 TikTok: https://www.tiktok.com/@colinandsamir\nABOUT US\nWe’re Colin and Samir, creators based out of Los Angeles California. We make videos about the creator economy, and the lessons we’ve learned over 10 years of being on YouTube."
+   },
+   {
+    "title": "An Unfiltered Conversation with Linus Tech Tips",
+    "url": "https://youtube.com/watch?v=nmNzEf7dXsw",
+    "snippet": "JOIN OUR COMMUNITY\n📡 Discord: https://discord.com/invite/colinandsamir\n📸 Instagram: https://instagram.com/colinandsamir\n🐦 Twitter: https://twitter.com/ColinandSamir\n🎵 TikTok: https://www.tiktok.com/@colinandsamir\nABOUT US\nWe’re Colin and Samir, creators based out of Los Angeles California. We make videos about the creator economy, and the lessons we’ve learned over 10 years of being on YouTube."
+   },
+   {
+    "title": "How Two YouTubers Became the Creator Industry’s Secret Weapon",
+    "url": "https://rollingstone.com/culture/culture-features/colin-samir-creator-industry-youtube-lighthouse-1235498923",
+    "snippet": "After two years at Whistle Sports, the two decided to branch out on their own. “We left with no plan outside of starting a channel called *Colin and Samir.*” he says. “We just want to express ourselves differently, and we want to participate in this new world of the creator economy.”"
+   },
+   {
+    "title": "MrBeast Reflects on the State of YouTube",
+    "url": "https://youtube.com/watch?v=xf0Mli0LVgI",
+    "snippet": "JOIN OUR COMMUNITY\n📡 Discord: https://discord.com/invite/colinandsamir\n📸 Instagram: https://instagram.com/colinandsamir\n🐦 Twitter: https://twitter.com/ColinandSamir\n🎵 TikTok: https://www.tiktok.com/@colinandsamir\nABOUT US\nWe’re Colin and Samir, creators based out of Los Angeles California. We make videos about the creator economy, and the lessons we’ve learned over 10 years of being on YouTube."
+   }
+  ],
+  "engine": "drex",
+  "evaluated_at": "2026-11-14T22:18:12+00:00"
+ },
+ {
+  "name": "Mrwhosetheboss",
+  "found": true,
+  "summary": "Arun Rupesh Maini is a British YouTuber known for creating technology-related content.",
+  "topics": [
+   "technology",
+   "smartphones",
+   "gadgets",
+   "reviews",
+   "tech news"
+  ],
+  "platforms": [
+   {
+    "platform": "youtube",
+    "handle": "@mrwhosetheboss",
+    "followers": 23100000,
+    "source": 2,
+    "source_url": "https://vidiq.com/youtube-stats/channel/@mrwhosetheboss"
+   },
+   {
+    "platform": "instagram",
+    "handle": "mrwhosetheboss",
+    "followers": null,
+    "source": 4,
+    "source_url": "https://youtube.com/watch?t=1816s&v=HVLUtJWlcJY"
+   },
+   {
+    "platform": "tiktok",
+    "handle": "@mrwhosetheboss",
+    "followers": null,
+    "source": 4,
+    "source_url": "https://youtube.com/watch?t=1816s&v=HVLUtJWlcJY"
+   },
+   {
+    "platform": "x",
+    "handle": "Mrwhosetheboss",
+    "followers": null,
+    "source": 4,
+    "source_url": "https://youtube.com/watch?t=1816s&v=HVLUtJWlcJY"
+   },
+   {
+    "platform": "other",
+    "handle": "mrwhosetheboss",
+    "followers": null,
+    "source": 4,
+    "source_url": "https://youtube.com/watch?t=1816s&v=HVLUtJWlcJY"
+   }
+  ],
+  "followers_total": 23100000,
+  "focus": {
+   "ai_ml": 0.0009,
+   "consumer_tech": 0.9922,
+   "gaming": 0.0021,
+   "software_dev": 0.0017,
+   "creative_design": 0.0004,
+   "business_finance": 0.0005,
+   "education_science": 0.0007,
+   "lifestyle_entertainment": 0.001,
+   "other": 0.0005
+  },
+  "p_authentic": 0.9991361173151395,
+  "p_identifiable": 0.9984461146747965,
+  "brand_safety": 2.477936047567488,
+  "evidence": [
+   {
+    "title": "Mrwhosetheboss",
+    "url": "https://en.wikipedia.org/wiki/Mrwhosetheboss",
+    "snippet": "Arun Rupesh Maini (born ( 1995-10-24) 24 October 1995), commonly known as Mrwhosetheboss, is a British YouTuber who is best known for his technology-related content, and is the creator of one of the biggest tech-related YouTube channels."
+   },
+   {
+    "title": "Mrwhosetheboss YouTube Stats: Subscribers, Views & Earnings | vidIQ",
+    "url": "https://vidiq.com/youtube-stats/channel/@mrwhosetheboss",
+    "snippet": "As of 2026-11-13, Mrwhosetheboss has 23,100,000 subscribers, 9,398,761,920 total views, and 1,945 videos. Ranked [#601 worldwide](https://vidiq.com/youtube-stats/top/100/), [#14 in United Kingdom](https://vidiq.com/youtube-stats/top/country/gb/) and [#6 in Technology](https://vidiq.com/youtube-stats/top/category/tech/) by subscribers."
+   },
+   {
+    "title": "Tech YouTuber Arun Maini tells us how he got 21 million subscribers",
+    "url": "https://mashable.com/article/arun-maini-mrwhosetheboss-youtube-success",
+    "snippet": "If Mrwhosetheboss sounds like a YouTube username chosen by an awkward teenage boy, that’s because it is."
+   },
+   {
+    "title": "I Tested 42 Years of Phones!",
+    "url": "https://youtube.com/watch?t=1816s&v=HVLUtJWlcJY",
+    "snippet": "Video by Mrwhosetheboss (23.1M subscribers) · 2026-11-09 · 37:20 · 4,308,549 views · 82,752 likes\n\nFor my tech hot takes: http://twitter.com/Mrwhosetheboss\nFor my Personal Posts: http://instagram.com/mrwhosetheboss\nFor quick tech videos: https://www.tiktok.com/@mrwhosetheboss\nDoes anyone still use this anymore?: https://facebook.com/mrwhosetheboss"
+   },
+   {
+    "title": "Mrwhosetheboss",
+    "url": "https://wikiwand.com/en/Mrwhosetheboss",
+    "snippet": "**Arun Rupesh Maini**[[a]](./Mrwhosetheboss#cite_note-2) (born 24 October 1995), commonly known as **Mrwhosetheboss**, is an English YouTuber who is best known for his technology-related content, and is the creator of one of the biggest tech-related [YouTube channels](./YouTube_channels).\n\n| Spouse | Dhrisha Mehta ​ (m. 2024)​ |"
+   },
+   {
+    "title": "Arun Maini (@mrwhosetheboss) • Threads, Say more",
+    "url": "https://threads.com/@mrwhosetheboss",
+    "snippet": "15M subscribers - let’s become the greatest Tech Community on the planet.\n[youtube.com/mrwhosetheboss](https://l.threads.com/?u=https%3A%2F%2Fyoutube.com%2Fmrwhosetheboss&e=AUDeT3EperV186GJoLKxDRrwpB0VIP_M4lM8w1nsKQF42fvardwdtW6Mh_pprWSObWfej-2oCIzwFys-zUlNx9o55tjiVDul)"
+   }
+  ],
+  "engine": "drex",
+  "evaluated_at": "2026-11-14T22:18:17+00:00"
+ }
+]

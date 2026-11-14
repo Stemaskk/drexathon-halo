@@ -13,7 +13,8 @@ const PRESETS: Profile[] = [
   { name: "Nace AI", kind: "company", aliases: ["Nace.AI", "Nace", "Drex"], description: "AI startup that builds Drex decision models, NDI document processing (Perception) and the Intern agent harness, and runs the Drexathon hackathon. Not the National Association of Colleges and Employers (NACE) or the corrosion-engineering body NACE International.", website: "https://www.nace.ai", region: "USA", industry: "artificial intelligence", priorities: PRIORITIES },
   { name: "Adobe", kind: "company", aliases: ["Adobe Inc.", "ADBE"], description: "American software company based in San Jose, California. Makes Creative Cloud (Photoshop, Illustrator, Premiere Pro), Acrobat and PDF tools, Firefly generative AI and Experience Cloud marketing software. Publicly traded (NASDAQ: ADBE).", website: "https://www.adobe.com", region: "USA", industry: "creative and marketing software", priorities: PRIORITIES },
 ];
-const TABS = ["Profile", "Scan", "Feedback", "Briefing"] as const;
+const TABS = ["Scan", "Feedback", "Briefing", "Influencers"] as const;
+type Tab = (typeof TABS)[number] | "Profile";
 type Area = { area: string; label: string; mentions: number; negative: number; positive: number; avg_sentiment: number | null;
   status: "needs_attention" | "mixed" | "strength"; items: { id: string; title: string; url: string; sentiment: number | null; evidence: string | null }[] };
 type Scorecard = { areas: Area[]; items_without_area: number };
@@ -30,7 +31,9 @@ const pct = (x?: number | null) => (x == null ? "unknown" : `${Math.round(x * 10
 const date = (x?: string | null) => (x ? x.slice(0, 10) : "date unknown");
 
 export default function App() {
-  const [tab, setTab] = useState<(typeof TABS)[number]>(() => (TABS as readonly string[]).includes(load("rr.tab", "Profile")) ? load("rr.tab", "Profile") : "Profile");
+  const [tab, setTab] = useState<Tab>(() => ([...TABS, "Profile"] as string[]).includes(load("rr.tab", "Profile")) ? load("rr.tab", "Profile") : "Profile");
+  const [query, setQuery] = useState("");
+  const [filling, setFilling] = useState(false);
   const [mode, setMode] = useState<Mode>(() => load("rr.mode", "fixture"));
   const [profile, setProfile] = useState<Profile>(() => load("rr.profile", EMPTY));
   const [history, setHistory] = useState<ScanRecord[]>(() => load("rr.history", []));
@@ -80,6 +83,21 @@ export default function App() {
     if (known) return chooseLive(known);
     setProfile({ ...EMPTY, ...profile, name, priorities: profile.priorities || PRIORITIES });
     if (mode === "fixture") setMode("live");
+  }
+
+  async function submitName() {
+    const name = query.trim();
+    if (!name) return;
+    const key = name.toLowerCase().replace(/[^a-z0-9]/g, "");
+    const known = PRESETS.find((x) => [x.name, ...x.aliases].some((a) => a.toLowerCase().replace(/[^a-z0-9]/g, "") === key));
+    if (known) { chooseLive(known); return; }
+    chooseLive({ ...EMPTY, name, priorities: PRIORITIES });
+    setFilling(true);
+    try {
+      const d = await api("autoprofile", { name });
+      setProfile({ name, kind: d.kind || "company", aliases: d.aliases || [], description: d.description || "", website: d.website || "", region: d.region || "", industry: d.industry || "", priorities: PRIORITIES });
+    } catch (e: any) { setError(`Could not auto-fill details: ${e.message}. You can fill them in by hand.`); }
+    finally { setFilling(false); }
   }
 
   function resetHistory() { setSeen([]); setPrior([]); setItems([]); setBriefing(""); setHistory([]); }
@@ -202,7 +220,7 @@ export default function App() {
   return (
     <div className="app">
       <header>
-        <div className="brand"><span className="dot" />Project Halo</div>
+        <button className="brand" onClick={() => setTab("Profile")} title="Home"><span className="dot" />Project Halo</button>
         <nav>{TABS.map((t) => (
           <button key={t} className={t === tab ? "active" : ""} onClick={() => setTab(t)}>
             {t}{t === "Scan" && alerts ? <span className="badge">{alerts}</span> : null}
@@ -218,25 +236,25 @@ export default function App() {
       {tab === "Profile" && (
         <section className="card narrow">
           <h2>Who should Project Halo study?</h2>
-          <p className="muted">Pick a demo company or type any name. That is all you need.</p>
-          <div className="presets">
-            <button className={mode === "fixture" ? "chip on" : "chip"} onClick={loadFixtureProfile}>Nimbleroot<span>fictional demo · offline sources</span></button>
-            {PRESETS.map((x) => (
-              <button key={x.name} className={mode === "live" && profile.name === x.name ? "chip on" : "chip"} onClick={() => chooseLive(x)}>{x.name}<span>live web</span></button>))}
-          </div>
-          <label>Or type a company, person or team<input value={mode === "fixture" ? "" : profile.name} onChange={(e) => setName(e.target.value)} placeholder="e.g. Duolingo" /></label>
-          <details>
-            <summary>Optional details (improves namesake filtering)</summary>
-            <label>Description<textarea rows={2} value={profile.description} onChange={(e) => setProfile({ ...profile, description: e.target.value })} /></label>
-            <label>Aliases (comma-separated)<input value={profile.aliases.join(", ")} onChange={(e) => setProfile({ ...profile, aliases: e.target.value.split(",").map((s) => s.trim()).filter(Boolean) })} /></label>
+          <p className="muted">Type a company name and press Enter. Halo fills in the details for you.</p>
+          <form className="searchbar" onSubmit={(e) => { e.preventDefault(); submitName(); }}>
+            <input autoFocus value={query} onChange={(e) => setQuery(e.target.value)} placeholder="e.g. Nvidia" />
+            <button className="primary" type="submit" disabled={!query.trim() || filling}>{filling ? "Looking up…" : "Look up"}</button>
+          </form>
+          {profile.name && mode === "live" && <>
+            <h3>{profile.name} {filling && <span className="muted small">filling in details…</span>}</h3>
+            <p className="muted small">These details tell the models which {profile.name} you mean. Edit anything that is wrong.</p>
+            <label>Description<textarea rows={3} value={profile.description} onChange={(e) => setProfile({ ...profile, description: e.target.value })} /></label>
+            <label>Other names and tickers (comma-separated)<input value={profile.aliases.join(", ")} onChange={(e) => setProfile({ ...profile, aliases: e.target.value.split(",").map((s) => s.trim()).filter(Boolean) })} /></label>
             <div className="grid2">
               <label>Official website<input value={profile.website} onChange={(e) => setProfile({ ...profile, website: e.target.value })} /></label>
               <label>Industry<input value={profile.industry} onChange={(e) => setProfile({ ...profile, industry: e.target.value })} /></label>
             </div>
             <label>What to watch for<textarea rows={2} value={profile.priorities} onChange={(e) => setProfile({ ...profile, priorities: e.target.value })} /></label>
-          </details>
+          </>}
+          {error && tab === "Profile" && <div className="err">{error}</div>}
           <div className="row">
-            <button className="primary" onClick={() => setTab("Scan")} disabled={!profile.name.trim()}>Continue to scan</button>
+            <button className="primary" onClick={() => { setMode("live"); setTab("Scan"); }} disabled={!profile.name.trim() || filling || mode !== "live"}>Continue to scan</button>
             <button className="ghost" onClick={resetHistory}>Reset scan history</button>
           </div>
           <p className="muted small">History: {seen.length} URLs seen · {prior.length} prior stories in context · {history.length} scans stored in this browser.</p>
@@ -297,6 +315,7 @@ export default function App() {
         </section>
       )}
 
+      {tab === "Influencers" && <Influencers profile={profile} scorecard={scorecard} />}
       {tab === "Feedback" && <Feedback profile={profile.name} scorecard={scorecard} recs={recs} onOpen={(id) => { setSelected(id); setTab("Scan"); }} />}
       <footer className="muted small">Confidence values are model-estimated probabilities from Drex, not guarantees. Demo data in fixture mode is fictional.</footer>
     </div>
@@ -328,6 +347,87 @@ function Feedback({ profile, scorecard, recs, onOpen }: { profile: string; score
             <li key={it.id}><a href="#" onClick={(e) => { e.preventDefault(); onOpen(it.id); }}>{it.title}</a> <span className="muted">— {sentWord(it.sentiment)}</span>
               {it.evidence && <div className="muted">“{it.evidence}”</div>}</li>))}</ul>
         </div>))}</div>
+    </section>
+  );
+}
+
+type Inf = { name: string; found?: boolean; summary?: string; topics?: string[]; followers_total?: number | null; p_authentic?: number | null; p_identifiable?: number | null;
+  brand_safety?: number | null; focus?: Record<string, number>; platforms?: { platform: string; handle?: string; followers?: number | null; source_url?: string | null }[];
+  evidence?: { title: string; url: string }[]; engine?: string; evaluated_at?: string };
+const fmtN = (n?: number | null) => (n == null ? "unknown" : n >= 1e6 ? `${(n / 1e6).toFixed(1)}M` : n >= 1e3 ? `${Math.round(n / 1e3)}K` : `${n}`);
+const AREA = (k: string) => k.replace(/_/g, " ");
+
+function InfCard({ i }: { i: Inf }) {
+  const focus = Object.entries(i.focus || {}).filter(([, v]) => v >= 0.01).sort((a, b) => b[1] - a[1]);
+  return (
+    <div className="area">
+      <div className="areahead"><h3>{i.name}</h3>
+        <span className={`pill ${i.p_authentic == null ? "mixed" : i.p_authentic >= 0.8 ? "strength" : i.p_authentic >= 0.6 ? "mixed" : "needs_attention"}`}>
+          {i.p_authentic == null ? "authenticity unknown" : `authenticity signal ${pct(i.p_authentic)}`}</span></div>
+      {i.found === false && <p className="warnline small">The search results did not clearly identify a creator by this name.</p>}
+      <p className="small">{i.summary}</p>
+      <p className="small muted">Followers found in public pages: <b>{fmtN(i.followers_total)}</b> {(i.platforms || []).map((p, k) => (
+        <span key={k}> · {p.platform} {fmtN(p.followers)}{p.source_url && <> (<a href={p.source_url} target="_blank" rel="noreferrer">source</a>)</>}</span>))}</p>
+      <div className="probs"><div className="small muted">Content focus (Drex estimate)</div>{focus.map(([k, v]) => (
+        <div key={k} className="bar"><span>{AREA(k)}</span><div><i style={{ width: `${v * 100}%` }} /></div><em>{pct(v)}</em></div>))}</div>
+      <p className="small muted">Clearly identified: {pct(i.p_identifiable)} · Sponsor safety (0–3): {i.brand_safety != null ? i.brand_safety.toFixed(1) : "unknown"} · {i.engine === "drex" ? "scored by Drex" : `Drex ${i.engine}`}</p>
+    </div>);
+}
+
+function Influencers({ profile, scorecard }: { profile: Profile; scorecard: Scorecard | null }) {
+  const [db, setDb] = useState<Inf[]>([]);
+  const [extra, setExtra] = useState<Inf[]>(() => load("rr.influencers", []));
+  const [name, setNameQ] = useState(""); const [res, setRes] = useState<Inf | null>(null);
+  const [busy, setBusy] = useState(""); const [err, setErr] = useState("");
+  const [n, setN] = useState(3); const [rec, setRec] = useState<any>(null);
+  useEffect(() => { api("influencers").then(setDb).catch(() => setDb([])); }, []);
+  useEffect(() => save("rr.influencers", extra), [extra]);
+  const all = [...db.filter((d) => !extra.some((e) => e.name.toLowerCase() === d.name.toLowerCase())), ...extra];
+  async function evaluate() {
+    setBusy("eval"); setErr(""); setRes(null);
+    try { setRes(await api<Inf>("influencer/evaluate", { name })); } catch (e: any) { setErr(e.message); } finally { setBusy(""); }
+  }
+  async function recommend() {
+    setBusy("rec"); setErr(""); setRec(null);
+    try { setRec(await api("influencer/recommend", { profile, n, scorecard, extra })); } catch (e: any) { setErr(e.message); } finally { setBusy(""); }
+  }
+  return (
+    <section className="card narrow">
+      <h2>Influencers</h2>
+      <p className="small muted">Everything here is estimated from public pages. The authenticity signal is a model estimate of risk, not proof that an account is real or fake. Real audience-overlap data is not public.</p>
+
+      <h3>Recommend creators for {profile.name || "a company"}</h3>
+      <p className="small muted">{scorecard?.areas?.length ? `Uses this scan’s findings: needs attention → ${scorecard.areas.filter((a) => a.status === "needs_attention").map((a) => a.label).join(", ") || "none"}.` : "No scan results yet, so only the company details are used. Run a scan first for better matches."}</p>
+      <div className="row"><label className="small inline">How many<input type="number" min={1} max={20} value={n} onChange={(e) => setN(Math.max(1, Math.min(20, +e.target.value || 1)))} /></label>
+        <button className="primary" onClick={recommend} disabled={!profile.name || busy !== ""}>{busy === "rec" ? "Choosing…" : "Recommend"}</button></div>
+      {rec && <>
+        <p className="small"><b>Estimated combined unique reach: {fmtN(rec.estimated_unique_reach)}</b> across {rec.picks.length} creator(s), chosen from {rec.considered}.</p>
+        <div className="areas">{rec.picks.map((p: any, k: number) => (
+          <div key={p.name} className="area strength">
+            <div className="areahead"><h3>{k + 1}. {p.name}</h3><span className="pill strength">adds ~{fmtN(p.new_reach_estimate)} new reach</span></div>
+            <p className="small">{p.summary}</p>
+            <p className="small muted">Followers {fmtN(p.followers_total)} · fit for {profile.name} {pct(p.fit)} · authenticity signal {pct(p.p_authentic)} · overlap with earlier picks −{fmtN(p.overlap_discount)}</p>
+            <p className="small muted">Main audiences: {p.top_segments.map((t: any) => `${AREA(t.segment.replace(":", " / "))} ~${fmtN(t.reach)}`).join(" · ")}</p>
+          </div>))}</div>
+        <p className="small muted">{rec.method}</p>
+        {rec.excluded.length > 0 && <p className="small muted">Not considered: {rec.excluded.map((x: any) => `${x.name} (${x.reason})`).join("; ")}</p>}
+      </>}
+
+      <h3>Check an influencer</h3>
+      <form className="searchbar" onSubmit={(e) => { e.preventDefault(); if (name.trim()) evaluate(); }}>
+        <input value={name} onChange={(e) => setNameQ(e.target.value)} placeholder="Creator or channel name" />
+        <button type="submit" disabled={!name.trim() || busy !== ""}>{busy === "eval" ? "Checking…" : "Check"}</button>
+      </form>
+      {err && <div className="err">{err}</div>}
+      {res && <><InfCard i={res} />
+        <div className="row"><button onClick={() => { setExtra((x) => [...x.filter((e) => e.name.toLowerCase() !== res.name.toLowerCase()), res]); setRes(null); setNameQ(""); }}>Add to database</button></div></>}
+
+      <h3>Database ({all.length})</h3>
+      <table className="bench small"><thead><tr><th>Creator</th><th>Followers</th><th>Top focus</th><th>Authenticity signal</th><th></th></tr></thead>
+        <tbody>{all.sort((a, b) => (b.followers_total || 0) - (a.followers_total || 0)).map((i) => {
+          const top = Object.entries(i.focus || {}).sort((a, b) => b[1] - a[1])[0];
+          return <tr key={i.name}><td>{i.name}</td><td>{fmtN(i.followers_total)}</td><td>{top ? `${AREA(top[0])} ${pct(top[1])}` : "unknown"}</td><td>{pct(i.p_authentic)}</td>
+            <td>{extra.some((e) => e.name === i.name) ? <button className="ghost" onClick={() => setExtra((x) => x.filter((e) => e.name !== i.name))}>remove</button> : <a href="#" onClick={(e) => { e.preventDefault(); setRes(i); }}>view</a>}</td></tr>; })}</tbody></table>
     </section>
   );
 }
