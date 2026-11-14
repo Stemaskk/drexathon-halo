@@ -13,7 +13,7 @@ const PRESETS: Profile[] = [
   { name: "Nace AI", kind: "company", aliases: ["Nace.AI", "Nace", "Drex"], description: "AI startup that builds Drex decision models, NDI document processing (Perception) and the Intern agent harness, and runs the Drexathon hackathon. Not the National Association of Colleges and Employers (NACE) or the corrosion-engineering body NACE International.", website: "https://www.nace.ai", region: "USA", industry: "artificial intelligence", priorities: PRIORITIES },
   { name: "Adobe", kind: "company", aliases: ["Adobe Inc.", "ADBE"], description: "American software company based in San Jose, California. Makes Creative Cloud (Photoshop, Illustrator, Premiere Pro), Acrobat and PDF tools, Firefly generative AI and Experience Cloud marketing software. Publicly traded (NASDAQ: ADBE).", website: "https://www.adobe.com", region: "USA", industry: "creative and marketing software", priorities: PRIORITIES },
 ];
-const TABS = ["Profile", "Scan", "Feedback", "Briefing", "Benchmark"] as const;
+const TABS = ["Profile", "Scan", "Feedback", "Briefing"] as const;
 type Area = { area: string; label: string; mentions: number; negative: number; positive: number; avg_sentiment: number | null;
   status: "needs_attention" | "mixed" | "strength"; items: { id: string; title: string; url: string; sentiment: number | null; evidence: string | null }[] };
 type Scorecard = { areas: Area[]; items_without_area: number };
@@ -30,7 +30,7 @@ const pct = (x?: number | null) => (x == null ? "unknown" : `${Math.round(x * 10
 const date = (x?: string | null) => (x ? x.slice(0, 10) : "date unknown");
 
 export default function App() {
-  const [tab, setTab] = useState<(typeof TABS)[number]>(() => load("rr.tab", "Profile"));
+  const [tab, setTab] = useState<(typeof TABS)[number]>(() => (TABS as readonly string[]).includes(load("rr.tab", "Profile")) ? load("rr.tab", "Profile") : "Profile");
   const [mode, setMode] = useState<Mode>(() => load("rr.mode", "fixture"));
   const [profile, setProfile] = useState<Profile>(() => load("rr.profile", EMPTY));
   const [history, setHistory] = useState<ScanRecord[]>(() => load("rr.history", []));
@@ -43,7 +43,7 @@ export default function App() {
   const [running, setRunning] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [health, setHealth] = useState<any>(null);
-  const [batch, setBatch] = useState(6);
+  const [batch, setBatch] = useState(15);
   const [replay, setReplay] = useState<boolean>(() => load("rr.replay", false));
   useEffect(() => save("rr.replay", replay), [replay]);
   const replaying = mode === "fixture" && replay;
@@ -108,7 +108,7 @@ export default function App() {
         scanPrior = fx.history.map((h: any) => ({ title: h.title, published_at: h.published_at, summary: h.summary }));
       }
       setStep(0, { status: "running" });
-      const s = await api("search", { profile: prof, mode, seen_urls: scanSeen, published_after: "30d", max_results: 8 });
+      const s = await api("search", { profile: prof, mode, seen_urls: scanSeen, published_after: "30d", max_results: 12 });
       const limit = mode === "fixture" ? s.candidates.length : batch;
       const picked: Item[] = s.candidates.slice(0, limit);
       setStep(0, { status: "done", detail: `${s.stats.raw} results → ${s.stats.unique_new} new unique (${s.stats.duplicates_in_scan} dupes, ${s.stats.already_seen} already seen); processing ${picked.length}` });
@@ -252,7 +252,7 @@ export default function App() {
             </div>
             {mode === "fixture" && <label className="small check"><input type="checkbox" checked={replay} disabled={running} onChange={(e) => setReplay(e.target.checked)} />
               Replay recorded Drex responses<span className="muted"> (real drex-latest output captured 2026-11-14 21:21 UTC; use if the Nace API is down)</span></label>}
-            {mode === "live" && <label className="small">Articles to process<input type="number" min={1} max={10} value={batch} onChange={(e) => setBatch(Math.max(1, Math.min(10, +e.target.value || 1)))} /></label>}
+            {mode === "live" && <label className="small">Articles to process<input type="number" min={1} max={30} value={batch} onChange={(e) => setBatch(Math.max(1, Math.min(30, +e.target.value || 1)))} /></label>}
             <button className="primary wide" onClick={runScan} disabled={running}>{running ? "Scanning…" : "Scan now"}</button>
             <ol className="steps">{steps.map((s, i) => (
               <li key={i} className={s.status}><span className="ico" />{s.label}{s.detail && <div className="small muted">{s.detail}</div>}</li>))}</ol>
@@ -296,7 +296,6 @@ export default function App() {
       )}
 
       {tab === "Feedback" && <Feedback profile={profile.name} scorecard={scorecard} recs={recs} onOpen={(id) => { setSelected(id); setTab("Scan"); }} />}
-      {tab === "Benchmark" && <Benchmark />}
       <footer className="muted small">Confidence values are model-estimated probabilities from Drex, not guarantees. Demo data in fixture mode is fictional.</footer>
     </div>
   );
@@ -390,43 +389,3 @@ function Markdown({ text }: { text: string }) {
   })}</div>;
 }
 function escapeKeep(s: string) { return s.replace(/</g, "&lt;").replace(/&lt;(\/?)b>/g, "<$1b>"); }
-
-function Benchmark() {
-  const [b, setB] = useState<any>(null);
-  useEffect(() => { api("benchmark").then(setB).catch((e) => setB({ available: false, message: e.message })); }, []);
-  if (!b) return <section className="card narrow muted">Loading…</section>;
-  if (b.available === false) return <section className="card narrow"><h2>Benchmark</h2><p className="muted">{b.message}</p></section>;
-  const sys = b.systems as any[];
-  const metrics: [string, string, (s: any) => string][] = [
-    ["Important items caught (gold = review now)", "important_caught", (s) => `${s.important_caught}/${b.dataset.important}`],
-    ["Important items escalated ≥ watch", "important_ge_watch", (s) => `${s.important_ge_watch}/${b.dataset.important}`],
-    ["Irrelevant alerts (gold ignore/digest → watch/review)", "false_alerts", (s) => `${s.false_alerts}`],
-    ["Namesakes correctly ignored", "namesake_ok", (s) => `${s.namesake_ok}/${b.dataset.namesakes}`],
-    ["Action agreement", "action_acc", (s) => pct(s.action_acc)],
-    ["Category agreement", "category_acc", (s) => pct(s.category_acc)],
-    ["Report-type agreement", "report_type_acc", (s) => pct(s.report_type_acc)],
-    ["Identity agreement", "subject_acc", (s) => pct(s.subject_acc)],
-    ["Improvement-area agreement", "area_acc", (s) => s.improvement_area_acc == null ? "not measured in this run" : pct(s.improvement_area_acc)],
-    ["Novelty agreement", "novel_acc", (s) => pct(s.novel_acc)],
-    ["Median latency / article", "lat", (s) => `${s.latency_ms_median} ms`],
-    ["Mean latency / article", "latm", (s) => `${s.latency_ms_mean} ms`],
-    ["Input tokens (total)", "tin", (s) => `${s.input_tokens}`],
-    ["Output tokens (total; not billed for Drex)", "tout", (s) => `${s.output_tokens}`],
-    ["Est. decision-stage cost", "cost", (s) => s.est_cost_usd == null ? "price not set" : `$${s.est_cost_usd.toFixed(5)}`],
-    ["Cost basis", "cbasis", (s) => s.cost_source ?? "—"],
-    ["Errors / parse failures", "err", (s) => `${s.errors}`],
-  ];
-  return (
-    <section className="card">
-      <h2>Decision-stage benchmark</h2>
-      <p className="small muted">Run at {b.run_at} · {b.dataset.size} articles ({b.dataset.label}) · same profile, criteria, article text and NDI extraction for every system · {b.repeats ?? 1} run(s).</p>
-      <table className="bench"><thead><tr><th>Metric</th>{sys.map((s) => <th key={s.name}>{s.name}<div className="small muted">{s.model}</div></th>)}</tr></thead>
-        <tbody>{metrics.map(([label, k, f]) => <tr key={k}><td>{label}</td>{sys.map((s) => <td key={s.name}>{f(s)}</td>)}</tr>)}</tbody></table>
-      <h3>Per-article actions</h3>
-      <table className="bench small"><thead><tr><th>Article</th><th>Gold</th>{sys.map((s) => <th key={s.name}>{s.name}</th>)}</tr></thead>
-        <tbody>{b.per_article.map((r: any) => <tr key={r.id}><td>{r.id} · {r.title}</td><td>{r.gold_action}</td>
-          {sys.map((s) => { const v = r.pred[s.name]; return <td key={s.name} className={v === r.gold_action ? "ok" : "bad"}>{v ?? "error"}</td>; })}</tr>)}</tbody></table>
-      <h3>Limitations</h3><ul className="small">{(b.limitations || []).map((l: string, i: number) => <li key={i}>{l}</li>)}</ul>
-    </section>
-  );
-}

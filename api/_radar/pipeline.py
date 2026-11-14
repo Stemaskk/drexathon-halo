@@ -218,9 +218,9 @@ def profile_block(profile: dict[str, Any]) -> str:
 
 
 def build_state(profile: dict[str, Any], doc: dict[str, Any], facts: dict[str, Any] | None,
-                prior: list[dict[str, Any]], max_chars: int = 3500) -> str:
-    prior_txt = "\n".join(f"- [{p.get('published_at') or 'date unknown'}] {p.get('title')}: {p.get('summary', '')}" for p in prior[-12:]) or "- (none)"
-    facts_txt = json.dumps(facts, ensure_ascii=False)[:2500] if facts else "(no structured extraction available)"
+                prior: list[dict[str, Any]], max_chars: int = 9000) -> str:
+    prior_txt = "\n".join(f"- [{p.get('published_at') or 'date unknown'}] {p.get('title')}: {p.get('summary', '')}" for p in prior[-25:]) or "- (none)"
+    facts_txt = json.dumps(facts, ensure_ascii=False)[:4500] if facts else "(no structured extraction available)"
     return (f"{profile_block(profile)}\n\nPRIOR COVERAGE ALREADY SEEN:\n{prior_txt}\n\n"
             f"ARTICLE\nTitle: {doc.get('title')}\nURL: {doc.get('url')}\nPublished: {doc.get('published_at') or 'unknown'}\n\n"
             f"EXTRACTED FACTS (NDI):\n{facts_txt}\n\nARTICLE TEXT:\n{(doc.get('text') or '')[:max_chars]}")
