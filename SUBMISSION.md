@@ -18,6 +18,9 @@ Deadline: **Saturday, November 14, 2026, 3:00 PM America/Los_Angeles**. Only fin
 - [ ] Go to https://www.nace.ai/drexathon/submit and submit the repo URL, the deck (PDF/PPTX export) and the optional demo URL
 - [ ] Push any final commits, then click **Finalize** before 3:00 PM PT
 
+## If the Nace API is down during the demo
+`console.nace.ai` may return a Vercel security checkpoint (HTTP 403). The app says so explicitly. In Fixture mode, tick **Replay recorded Drex responses**: real responses captured earlier, each item labeled. Live mode needs Nace to be reachable.
+
 ## Demo script (about 3 min)
 1. Profile → **Load demo profile (fictional “Nimbleroot”)** → Scan (Fixture mode).
 2. In the feed, point out: the namesakes (nursery, musician) are **Ignored**, the funding repost is marked *repeat coverage* and sent to the digest, the pricey review goes to the **Digest**, and the scam accounts, data exposure and Oregon DOJ inquiry are **Review now**.

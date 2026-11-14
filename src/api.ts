@@ -17,7 +17,7 @@ export type Item = {
   decisions?: Decisions; final_action?: string; flags?: string[];
   evidence?: { passage: string | null; verified: boolean; origin: string | null; note?: string };
   drex?: { model?: string; latency_ms?: number; usage?: any; request_id?: string };
-  explanation?: string; error?: string;
+  explanation?: string; error?: string; replayed?: boolean; recorded_at?: string;
 };
 
 export class ApiFailure extends Error {

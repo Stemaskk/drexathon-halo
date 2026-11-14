@@ -1,0 +1,1138 @@
+{
+ "f01": {
+  "decisions": {
+   "is_subject": {
+    "value": false,
+    "p_yes": 0.0003830196800681251,
+    "confidence": 0.99961698032
+   },
+   "category": {
+    "value": "other",
+    "confidence": 0.9345514452582533,
+    "probabilities": {
+     "security_concern": 0.045638810744937745,
+     "allegation_or_legal": 0.00289438571157561,
+     "impersonation_or_scam": 0.002960562466786894,
+     "customer_complaint": 0.001046532879192282,
+     "routine_criticism": 0.000853871168126746,
+     "business_news": 0.0027045982365921295,
+     "other": 0.9439012387927886
+    }
+   },
+   "report_type": {
+    "value": "news_report",
+    "confidence": 0.8028961886247926,
+    "probabilities": {
+     "allegation": 0.002491386210366447,
+     "official_statement": 0.004190364968161622,
+     "news_report": 0.831053875964108,
+     "opinion": 0.0018154784839447124,
+     "correction": 0.0023280247756910827,
+     "satire": 0.0021267480338038043,
+     "other": 0.15599412156392434
+    }
+   },
+   "is_novel": {
+    "value": true,
+    "p_yes": 0.8796761566424656,
+    "confidence": 0.8796761566424656
+   },
+   "action": {
+    "value": "ignore",
+    "confidence": 0.9980614238813419,
+    "probabilities": {
+     "ignore": 0.9985460679110064,
+     "digest": 0.0010581786719952102,
+     "watch": 0.00026648315785370166,
+     "review_now": 0.00012927025914461694
+    }
+   },
+   "urgency": {
+    "score": 0.014736341406386046,
+    "confidence": 0.9877197154946783,
+    "probabilities": {
+     "0": 0.9889663042003786,
+     "1": 0.008975699707481195,
+     "2": 0.000957416562577208,
+     "3": 0.0005565095445017497,
+     "4": 0.0005440699850612963
+    },
+    "legend": [
+     "None",
+     "Low",
+     "Moderate",
+     "High",
+     "Critical"
+    ]
+   }
+  },
+  "final_action": "ignore",
+  "flags": [
+   "namesake_or_unrelated"
+  ],
+  "model": "drex-max-v1.1",
+  "usage": {
+   "input_tokens": 1540,
+   "output_tokens": 895
+  },
+  "latency_ms": 383.2,
+  "evaluation_time_ms": 133.4,
+  "request_id": "req_cbecbb18531bc9c8543866056a049be4",
+  "recorded_at": "2026-11-14T20:32:49+00:00",
+  "recorded_from": "2026-11-14T203249+0000.json"
+ },
+ "f02": {
+  "decisions": {
+   "is_subject": {
+    "value": false,
+    "p_yes": 0.00036609414294403353,
+    "confidence": 0.999633905857
+   },
+   "category": {
+    "value": "other",
+    "confidence": 0.9550221463459896,
+    "probabilities": {
+     "security_concern": 0.027021223971333636,
+     "allegation_or_legal": 0.003300994432203144,
+     "impersonation_or_scam": 0.002817862426191075,
+     "customer_complaint": 0.0015305163162299055,
+     "routine_criticism": 0.0012487547769440596,
+     "business_news": 0.0026330940662498393,
+     "other": 0.9614475540108484
+    }
+   },
+   "report_type": {
+    "value": "news_report",
+    "confidence": 0.7414790681562812,
+    "probabilities": {
+     "allegation": 0.004810517288964837,
+     "official_statement": 0.02394744804018883,
+     "news_report": 0.778410629848241,
+     "opinion": 0.026213843924749167,
+     "correction": 0.002925494281410818,
+     "satire": 0.0037514181662415234,
+     "other": 0.15994064845020378
+    }
+   },
+   "is_novel": {
+    "value": true,
+    "p_yes": 0.9538787638913049,
+    "confidence": 0.9538787638913049
+   },
+   "action": {
+    "value": "ignore",
+    "confidence": 0.9977837192250401,
+    "probabilities": {
+     "ignore": 0.99833778941878,
+     "digest": 0.0011845618988065034,
+     "watch": 0.0003192436174409326,
+     "review_now": 0.00015840506497252635
+    }
+   },
+   "urgency": {
+    "score": 0.01593043195185557,
+    "confidence": 0.9867246400401204,
+    "probabilities": {
+     "0": 0.9876587443620021,
+     "1": 0.010265986178138143,
+     "2": 0.0010466408672005765,
+     "3": 0.0005433503313205932,
+     "4": 0.0004852782613386236
+    },
+    "legend": [
+     "None",
+     "Low",
+     "Moderate",
+     "High",
+     "Critical"
+    ]
+   }
+  },
+  "final_action": "ignore",
+  "flags": [
+   "namesake_or_unrelated"
+  ],
+  "model": "drex-max-v1.1",
+  "usage": {
+   "input_tokens": 1419,
+   "output_tokens": 893
+  },
+  "latency_ms": 257.8,
+  "evaluation_time_ms": 138.1,
+  "request_id": "req_93f22ee0da6469e31aa38aecd1715a5e",
+  "recorded_at": "2026-11-14T20:32:49+00:00",
+  "recorded_from": "2026-11-14T203249+0000.json"
+ },
+ "f03": {
+  "decisions": {
+   "is_subject": {
+    "value": true,
+    "p_yes": 0.9982993052030998,
+    "confidence": 0.9982993052030998
+   },
+   "category": {
+    "value": "business_news",
+    "confidence": 0.9953530717954232,
+    "probabilities": {
+     "security_concern": 0.0012364672402461736,
+     "allegation_or_legal": 0.0015501048641625788,
+     "impersonation_or_scam": 0.0005998065902997503,
+     "customer_complaint": 0.0001616500472312729,
+     "routine_criticism": 0.0001809944151280403,
+     "business_news": 0.9960169186817913,
+     "other": 0.00025405816114088377
+    }
+   },
+   "report_type": {
+    "value": "news_report",
+    "confidence": 0.8458430180497768,
+    "probabilities": {
+     "allegation": 0.007195615244910344,
+     "official_statement": 0.1084451676404814,
+     "news_report": 0.8678654440426659,
+     "opinion": 0.003652013626869785,
+     "correction": 0.003047822022647314,
+     "satire": 0.005611402838912198,
+     "other": 0.004182534583513122
+    }
+   },
+   "is_novel": {
+    "value": false,
+    "p_yes": 0.07679522037506104,
+    "confidence": 0.923204779625
+   },
+   "action": {
+    "value": "digest",
+    "confidence": 0.3518303761811363,
+    "probabilities": {
+     "ignore": 0.4694445791926028,
+     "digest": 0.5138727821358522,
+     "watch": 0.012610378712747472,
+     "review_now": 0.00407225995879755
+    }
+   },
+   "urgency": {
+    "score": 0.3679697474642696,
+    "confidence": 0.6933585437797753,
+    "probabilities": {
+     "0": 0.6545243636796817,
+     "1": 0.3321928567019857,
+     "2": 0.007447167046534272,
+     "3": 0.0024598936179782106,
+     "4": 0.003375718953820186
+    },
+    "legend": [
+     "None",
+     "Low",
+     "Moderate",
+     "High",
+     "Critical"
+    ]
+   }
+  },
+  "final_action": "digest",
+  "flags": [
+   "low_confidence_action"
+  ],
+  "model": "drex-max-v1.1",
+  "usage": {
+   "input_tokens": 1453,
+   "output_tokens": 885
+  },
+  "latency_ms": 258.5,
+  "evaluation_time_ms": 135.8,
+  "request_id": "req_e7d6e64d8a8663adb31913303096d54b",
+  "recorded_at": "2026-11-14T20:32:49+00:00",
+  "recorded_from": "2026-11-14T203249+0000.json"
+ },
+ "f04": {
+  "decisions": {
+   "is_subject": {
+    "value": true,
+    "p_yes": 0.9978688327786807,
+    "confidence": 0.9978688327786807
+   },
+   "category": {
+    "value": "routine_criticism",
+    "confidence": 0.6889200580046634,
+    "probabilities": {
+     "security_concern": 0.004961028678935393,
+     "allegation_or_legal": 0.09163778990438928,
+     "impersonation_or_scam": 0.008534933412566533,
+     "customer_complaint": 0.15068407307621626,
+     "routine_criticism": 0.733360049718283,
+     "business_news": 0.006080403438507196,
+     "other": 0.004741721771102375
+    }
+   },
+   "report_type": {
+    "value": "opinion",
+    "confidence": 0.9878552029362891,
+    "probabilities": {
+     "allegation": 0.0008178051753587956,
+     "official_statement": 0.0031748346293439277,
+     "news_report": 0.0019749050405482955,
+     "opinion": 0.9895901739453907,
+     "correction": 0.0031748346293439277,
+     "satire": 0.0005203468953349376,
+     "other": 0.0007470996846793825
+    }
+   },
+   "is_novel": {
+    "value": true,
+    "p_yes": 0.993994495135016,
+    "confidence": 0.993994495135016
+   },
+   "action": {
+    "value": "digest",
+    "confidence": 0.9870421605189122,
+    "probabilities": {
+     "ignore": 0.0019321086173322945,
+     "digest": 0.9902816203891842,
+     "watch": 0.005718583240754871,
+     "review_now": 0.00206768775272865
+    }
+   },
+   "urgency": {
+    "score": 0.9927521067844872,
+    "confidence": 0.9569922774959937,
+    "probabilities": {
+     "0": 0.029428580110160155,
+     "1": 0.9565740597956283,
+     "2": 0.008681712857551862,
+     "3": 0.0024479676728835164,
+     "4": 0.0028676795637761804
+    },
+    "legend": [
+     "None",
+     "Low",
+     "Moderate",
+     "High",
+     "Critical"
+    ]
+   }
+  },
+  "final_action": "digest",
+  "flags": [],
+  "model": "drex-max-v1.1",
+  "usage": {
+   "input_tokens": 1534,
+   "output_tokens": 888
+  },
+  "latency_ms": 298.9,
+  "evaluation_time_ms": 175.5,
+  "request_id": "req_496c4daec69bf135c8e98d438f99eb5c",
+  "recorded_at": "2026-11-14T20:32:49+00:00",
+  "recorded_from": "2026-11-14T203249+0000.json"
+ },
+ "f05": {
+  "decisions": {
+   "is_subject": {
+    "value": true,
+    "p_yes": 0.9979163709247068,
+    "confidence": 0.9979163709247068
+   },
+   "category": {
+    "value": "customer_complaint",
+    "confidence": 0.9974084741482172,
+    "probabilities": {
+     "security_concern": 0.0002545073165936938,
+     "allegation_or_legal": 0.000600867309652839,
+     "impersonation_or_scam": 0.0007881209433086374,
+     "customer_complaint": 0.9977786921270434,
+     "routine_criticism": 0.00023250319142971795,
+     "business_news": 0.00011800310784961594,
+     "other": 0.00022730600412212192
+    }
+   },
+   "report_type": {
+    "value": "allegation",
+    "confidence": 0.7235457845664027,
+    "probabilities": {
+     "allegation": 0.7630392439140595,
+     "official_statement": 0.010640768410049463,
+     "news_report": 0.01789713634065956,
+     "opinion": 0.1308442329029042,
+     "correction": 0.0029332924616484405,
+     "satire": 0.0019526938660466243,
+     "other": 0.0726926321046322
+    }
+   },
+   "is_novel": {
+    "value": true,
+    "p_yes": 0.9995992724456632,
+    "confidence": 0.9995992724456632
+   },
+   "action": {
+    "value": "review_now",
+    "confidence": 0.9835139440649993,
+    "probabilities": {
+     "ignore": 0.0008734637155633312,
+     "digest": 0.0025274567929819275,
+     "watch": 0.008963621442705363,
+     "review_now": 0.9876354580487494
+    }
+   },
+   "urgency": {
+    "score": 2.611965345635881,
+    "confidence": 0.6654493186267068,
+    "probabilities": {
+     "0": 0.006272898544642696,
+     "1": 0.020323416293872208,
+     "2": 0.3352822077843629,
+     "3": 0.6314083957352057,
+     "4": 0.00671308164191649
+    },
+    "legend": [
+     "None",
+     "Low",
+     "Moderate",
+     "High",
+     "Critical"
+    ]
+   }
+  },
+  "final_action": "review_now",
+  "flags": [
+   "allegation_not_fact"
+  ],
+  "model": "drex-max-v1.1",
+  "usage": {
+   "input_tokens": 1691,
+   "output_tokens": 888
+  },
+  "latency_ms": 269.5,
+  "evaluation_time_ms": 125,
+  "request_id": "req_21d57a5a6e1fb0da582b323f43a38250",
+  "recorded_at": "2026-11-14T20:32:49+00:00",
+  "recorded_from": "2026-11-14T203249+0000.json"
+ },
+ "f06": {
+  "decisions": {
+   "is_subject": {
+    "value": true,
+    "p_yes": 0.9968020280898751,
+    "confidence": 0.9968020280898751
+   },
+   "category": {
+    "value": "impersonation_or_scam",
+    "confidence": 0.998757125918931,
+    "probabilities": {
+     "security_concern": 0.00010792573374534357,
+     "allegation_or_legal": 0.00017350018487983707,
+     "impersonation_or_scam": 0.9989346793590836,
+     "customer_complaint": 0.0006584959874575162,
+     "routine_criticism": 4.8921545051145e-05,
+     "business_news": 3.564923802714741e-05,
+     "other": 4.0827951755364144e-05
+    }
+   },
+   "report_type": {
+    "value": "news_report",
+    "confidence": 0.7404109184746638,
+    "probabilities": {
+     "allegation": 0.18295955346989273,
+     "official_statement": 0.013903367096803664,
+     "news_report": 0.7774950729782832,
+     "opinion": 0.011090256085249434,
+     "correction": 0.0038326787110917397,
+     "satire": 0.003501314377506275,
+     "other": 0.007217757281172955
+    }
+   },
+   "is_novel": {
+    "value": true,
+    "p_yes": 0.99978717110524,
+    "confidence": 0.99978717110524
+   },
+   "action": {
+    "value": "review_now",
+    "confidence": 0.9997534948017077,
+    "probabilities": {
+     "ignore": 2.7825090570531417e-05,
+     "digest": 3.334104108388248e-05,
+     "watch": 0.00012371276706476535,
+     "review_now": 0.9998151211012808
+    }
+   },
+   "urgency": {
+    "score": 2.9760416046837523,
+    "confidence": 0.907301778264555,
+    "probabilities": {
+     "0": 0.003630097572633429,
+     "1": 0.006534051299173624,
+     "2": 0.0436397353831432,
+     "3": 0.9025563803619066,
+     "4": 0.0436397353831432
+    },
+    "legend": [
+     "None",
+     "Low",
+     "Moderate",
+     "High",
+     "Critical"
+    ]
+   }
+  },
+  "final_action": "review_now",
+  "flags": [],
+  "model": "drex-max-v1.1",
+  "usage": {
+   "input_tokens": 1636,
+   "output_tokens": 892
+  },
+  "latency_ms": 262.5,
+  "evaluation_time_ms": 142.1,
+  "request_id": "req_bb2bc60e6a75d856b84d994cb4c5030e",
+  "recorded_at": "2026-11-14T20:32:49+00:00",
+  "recorded_from": "2026-11-14T203249+0000.json"
+ },
+ "f07": {
+  "decisions": {
+   "is_subject": {
+    "value": true,
+    "p_yes": 0.9959940942805068,
+    "confidence": 0.9959940942805068
+   },
+   "category": {
+    "value": "security_concern",
+    "confidence": 0.9973057597645505,
+    "probabilities": {
+     "security_concern": 0.9976906512267576,
+     "allegation_or_legal": 0.0005128796775070867,
+     "impersonation_or_scam": 0.0007532149121038014,
+     "customer_complaint": 0.0007199183265054104,
+     "routine_criticism": 0.0001583022198169654,
+     "business_news": 8.995821315796683e-05,
+     "other": 7.507542415114972e-05
+    }
+   },
+   "report_type": {
+    "value": "allegation",
+    "confidence": 0.4629966646301808,
+    "probabilities": {
+     "allegation": 0.5397114268258693,
+     "official_statement": 0.009435530945269093,
+     "news_report": 0.43051017212795445,
+     "opinion": 0.007526407638174452,
+     "correction": 0.003996575333107875,
+     "satire": 0.003335377735438114,
+     "other": 0.005484509394186742
+    }
+   },
+   "is_novel": {
+    "value": true,
+    "p_yes": 0.999616980494488,
+    "confidence": 0.999616980494488
+   },
+   "action": {
+    "value": "review_now",
+    "confidence": 0.9982968527794763,
+    "probabilities": {
+     "ignore": 0.00015146084884380253,
+     "digest": 0.00022243544530732882,
+     "watch": 0.0009034641212415666,
+     "review_now": 0.9987226395846073
+    }
+   },
+   "urgency": {
+    "score": 2.943420311119893,
+    "confidence": 0.8976891528685902,
+    "probabilities": {
+     "0": 0.005937824058930338,
+     "1": 0.008720289964528512,
+     "2": 0.054422300613051096,
+     "3": 0.8978229215246974,
+     "4": 0.033096663838792575
+    },
+    "legend": [
+     "None",
+     "Low",
+     "Moderate",
+     "High",
+     "Critical"
+    ]
+   }
+  },
+  "final_action": "review_now",
+  "flags": [
+   "allegation_not_fact"
+  ],
+  "model": "drex-max-v1.1",
+  "usage": {
+   "input_tokens": 1792,
+   "output_tokens": 893
+  },
+  "latency_ms": 250.2,
+  "evaluation_time_ms": 135.5,
+  "request_id": "req_15f241a28fba10b4a08f81f7407686da",
+  "recorded_at": "2026-11-14T20:32:49+00:00",
+  "recorded_from": "2026-11-14T203249+0000.json"
+ },
+ "f08": {
+  "decisions": {
+   "is_subject": {
+    "value": true,
+    "p_yes": 0.9992950419805655,
+    "confidence": 0.9992950419805655
+   },
+   "category": {
+    "value": "allegation_or_legal",
+    "confidence": 0.9965972169017835,
+    "probabilities": {
+     "security_concern": 0.0004577853953825163,
+     "allegation_or_legal": 0.9970833287729572,
+     "impersonation_or_scam": 0.0009436980702467982,
+     "customer_complaint": 0.0011830734579610282,
+     "routine_criticism": 9.621218128736387e-05,
+     "business_news": 0.00012061705188855335,
+     "other": 0.00011528507027644403
+    }
+   },
+   "report_type": {
+    "value": "allegation",
+    "confidence": 0.9824136827226151,
+    "probabilities": {
+     "allegation": 0.9849260137622415,
+     "official_statement": 0.0037862727077341255,
+     "news_report": 0.00978501507924466,
+     "opinion": 0.0007269567062753499,
+     "correction": 0.00030791456652821606,
+     "satire": 0.00020497882009629266,
+     "other": 0.00026284835787976937
+    }
+   },
+   "is_novel": {
+    "value": true,
+    "p_yes": 0.999341235989565,
+    "confidence": 0.999341235989565
+   },
+   "action": {
+    "value": "review_now",
+    "confidence": 0.8962508327794926,
+    "probabilities": {
+     "ignore": 0.003026238051552704,
+     "digest": 0.018886392153385608,
+     "watch": 0.05589924521044231,
+     "review_now": 0.9221881245846194
+    }
+   },
+   "urgency": {
+    "score": 1.8894626493637876,
+    "confidence": 0.7735424520846671,
+    "probabilities": {
+     "0": 0.011651680951283959,
+     "1": 0.167839842164738,
+     "2": 0.7462312076931087,
+     "3": 0.06794868495064531,
+     "4": 0.006328584240224107
+    },
+    "legend": [
+     "None",
+     "Low",
+     "Moderate",
+     "High",
+     "Critical"
+    ]
+   }
+  },
+  "final_action": "review_now",
+  "flags": [
+   "allegation_not_fact"
+  ],
+  "model": "drex-max-v1.1",
+  "usage": {
+   "input_tokens": 1801,
+   "output_tokens": 895
+  },
+  "latency_ms": 431.4,
+  "evaluation_time_ms": 141.6,
+  "request_id": "req_8bdf1b2588c1a8074d5e11f7e92ac822",
+  "recorded_at": "2026-11-14T20:32:49+00:00",
+  "recorded_from": "2026-11-14T203249+0000.json"
+ },
+ "f09": {
+  "decisions": {
+   "is_subject": {
+    "value": true,
+    "p_yes": 0.9986119612110682,
+    "confidence": 0.9986119612110682
+   },
+   "category": {
+    "value": "security_concern",
+    "confidence": 0.9942614846544763,
+    "probabilities": {
+     "security_concern": 0.9950812725609798,
+     "allegation_or_legal": 0.0020312668443724924,
+     "impersonation_or_scam": 0.0006709532019152427,
+     "customer_complaint": 0.0014801884600735467,
+     "routine_criticism": 0.0004673114321445628,
+     "business_news": 0.00016149819280046707,
+     "other": 0.00010750930771385828
+    }
+   },
+   "report_type": {
+    "value": "official_statement",
+    "confidence": 0.9882106458032134,
+    "probabilities": {
+     "allegation": 0.0013451669798944207,
+     "official_statement": 0.9898948392598972,
+     "news_report": 0.0020668800655433183,
+     "opinion": 0.0021141367714870587,
+     "correction": 0.003637154005408713,
+     "satire": 0.00044432574918938715,
+     "other": 0.0004974971685799206
+    }
+   },
+   "is_novel": {
+    "value": true,
+    "p_yes": 0.992482612763819,
+    "confidence": 0.992482612763819
+   },
+   "action": {
+    "value": "review_now",
+    "confidence": 0.7317089269513204,
+    "probabilities": {
+     "ignore": 0.00888536593565354,
+     "digest": 0.11959926072396132,
+     "watch": 0.07273367812689491,
+     "review_now": 0.7987816952134903
+    }
+   },
+   "urgency": {
+    "score": 2.5672495780480116,
+    "confidence": 0.5927302453452272,
+    "probabilities": {
+     "0": 0.015200881202514015,
+     "1": 0.05037499563558961,
+     "2": 0.31438442889013646,
+     "3": 0.5920530524548904,
+     "4": 0.027986641816869516
+    },
+    "legend": [
+     "None",
+     "Low",
+     "Moderate",
+     "High",
+     "Critical"
+    ]
+   }
+  },
+  "final_action": "review_now",
+  "flags": [],
+  "model": "drex-max-v1.1",
+  "usage": {
+   "input_tokens": 1891,
+   "output_tokens": 893
+  },
+  "latency_ms": 428.1,
+  "evaluation_time_ms": 217.2,
+  "request_id": "req_bfce35df0ef59dc2395a0a0daafb6547",
+  "recorded_at": "2026-11-14T20:32:49+00:00",
+  "recorded_from": "2026-11-14T203249+0000.json"
+ },
+ "f10": {
+  "decisions": {
+   "is_subject": {
+    "value": true,
+    "p_yes": 0.9887500193517186,
+    "confidence": 0.9887500193517186
+   },
+   "category": {
+    "value": "business_news",
+    "confidence": 0.707953012864495,
+    "probabilities": {
+     "security_concern": 0.054450473868094776,
+     "allegation_or_legal": 0.07817852380605751,
+     "impersonation_or_scam": 0.007792313932741971,
+     "customer_complaint": 0.003532169799772355,
+     "routine_criticism": 0.031649972771853614,
+     "business_news": 0.74967401102671,
+     "other": 0.07472253479476966
+    }
+   },
+   "report_type": {
+    "value": "correction",
+    "confidence": 0.9908597473053565,
+    "probabilities": {
+     "allegation": 0.002779345303834917,
+     "official_statement": 0.00290789109341194,
+     "news_report": 0.0007323004037770051,
+     "opinion": 0.0003101778353943502,
+     "correction": 0.9921654976903057,
+     "satire": 0.0007159311300782052,
+     "other": 0.000388856543197903
+    }
+   },
+   "is_novel": {
+    "value": false,
+    "p_yes": 0.18361793732073808,
+    "confidence": 0.816382062679
+   },
+   "action": {
+    "value": "ignore",
+    "confidence": 0.3671858131286907,
+    "probabilities": {
+     "ignore": 0.525389359846518,
+     "digest": 0.4587477328110834,
+     "watch": 0.010759956859146418,
+     "review_now": 0.005102950483252166
+    }
+   },
+   "urgency": {
+    "score": 0.4070106404971782,
+    "confidence": 0.6608244662523515,
+    "probabilities": {
+     "0": 0.6220029050051485,
+     "1": 0.3615462215098576,
+     "2": 0.008290533047809667,
+     "3": 0.00375800885703562,
+     "4": 0.004402331580148607
+    },
+    "legend": [
+     "None",
+     "Low",
+     "Moderate",
+     "High",
+     "Critical"
+    ]
+   }
+  },
+  "final_action": "ignore",
+  "flags": [
+   "low_confidence_action"
+  ],
+  "model": "drex-max-v1.1",
+  "usage": {
+   "input_tokens": 1617,
+   "output_tokens": 875
+  },
+  "latency_ms": 328.9,
+  "evaluation_time_ms": 148.1,
+  "request_id": "req_fa6b84220f59bc9626ae186f29fda292",
+  "recorded_at": "2026-11-14T20:32:49+00:00",
+  "recorded_from": "2026-11-14T203249+0000.json"
+ },
+ "f11": {
+  "decisions": {
+   "is_subject": {
+    "value": true,
+    "p_yes": 0.9659654934507781,
+    "confidence": 0.9659654934507781
+   },
+   "category": {
+    "value": "other",
+    "confidence": 0.7647694466975219,
+    "probabilities": {
+     "security_concern": 0.052974130268036705,
+     "allegation_or_legal": 0.048394109745255834,
+     "impersonation_or_scam": 0.006770788127569913,
+     "customer_complaint": 0.004406564967345852,
+     "routine_criticism": 0.00950401290263128,
+     "business_news": 0.07957658253414171,
+     "other": 0.7983738114550187
+    }
+   },
+   "report_type": {
+    "value": "satire",
+    "confidence": 0.9978363000229418,
+    "probabilities": {
+     "allegation": 0.00040929357462053033,
+     "official_statement": 0.0006432681300168156,
+     "news_report": 0.00020772998871257191,
+     "opinion": 0.0001513733057600129,
+     "correction": 0.00014468170981502178,
+     "satire": 0.9981454000196643,
+     "other": 0.00029825327141069644
+    }
+   },
+   "is_novel": {
+    "value": false,
+    "p_yes": 0.29753899574279785,
+    "confidence": 0.702461004257
+   },
+   "action": {
+    "value": "ignore",
+    "confidence": 0.8849403154224676,
+    "probabilities": {
+     "ignore": 0.9137052365668508,
+     "digest": 0.07600505706671667,
+     "watch": 0.006614766132941589,
+     "review_now": 0.0036749402334909156
+    }
+   },
+   "urgency": {
+    "score": 0.16270389146918776,
+    "confidence": 0.8644134237756769,
+    "probabilities": {
+     "0": 0.8589181332074223,
+     "1": 0.12860331579033712,
+     "2": 0.006218132151768186,
+     "3": 0.003377364026575493,
+     "4": 0.002883054823896948
+    },
+    "legend": [
+     "None",
+     "Low",
+     "Moderate",
+     "High",
+     "Critical"
+    ]
+   }
+  },
+  "final_action": "ignore",
+  "flags": [],
+  "model": "drex-max-v1.1",
+  "usage": {
+   "input_tokens": 1841,
+   "output_tokens": 891
+  },
+  "latency_ms": 409.8,
+  "evaluation_time_ms": 186.6,
+  "request_id": "req_87b186046d85b2965c3744f8453593d4",
+  "recorded_at": "2026-11-14T20:32:49+00:00",
+  "recorded_from": "2026-11-14T203249+0000.json"
+ },
+ "f12": {
+  "decisions": {
+   "is_subject": {
+    "value": true,
+    "p_yes": 0.9984807962070856,
+    "confidence": 0.9984807962070856
+   },
+   "category": {
+    "value": "allegation_or_legal",
+    "confidence": 0.9576771626295323,
+    "probabilities": {
+     "security_concern": 0.006091911221611725,
+     "allegation_or_legal": 0.9637232822538849,
+     "impersonation_or_scam": 0.00835994707152821,
+     "customer_complaint": 0.018030605842899994,
+     "routine_criticism": 0.0011963769549776372,
+     "business_news": 0.0014014997001198996,
+     "other": 0.0011963769549776372
+    }
+   },
+   "report_type": {
+    "value": "news_report",
+    "confidence": 0.5276328263416026,
+    "probabilities": {
+     "allegation": 0.006771191913040966,
+     "official_statement": 0.37865420567290425,
+     "news_report": 0.5951138511499451,
+     "opinion": 0.009944174130210382,
+     "correction": 0.0030006991716074005,
+     "satire": 0.0030006991716074005,
+     "other": 0.0035151787906845785
+    }
+   },
+   "is_novel": {
+    "value": true,
+    "p_yes": 0.9993559520935135,
+    "confidence": 0.9993559520935135
+   },
+   "action": {
+    "value": "review_now",
+    "confidence": 0.9902871485239991,
+    "probabilities": {
+     "ignore": 0.00046620081647759626,
+     "digest": 0.0033321620847653983,
+     "watch": 0.0034862757057577427,
+     "review_now": 0.9927153613929993
+    }
+   },
+   "urgency": {
+    "score": 2.9118072540124498,
+    "confidence": 0.9018834883733063,
+    "probabilities": {
+     "0": 0.003981520503380756,
+     "1": 0.01412045612060468,
+     "2": 0.06278080621843947,
+     "3": 0.9043436831753338,
+     "4": 0.014773533982241292
+    },
+    "legend": [
+     "None",
+     "Low",
+     "Moderate",
+     "High",
+     "Critical"
+    ]
+   }
+  },
+  "final_action": "review_now",
+  "flags": [],
+  "model": "drex-max-v1.1",
+  "usage": {
+   "input_tokens": 2042,
+   "output_tokens": 892
+  },
+  "latency_ms": 339.3,
+  "evaluation_time_ms": 205,
+  "request_id": "req_5c50fb8524c13d46ae1320becebdc11c",
+  "recorded_at": "2026-11-14T20:32:49+00:00",
+  "recorded_from": "2026-11-14T203249+0000.json"
+ },
+ "f13": {
+  "decisions": {
+   "is_subject": {
+    "value": true,
+    "p_yes": 0.9897126598444212,
+    "confidence": 0.9897126598444212
+   },
+   "category": {
+    "value": "other",
+    "confidence": 0.621356704697274,
+    "probabilities": {
+     "security_concern": 0.04094291151623702,
+     "allegation_or_legal": 0.08067040235553387,
+     "impersonation_or_scam": 0.009419295110769143,
+     "customer_complaint": 0.006130263277853988,
+     "routine_criticism": 0.0053526880817788254,
+     "business_news": 0.18203583563159223,
+     "other": 0.675448604026235
+    }
+   },
+   "report_type": {
+    "value": "other",
+    "confidence": 0.374170766736401,
+    "probabilities": {
+     "allegation": 0.015611418349232716,
+     "official_statement": 0.03522775817913038,
+     "news_report": 0.3534318554580016,
+     "opinion": 0.10426577932741565,
+     "correction": 0.006464665298057196,
+     "satire": 0.021423580471247327,
+     "other": 0.46357494291691514
+    }
+   },
+   "is_novel": {
+    "value": false,
+    "p_yes": 0.017568090243395614,
+    "confidence": 0.982431909757
+   },
+   "action": {
+    "value": "digest",
+    "confidence": 0.5886868979292698,
+    "probabilities": {
+     "ignore": 0.29290256995344793,
+     "digest": 0.6915151734469523,
+     "watch": 0.010797343619068847,
+     "review_now": 0.004784912980530895
+    }
+   },
+   "urgency": {
+    "score": 0.34833066372425847,
+    "confidence": 0.7097244468964512,
+    "probabilities": {
+     "0": 0.6744950611578249,
+     "1": 0.31273175203339215,
+     "2": 0.006121609539567214,
+     "3": 0.003250616465131211,
+     "4": 0.003400960804084563
+    },
+    "legend": [
+     "None",
+     "Low",
+     "Moderate",
+     "High",
+     "Critical"
+    ]
+   }
+  },
+  "final_action": "digest",
+  "flags": [],
+  "model": "drex-max-v1.1",
+  "usage": {
+   "input_tokens": 1850,
+   "output_tokens": 874
+  },
+  "latency_ms": 318.5,
+  "evaluation_time_ms": 185.4,
+  "request_id": "req_6ad91476ca7ecb49b9b6d0cff178e40d",
+  "recorded_at": "2026-11-14T20:32:49+00:00",
+  "recorded_from": "2026-11-14T203249+0000.json"
+ },
+ "f14": {
+  "decisions": {
+   "is_subject": {
+    "value": true,
+    "p_yes": 0.9928125369246104,
+    "confidence": 0.9928125369246104
+   },
+   "category": {
+    "value": "security_concern",
+    "confidence": 0.9871946898298886,
+    "probabilities": {
+     "security_concern": 0.9890240198541903,
+     "allegation_or_legal": 0.004354339456361721,
+     "impersonation_or_scam": 0.004354339456361721,
+     "customer_complaint": 0.0012845712179362025,
+     "routine_criticism": 0.00039648790494638557,
+     "business_news": 0.0003162652936523637,
+     "other": 0.0002699768165513148
+    }
+   },
+   "report_type": {
+    "value": "news_report",
+    "confidence": 0.7975040579885087,
+    "probabilities": {
+     "allegation": 0.1417146428057385,
+     "official_statement": 0.018527121697660062,
+     "news_report": 0.8264320497044361,
+     "opinion": 0.00398285157108905,
+     "correction": 0.003105972886333135,
+     "satire": 0.0028374378767983565,
+     "other": 0.003399923457944793
+    }
+   },
+   "is_novel": {
+    "value": false,
+    "p_yes": 0.09837330059429034,
+    "confidence": 0.901626699406
+   },
+   "action": {
+    "value": "digest",
+    "confidence": 0.48225177877391046,
+    "probabilities": {
+     "ignore": 0.13149727489062324,
+     "digest": 0.6116888340804328,
+     "watch": 0.21622676502982482,
+     "review_now": 0.0405871259991191
+    }
+   },
+   "urgency": {
+    "score": 1.3507726289216782,
+    "confidence": 0.5749298049768338,
+    "probabilities": {
+     "0": 0.07965580255306061,
+     "1": 0.5566121852902742,
+     "2": 0.3092349125558896,
+     "3": 0.04229777988347739,
+     "4": 0.012199319717298155
+    },
+    "legend": [
+     "None",
+     "Low",
+     "Moderate",
+     "High",
+     "Critical"
+    ]
+   }
+  },
+  "final_action": "digest",
+  "flags": [
+   "low_confidence_action"
+  ],
+  "model": "drex-max-v1.1",
+  "usage": {
+   "input_tokens": 1972,
+   "output_tokens": 881
+  },
+  "latency_ms": 255.8,
+  "evaluation_time_ms": 142.2,
+  "request_id": "req_54042f68e44c47581974b421da83abde",
+  "recorded_at": "2026-11-14T20:32:49+00:00",
+  "recorded_from": "2026-11-14T203249+0000.json"
+ }
+}

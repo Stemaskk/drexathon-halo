@@ -35,6 +35,9 @@ export default function App() {
   const [error, setError] = useState<string | null>(null);
   const [health, setHealth] = useState<any>(null);
   const [batch, setBatch] = useState(6);
+  const [replay, setReplay] = useState<boolean>(() => load("rr.replay", false));
+  useEffect(() => save("rr.replay", replay), [replay]);
+  const replaying = mode === "fixture" && replay;
 
   useEffect(() => { api("health").then(setHealth).catch(() => setHealth(null)); }, []);
   useEffect(() => save("rr.tab", tab), [tab]);
@@ -65,7 +68,7 @@ export default function App() {
       { label: mode === "live" ? "Search the web (Keenable)" : "Load fixture articles", status: "pending" },
       { label: mode === "live" ? "Fetch article text (Keenable)" : "Load fixture text", status: "pending" },
       { label: "Extract facts & passages (NDI)", status: "pending" },
-      { label: "Decide relevance, category, novelty, action (Drex)", status: "pending" },
+      { label: replaying ? "Decide (Drex — RECORDED responses, replay)" : "Decide relevance, category, novelty, action (Drex)", status: "pending" },
       { label: "Write briefing (DeepInfra)", status: "pending" },
     ]);
     let cur = 0;
@@ -119,8 +122,9 @@ export default function App() {
       for (let i = 0; i < ordered.length; i++) {
         const d = ordered[i];
         try {
-          const r = await api("decide", { profile, doc: d, facts: d.facts, prior: running });
+          const r = await api("decide", { profile, doc: d, facts: d.facts, prior: running, replay: replaying });
           Object.assign(d, { decisions: r.decisions, final_action: r.final_action, flags: r.flags, evidence: r.evidence,
+            replayed: !!r.replayed, recorded_at: r.recorded_at,
             drex: { model: r.model, latency_ms: r.latency_ms, usage: r.usage, request_id: r.request_id } });
           if (r.final_action !== "ignore") {
             const claim = d.facts?.data?.claims?.[0]?.claim;
@@ -132,7 +136,12 @@ export default function App() {
       }
       const decided = ordered.filter((d) => d.decisions);
       setStep(3, { status: decided.length ? "done" : "error", detail: `${decided.length}/${ordered.length} decided` });
-      if (!decided.length) throw new Error(ordered.find((d) => d.error)?.error || "Drex returned no decisions.");
+      if (!decided.length) {
+        const first = ordered.find((d) => d.error)?.error || "Drex returned no decisions.";
+        throw new Error(mode === "fixture" && !replay
+          ? `${first} — To demo anyway, tick “Replay recorded Drex responses” (real responses captured earlier, clearly labeled).`
+          : first);
+      }
 
       cur = 4; setStep(4, { status: "running" });
       const b = await api("brief", { profile, items: decided.map(({ text, ...rest }) => rest) });
@@ -210,6 +219,8 @@ export default function App() {
               <button className={mode === "fixture" ? "active" : ""} onClick={() => setMode("fixture")} disabled={running}>Fixture</button>
               <button className={mode === "live" ? "active" : ""} onClick={() => setMode("live")} disabled={running}>Live</button>
             </div>
+            {mode === "fixture" && <label className="small check"><input type="checkbox" checked={replay} disabled={running} onChange={(e) => setReplay(e.target.checked)} />
+              Replay recorded Drex responses<span className="muted"> (real drex-latest output captured 2026-11-14 20:32 UTC; use if the Nace API is down)</span></label>}
             {mode === "live" && <label className="small">Articles to process<input type="number" min={1} max={10} value={batch} onChange={(e) => setBatch(Math.max(1, Math.min(10, +e.target.value || 1)))} /></label>}
             <button className="primary wide" onClick={runScan} disabled={running}>{running ? "Scanning…" : "Scan now"}</button>
             <ol className="steps">{steps.map((s, i) => (
@@ -223,6 +234,7 @@ export default function App() {
                 <div className="itemhead">
                   <span className={`act ${it.final_action}`}>{it.final_action ? ACTION_LABEL[it.final_action] : "Error"}</span>
                   <span className="src">{it.source === "fixture" ? "fixture" : "live"}</span>
+                  {it.replayed && <span className="src rec">recorded Drex</span>}
                   <span className="muted small">{it.outlet || hostOf(it.url)} · {date(it.published_at)}</span>
                 </div>
                 <h4>{it.title}</h4>
@@ -284,7 +296,7 @@ function Detail({ item, onClose }: { item: Item; onClose: () => void }) {
         </tbody></table>
         <Probs title="Action probabilities" p={d.action.probabilities} />
         <Probs title="Category probabilities" p={d.category.probabilities} />
-        <p className="small muted">Drex {item.drex?.model} · {item.drex?.latency_ms} ms · {item.drex?.usage?.input_tokens ?? "?"} input tokens</p>
+        <p className="small muted">{item.replayed ? `RECORDED Drex response (captured ${item.recorded_at}), not a live call · ` : ""}Drex {item.drex?.model} · {item.drex?.latency_ms} ms · {item.drex?.usage?.input_tokens ?? "?"} input tokens</p>
       </>}
       {item.facts?.data && <>
         <h4>NDI extraction <span className="muted small">{item.ndi?.cached ? "(cached fixture output)" : `job ${item.ndi?.job_id ?? ""}`}</span></h4>

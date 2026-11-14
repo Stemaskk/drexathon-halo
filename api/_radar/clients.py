@@ -26,6 +26,10 @@ class ApiError(RuntimeError):
 
 def _check(service: str, resp: httpx.Response) -> dict[str, Any]:
     if resp.status_code >= 400:
+        if resp.headers.get("x-vercel-mitigated") or "Vercel Security Checkpoint" in resp.text[:2000]:
+            raise ApiError(service, f"HTTP {resp.status_code}: {resp.request.url.host} is behind a Vercel security checkpoint "
+                           "(bot challenge on the provider's side), so API calls are blocked. Not a key or app problem; "
+                           "retry later or tell the organizers.", resp.status_code)
         body = resp.text[:500]
         raise ApiError(service, f"HTTP {resp.status_code}: {body}", resp.status_code)
     try:

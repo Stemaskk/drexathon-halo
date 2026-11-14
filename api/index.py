@@ -68,6 +68,7 @@ class DecideReq(BaseModel):
     doc: dict[str, Any]
     facts: dict[str, Any] | None = None
     prior: list[dict[str, Any]] = []
+    replay: bool = False  # fixture-only: return a recorded real Drex response instead of calling the API
 
 
 class BriefReq(BaseModel):
@@ -136,6 +137,11 @@ def extract(req: ExtractReq):
 def decide(req: DecideReq):
     profile = req.profile.model_dump()
     facts = pipeline.facts_with_fields(req.facts) if req.facts and "data" in req.facts else req.facts
+    if req.replay:
+        rec = (_load("drex_replay.json") or {}).get(req.doc.get("id"))
+        if not rec:
+            return JSONResponse(status_code=404, content={"error": f"No recorded Drex response for {req.doc.get('id')} (replay is fixture-only)."})
+        return {**rec, "replayed": True, "evidence": pipeline.pick_evidence(req.doc, facts)}
     out = pipeline.drex_decide(profile, req.doc, pipeline.strip_internal(facts), req.prior)
     out["evidence"] = pipeline.pick_evidence(req.doc, facts)
     return out
