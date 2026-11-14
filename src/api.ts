@@ -8,6 +8,8 @@ export type Noul = { value: boolean | null; p_yes: number | null; confidence: nu
 export type Decisions = {
   is_subject: Noul; category: Choice; report_type: Choice; is_novel: Noul; action: Choice;
   urgency: { score: number | null; confidence: number | null; probabilities: Record<string, number>; legend?: string[] };
+  improvement_area?: Choice;
+  sentiment?: { score: number | null; confidence: number | null; probabilities: Record<string, number> };
 };
 
 export type Item = {

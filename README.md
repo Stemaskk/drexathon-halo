@@ -1,8 +1,10 @@
-# Reputation Radar
+# Halo
 
-**Affordable reputation monitoring and triage for people and teams without a PR department.** Early-stage startups, public-facing founders, emerging creators and anyone who is starting to get public attention.
+**Public-reputation monitoring and improvement feedback for teams without a PR or marketing department.** Built for early-stage startups, public-facing founders, emerging creators and anyone starting to get public attention.
 
-Radar finds online coverage and works out which mentions are actually about you (not a namesake). It separates routine criticism from developments that need attention and gives you a short briefing, with a verified source passage for every important item.
+Halo reads what is publicly said about you: news coverage, customer reviews and complaints, how your product is advertised and received, and stock or investor news. It answers two questions:
+1. **What needs attention now?** Halo filters out namesakes and repeat stories, separates routine criticism from real developments, and triages each item (ignore, digest, watch, review now) with a verified source passage.
+2. **Where should you improve?** Each relevant item is tagged with an improvement area (marketing and messaging, advertising, product quality, customer support, pricing and value, trust and safety, financial and market) and a sentiment score. Halo combines these into a **Feedback scorecard** with concrete, evidence-based recommendations.
 
 Built for the **Drexathon (Nace.AI), November 14, 2026**. Primary track: **Apex Predator**. Decisions that would normally go to a general-purpose LLM go to **Drex**, and the decision stage is measured against an LLM baseline.
 
@@ -12,7 +14,7 @@ Built for the **Drexathon (Nace.AI), November 14, 2026**. Primary track: **Apex 
 
 ## What each tool does
 
-| Component | Responsibility in Radar | Code |
+| Component | Responsibility in Halo | Code |
 |---|---|---|
 | **Keenable** | Web search (date-filtered, multiple identity-aware queries) and article fetch as Markdown | `api/_radar/clients.py` → `keenable_search`, `keenable_fetch` |
 | **NDI (Nace Perception)** | Each fetched article is uploaded as a Markdown document. Extract fills a JSON schema with entities, reported claims (with *alleged / officially stated / reported / opinion* status), event dates and verbatim supporting passages, with citations | `pipeline.ndi_extract`, `NDI_SCHEMA` |
@@ -20,6 +22,13 @@ Built for the **Drexathon (Nace.AI), November 14, 2026**. Primary track: **Apex 
 | **DeepInfra** (`Qwen/Qwen3.8-27B`) | Writes the readable briefing and one-line "why it matters" explanations, using only Drex's decisions and verified evidence. It is also the LLM baseline in the benchmark | `pipeline.write_briefing`, `baseline_decide` |
 | **Intern** | Coding agent used during development (see [Intern usage](#intern-usage)) | `docs/intern/` |
 | **Our app** | Profiles, scan trigger and progress, canonical-URL deduplication, history of seen URLs and prior coverage, evidence validation, a rules layer for uncertainty, benchmark | `api/`, `src/` |
+
+### Improvement feedback (Feedback tab)
+- Keenable queries cover general and news coverage, **reviews and complaints**, **ads and campaigns**, and **stock and investor** news (company profiles).
+- Drex answers two more typed questions per article in the same batched call: `improvement_area` (choice: marketing_messaging, advertising, product_quality, customer_support, pricing_value, trust_safety, financial_market, none) and `sentiment` (score: very negative to very positive, 0–4).
+- `pipeline.build_scorecard` groups the items that weren't ignored by area. For each area it counts mentions, negative and positive items, and the average sentiment. It marks an area **Needs attention** when negative items outnumber positive ones or the average is below 1.5, **Strength** when the average is above 2.5, and **Mixed** otherwise.
+- DeepInfra writes 1–2 sentences of practical advice per area, using only the scorecard and verified evidence.
+- Limits: there is no live stock-price feed (only news about stocks and investors), and advertising is judged from public coverage of the ads, not from ad-platform data.
 
 ### Rules applied after Drex (deterministic, in `pipeline.apply_policy`)
 - P(subject) < 0.35 → **ignore** (namesake or unrelated).
@@ -82,7 +91,7 @@ npm run dev    # http://localhost:5173 (proxies /api to :8000)
 |---|---|---|
 | `NACE_API_KEY` | yes | Drex and NDI. Get one at console.nace.ai. Redeem `DREXATHON` under Billing for event credits |
 | `DEEPINFRA_API_KEY` | yes | Briefing writer and LLM baseline |
-| `KEENABLE_API_KEY` | optional | If unset, Radar uses Keenable's documented keyless `/public` endpoints (rate-limited) |
+| `KEENABLE_API_KEY` | optional | If unset, Halo uses Keenable's documented keyless `/public` endpoints (rate-limited) |
 | `DREX_MODEL` | no | Default `drex-latest` (currently resolves to `drex-max-v1.1`) |
 | `DEEPINFRA_MODEL`, `BASELINE_MODEL` | no | Default `Qwen/Qwen3.8-27B` |
 | `DREX_PRICE_PER_M_INPUT` | no | Used only for benchmark cost estimates. See limitations |
@@ -142,7 +151,7 @@ intern -p --json --no-session --max-turns 40 --cwd . \
 
 Sanitized record: [`docs/intern/run1.transcript.md`](docs/intern/run1.transcript.md) and [`docs/intern/run1.events.jsonl`](docs/intern/run1.events.jsonl). Token-level reasoning is dropped, and keys and local paths are redacted by `scripts/sanitize_intern_log.py`.
 
-Intern's internal Drex supervision is separate from the product. Radar's reputation decisions are explicit `/v1/systemone` calls made by our backend.
+Intern's internal Drex supervision is separate from the product. Halo's reputation decisions are explicit `/v1/systemone` calls made by our backend.
 
 ## Limitations and next steps
 - The benchmark dataset is tiny and synthetic, and the labels were written by the authors. Treat the results as directional.

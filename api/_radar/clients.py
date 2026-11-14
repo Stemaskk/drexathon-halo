@@ -44,7 +44,7 @@ def _keenable(path: str) -> tuple[str, dict[str, str]]:
     key = config.env("KEENABLE_API_KEY")
     if key:
         return f"{config.KEENABLE_BASE_URL}{path}", {"X-API-Key": key}
-    return f"{config.KEENABLE_BASE_URL}{path}/public", {"X-Keenable-Title": "Reputation Radar"}
+    return f"{config.KEENABLE_BASE_URL}{path}/public", {"X-Keenable-Title": "Halo"}
 
 
 def keenable_mode() -> str:

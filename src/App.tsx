@@ -7,7 +7,10 @@ type Prior = { title: string; published_at?: string | null; summary: string; url
 type ScanRecord = { at: string; mode: Mode; profile: string; stats: any; items: Item[]; briefing?: string };
 
 const EMPTY: Profile = { name: "", kind: "company", aliases: [], description: "", website: "", region: "", industry: "", priorities: "" };
-const TABS = ["Profile", "Scan", "Briefing", "Benchmark"] as const;
+const TABS = ["Profile", "Scan", "Feedback", "Briefing", "Benchmark"] as const;
+type Area = { area: string; label: string; mentions: number; negative: number; positive: number; avg_sentiment: number | null;
+  status: "needs_attention" | "mixed" | "strength"; items: { id: string; title: string; url: string; sentiment: number | null; evidence: string | null }[] };
+type Scorecard = { areas: Area[]; items_without_area: number };
 
 async function pool<T, R>(xs: T[], n: number, fn: (x: T, i: number) => Promise<R>): Promise<R[]> {
   const out: R[] = new Array(xs.length); let next = 0;
@@ -38,6 +41,10 @@ export default function App() {
   const [replay, setReplay] = useState<boolean>(() => load("rr.replay", false));
   useEffect(() => save("rr.replay", replay), [replay]);
   const replaying = mode === "fixture" && replay;
+  const [scorecard, setScorecard] = useState<Scorecard | null>(() => load("rr.scorecard", null));
+  const [recs, setRecs] = useState<Record<string, string>>(() => load("rr.recs", {}));
+  useEffect(() => save("rr.scorecard", scorecard), [scorecard]);
+  useEffect(() => save("rr.recs", recs), [recs]);
 
   useEffect(() => { api("health").then(setHealth).catch(() => setHealth(null)); }, []);
   useEffect(() => save("rr.tab", tab), [tab]);
@@ -63,7 +70,7 @@ export default function App() {
 
   async function runScan() {
     if (!profile.name.trim()) { setError("Create a profile first."); setTab("Profile"); return; }
-    setRunning(true); setError(null); setSelected(null); setBriefing(""); setItems([]);
+    setRunning(true); setError(null); setSelected(null); setBriefing(""); setItems([]); setScorecard(null); setRecs({});
     setSteps([
       { label: mode === "live" ? "Search the web (Keenable)" : "Load fixture articles", status: "pending" },
       { label: mode === "live" ? "Fetch article text (Keenable)" : "Load fixture text", status: "pending" },
@@ -146,7 +153,7 @@ export default function App() {
       cur = 4; setStep(4, { status: "running" });
       const b = await api("brief", { profile, items: decided.map(({ text, ...rest }) => rest) });
       for (const d of decided) d.explanation = b.explanations?.[d.id];
-      setBriefing(b.briefing); setItems([...ordered]);
+      setBriefing(b.briefing); setItems([...ordered]); setScorecard(b.scorecard ?? null); setRecs(b.recommendations ?? {});
       setStep(4, { status: "done", detail: b.model ? `${b.model} · ${b.latency_ms ?? "?"} ms` : "skipped — no relevant items to brief" });
 
       if (mode === "live") {
@@ -172,7 +179,7 @@ export default function App() {
   return (
     <div className="app">
       <header>
-        <div className="brand"><span className="dot" />Reputation Radar</div>
+        <div className="brand"><span className="dot" />Halo</div>
         <nav>{TABS.map((t) => (
           <button key={t} className={t === tab ? "active" : ""} onClick={() => setTab(t)}>
             {t}{t === "Scan" && alerts ? <span className="badge">{alerts}</span> : null}
@@ -188,7 +195,7 @@ export default function App() {
       {tab === "Profile" && (
         <section className="card narrow">
           <h2>Monitored profile</h2>
-          <p className="muted">Who should Radar watch? Identifying context helps separate namesakes.</p>
+          <p className="muted">Who should Halo watch? Identifying context helps separate namesakes.</p>
           <div className="grid2">
             <label>Name<input value={profile.name} onChange={(e) => setProfile({ ...profile, name: e.target.value })} placeholder="Acme Robotics" /></label>
             <label>Type<select value={profile.kind} onChange={(e) => setProfile({ ...profile, kind: e.target.value })}>
@@ -262,9 +269,39 @@ export default function App() {
         </section>
       )}
 
+      {tab === "Feedback" && <Feedback profile={profile.name} scorecard={scorecard} recs={recs} onOpen={(id) => { setSelected(id); setTab("Scan"); }} />}
       {tab === "Benchmark" && <Benchmark />}
       <footer className="muted small">Confidence values are model-estimated probabilities from Drex, not guarantees. Demo data in fixture mode is fictional.</footer>
     </div>
+  );
+}
+
+const STATUS_LABEL: Record<Area["status"], string> = { needs_attention: "Needs attention", mixed: "Mixed", strength: "Strength" };
+const SENT_LABEL = ["very negative", "negative", "neutral", "positive", "very positive"];
+const sentWord = (s: number | null) => (s == null ? "unknown" : SENT_LABEL[Math.max(0, Math.min(4, Math.round(s)))]);
+
+function Feedback({ profile, scorecard, recs, onOpen }: { profile: string; scorecard: Scorecard | null; recs: Record<string, string>; onOpen: (id: string) => void }) {
+  if (!scorecard) return <section className="card narrow"><h2>Improvement feedback</h2><p className="muted">Run a scan to see where {profile || "the subject"} should improve.</p></section>;
+  return (
+    <section className="card narrow">
+      <h2>Improvement feedback — {profile}</h2>
+      <p className="small muted">From public coverage: news, reviews, complaints, ads and market news. <b>Drex</b> labels each relevant item with an improvement area and a sentiment score (0 very negative to 4 very positive). <b>DeepInfra</b> writes the advice, using only those decisions and verified evidence. Scores are model estimates.</p>
+      {!scorecard.areas.length && <p className="muted">No improvement areas found in this scan.</p>}
+      {scorecard.items_without_area > 0 && <p className="small warnline">{scorecard.items_without_area} relevant item(s) have no improvement area, e.g. recorded Drex responses captured before this feature was added. They are not counted here.</p>}
+      <div className="areas">{scorecard.areas.map((a) => (
+        <div key={a.area} className={`area ${a.status}`}>
+          <div className="areahead">
+            <h3>{a.label}</h3>
+            <span className={`pill ${a.status}`}>{STATUS_LABEL[a.status]}</span>
+          </div>
+          <div className="small muted">{a.mentions} mention{a.mentions === 1 ? "" : "s"} · {a.negative} negative · {a.positive} positive · average {a.avg_sentiment ?? "?"} / 4 ({sentWord(a.avg_sentiment)})</div>
+          <div className="sentbar" aria-label={`average sentiment ${a.avg_sentiment ?? "unknown"} of 4`}><i style={{ width: `${((a.avg_sentiment ?? 0) / 4) * 100}%` }} /></div>
+          {recs[a.area] && <p><b>Recommendation:</b> {recs[a.area]}</p>}
+          <ul className="small">{a.items.map((it) => (
+            <li key={it.id}><a href="#" onClick={(e) => { e.preventDefault(); onOpen(it.id); }}>{it.title}</a> <span className="muted">— {sentWord(it.sentiment)}</span>
+              {it.evidence && <div className="muted">“{it.evidence}”</div>}</li>))}</ul>
+        </div>))}</div>
+    </section>
   );
 }
 
@@ -293,6 +330,8 @@ function Detail({ item, onClose }: { item: Item; onClose: () => void }) {
           <tr><td>Drex action</td><td>{d.action.value}</td><td>{pct(d.action.confidence)}</td></tr>
           <tr><td>Final action (after policy)</td><td><b>{item.final_action}</b></td><td>{(item.flags || []).join(", ") || "—"}</td></tr>
           <tr><td>Urgency (0–4)</td><td>{d.urgency.score?.toFixed(2)}</td><td>{pct(d.urgency.confidence)}</td></tr>
+          <tr><td>Improvement area</td><td>{d.improvement_area?.value?.replace(/_/g, " ") ?? "not in this response"}</td><td>{pct(d.improvement_area?.confidence)}</td></tr>
+          <tr><td>Sentiment (0 very neg – 4 very pos)</td><td>{d.sentiment?.score != null ? d.sentiment.score.toFixed(2) : "not in this response"}</td><td>{pct(d.sentiment?.confidence)}</td></tr>
         </tbody></table>
         <Probs title="Action probabilities" p={d.action.probabilities} />
         <Probs title="Category probabilities" p={d.category.probabilities} />
@@ -341,6 +380,7 @@ function Benchmark() {
     ["Category agreement", "category_acc", (s) => pct(s.category_acc)],
     ["Report-type agreement", "report_type_acc", (s) => pct(s.report_type_acc)],
     ["Identity agreement", "subject_acc", (s) => pct(s.subject_acc)],
+    ["Improvement-area agreement", "area_acc", (s) => s.improvement_area_acc == null ? "not measured in this run" : pct(s.improvement_area_acc)],
     ["Novelty agreement", "novel_acc", (s) => pct(s.novel_acc)],
     ["Median latency / article", "lat", (s) => `${s.latency_ms_median} ms`],
     ["Mean latency / article", "latm", (s) => `${s.latency_ms_mean} ms`],

@@ -23,7 +23,7 @@ sys.path.insert(0, str(ROOT / "api"))
 from _radar import clients, config, pipeline  # noqa: E402
 
 DATA = config.DATA_DIR
-FIELDS = ["is_subject", "category", "report_type", "is_novel", "action"]
+FIELDS = ["is_subject", "category", "report_type", "is_novel", "action", "improvement_area"]
 
 
 def ensure_ndi(fx: dict, refresh: bool) -> dict:
@@ -55,7 +55,7 @@ def fixed_prior(fx: dict, upto: dict) -> list[dict]:
 
 
 def value(d: dict, f: str):
-    return d["decisions"][f]["value"]
+    return (d["decisions"].get(f) or {}).get("value")
 
 
 def run(args) -> dict:
@@ -121,7 +121,7 @@ def run(args) -> dict:
             "false_alerts": sum(1 for i, g in gold.items() if g["action"] in ("ignore", "digest") and fa.get(i) in ("watch", "review_now")),
             "namesake_ok": sum(1 for i in namesakes if fa.get(i) == "ignore"),
             "action_acc": final_ok, "drex_raw_action_acc": acc["action"], "category_acc": acc["category"],
-            "report_type_acc": acc["report_type"], "subject_acc": acc["is_subject"], "novel_acc": acc["is_novel"],
+            "report_type_acc": acc["report_type"], "improvement_area_acc": acc["improvement_area"], "subject_acc": acc["is_subject"], "novel_acc": acc["is_novel"],
             "latency_ms_median": round(statistics.median(lat), 1) if lat else None,
             "latency_ms_mean": round(statistics.mean(lat), 1) if lat else None,
             "input_tokens": tin, "output_tokens": tout, "est_cost_usd": cost,

@@ -1,4 +1,4 @@
-"""Reputation Radar pipeline: retrieval -> NDI extraction -> Drex decisions -> DeepInfra briefing."""
+"""Halo pipeline: retrieval -> NDI extraction -> Drex decisions -> DeepInfra briefing."""
 from __future__ import annotations
 
 import hashlib
@@ -37,6 +37,17 @@ ACTIONS = {
     "review_now": "Needs the customer's attention today given their stated priorities",
 }
 ACTION_RANK = {"review_now": 3, "watch": 2, "digest": 1, "ignore": 0}
+IMPROVEMENT_AREAS = {
+    "marketing_messaging": "How the brand or product is positioned, explained or perceived; unclear, misleading or off-target messaging",
+    "advertising": "Ad campaigns, sponsored posts or promotions: their tone, claims, targeting, frequency or reception",
+    "product_quality": "Features, reliability, bugs, accuracy, usability, design or performance of the product itself",
+    "customer_support": "Support responsiveness, billing handling, refunds, onboarding or account help",
+    "pricing_value": "Price level, value for money, plans, fees or discounts",
+    "trust_safety": "Security, privacy, scams or impersonation, legal or regulatory trust issues",
+    "financial_market": "Stock price, funding, investor or analyst sentiment, financial results",
+    "none": "No actionable feedback for the subject in this item",
+}
+SENTIMENT_LEVELS = ["Very negative", "Negative", "Neutral", "Positive", "Very positive"]
 
 
 # ------------------------------------------------------------------ helpers
@@ -67,10 +78,12 @@ def build_queries(profile: dict[str, Any]) -> list[str]:
     aliases = [a.strip() for a in profile.get("aliases", []) if a.strip()]
     context = " ".join(x for x in [profile.get("industry", ""), profile.get("region", "")] if x).strip()
     names = " OR ".join(f'"{n}"' for n in [name, *aliases][:4])
-    qs = [f"({names}) {context}".strip(), f'"{name}" news']
-    if profile.get("priorities"):
-        qs.append(f'"{name}" {profile["priorities"].split(",")[0].strip()}')
-    return qs[:3]
+    qs = [f"({names}) {context}".strip(), f'"{name}" news',
+          f'"{name}" reviews OR complaints OR "customer experience"',
+          f'"{name}" ad OR advertisement OR campaign OR marketing']
+    if profile.get("kind", "company") == "company":
+        qs.append(f'"{name}" stock OR shares OR investors OR funding')
+    return qs[:5]
 
 
 # ------------------------------------------------------------------ retrieval
@@ -135,7 +148,7 @@ NDI_SCHEMA = {
 
 
 def ndi_extract(doc: dict[str, Any], profile: dict[str, Any]) -> dict[str, Any]:
-    path = f"reputation-radar/{doc['id']}.md"
+    path = f"halo/{doc['id']}.md"
     source = clients.ndi_upload_markdown(path, to_markdown(doc))
     instructions = (f"The reader monitors '{profile['name']}' ({profile.get('description', '')}). Extract entities, "
                     "reported claims and dates. Copy supporting passages verbatim. Mark allegations as 'alleged'.")
@@ -161,6 +174,8 @@ def drex_questions(profile: dict[str, Any]) -> dict[str, Any]:
                                   "false": "It repeats or rewrites a story already in prior coverage, without material new facts"}},
         "action": {"type": "choice", "instructions": f"Given the customer's monitoring priorities ({priorities}), what action fits this coverage? Repeated coverage of an already-known story should not be escalated.", "criteria": ACTIONS},
         "urgency": {"type": "score", "instructions": "How urgent is this for the subject's reputation in the next 48 hours?", "criteria": ["None", "Low", "Moderate", "High", "Critical"]},
+        "improvement_area": {"type": "choice", "instructions": f"Which area of {name}'s business does this item give the most actionable feedback on?", "criteria": IMPROVEMENT_AREAS},
+        "sentiment": {"type": "score", "instructions": f"Overall, how does this item portray {name}?", "criteria": SENTIMENT_LEVELS},
     }
 
 
@@ -193,8 +208,10 @@ def parse_drex(resp: dict[str, Any]) -> dict[str, Any]:
         return {"value": (p >= 0.5) if p is not None else None, "p_yes": p, "confidence": x.get("confidence")}
 
     urg = a.get("urgency", {})
+    sen = a.get("sentiment", {})
     return {"is_subject": nl("is_subject"), "category": ch("category"), "report_type": ch("report_type"),
-            "is_novel": nl("is_novel"), "action": ch("action"),
+            "is_novel": nl("is_novel"), "action": ch("action"), "improvement_area": ch("improvement_area"),
+            "sentiment": {"score": sen.get("score"), "confidence": sen.get("confidence"), "probabilities": sen.get("probabilities", {})},
             "urgency": {"score": urg.get("score"), "confidence": urg.get("confidence"), "probabilities": urg.get("probabilities", {}),
                         "legend": urg.get("legend")}}
 
@@ -243,6 +260,8 @@ def baseline_decide(profile: dict[str, Any], doc: dict[str, Any], facts: dict[st
         "is_novel": "true/false — " + qs["is_novel"]["instructions"],
         "action": f"one of {list(ACTIONS)} — {json.dumps(ACTIONS)}",
         "urgency": "integer 0-4 (None, Low, Moderate, High, Critical)",
+        "improvement_area": f"one of {list(IMPROVEMENT_AREAS)} — {json.dumps(IMPROVEMENT_AREAS)}",
+        "sentiment": "integer 0-4 (Very negative, Negative, Neutral, Positive, Very positive)",
     }
     messages = [
         {"role": "system", "content": "You are a reputation-monitoring analyst. Answer strictly as a JSON object with exactly the requested keys."},
@@ -261,7 +280,9 @@ def baseline_decide(profile: dict[str, Any], doc: dict[str, Any], facts: dict[st
          "report_type": {"value": out.get("report_type"), "confidence": None, "probabilities": {}},
          "is_novel": {"value": _as_bool(out.get("is_novel")), "p_yes": None, "confidence": None},
          "action": {"value": out.get("action"), "confidence": None, "probabilities": {}},
-         "urgency": {"score": out.get("urgency")}}
+         "urgency": {"score": out.get("urgency")},
+         "improvement_area": {"value": out.get("improvement_area"), "confidence": None, "probabilities": {}},
+         "sentiment": {"score": out.get("sentiment")}}
     pol = apply_policy({**d, "is_subject": {**d["is_subject"], "p_yes": None if d["is_subject"]["value"] is None else float(d["is_subject"]["value"])}})
     return {"decisions": d, **pol, "model": resp.get("model") or model or config.BASELINE_MODEL, "usage": resp.get("usage", {}),
             "latency_ms": resp.get("_latency_ms"), "parse_error": parse_error}
@@ -302,7 +323,42 @@ def pick_evidence(doc: dict[str, Any], facts: dict[str, Any] | None) -> dict[str
             "note": "No extracted passage could be verified against the stored source text."}
 
 
+def build_scorecard(items: list[dict[str, Any]]) -> dict[str, Any]:
+    """Aggregate Drex's per-item improvement area and sentiment (0-4) into a per-area scorecard."""
+    areas: dict[str, dict[str, Any]] = {}
+    for it in items:
+        if it.get("final_action") == "ignore":
+            continue
+        d = it.get("decisions") or {}
+        area = (d.get("improvement_area") or {}).get("value")
+        score = (d.get("sentiment") or {}).get("score")
+        if not area or area == "none":
+            continue
+        a = areas.setdefault(area, {"area": area, "label": area.replace("_", " "), "mentions": 0, "negative": 0,
+                                    "positive": 0, "scores": [], "items": []})
+        a["mentions"] += 1
+        if isinstance(score, (int, float)):
+            a["scores"].append(score)
+            a["negative"] += score < 1.5
+            a["positive"] += score > 2.5
+        a["items"].append({"id": it["id"], "title": it.get("title"), "url": it.get("url"), "sentiment": score,
+                           "evidence": (it.get("evidence") or {}).get("passage")})
+    out = []
+    for a in areas.values():
+        sc = a.pop("scores")
+        a["avg_sentiment"] = round(sum(sc) / len(sc), 2) if sc else None
+        # needs attention: more negative than positive mentions, or average below neutral
+        a["status"] = "needs_attention" if (a["negative"] > a["positive"] or (a["avg_sentiment"] is not None and a["avg_sentiment"] < 1.5)) \
+            else ("strength" if a["avg_sentiment"] is not None and a["avg_sentiment"] > 2.5 else "mixed")
+        out.append(a)
+    order = {"needs_attention": 0, "mixed": 1, "strength": 2}
+    out.sort(key=lambda a: (order[a["status"]], -a["mentions"]))
+    unlabeled = sum(1 for it in items if it.get("final_action") != "ignore" and not ((it.get("decisions") or {}).get("improvement_area") or {}).get("value"))
+    return {"areas": out, "items_without_area": unlabeled}
+
+
 def write_briefing(profile: dict[str, Any], items: list[dict[str, Any]]) -> dict[str, Any]:
+    scorecard = build_scorecard(items)
     rows = []
     for it in items:
         if it.get("final_action") == "ignore":
@@ -311,27 +367,35 @@ def write_briefing(profile: dict[str, Any], items: list[dict[str, Any]]) -> dict
         rows.append({"id": it["id"], "title": it.get("title"), "url": it.get("url"), "published_at": it.get("published_at") or "unknown",
                      "action": it["final_action"], "category": d["category"]["value"], "report_type": d["report_type"]["value"],
                      "novel": d["is_novel"]["value"], "flags": it.get("flags", []),
+                     "improvement_area": (d.get("improvement_area") or {}).get("value"), "sentiment_0_4": (d.get("sentiment") or {}).get("score"),
                      "evidence": (it.get("evidence") or {}).get("passage"),
                      "claims": [c.get("claim") for c in ((it.get("facts") or {}).get("claims") or [])][:4]})
     rows.sort(key=lambda r: -ACTION_RANK.get(r["action"], 0))
     if not rows:
-        return {"briefing": "No relevant coverage in this scan.", "explanations": {}, "usage": {}, "latency_ms": 0, "model": None}
+        return {"briefing": "No relevant coverage in this scan.", "explanations": {}, "usage": {}, "latency_ms": 0, "model": None,
+                "scorecard": scorecard, "recommendations": {}}
     messages = [
         {"role": "system", "content": (
             "You write concise reputation briefings for a busy founder. Use ONLY the decisions and evidence given. "
             "Never present an allegation as fact: say 'reports allege' or 'according to'. Do not infer causes or links between items unless the evidence states them. If evidence is missing, say it is unknown. "
             "Return JSON: {\"briefing\": markdown string under 180 words with a 1-line headline then bullets ordered by action, "
-            "\"explanations\": {item_id: one sentence on why it matters to this profile}}.")},
-        {"role": "user", "content": f"{profile_block(profile)}\n\nTRIAGED ITEMS (decisions by Drex):\n{json.dumps(rows, ensure_ascii=False)}"},
+            "\"explanations\": {item_id: one sentence on why it matters to this profile}, "
+            "\"recommendations\": {area: 1-2 sentences of concrete, practical advice for that improvement area, citing what the evidence shows; "
+            "only for areas in the SCORECARD}}.")},
+        {"role": "user", "content": f"{profile_block(profile)}\n\nTRIAGED ITEMS (decisions by Drex):\n{json.dumps(rows, ensure_ascii=False)}"
+                                    f"\n\nSCORECARD (improvement areas and sentiment 0=very negative..4=very positive, from Drex):\n"
+                                    f"{json.dumps(scorecard, ensure_ascii=False)}"},
     ]
-    resp = clients.deepinfra_chat(messages, max_tokens=1200, temperature=0.2, json_mode=True)
+    resp = clients.deepinfra_chat(messages, max_tokens=1800, temperature=0.2, json_mode=True)
     text = clients.chat_text(resp)
     try:
         m = re.search(r"\{.*\}", text, re.S)
         out = json.loads(m.group(0)) if m else {"briefing": text, "explanations": {}}
     except json.JSONDecodeError:
         out = {"briefing": text, "explanations": {}}
+    recs = {k: v for k, v in (out.get("recommendations") or {}).items() if k in {a["area"] for a in scorecard["areas"]}}
     return {"briefing": out.get("briefing", ""), "explanations": out.get("explanations", {}), "usage": resp.get("usage", {}),
+            "scorecard": scorecard, "recommendations": recs,
             "latency_ms": resp.get("_latency_ms"), "model": resp.get("model") or config.DEEPINFRA_MODEL}
 
 

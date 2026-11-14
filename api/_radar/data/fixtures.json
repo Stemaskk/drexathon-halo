@@ -35,7 +35,9 @@
     "category": "other",
     "report_type": "news_report",
     "is_novel": true,
-    "action": "ignore"
+    "action": "ignore",
+    "improvement_area": "none",
+    "sentiment": 2
    }
   },
   {
@@ -50,7 +52,9 @@
     "category": "other",
     "report_type": "news_report",
     "is_novel": true,
-    "action": "ignore"
+    "action": "ignore",
+    "improvement_area": "none",
+    "sentiment": 2
    }
   },
   {
@@ -65,7 +69,9 @@
     "category": "business_news",
     "report_type": "news_report",
     "is_novel": false,
-    "action": "digest"
+    "action": "digest",
+    "improvement_area": "financial_market",
+    "sentiment": 3
    }
   },
   {
@@ -80,7 +86,9 @@
     "category": "routine_criticism",
     "report_type": "opinion",
     "is_novel": true,
-    "action": "digest"
+    "action": "digest",
+    "improvement_area": "product_quality",
+    "sentiment": 1
    }
   },
   {
@@ -95,7 +103,9 @@
     "category": "customer_complaint",
     "report_type": "other",
     "is_novel": true,
-    "action": "watch"
+    "action": "watch",
+    "improvement_area": "customer_support",
+    "sentiment": 0
    }
   },
   {
@@ -110,7 +120,9 @@
     "category": "impersonation_or_scam",
     "report_type": "news_report",
     "is_novel": true,
-    "action": "review_now"
+    "action": "review_now",
+    "improvement_area": "trust_safety",
+    "sentiment": 1
    }
   },
   {
@@ -125,7 +137,9 @@
     "category": "security_concern",
     "report_type": "news_report",
     "is_novel": true,
-    "action": "review_now"
+    "action": "review_now",
+    "improvement_area": "trust_safety",
+    "sentiment": 0
    }
   },
   {
@@ -140,7 +154,9 @@
     "category": "allegation_or_legal",
     "report_type": "allegation",
     "is_novel": true,
-    "action": "review_now"
+    "action": "review_now",
+    "improvement_area": "trust_safety",
+    "sentiment": 1
    }
   },
   {
@@ -155,7 +171,9 @@
     "category": "security_concern",
     "report_type": "official_statement",
     "is_novel": true,
-    "action": "watch"
+    "action": "watch",
+    "improvement_area": "trust_safety",
+    "sentiment": 2
    }
   },
   {
@@ -170,7 +188,9 @@
     "category": "business_news",
     "report_type": "correction",
     "is_novel": true,
-    "action": "digest"
+    "action": "digest",
+    "improvement_area": "financial_market",
+    "sentiment": 2
    }
   },
   {
@@ -185,7 +205,9 @@
     "category": "other",
     "report_type": "satire",
     "is_novel": true,
-    "action": "digest"
+    "action": "digest",
+    "improvement_area": "none",
+    "sentiment": 2
    }
   },
   {
@@ -200,7 +222,9 @@
     "category": "allegation_or_legal",
     "report_type": "news_report",
     "is_novel": true,
-    "action": "review_now"
+    "action": "review_now",
+    "improvement_area": "trust_safety",
+    "sentiment": 1
    }
   },
   {
@@ -215,7 +239,9 @@
     "category": "business_news",
     "report_type": "opinion",
     "is_novel": false,
-    "action": "digest"
+    "action": "digest",
+    "improvement_area": "marketing_messaging",
+    "sentiment": 3
    }
   },
   {
@@ -230,7 +256,77 @@
     "category": "security_concern",
     "report_type": "news_report",
     "is_novel": false,
-    "action": "watch"
+    "action": "watch",
+    "improvement_area": "trust_safety",
+    "sentiment": 0
+   }
+  },
+  {
+   "id": "f15",
+   "url": "https://bookkeepingtoday.example/2026/11/nimbleroot-fire-your-accountant-ads",
+   "title": "Nimbleroot's 'Fire your accountant' ads draw backlash from bookkeepers",
+   "outlet": "Bookkeeping Today (fictional)",
+   "published_at": "2026-11-11",
+   "text": "Nimbleroot's new billboard and social media campaign, built around the slogan \"Fire your accountant,\" has drawn criticism from bookkeepers and some small-business owners.\nSeveral accounting groups called the ads insulting and misleading, noting that Nimbleroot's own terms recommend a professional review at tax time.\n\"It's a cheap shot at the people who refer customers to tools like this,\" said one Portland bookkeeper.\nSome marketers praised the campaign for getting attention. Nimbleroot did not respond to a request for comment.",
+   "gold": {
+    "is_subject": true,
+    "category": "routine_criticism",
+    "report_type": "news_report",
+    "is_novel": true,
+    "action": "watch",
+    "improvement_area": "advertising",
+    "sentiment": 1
+   }
+  },
+  {
+   "id": "f16",
+   "url": "https://smallbizforum.example/t/what-does-nimbleroot-actually-do/9021",
+   "title": "Thread: What does Nimbleroot actually do?",
+   "outlet": "SmallBizForum (fictional)",
+   "published_at": "2026-11-12",
+   "text": "Original post: Saw a Nimbleroot ad that says \"autopilot for your books.\" Is it bookkeeping software, an accountant service, or a bank? Their homepage didn't make it clear.\nReply from user ledgerlady: It's software. It sorts your transactions. It doesn't file taxes, even though the ads kind of imply it.\nReply from user brewpub_owner: I signed up thinking it did payroll. It doesn't.\nSeveral replies said the website should explain what is and is not included.",
+   "gold": {
+    "is_subject": true,
+    "category": "routine_criticism",
+    "report_type": "other",
+    "is_novel": true,
+    "action": "digest",
+    "improvement_area": "marketing_messaging",
+    "sentiment": 1
+   }
+  },
+  {
+   "id": "f17",
+   "url": "https://appreviewroundup.example/nimbleroot-reviews-november",
+   "title": "Users praise Nimbleroot's receipt scanning in latest app reviews",
+   "outlet": "App Review Roundup (fictional)",
+   "published_at": "2026-11-12",
+   "text": "Recent app store reviews of Nimbleroot are mostly positive about its receipt scanning, which users say is fast and accurate.\n\"Snap a photo and it's categorized before I put my phone down,\" one reviewer wrote.\nSeveral reviewers still mention a slow dashboard on older phones. The app's average rating this month is 4.5 out of 5 across 210 reviews.",
+   "gold": {
+    "is_subject": true,
+    "category": "business_news",
+    "report_type": "opinion",
+    "is_novel": true,
+    "action": "digest",
+    "improvement_area": "product_quality",
+    "sentiment": 3
+   }
+  },
+  {
+   "id": "f18",
+   "url": "https://pacificventurewire.example/ai-bookkeeping-investors-cool",
+   "title": "Investors cool on AI bookkeeping startups; Nimbleroot's Series A talks reportedly slow",
+   "outlet": "Pacific Venture Wire (fictional)",
+   "published_at": "2026-11-13",
+   "text": "Venture investors have become more cautious about AI bookkeeping startups after a string of data-security incidents in the sector, according to three investors who spoke to Pacific Venture Wire.\nTwo of them said early Series A conversations with Portland-based Nimbleroot had slowed in recent weeks, citing the company's invoice exposure.\nNimbleroot declined to comment on fundraising. The company raised a $6 million seed round in October.",
+   "gold": {
+    "is_subject": true,
+    "category": "business_news",
+    "report_type": "news_report",
+    "is_novel": true,
+    "action": "watch",
+    "improvement_area": "financial_market",
+    "sentiment": 1
    }
   }
  ]

@@ -127,6 +127,49 @@ The bucket was secured after Lindqvist reported it on November 6.
 The company has since said it is notifying affected customers.""",
  {"is_subject": True, "category": "security_concern", "report_type": "news_report", "is_novel": False, "action": "watch"})
 
+add("f15", "2026-11-11", "Bookkeeping Today (fictional)", "https://bookkeepingtoday.example/2026/11/nimbleroot-fire-your-accountant-ads",
+ "Nimbleroot's 'Fire your accountant' ads draw backlash from bookkeepers",
+ """Nimbleroot's new billboard and social media campaign, built around the slogan "Fire your accountant," has drawn criticism from bookkeepers and some small-business owners.
+Several accounting groups called the ads insulting and misleading, noting that Nimbleroot's own terms recommend a professional review at tax time.
+"It's a cheap shot at the people who refer customers to tools like this," said one Portland bookkeeper.
+Some marketers praised the campaign for getting attention. Nimbleroot did not respond to a request for comment.""",
+ {"is_subject": True, "category": "routine_criticism", "report_type": "news_report", "is_novel": True, "action": "watch",
+  "improvement_area": "advertising", "sentiment": 1})
+
+add("f16", "2026-11-12", "SmallBizForum (fictional)", "https://smallbizforum.example/t/what-does-nimbleroot-actually-do/9021",
+ "Thread: What does Nimbleroot actually do?",
+ """Original post: Saw a Nimbleroot ad that says "autopilot for your books." Is it bookkeeping software, an accountant service, or a bank? Their homepage didn't make it clear.
+Reply from user ledgerlady: It's software. It sorts your transactions. It doesn't file taxes, even though the ads kind of imply it.
+Reply from user brewpub_owner: I signed up thinking it did payroll. It doesn't.
+Several replies said the website should explain what is and is not included.""",
+ {"is_subject": True, "category": "routine_criticism", "report_type": "other", "is_novel": True, "action": "digest",
+  "improvement_area": "marketing_messaging", "sentiment": 1})
+
+add("f17", "2026-11-12", "App Review Roundup (fictional)", "https://appreviewroundup.example/nimbleroot-reviews-november",
+ "Users praise Nimbleroot's receipt scanning in latest app reviews",
+ """Recent app store reviews of Nimbleroot are mostly positive about its receipt scanning, which users say is fast and accurate.
+"Snap a photo and it's categorized before I put my phone down," one reviewer wrote.
+Several reviewers still mention a slow dashboard on older phones. The app's average rating this month is 4.5 out of 5 across 210 reviews.""",
+ {"is_subject": True, "category": "business_news", "report_type": "opinion", "is_novel": True, "action": "digest",
+  "improvement_area": "product_quality", "sentiment": 3})
+
+add("f18", "2026-11-13", "Pacific Venture Wire (fictional)", "https://pacificventurewire.example/ai-bookkeeping-investors-cool",
+ "Investors cool on AI bookkeeping startups; Nimbleroot's Series A talks reportedly slow",
+ """Venture investors have become more cautious about AI bookkeeping startups after a string of data-security incidents in the sector, according to three investors who spoke to Pacific Venture Wire.
+Two of them said early Series A conversations with Portland-based Nimbleroot had slowed in recent weeks, citing the company's invoice exposure.
+Nimbleroot declined to comment on fundraising. The company raised a $6 million seed round in October.""",
+ {"is_subject": True, "category": "business_news", "report_type": "news_report", "is_novel": True, "action": "watch",
+  "improvement_area": "financial_market", "sentiment": 1})
+
+# Improvement-area and sentiment (0 very negative .. 4 very positive) labels for the original 14 articles.
+EXTRA = {"f01": ("none", 2), "f02": ("none", 2), "f03": ("financial_market", 3), "f04": ("product_quality", 1),
+         "f05": ("customer_support", 0), "f06": ("trust_safety", 1), "f07": ("trust_safety", 0), "f08": ("trust_safety", 1),
+         "f09": ("trust_safety", 2), "f10": ("financial_market", 2), "f11": ("none", 2), "f12": ("trust_safety", 1),
+         "f13": ("marketing_messaging", 3), "f14": ("trust_safety", 0)}
+for a in A:
+    if a["id"] in EXTRA:
+        a["gold"]["improvement_area"], a["gold"]["sentiment"] = EXTRA[a["id"]]
+
 out = {"label": "SYNTHETIC FIXTURE — fictional company, invented articles for reproducible testing",
        "profile": PROFILE, "history": HISTORY, "articles": A}
 p = pathlib.Path(__file__).resolve().parents[1] / "api/_radar/data/fixtures.json"
