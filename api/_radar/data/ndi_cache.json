@@ -1,0 +1,3498 @@
+{
+ "f01": {
+  "data": {
+   "claims": [
+    {
+     "claim": "Nimbleroot Nursery opened its second greenhouse this weekend.",
+     "status": "reported",
+     "attributed_to": "Burlington Weekly",
+     "supporting_passage": "Nimbleroot Nursery, the family-run plant shop on Pine Street in Burlington, Vermont, opened its second greenhouse this weekend."
+    },
+    {
+     "claim": "The new greenhouse space will focus on native perennials and seedlings for community gardens.",
+     "status": "confirmed_by_subject",
+     "attributed_to": "Gail Hartmann",
+     "supporting_passage": "Owner Gail Hartmann said the new space will focus on native perennials and seedlings for community gardens."
+    },
+    {
+     "claim": "The nursery has outgrown its old barn.",
+     "status": "confirmed_by_subject",
+     "attributed_to": "Gail Hartmann",
+     "supporting_passage": "\"We've outgrown the old barn,\" Hartmann said."
+    },
+    {
+     "claim": "Nimbleroot Nursery was founded in 1994.",
+     "status": "reported",
+     "attributed_to": "Burlington Weekly",
+     "supporting_passage": "The nursery, founded in 1994, has no connection to any technology company."
+    },
+    {
+     "claim": "Nimbleroot Nursery has no connection to any technology company.",
+     "status": "reported",
+     "attributed_to": "Burlington Weekly",
+     "supporting_passage": "The nursery, founded in 1994, has no connection to any technology company."
+    },
+    {
+     "claim": "The greenhouse will host free workshops on composting through the winter.",
+     "status": "reported",
+     "attributed_to": "Burlington Weekly",
+     "supporting_passage": "The greenhouse will host free workshops on composting through the winter."
+    }
+   ],
+   "entities": [
+    {
+     "kind": "organization",
+     "name": "Nimbleroot Nursery",
+     "role": "Family-run plant shop in Burlington, Vermont"
+    },
+    {
+     "kind": "person",
+     "name": "Gail Hartmann",
+     "role": "Owner of Nimbleroot Nursery"
+    }
+   ],
+   "event_dates": [
+    {
+     "date": "2026-10-28",
+     "event": "Publication of the article"
+    }
+   ],
+   "publication_date": "2026-10-28"
+  },
+  "fields": [
+   {
+    "path": "/publication_date",
+    "value": "2026-10-28",
+    "status": "found",
+    "confidence": 0.8888888888888888,
+    "ambiguous": false,
+    "derived": false,
+    "citations": [
+     {
+      "location": {
+       "kind": "text_span",
+       "page": null,
+       "char_start": 159,
+       "char_end": 169
+      },
+      "source_text": "Published: 2026-10-28"
+     }
+    ]
+   },
+   {
+    "path": "/claims/0",
+    "value": "{\"claim\": \"Nimbleroot Nursery opened its second greenhouse this weekend.\", \"status\": \"reported\", \"attributed_to\": \"Burlington Weekly\", \"supporting_passage\": \"Nimbleroot Nursery, the family-run plant shop on Pine Street in Burlington, Vermont, opened its second greenhouse this weekend.\"}",
+    "status": "found",
+    "confidence": null,
+    "ambiguous": false,
+    "derived": false,
+    "citations": []
+   },
+   {
+    "path": "/claims/1",
+    "value": "{\"claim\": \"The new greenhouse space will focus on native perennials and seedlings for community gardens.\", \"status\": \"confirmed_by_subject\", \"attributed_to\": \"Gail Hartmann\", \"supporting_passage\": \"Owner Gail Hartmann said the new space will focus on native perennials and seedlings for community gardens.\"}",
+    "status": "found",
+    "confidence": null,
+    "ambiguous": false,
+    "derived": false,
+    "citations": []
+   },
+   {
+    "path": "/claims/2",
+    "value": "{\"claim\": \"The nursery has outgrown its old barn.\", \"status\": \"confirmed_by_subject\", \"attributed_to\": \"Gail Hartmann\", \"supporting_passage\": \"\\\"We've outgrown the old barn,\\\" Hartmann said.\"}",
+    "status": "found",
+    "confidence": null,
+    "ambiguous": false,
+    "derived": false,
+    "citations": []
+   },
+   {
+    "path": "/claims/3",
+    "value": "{\"claim\": \"Nimbleroot Nursery was founded in 1994.\", \"status\": \"reported\", \"attributed_to\": \"Burlington Weekly\", \"supporting_passage\": \"The nursery, founded in 1994, has no connection to any technology company.\"}",
+    "status": "found",
+    "confidence": null,
+    "ambiguous": false,
+    "derived": false,
+    "citations": []
+   },
+   {
+    "path": "/claims/4",
+    "value": "{\"claim\": \"Nimbleroot Nursery has no connection to any technology company.\", \"status\": \"reported\", \"attributed_to\": \"Burlington Weekly\", \"supporting_passage\": \"The nursery, founded in 1994, has no connection to any technology company.\"}",
+    "status": "found",
+    "confidence": null,
+    "ambiguous": false,
+    "derived": false,
+    "citations": []
+   },
+   {
+    "path": "/claims/5",
+    "value": "{\"claim\": \"The greenhouse will host free workshops on composting through the winter.\", \"status\": \"reported\", \"attributed_to\": \"Burlington Weekly\", \"supporting_passage\": \"The greenhouse will host free workshops on composting through the winter.\"}",
+    "status": "found",
+    "confidence": null,
+    "ambiguous": false,
+    "derived": false,
+    "citations": []
+   },
+   {
+    "path": "/entities/0",
+    "value": "{\"kind\": \"organization\", \"name\": \"Nimbleroot Nursery\", \"role\": \"Family-run plant shop in Burlington, Vermont\"}",
+    "status": "found",
+    "confidence": null,
+    "ambiguous": false,
+    "derived": false,
+    "citations": []
+   },
+   {
+    "path": "/entities/1",
+    "value": "{\"kind\": \"person\", \"name\": \"Gail Hartmann\", \"role\": \"Owner of Nimbleroot Nursery\"}",
+    "status": "found",
+    "confidence": null,
+    "ambiguous": false,
+    "derived": false,
+    "citations": []
+   },
+   {
+    "path": "/event_dates/0",
+    "value": "{\"date\": \"2026-10-28\", \"event\": \"Publication of the article\"}",
+    "status": "found",
+    "confidence": 0.8888888888888888,
+    "ambiguous": false,
+    "derived": false,
+    "citations": [
+     {
+      "location": {
+       "kind": "text_span",
+       "page": null,
+       "char_start": 148,
+       "char_end": 169
+      },
+      "source_text": "Published: 2026-10-28"
+     }
+    ]
+   }
+  ],
+  "job_id": "02101f0e-4647-4720-a5cf-e3aa9f7a4194",
+  "cost": {
+   "lines": [
+    {
+     "unit": "page",
+     "quantity": 1,
+     "execution": "fresh",
+     "operation": "parse",
+     "amount_usd": "0.0035",
+     "reuse_reason": null,
+     "unit_price_usd": "0.0035"
+    },
+    {
+     "unit": "page",
+     "quantity": 1,
+     "execution": "fresh",
+     "operation": "extract",
+     "amount_usd": "0.0085",
+     "reuse_reason": null,
+     "unit_price_usd": "0.0085"
+    }
+   ],
+   "currency": "USD",
+   "total_usd": "0.012",
+   "pricing_version": "retail-2026-11-10-v2"
+  },
+  "units": 3,
+  "latency_ms": 6552.1,
+  "warnings": [
+   "array_item_evidence_partial"
+  ]
+ },
+ "f02": {
+  "data": {
+   "claims": [
+    {
+     "claim": "Folk singer Dana Vell will take her new album 'Ember' on a twelve-date tour across the Midwest this winter.",
+     "status": "officially_stated",
+     "attributed_to": "Dana Vell",
+     "supporting_passage": "Folk singer Dana Vell will take her new album 'Ember' on the road this winter, with twelve dates across the Midwest."
+    },
+    {
+     "claim": "The album 'Ember' was written during a year of living out of a van.",
+     "status": "confirmed_by_subject",
+     "attributed_to": "Dana Vell",
+     "supporting_passage": "Vell, who is based in Nashville, says the record was written during a year of living out of a van."
+    },
+    {
+     "claim": "Tickets for the tour go on sale on Friday.",
+     "status": "reported",
+     "attributed_to": "Indie Sound",
+     "supporting_passage": "Tickets go on sale Friday."
+    },
+    {
+     "claim": "Critics have praised the album's sparse arrangements and Vell's storytelling.",
+     "status": "reported",
+     "attributed_to": "Indie Sound",
+     "supporting_passage": "Critics have praised the album's sparse arrangements and Vell's storytelling."
+    }
+   ],
+   "entities": [
+    {
+     "kind": "person",
+     "name": "Dana Vell",
+     "role": "Folk singer and artist"
+    },
+    {
+     "kind": "product",
+     "name": "Ember",
+     "role": "New album by Dana Vell"
+    },
+    {
+     "kind": "organization",
+     "name": "Indie Sound",
+     "role": "Source of the article"
+    }
+   ],
+   "event_dates": [
+    {
+     "date": "2026-10-30",
+     "event": "Article publication date"
+    }
+   ],
+   "publication_date": "2026-10-30"
+  },
+  "fields": [
+   {
+    "path": "/publication_date",
+    "value": "2026-10-30",
+    "status": "found",
+    "confidence": 0.8888888888888888,
+    "ambiguous": false,
+    "derived": false,
+    "citations": [
+     {
+      "location": {
+       "kind": "text_span",
+       "page": null,
+       "char_start": 144,
+       "char_end": 154
+      },
+      "source_text": "Published: 2026-10-30"
+     }
+    ]
+   },
+   {
+    "path": "/claims/0",
+    "value": "{\"claim\": \"Folk singer Dana Vell will take her new album 'Ember' on a twelve-date tour across the Midwest this winter.\", \"status\": \"officially_stated\", \"attributed_to\": \"Dana Vell\", \"supporting_passage\": \"Folk singer Dana Vell will take her new album 'Ember' on the road this winter, with twelve dates across the Midwest.\"}",
+    "status": "found",
+    "confidence": 0.8888888888888888,
+    "ambiguous": false,
+    "derived": false,
+    "citations": [
+     {
+      "location": {
+       "kind": "text_span",
+       "page": null,
+       "char_start": 200,
+       "char_end": 316
+      },
+      "source_text": "Folk singer Dana Vell will take her new album 'Ember' on the road this winter, with twelve dates across the Midwest."
+     }
+    ]
+   },
+   {
+    "path": "/claims/1",
+    "value": "{\"claim\": \"The album 'Ember' was written during a year of living out of a van.\", \"status\": \"confirmed_by_subject\", \"attributed_to\": \"Dana Vell\", \"supporting_passage\": \"Vell, who is based in Nashville, says the record was written during a year of living out of a van.\"}",
+    "status": "found",
+    "confidence": 0.8888888888888888,
+    "ambiguous": false,
+    "derived": false,
+    "citations": [
+     {
+      "location": {
+       "kind": "text_span",
+       "page": null,
+       "char_start": 317,
+       "char_end": 415
+      },
+      "source_text": "Vell, who is based in Nashville, says the record was written during a year of living out of a van."
+     }
+    ]
+   },
+   {
+    "path": "/claims/2",
+    "value": "{\"claim\": \"Tickets for the tour go on sale on Friday.\", \"status\": \"reported\", \"attributed_to\": \"Indie Sound\", \"supporting_passage\": \"Tickets go on sale Friday.\"}",
+    "status": "found",
+    "confidence": 0.8888888888888888,
+    "ambiguous": false,
+    "derived": false,
+    "citations": [
+     {
+      "location": {
+       "kind": "text_span",
+       "page": null,
+       "char_start": 416,
+       "char_end": 442
+      },
+      "source_text": "Tickets go on sale Friday."
+     }
+    ]
+   },
+   {
+    "path": "/claims/3",
+    "value": "{\"claim\": \"Critics have praised the album's sparse arrangements and Vell's storytelling.\", \"status\": \"reported\", \"attributed_to\": \"Indie Sound\", \"supporting_passage\": \"Critics have praised the album's sparse arrangements and Vell's storytelling.\"}",
+    "status": "found",
+    "confidence": 0.8888888888888888,
+    "ambiguous": false,
+    "derived": false,
+    "citations": [
+     {
+      "location": {
+       "kind": "text_span",
+       "page": null,
+       "char_start": 443,
+       "char_end": 520
+      },
+      "source_text": "Critics have praised the album's sparse arrangements and Vell's storytelling."
+     }
+    ]
+   },
+   {
+    "path": "/entities/0",
+    "value": "{\"kind\": \"person\", \"name\": \"Dana Vell\", \"role\": \"Folk singer and artist\"}",
+    "status": "found",
+    "confidence": 0.8888888888888888,
+    "ambiguous": false,
+    "derived": false,
+    "citations": [
+     {
+      "location": {
+       "kind": "text_span",
+       "page": null,
+       "char_start": 200,
+       "char_end": 316
+      },
+      "source_text": "Folk singer Dana Vell will take her new album 'Ember' on the road this winter, with twelve dates across the Midwest."
+     }
+    ]
+   },
+   {
+    "path": "/entities/1",
+    "value": "{\"kind\": \"product\", \"name\": \"Ember\", \"role\": \"New album by Dana Vell\"}",
+    "status": "found",
+    "confidence": 0.8888888888888888,
+    "ambiguous": false,
+    "derived": false,
+    "citations": [
+     {
+      "location": {
+       "kind": "text_span",
+       "page": null,
+       "char_start": 200,
+       "char_end": 316
+      },
+      "source_text": "Folk singer Dana Vell will take her new album 'Ember' on the road this winter, with twelve dates across the Midwest."
+     }
+    ]
+   },
+   {
+    "path": "/entities/2",
+    "value": "{\"kind\": \"organization\", \"name\": \"Indie Sound\", \"role\": \"Source of the article\"}",
+    "status": "found",
+    "confidence": 0.5925925925925926,
+    "ambiguous": false,
+    "derived": false,
+    "citations": [
+     {
+      "location": {
+       "kind": "text_span",
+       "page": null,
+       "char_start": 63,
+       "char_end": 130
+      },
+      "source_text": "Source URL: https://indiesound.example/reviews/dana-vell-ember-tour"
+     }
+    ]
+   },
+   {
+    "path": "/event_dates/0",
+    "value": "{\"date\": \"2026-10-30\", \"event\": \"Article publication date\"}",
+    "status": "found",
+    "confidence": 0.8888888888888888,
+    "ambiguous": false,
+    "derived": false,
+    "citations": [
+     {
+      "location": {
+       "kind": "text_span",
+       "page": null,
+       "char_start": 133,
+       "char_end": 154
+      },
+      "source_text": "Published: 2026-10-30"
+     }
+    ]
+   }
+  ],
+  "job_id": "8c33c3bb-386f-4161-8acf-61d422cf7d97",
+  "cost": {
+   "lines": [
+    {
+     "unit": "page",
+     "quantity": 1,
+     "execution": "fresh",
+     "operation": "parse",
+     "amount_usd": "0.0035",
+     "reuse_reason": null,
+     "unit_price_usd": "0.0035"
+    },
+    {
+     "unit": "page",
+     "quantity": 1,
+     "execution": "fresh",
+     "operation": "extract",
+     "amount_usd": "0.0085",
+     "reuse_reason": null,
+     "unit_price_usd": "0.0085"
+    }
+   ],
+   "currency": "USD",
+   "total_usd": "0.012",
+   "pricing_version": "retail-2026-11-10-v2"
+  },
+  "units": 3,
+  "latency_ms": 5836.7,
+  "warnings": []
+ },
+ "f03": {
+  "data": {
+   "claims": [
+    {
+     "claim": "Nimbleroot raised $6 million in seed funding led by Fernhill Ventures.",
+     "status": "officially_stated",
+     "attributed_to": "Nimbleroot",
+     "supporting_passage": "Portland-based Nimbleroot has raised $6 million in seed funding led by Fernhill Ventures, the company said last month."
+    },
+    {
+     "claim": "Nimbleroot sells AI bookkeeping software that categorizes transactions for small businesses.",
+     "status": "reported",
+     "attributed_to": "Reporter",
+     "supporting_passage": "The startup, led by CEO Dana Vell, sells AI bookkeeping software that categorizes transactions for small businesses."
+    },
+    {
+     "claim": "Nimbleroot will use the funding to hire engineers and expand to accounting firms.",
+     "status": "officially_stated",
+     "attributed_to": "Nimbleroot",
+     "supporting_passage": "Nimbleroot said it will use the money to hire engineers and expand to accounting firms."
+    },
+    {
+     "claim": "Small businesses deserve a bookkeeper that never sleeps.",
+     "status": "opinion",
+     "attributed_to": "Dana Vell",
+     "supporting_passage": "\"Small businesses deserve a bookkeeper that never sleeps,\" Vell said in the announcement."
+    }
+   ],
+   "entities": [
+    {
+     "kind": "organization",
+     "name": "Nimbleroot",
+     "role": "Startup that raised seed funding"
+    },
+    {
+     "kind": "organization",
+     "name": "Fernhill Ventures",
+     "role": "Lead investor in the seed round"
+    },
+    {
+     "kind": "person",
+     "name": "Dana Vell",
+     "role": "CEO of Nimbleroot"
+    }
+   ],
+   "event_dates": [
+    {
+     "date": "2026-11-02",
+     "event": "Article publication date"
+    }
+   ],
+   "publication_date": "2026-11-02"
+  },
+  "fields": [
+   {
+    "path": "/publication_date",
+    "value": "2026-11-02",
+    "status": "found",
+    "confidence": 0.8888888888888888,
+    "ambiguous": false,
+    "derived": false,
+    "citations": [
+     {
+      "location": {
+       "kind": "text_span",
+       "page": null,
+       "char_start": 174,
+       "char_end": 184
+      },
+      "source_text": "Published: 2026-11-02"
+     }
+    ]
+   },
+   {
+    "path": "/claims/0",
+    "value": "{\"claim\": \"Nimbleroot raised $6 million in seed funding led by Fernhill Ventures.\", \"status\": \"officially_stated\", \"attributed_to\": \"Nimbleroot\", \"supporting_passage\": \"Portland-based Nimbleroot has raised $6 million in seed funding led by Fernhill Ventures, the company said last month.\"}",
+    "status": "found",
+    "confidence": 0.8888888888888888,
+    "ambiguous": false,
+    "derived": false,
+    "citations": [
+     {
+      "location": {
+       "kind": "text_span",
+       "page": null,
+       "char_start": 230,
+       "char_end": 348
+      },
+      "source_text": "Portland-based Nimbleroot has raised $6 million in seed funding led by Fernhill Ventures, the company said last month."
+     }
+    ]
+   },
+   {
+    "path": "/claims/1",
+    "value": "{\"claim\": \"Nimbleroot sells AI bookkeeping software that categorizes transactions for small businesses.\", \"status\": \"reported\", \"attributed_to\": \"Reporter\", \"supporting_passage\": \"The startup, led by CEO Dana Vell, sells AI bookkeeping software that categorizes transactions for small businesses.\"}",
+    "status": "found",
+    "confidence": 0.8888888888888888,
+    "ambiguous": false,
+    "derived": false,
+    "citations": [
+     {
+      "location": {
+       "kind": "text_span",
+       "page": null,
+       "char_start": 349,
+       "char_end": 465
+      },
+      "source_text": "The startup, led by CEO Dana Vell, sells AI bookkeeping software that categorizes transactions for small businesses."
+     }
+    ]
+   },
+   {
+    "path": "/claims/2",
+    "value": "{\"claim\": \"Nimbleroot will use the funding to hire engineers and expand to accounting firms.\", \"status\": \"officially_stated\", \"attributed_to\": \"Nimbleroot\", \"supporting_passage\": \"Nimbleroot said it will use the money to hire engineers and expand to accounting firms.\"}",
+    "status": "found",
+    "confidence": 0.8888888888888888,
+    "ambiguous": false,
+    "derived": false,
+    "citations": [
+     {
+      "location": {
+       "kind": "text_span",
+       "page": null,
+       "char_start": 466,
+       "char_end": 553
+      },
+      "source_text": "Nimbleroot said it will use the money to hire engineers and expand to accounting firms."
+     }
+    ]
+   },
+   {
+    "path": "/claims/3",
+    "value": "{\"claim\": \"Small businesses deserve a bookkeeper that never sleeps.\", \"status\": \"opinion\", \"attributed_to\": \"Dana Vell\", \"supporting_passage\": \"\\\"Small businesses deserve a bookkeeper that never sleeps,\\\" Vell said in the announcement.\"}",
+    "status": "found",
+    "confidence": 0.8888888888888888,
+    "ambiguous": false,
+    "derived": false,
+    "citations": [
+     {
+      "location": {
+       "kind": "text_span",
+       "page": null,
+       "char_start": 554,
+       "char_end": 643
+      },
+      "source_text": "\"Small businesses deserve a bookkeeper that never sleeps,\" Vell said in the announcement."
+     }
+    ]
+   },
+   {
+    "path": "/entities/0",
+    "value": "{\"kind\": \"organization\", \"name\": \"Nimbleroot\", \"role\": \"Startup that raised seed funding\"}",
+    "status": "found",
+    "confidence": 0.8888888888888888,
+    "ambiguous": false,
+    "derived": false,
+    "citations": [
+     {
+      "location": {
+       "kind": "text_span",
+       "page": null,
+       "char_start": 230,
+       "char_end": 348
+      },
+      "source_text": "Portland-based Nimbleroot has raised $6 million in seed funding led by Fernhill Ventures, the company said last month."
+     }
+    ]
+   },
+   {
+    "path": "/entities/1",
+    "value": "{\"kind\": \"organization\", \"name\": \"Fernhill Ventures\", \"role\": \"Lead investor in the seed round\"}",
+    "status": "found",
+    "confidence": 0.8888888888888888,
+    "ambiguous": false,
+    "derived": false,
+    "citations": [
+     {
+      "location": {
+       "kind": "text_span",
+       "page": null,
+       "char_start": 230,
+       "char_end": 348
+      },
+      "source_text": "Portland-based Nimbleroot has raised $6 million in seed funding led by Fernhill Ventures, the company said last month."
+     }
+    ]
+   },
+   {
+    "path": "/entities/2",
+    "value": "{\"kind\": \"person\", \"name\": \"Dana Vell\", \"role\": \"CEO of Nimbleroot\"}",
+    "status": "found",
+    "confidence": 0.8888888888888888,
+    "ambiguous": false,
+    "derived": false,
+    "citations": [
+     {
+      "location": {
+       "kind": "text_span",
+       "page": null,
+       "char_start": 349,
+       "char_end": 465
+      },
+      "source_text": "The startup, led by CEO Dana Vell, sells AI bookkeeping software that categorizes transactions for small businesses."
+     }
+    ]
+   },
+   {
+    "path": "/event_dates/0",
+    "value": "{\"date\": \"2026-11-02\", \"event\": \"Article publication date\"}",
+    "status": "found",
+    "confidence": 0.8888888888888888,
+    "ambiguous": false,
+    "derived": false,
+    "citations": [
+     {
+      "location": {
+       "kind": "text_span",
+       "page": null,
+       "char_start": 163,
+       "char_end": 184
+      },
+      "source_text": "Published: 2026-11-02"
+     }
+    ]
+   }
+  ],
+  "job_id": "3fb30136-882b-4358-a4d5-c62f4d3be4d5",
+  "cost": {
+   "lines": [
+    {
+     "unit": "page",
+     "quantity": 1,
+     "execution": "fresh",
+     "operation": "parse",
+     "amount_usd": "0.0035",
+     "reuse_reason": null,
+     "unit_price_usd": "0.0035"
+    },
+    {
+     "unit": "page",
+     "quantity": 1,
+     "execution": "fresh",
+     "operation": "extract",
+     "amount_usd": "0.0085",
+     "reuse_reason": null,
+     "unit_price_usd": "0.0085"
+    }
+   ],
+   "currency": "USD",
+   "total_usd": "0.012",
+   "pricing_version": "retail-2026-11-10-v2"
+  },
+  "units": 3,
+  "latency_ms": 5111.3,
+  "warnings": []
+ },
+ "f04": {
+  "data": {
+   "claims": [
+    {
+     "claim": "The user switched their bakery's books to Nimbleroot in October.",
+     "status": "confirmed_by_subject",
+     "attributed_to": "The author",
+     "supporting_passage": "I switched my bakery's books to Nimbleroot in October."
+    },
+    {
+     "claim": "The Nimbleroot dashboard feels cluttered and the mobile app is slow to load.",
+     "status": "opinion",
+     "attributed_to": "The author",
+     "supporting_passage": "The dashboard feels cluttered and the mobile app is slow to load."
+    },
+    {
+     "claim": "Nimbleroot costs $49 a month.",
+     "status": "reported",
+     "attributed_to": "The author",
+     "supporting_passage": "At $49 a month it is pricier than I expected for a tool this young."
+    },
+    {
+     "claim": "Nimbleroot's categorization was accurate most of the time but incorrectly labeled flour orders as \"office supplies\".",
+     "status": "confirmed_by_subject",
+     "attributed_to": "The author",
+     "supporting_passage": "Categorization was right most of the time, though it kept labeling flour orders as \"office supplies\"."
+    },
+    {
+     "claim": "Nimbleroot is promising but not yet worth the price for very small shops.",
+     "status": "opinion",
+     "attributed_to": "The author",
+     "supporting_passage": "In my opinion it's promising but not yet worth the price for very small shops."
+    }
+   ],
+   "entities": [
+    {
+     "kind": "organization",
+     "name": "Nimbleroot",
+     "role": "AI bookkeeping software provider"
+    },
+    {
+     "kind": "product",
+     "name": "Nimbleroot",
+     "role": "The software being reviewed"
+    }
+   ],
+   "event_dates": [
+    {
+     "date": "2026-10-01",
+     "event": "User switched bakery's books to Nimbleroot"
+    }
+   ],
+   "publication_date": "2026-11-04"
+  },
+  "fields": [
+   {
+    "path": "/publication_date",
+    "value": "2026-11-04",
+    "status": "found",
+    "confidence": 0.8888888888888888,
+    "ambiguous": false,
+    "derived": false,
+    "citations": [
+     {
+      "location": {
+       "kind": "text_span",
+       "page": null,
+       "char_start": 141,
+       "char_end": 151
+      },
+      "source_text": "Published: 2026-11-04"
+     }
+    ]
+   },
+   {
+    "path": "/claims/0",
+    "value": "{\"claim\": \"The user switched their bakery's books to Nimbleroot in October.\", \"status\": \"confirmed_by_subject\", \"attributed_to\": \"The author\", \"supporting_passage\": \"I switched my bakery's books to Nimbleroot in October.\"}",
+    "status": "found",
+    "confidence": 0.8888888888888888,
+    "ambiguous": false,
+    "derived": false,
+    "citations": [
+     {
+      "location": {
+       "kind": "text_span",
+       "page": null,
+       "char_start": 197,
+       "char_end": 251
+      },
+      "source_text": "I switched my bakery's books to Nimbleroot in October."
+     }
+    ]
+   },
+   {
+    "path": "/claims/1",
+    "value": "{\"claim\": \"The Nimbleroot dashboard feels cluttered and the mobile app is slow to load.\", \"status\": \"opinion\", \"attributed_to\": \"The author\", \"supporting_passage\": \"The dashboard feels cluttered and the mobile app is slow to load.\"}",
+    "status": "found",
+    "confidence": 0.8888888888888888,
+    "ambiguous": false,
+    "derived": false,
+    "citations": [
+     {
+      "location": {
+       "kind": "text_span",
+       "page": null,
+       "char_start": 293,
+       "char_end": 358
+      },
+      "source_text": "The dashboard feels cluttered and the mobile app is slow to load."
+     }
+    ]
+   },
+   {
+    "path": "/claims/2",
+    "value": "{\"claim\": \"Nimbleroot costs $49 a month.\", \"status\": \"reported\", \"attributed_to\": \"The author\", \"supporting_passage\": \"At $49 a month it is pricier than I expected for a tool this young.\"}",
+    "status": "found",
+    "confidence": 0.8888888888888888,
+    "ambiguous": false,
+    "derived": false,
+    "citations": [
+     {
+      "location": {
+       "kind": "text_span",
+       "page": null,
+       "char_start": 359,
+       "char_end": 426
+      },
+      "source_text": "At $49 a month it is pricier than I expected for a tool this young."
+     }
+    ]
+   },
+   {
+    "path": "/claims/3",
+    "value": "{\"claim\": \"Nimbleroot's categorization was accurate most of the time but incorrectly labeled flour orders as \\\"office supplies\\\".\", \"status\": \"confirmed_by_subject\", \"attributed_to\": \"The author\", \"supporting_passage\": \"Categorization was right most of the time, though it kept labeling flour orders as \\\"office supplies\\\".\"}",
+    "status": "found",
+    "confidence": 0.8888888888888888,
+    "ambiguous": false,
+    "derived": false,
+    "citations": [
+     {
+      "location": {
+       "kind": "text_span",
+       "page": null,
+       "char_start": 427,
+       "char_end": 528
+      },
+      "source_text": "Categorization was right most of the time, though it kept labeling flour orders as \"office supplies\"."
+     }
+    ]
+   },
+   {
+    "path": "/claims/4",
+    "value": "{\"claim\": \"Nimbleroot is promising but not yet worth the price for very small shops.\", \"status\": \"opinion\", \"attributed_to\": \"The author\", \"supporting_passage\": \"In my opinion it's promising but not yet worth the price for very small shops.\"}",
+    "status": "found",
+    "confidence": 0.8888888888888888,
+    "ambiguous": false,
+    "derived": false,
+    "citations": [
+     {
+      "location": {
+       "kind": "text_span",
+       "page": null,
+       "char_start": 529,
+       "char_end": 607
+      },
+      "source_text": "In my opinion it's promising but not yet worth the price for very small shops."
+     }
+    ]
+   },
+   {
+    "path": "/entities/0",
+    "value": "{\"kind\": \"organization\", \"name\": \"Nimbleroot\", \"role\": \"AI bookkeeping software provider\"}",
+    "status": "found",
+    "confidence": 0.5925925925925926,
+    "ambiguous": false,
+    "derived": false,
+    "citations": [
+     {
+      "location": {
+       "kind": "text_span",
+       "page": null,
+       "char_start": 2,
+       "char_end": 54
+      },
+      "source_text": "I used Nimbleroot for a month. Here's my honest take"
+     }
+    ]
+   },
+   {
+    "path": "/entities/1",
+    "value": "{\"kind\": \"product\", \"name\": \"Nimbleroot\", \"role\": \"The software being reviewed\"}",
+    "status": "found",
+    "confidence": 0.5925925925925926,
+    "ambiguous": false,
+    "derived": false,
+    "citations": [
+     {
+      "location": {
+       "kind": "text_span",
+       "page": null,
+       "char_start": 2,
+       "char_end": 54
+      },
+      "source_text": "I used Nimbleroot for a month. Here's my honest take"
+     }
+    ]
+   },
+   {
+    "path": "/event_dates/0",
+    "value": "{\"date\": \"2026-10-01\", \"event\": \"User switched bakery's books to Nimbleroot\"}",
+    "status": "found",
+    "confidence": 0.5925925925925926,
+    "ambiguous": false,
+    "derived": false,
+    "citations": [
+     {
+      "location": {
+       "kind": "text_span",
+       "page": null,
+       "char_start": 197,
+       "char_end": 251
+      },
+      "source_text": "I switched my bakery's books to Nimbleroot in October."
+     }
+    ]
+   }
+  ],
+  "job_id": "bfd421db-1084-4ebe-9773-c797719ce907",
+  "cost": {
+   "lines": [
+    {
+     "unit": "page",
+     "quantity": 1,
+     "execution": "fresh",
+     "operation": "parse",
+     "amount_usd": "0.0035",
+     "reuse_reason": null,
+     "unit_price_usd": "0.0035"
+    },
+    {
+     "unit": "page",
+     "quantity": 1,
+     "execution": "fresh",
+     "operation": "extract",
+     "amount_usd": "0.0085",
+     "reuse_reason": null,
+     "unit_price_usd": "0.0085"
+    }
+   ],
+   "currency": "USD",
+   "total_usd": "0.012",
+   "pricing_version": "retail-2026-11-10-v2"
+  },
+  "units": 3,
+  "latency_ms": 5838.6,
+  "warnings": []
+ },
+ "f05": {
+  "data": {
+   "claims": [
+    {
+     "claim": "Nimbleroot charged the original poster's card twice for November and support has not replied in four days.",
+     "status": "alleged",
+     "attributed_to": "Original poster",
+     "supporting_passage": "Nimbleroot charged my card twice for November and support hasn't replied in four days."
+    },
+    {
+     "claim": "User ledgerlady was charged two $49 charges on Nov 1 and is still waiting on a refund.",
+     "status": "alleged",
+     "attributed_to": "ledgerlady",
+     "supporting_passage": "Same here, two $49 charges on Nov 1. Still waiting on a refund."
+    },
+    {
+     "claim": "User tacoshop_pdx experienced duplicate charges and opened a dispute with their bank.",
+     "status": "alleged",
+     "attributed_to": "tacoshop_pdx",
+     "supporting_passage": "Happened to me too. I opened a dispute with my bank."
+    },
+    {
+     "claim": "User mike_r received a single charge and was not affected by the duplicate charge issue.",
+     "status": "alleged",
+     "attributed_to": "mike_r",
+     "supporting_passage": "Mine was fine, single charge."
+    },
+    {
+     "claim": "Several users said they would cancel if the duplicate charges were not refunded this week.",
+     "status": "alleged",
+     "attributed_to": "Several users",
+     "supporting_passage": "Several users said they would cancel if the duplicate charges were not refunded this week."
+    }
+   ],
+   "entities": [
+    {
+     "kind": "organization",
+     "name": "Nimbleroot",
+     "role": "Company accused of double-charging customers"
+    },
+    {
+     "kind": "person",
+     "name": "ledgerlady",
+     "role": "User reporting duplicate charges"
+    },
+    {
+     "kind": "person",
+     "name": "tacoshop_pdx",
+     "role": "User reporting duplicate charges and opening a bank dispute"
+    },
+    {
+     "kind": "person",
+     "name": "mike_r",
+     "role": "User reporting a single charge"
+    }
+   ],
+   "event_dates": [
+    {
+     "date": "2026-11-01",
+     "event": "Two $49 charges posted to ledgerlady's card"
+    },
+    {
+     "date": "2026-11-06",
+     "event": "Original post published on the forum"
+    }
+   ],
+   "publication_date": "2026-11-06"
+  },
+  "fields": [
+   {
+    "path": "/publication_date",
+    "value": "2026-11-06",
+    "status": "found",
+    "confidence": 0.8888888888888888,
+    "ambiguous": false,
+    "derived": false,
+    "citations": [
+     {
+      "location": {
+       "kind": "text_span",
+       "page": null,
+       "char_start": 150,
+       "char_end": 160
+      },
+      "source_text": "Published: 2026-11-06"
+     }
+    ]
+   },
+   {
+    "path": "/claims/0",
+    "value": "{\"claim\": \"Nimbleroot charged the original poster's card twice for November and support has not replied in four days.\", \"status\": \"alleged\", \"attributed_to\": \"Original poster\", \"supporting_passage\": \"Nimbleroot charged my card twice for November and support hasn't replied in four days.\"}",
+    "status": "found",
+    "confidence": 0.8888888888888888,
+    "ambiguous": false,
+    "derived": false,
+    "citations": [
+     {
+      "location": {
+       "kind": "text_span",
+       "page": null,
+       "char_start": 206,
+       "char_end": 307
+      },
+      "source_text": "Original post: Nimbleroot charged my card twice for November and support hasn't replied in four days."
+     }
+    ]
+   },
+   {
+    "path": "/claims/1",
+    "value": "{\"claim\": \"User ledgerlady was charged two $49 charges on Nov 1 and is still waiting on a refund.\", \"status\": \"alleged\", \"attributed_to\": \"ledgerlady\", \"supporting_passage\": \"Same here, two $49 charges on Nov 1. Still waiting on a refund.\"}",
+    "status": "found",
+    "confidence": 0.8888888888888888,
+    "ambiguous": false,
+    "derived": false,
+    "citations": [
+     {
+      "location": {
+       "kind": "text_span",
+       "page": null,
+       "char_start": 308,
+       "char_end": 399
+      },
+      "source_text": "Reply from user ledgerlady: Same here, two $49 charges on Nov 1. Still waiting on a refund."
+     }
+    ]
+   },
+   {
+    "path": "/claims/2",
+    "value": "{\"claim\": \"User tacoshop_pdx experienced duplicate charges and opened a dispute with their bank.\", \"status\": \"alleged\", \"attributed_to\": \"tacoshop_pdx\", \"supporting_passage\": \"Happened to me too. I opened a dispute with my bank.\"}",
+    "status": "found",
+    "confidence": 0.8888888888888888,
+    "ambiguous": false,
+    "derived": false,
+    "citations": [
+     {
+      "location": {
+       "kind": "text_span",
+       "page": null,
+       "char_start": 400,
+       "char_end": 482
+      },
+      "source_text": "Reply from user tacoshop_pdx: Happened to me too. I opened a dispute with my bank."
+     }
+    ]
+   },
+   {
+    "path": "/claims/3",
+    "value": "{\"claim\": \"User mike_r received a single charge and was not affected by the duplicate charge issue.\", \"status\": \"alleged\", \"attributed_to\": \"mike_r\", \"supporting_passage\": \"Mine was fine, single charge.\"}",
+    "status": "found",
+    "confidence": 0.8888888888888888,
+    "ambiguous": false,
+    "derived": false,
+    "citations": [
+     {
+      "location": {
+       "kind": "text_span",
+       "page": null,
+       "char_start": 483,
+       "char_end": 536
+      },
+      "source_text": "Reply from user mike_r: Mine was fine, single charge."
+     }
+    ]
+   },
+   {
+    "path": "/claims/4",
+    "value": "{\"claim\": \"Several users said they would cancel if the duplicate charges were not refunded this week.\", \"status\": \"alleged\", \"attributed_to\": \"Several users\", \"supporting_passage\": \"Several users said they would cancel if the duplicate charges were not refunded this week.\"}",
+    "status": "found",
+    "confidence": 0.8888888888888888,
+    "ambiguous": false,
+    "derived": false,
+    "citations": [
+     {
+      "location": {
+       "kind": "text_span",
+       "page": null,
+       "char_start": 537,
+       "char_end": 627
+      },
+      "source_text": "Several users said they would cancel if the duplicate charges were not refunded this week."
+     }
+    ]
+   },
+   {
+    "path": "/entities/0",
+    "value": "{\"kind\": \"organization\", \"name\": \"Nimbleroot\", \"role\": \"Company accused of double-charging customers\"}",
+    "status": "found",
+    "confidence": 0.8888888888888888,
+    "ambiguous": false,
+    "derived": false,
+    "citations": [
+     {
+      "location": {
+       "kind": "text_span",
+       "page": null,
+       "char_start": 206,
+       "char_end": 307
+      },
+      "source_text": "Original post: Nimbleroot charged my card twice for November and support hasn't replied in four days."
+     }
+    ]
+   },
+   {
+    "path": "/entities/1",
+    "value": "{\"kind\": \"person\", \"name\": \"ledgerlady\", \"role\": \"User reporting duplicate charges\"}",
+    "status": "found",
+    "confidence": 0.8888888888888888,
+    "ambiguous": false,
+    "derived": false,
+    "citations": [
+     {
+      "location": {
+       "kind": "text_span",
+       "page": null,
+       "char_start": 308,
+       "char_end": 399
+      },
+      "source_text": "Reply from user ledgerlady: Same here, two $49 charges on Nov 1. Still waiting on a refund."
+     }
+    ]
+   },
+   {
+    "path": "/entities/2",
+    "value": "{\"kind\": \"person\", \"name\": \"tacoshop_pdx\", \"role\": \"User reporting duplicate charges and opening a bank dispute\"}",
+    "status": "found",
+    "confidence": 0.8888888888888888,
+    "ambiguous": false,
+    "derived": false,
+    "citations": [
+     {
+      "location": {
+       "kind": "text_span",
+       "page": null,
+       "char_start": 400,
+       "char_end": 482
+      },
+      "source_text": "Reply from user tacoshop_pdx: Happened to me too. I opened a dispute with my bank."
+     }
+    ]
+   },
+   {
+    "path": "/entities/3",
+    "value": "{\"kind\": \"person\", \"name\": \"mike_r\", \"role\": \"User reporting a single charge\"}",
+    "status": "found",
+    "confidence": 0.8888888888888888,
+    "ambiguous": false,
+    "derived": false,
+    "citations": [
+     {
+      "location": {
+       "kind": "text_span",
+       "page": null,
+       "char_start": 483,
+       "char_end": 536
+      },
+      "source_text": "Reply from user mike_r: Mine was fine, single charge."
+     }
+    ]
+   },
+   {
+    "path": "/event_dates/0",
+    "value": "{\"date\": \"2026-11-01\", \"event\": \"Two $49 charges posted to ledgerlady's card\"}",
+    "status": "found",
+    "confidence": 0.5925925925925926,
+    "ambiguous": false,
+    "derived": false,
+    "citations": [
+     {
+      "location": {
+       "kind": "text_span",
+       "page": null,
+       "char_start": 308,
+       "char_end": 399
+      },
+      "source_text": "Reply from user ledgerlady: Same here, two $49 charges on Nov 1. Still waiting on a refund."
+     }
+    ]
+   },
+   {
+    "path": "/event_dates/1",
+    "value": "{\"date\": \"2026-11-06\", \"event\": \"Original post published on the forum\"}",
+    "status": "found",
+    "confidence": 0.8888888888888888,
+    "ambiguous": false,
+    "derived": false,
+    "citations": [
+     {
+      "location": {
+       "kind": "text_span",
+       "page": null,
+       "char_start": 139,
+       "char_end": 160
+      },
+      "source_text": "Published: 2026-11-06"
+     }
+    ]
+   }
+  ],
+  "job_id": "515be820-45ec-43a4-9d0a-a68397714749",
+  "cost": {
+   "lines": [
+    {
+     "unit": "page",
+     "quantity": 1,
+     "execution": "fresh",
+     "operation": "parse",
+     "amount_usd": "0.0035",
+     "reuse_reason": null,
+     "unit_price_usd": "0.0035"
+    },
+    {
+     "unit": "page",
+     "quantity": 1,
+     "execution": "fresh",
+     "operation": "extract",
+     "amount_usd": "0.0085",
+     "reuse_reason": null,
+     "unit_price_usd": "0.0085"
+    }
+   ],
+   "currency": "USD",
+   "total_usd": "0.012",
+   "pricing_version": "retail-2026-11-10-v2"
+  },
+  "units": 3,
+  "latency_ms": 6633.4,
+  "warnings": []
+ },
+ "f06": {
+  "data": {
+   "claims": [
+    {
+     "claim": "ScamWatch Northwest has received five reports of social media accounts posing as 'Nimbleroot Support'.",
+     "status": "reported",
+     "attributed_to": "ScamWatch Northwest",
+     "supporting_passage": "ScamWatch Northwest has received five reports of social media accounts posing as \"Nimbleroot Support\"."
+    },
+    {
+     "claim": "The fake accounts direct customers to a look-alike site that asks for online banking credentials.",
+     "status": "reported",
+     "attributed_to": "ScamWatch Northwest",
+     "supporting_passage": "The accounts reply to customers who post about billing problems and direct them to a look-alike site, nimbleroot-help.example, that asks for online banking credentials."
+    },
+    {
+     "claim": "Nimbleroot has not commented on the fake accounts.",
+     "status": "reported",
+     "attributed_to": "ScamWatch Northwest",
+     "supporting_passage": "Nimbleroot has not commented on the accounts."
+    },
+    {
+     "claim": "At least one bakery owner entered her banking password before realizing the site was fake.",
+     "status": "reported",
+     "attributed_to": "ScamWatch Northwest",
+     "supporting_passage": "At least one bakery owner said she entered her banking password before realizing the site was fake."
+    }
+   ],
+   "entities": [
+    {
+     "kind": "organization",
+     "name": "ScamWatch Northwest",
+     "role": "Organization reporting on the scam"
+    },
+    {
+     "kind": "organization",
+     "name": "Nimbleroot",
+     "role": "Company being impersonated"
+    },
+    {
+     "kind": "product",
+     "name": "Nimbleroot Support",
+     "role": "Name of the fake social media accounts"
+    },
+    {
+     "kind": "other",
+     "name": "nimbleroot-help.example",
+     "role": "Look-alike site used in the scam"
+    }
+   ],
+   "event_dates": [],
+   "publication_date": "2026-11-07"
+  },
+  "fields": [
+   {
+    "path": "/publication_date",
+    "value": "2026-11-07",
+    "status": "found",
+    "confidence": 0.8888888888888888,
+    "ambiguous": false,
+    "derived": false,
+    "citations": [
+     {
+      "location": {
+       "kind": "text_span",
+       "page": null,
+       "char_start": 174,
+       "char_end": 184
+      },
+      "source_text": "Published: 2026-11-07"
+     }
+    ]
+   },
+   {
+    "path": "/claims/0",
+    "value": "{\"claim\": \"ScamWatch Northwest has received five reports of social media accounts posing as 'Nimbleroot Support'.\", \"status\": \"reported\", \"attributed_to\": \"ScamWatch Northwest\", \"supporting_passage\": \"ScamWatch Northwest has received five reports of social media accounts posing as \\\"Nimbleroot Support\\\".\"}",
+    "status": "found",
+    "confidence": 0.8888888888888888,
+    "ambiguous": false,
+    "derived": false,
+    "citations": [
+     {
+      "location": {
+       "kind": "text_span",
+       "page": null,
+       "char_start": 230,
+       "char_end": 332
+      },
+      "source_text": "ScamWatch Northwest has received five reports of social media accounts posing as \"Nimbleroot Support\"."
+     }
+    ]
+   },
+   {
+    "path": "/claims/1",
+    "value": "{\"claim\": \"The fake accounts direct customers to a look-alike site that asks for online banking credentials.\", \"status\": \"reported\", \"attributed_to\": \"ScamWatch Northwest\", \"supporting_passage\": \"The accounts reply to customers who post about billing problems and direct them to a look-alike site, nimbleroot-help.example, that asks for online banking credentials.\"}",
+    "status": "found",
+    "confidence": 0.8888888888888888,
+    "ambiguous": false,
+    "derived": false,
+    "citations": [
+     {
+      "location": {
+       "kind": "text_span",
+       "page": null,
+       "char_start": 333,
+       "char_end": 501
+      },
+      "source_text": "The accounts reply to customers who post about billing problems and direct them to a look-alike site, nimbleroot-help.example, that asks for online banking credentials."
+     }
+    ]
+   },
+   {
+    "path": "/claims/2",
+    "value": "{\"claim\": \"Nimbleroot has not commented on the fake accounts.\", \"status\": \"reported\", \"attributed_to\": \"ScamWatch Northwest\", \"supporting_passage\": \"Nimbleroot has not commented on the accounts.\"}",
+    "status": "found",
+    "confidence": 0.8888888888888888,
+    "ambiguous": false,
+    "derived": false,
+    "citations": [
+     {
+      "location": {
+       "kind": "text_span",
+       "page": null,
+       "char_start": 502,
+       "char_end": 547
+      },
+      "source_text": "Nimbleroot has not commented on the accounts."
+     }
+    ]
+   },
+   {
+    "path": "/claims/3",
+    "value": "{\"claim\": \"At least one bakery owner entered her banking password before realizing the site was fake.\", \"status\": \"reported\", \"attributed_to\": \"ScamWatch Northwest\", \"supporting_passage\": \"At least one bakery owner said she entered her banking password before realizing the site was fake.\"}",
+    "status": "found",
+    "confidence": 0.8888888888888888,
+    "ambiguous": false,
+    "derived": false,
+    "citations": [
+     {
+      "location": {
+       "kind": "text_span",
+       "page": null,
+       "char_start": 630,
+       "char_end": 729
+      },
+      "source_text": "At least one bakery owner said she entered her banking password before realizing the site was fake."
+     }
+    ]
+   },
+   {
+    "path": "/entities/0",
+    "value": "{\"kind\": \"organization\", \"name\": \"ScamWatch Northwest\", \"role\": \"Organization reporting on the scam\"}",
+    "status": "found",
+    "confidence": 0.8888888888888888,
+    "ambiguous": false,
+    "derived": false,
+    "citations": [
+     {
+      "location": {
+       "kind": "text_span",
+       "page": null,
+       "char_start": 230,
+       "char_end": 332
+      },
+      "source_text": "ScamWatch Northwest has received five reports of social media accounts posing as \"Nimbleroot Support\"."
+     }
+    ]
+   },
+   {
+    "path": "/entities/1",
+    "value": "{\"kind\": \"organization\", \"name\": \"Nimbleroot\", \"role\": \"Company being impersonated\"}",
+    "status": "found",
+    "confidence": 0.8888888888888888,
+    "ambiguous": false,
+    "derived": false,
+    "citations": [
+     {
+      "location": {
+       "kind": "text_span",
+       "page": null,
+       "char_start": 502,
+       "char_end": 547
+      },
+      "source_text": "Nimbleroot has not commented on the accounts."
+     }
+    ]
+   },
+   {
+    "path": "/entities/2",
+    "value": "{\"kind\": \"product\", \"name\": \"Nimbleroot Support\", \"role\": \"Name of the fake social media accounts\"}",
+    "status": "found",
+    "confidence": 0.8888888888888888,
+    "ambiguous": false,
+    "derived": false,
+    "citations": [
+     {
+      "location": {
+       "kind": "text_span",
+       "page": null,
+       "char_start": 230,
+       "char_end": 332
+      },
+      "source_text": "ScamWatch Northwest has received five reports of social media accounts posing as \"Nimbleroot Support\"."
+     }
+    ]
+   },
+   {
+    "path": "/entities/3",
+    "value": "{\"kind\": \"other\", \"name\": \"nimbleroot-help.example\", \"role\": \"Look-alike site used in the scam\"}",
+    "status": "found",
+    "confidence": 0.8888888888888888,
+    "ambiguous": false,
+    "derived": false,
+    "citations": [
+     {
+      "location": {
+       "kind": "text_span",
+       "page": null,
+       "char_start": 333,
+       "char_end": 501
+      },
+      "source_text": "The accounts reply to customers who post about billing problems and direct them to a look-alike site, nimbleroot-help.example, that asks for online banking credentials."
+     }
+    ]
+   }
+  ],
+  "job_id": "eac46dff-a671-4bd7-870b-4cdda80915e8",
+  "cost": {
+   "lines": [
+    {
+     "unit": "page",
+     "quantity": 1,
+     "execution": "fresh",
+     "operation": "parse",
+     "amount_usd": "0.0035",
+     "reuse_reason": null,
+     "unit_price_usd": "0.0035"
+    },
+    {
+     "unit": "page",
+     "quantity": 1,
+     "execution": "fresh",
+     "operation": "extract",
+     "amount_usd": "0.0085",
+     "reuse_reason": null,
+     "unit_price_usd": "0.0085"
+    }
+   ],
+   "currency": "USD",
+   "total_usd": "0.012",
+   "pricing_version": "retail-2026-11-10-v2"
+  },
+  "units": 3,
+  "latency_ms": 6380.9,
+  "warnings": []
+ },
+ "f07": {
+  "data": {
+   "claims": [
+    {
+     "claim": "A publicly readable cloud storage bucket belonging to Nimbleroot's staging environment was found.",
+     "status": "reported",
+     "attributed_to": "Theo Lindqvist",
+     "supporting_passage": "Security researcher Theo Lindqvist says he found a publicly readable cloud storage bucket belonging to Nimbleroot's staging environment."
+    },
+    {
+     "claim": "The bucket contained roughly 2,300 PDF invoices that appeared to belong to real small-business customers, including names and addresses.",
+     "status": "reported",
+     "attributed_to": "Theo Lindqvist",
+     "supporting_passage": "According to Lindqvist, the bucket contained roughly 2,300 PDF invoices that appeared to belong to real small-business customers, including names and addresses."
+    },
+    {
+     "claim": "The issue was reported to Nimbleroot on November 6 and the bucket was locked down within hours.",
+     "status": "reported",
+     "attributed_to": "Theo Lindqvist",
+     "supporting_passage": "Lindqvist says he reported the issue to Nimbleroot on November 6 and the bucket was locked down within hours."
+    },
+    {
+     "claim": "It is not known whether anyone else accessed the files.",
+     "status": "reported",
+     "attributed_to": "buckethunter.example",
+     "supporting_passage": "It is not known whether anyone else accessed the files."
+    },
+    {
+     "claim": "Nimbleroot did not respond to a request for comment before publication.",
+     "status": "reported",
+     "attributed_to": "buckethunter.example",
+     "supporting_passage": "Nimbleroot did not respond to a request for comment before publication."
+    }
+   ],
+   "entities": [
+    {
+     "kind": "person",
+     "name": "Theo Lindqvist",
+     "role": "Security researcher who found the publicly readable cloud storage bucket"
+    },
+    {
+     "kind": "organization",
+     "name": "Nimbleroot",
+     "role": "Seed-stage startup whose staging environment bucket was exposed"
+    }
+   ],
+   "event_dates": [
+    {
+     "date": "2026-11-06",
+     "event": "Theo Lindqvist reported the issue to Nimbleroot"
+    },
+    {
+     "date": "2026-11-08",
+     "event": "Article published"
+    }
+   ],
+   "publication_date": "2026-11-08"
+  },
+  "fields": [
+   {
+    "path": "/publication_date",
+    "value": "2026-11-08",
+    "status": "found",
+    "confidence": 0.8888888888888888,
+    "ambiguous": false,
+    "derived": false,
+    "citations": [
+     {
+      "location": {
+       "kind": "text_span",
+       "page": null,
+       "char_start": 169,
+       "char_end": 179
+      },
+      "source_text": "Published: 2026-11-08"
+     }
+    ]
+   },
+   {
+    "path": "/claims/0",
+    "value": "{\"claim\": \"A publicly readable cloud storage bucket belonging to Nimbleroot's staging environment was found.\", \"status\": \"reported\", \"attributed_to\": \"Theo Lindqvist\", \"supporting_passage\": \"Security researcher Theo Lindqvist says he found a publicly readable cloud storage bucket belonging to Nimbleroot's staging environment.\"}",
+    "status": "found",
+    "confidence": 0.8888888888888888,
+    "ambiguous": false,
+    "derived": false,
+    "citations": [
+     {
+      "location": {
+       "kind": "text_span",
+       "page": null,
+       "char_start": 225,
+       "char_end": 361
+      },
+      "source_text": "Security researcher Theo Lindqvist says he found a publicly readable cloud storage bucket belonging to Nimbleroot's staging environment."
+     }
+    ]
+   },
+   {
+    "path": "/claims/1",
+    "value": "{\"claim\": \"The bucket contained roughly 2,300 PDF invoices that appeared to belong to real small-business customers, including names and addresses.\", \"status\": \"reported\", \"attributed_to\": \"Theo Lindqvist\", \"supporting_passage\": \"According to Lindqvist, the bucket contained roughly 2,300 PDF invoices that appeared to belong to real small-business customers, including names and addresses.\"}",
+    "status": "found",
+    "confidence": 0.8888888888888888,
+    "ambiguous": false,
+    "derived": false,
+    "citations": [
+     {
+      "location": {
+       "kind": "text_span",
+       "page": null,
+       "char_start": 362,
+       "char_end": 522
+      },
+      "source_text": "According to Lindqvist, the bucket contained roughly 2,300 PDF invoices that appeared to belong to real small-business customers, including names and addresses."
+     }
+    ]
+   },
+   {
+    "path": "/claims/2",
+    "value": "{\"claim\": \"The issue was reported to Nimbleroot on November 6 and the bucket was locked down within hours.\", \"status\": \"reported\", \"attributed_to\": \"Theo Lindqvist\", \"supporting_passage\": \"Lindqvist says he reported the issue to Nimbleroot on November 6 and the bucket was locked down within hours.\"}",
+    "status": "found",
+    "confidence": 0.8888888888888888,
+    "ambiguous": false,
+    "derived": false,
+    "citations": [
+     {
+      "location": {
+       "kind": "text_span",
+       "page": null,
+       "char_start": 523,
+       "char_end": 632
+      },
+      "source_text": "Lindqvist says he reported the issue to Nimbleroot on November 6 and the bucket was locked down within hours."
+     }
+    ]
+   },
+   {
+    "path": "/claims/3",
+    "value": "{\"claim\": \"It is not known whether anyone else accessed the files.\", \"status\": \"reported\", \"attributed_to\": \"buckethunter.example\", \"supporting_passage\": \"It is not known whether anyone else accessed the files.\"}",
+    "status": "found",
+    "confidence": 0.8888888888888888,
+    "ambiguous": false,
+    "derived": false,
+    "citations": [
+     {
+      "location": {
+       "kind": "text_span",
+       "page": null,
+       "char_start": 633,
+       "char_end": 688
+      },
+      "source_text": "It is not known whether anyone else accessed the files."
+     }
+    ]
+   },
+   {
+    "path": "/claims/4",
+    "value": "{\"claim\": \"Nimbleroot did not respond to a request for comment before publication.\", \"status\": \"reported\", \"attributed_to\": \"buckethunter.example\", \"supporting_passage\": \"Nimbleroot did not respond to a request for comment before publication.\"}",
+    "status": "found",
+    "confidence": 0.8888888888888888,
+    "ambiguous": false,
+    "derived": false,
+    "citations": [
+     {
+      "location": {
+       "kind": "text_span",
+       "page": null,
+       "char_start": 689,
+       "char_end": 760
+      },
+      "source_text": "Nimbleroot did not respond to a request for comment before publication."
+     }
+    ]
+   },
+   {
+    "path": "/entities/0",
+    "value": "{\"kind\": \"person\", \"name\": \"Theo Lindqvist\", \"role\": \"Security researcher who found the publicly readable cloud storage bucket\"}",
+    "status": "found",
+    "confidence": 0.8888888888888888,
+    "ambiguous": false,
+    "derived": false,
+    "citations": [
+     {
+      "location": {
+       "kind": "text_span",
+       "page": null,
+       "char_start": 225,
+       "char_end": 361
+      },
+      "source_text": "Security researcher Theo Lindqvist says he found a publicly readable cloud storage bucket belonging to Nimbleroot's staging environment."
+     }
+    ]
+   },
+   {
+    "path": "/entities/1",
+    "value": "{\"kind\": \"organization\", \"name\": \"Nimbleroot\", \"role\": \"Seed-stage startup whose staging environment bucket was exposed\"}",
+    "status": "found",
+    "confidence": 0.8888888888888888,
+    "ambiguous": false,
+    "derived": false,
+    "citations": [
+     {
+      "location": {
+       "kind": "text_span",
+       "page": null,
+       "char_start": 225,
+       "char_end": 361
+      },
+      "source_text": "Security researcher Theo Lindqvist says he found a publicly readable cloud storage bucket belonging to Nimbleroot's staging environment."
+     }
+    ]
+   },
+   {
+    "path": "/event_dates/0",
+    "value": "{\"date\": \"2026-11-06\", \"event\": \"Theo Lindqvist reported the issue to Nimbleroot\"}",
+    "status": "found",
+    "confidence": 0.5925925925925926,
+    "ambiguous": false,
+    "derived": false,
+    "citations": [
+     {
+      "location": {
+       "kind": "text_span",
+       "page": null,
+       "char_start": 523,
+       "char_end": 632
+      },
+      "source_text": "Lindqvist says he reported the issue to Nimbleroot on November 6 and the bucket was locked down within hours."
+     }
+    ]
+   },
+   {
+    "path": "/event_dates/1",
+    "value": "{\"date\": \"2026-11-08\", \"event\": \"Article published\"}",
+    "status": "found",
+    "confidence": 0.8888888888888888,
+    "ambiguous": false,
+    "derived": false,
+    "citations": [
+     {
+      "location": {
+       "kind": "text_span",
+       "page": null,
+       "char_start": 158,
+       "char_end": 179
+      },
+      "source_text": "Published: 2026-11-08"
+     }
+    ]
+   }
+  ],
+  "job_id": "aa02347a-5786-42f9-8df8-ea5d03cd7d60",
+  "cost": {
+   "lines": [
+    {
+     "unit": "page",
+     "quantity": 1,
+     "execution": "fresh",
+     "operation": "parse",
+     "amount_usd": "0.0035",
+     "reuse_reason": null,
+     "unit_price_usd": "0.0035"
+    },
+    {
+     "unit": "page",
+     "quantity": 1,
+     "execution": "fresh",
+     "operation": "extract",
+     "amount_usd": "0.0085",
+     "reuse_reason": null,
+     "unit_price_usd": "0.0085"
+    }
+   ],
+   "currency": "USD",
+   "total_usd": "0.012",
+   "pricing_version": "retail-2026-11-10-v2"
+  },
+  "units": 3,
+  "latency_ms": 5751.6,
+  "warnings": []
+ },
+ "f08": {
+  "data": {
+   "claims": [
+    {
+     "claim": "A former design contractor filed a small-claims complaint alleging Nimbleroot withheld a final payment of $8,400.",
+     "status": "alleged",
+     "attributed_to": "former design contractor",
+     "supporting_passage": "A former design contractor has filed a small-claims complaint in Multnomah County alleging that Nimbleroot withheld a final payment of $8,400."
+    },
+    {
+     "claim": "Nimbleroot stopped responding after the contractor delivered a redesign of its mobile app.",
+     "status": "alleged",
+     "attributed_to": "former design contractor",
+     "supporting_passage": "The complaint claims the company stopped responding after the contractor delivered a redesign of its mobile app."
+    },
+    {
+     "claim": "The allegations have not been tested in court.",
+     "status": "reported",
+     "attributed_to": "reporter",
+     "supporting_passage": "The allegations have not been tested in court."
+    },
+    {
+     "claim": "A hearing is scheduled for January.",
+     "status": "reported",
+     "attributed_to": "reporter",
+     "supporting_passage": "A hearing is scheduled for January."
+    },
+    {
+     "claim": "Nimbleroot CEO Dana Vell did not respond to a request for comment.",
+     "status": "reported",
+     "attributed_to": "reporter",
+     "supporting_passage": "Nimbleroot CEO Dana Vell did not respond to a request for comment."
+    }
+   ],
+   "entities": [
+    {
+     "kind": "organization",
+     "name": "Nimbleroot",
+     "role": "Defendant in a small-claims complaint alleging it withheld a final payment of $8,400"
+    },
+    {
+     "kind": "person",
+     "name": "Dana Vell",
+     "role": "Nimbleroot CEO who did not respond to a request for comment"
+    },
+    {
+     "kind": "organization",
+     "name": "Multnomah County",
+     "role": "Jurisdiction where the small-claims complaint was filed"
+    }
+   ],
+   "event_dates": [
+    {
+     "date": "2026-11-09",
+     "event": "Article published"
+    },
+    {
+     "date": "2026-11-14",
+     "event": "Article retrieved"
+    }
+   ],
+   "publication_date": "2026-11-09"
+  },
+  "fields": [
+   {
+    "path": "/publication_date",
+    "value": "2026-11-09",
+    "status": "found",
+    "confidence": 0.8888888888888888,
+    "ambiguous": false,
+    "derived": false,
+    "citations": [
+     {
+      "location": {
+       "kind": "text_span",
+       "page": null,
+       "char_start": 154,
+       "char_end": 164
+      },
+      "source_text": "Published: 2026-11-09"
+     }
+    ]
+   },
+   {
+    "path": "/claims/0",
+    "value": "{\"claim\": \"A former design contractor filed a small-claims complaint alleging Nimbleroot withheld a final payment of $8,400.\", \"status\": \"alleged\", \"attributed_to\": \"former design contractor\", \"supporting_passage\": \"A former design contractor has filed a small-claims complaint in Multnomah County alleging that Nimbleroot withheld a final payment of $8,400.\"}",
+    "status": "found",
+    "confidence": 0.8888888888888888,
+    "ambiguous": false,
+    "derived": false,
+    "citations": [
+     {
+      "location": {
+       "kind": "text_span",
+       "page": null,
+       "char_start": 210,
+       "char_end": 352
+      },
+      "source_text": "A former design contractor has filed a small-claims complaint in Multnomah County alleging that Nimbleroot withheld a final payment of $8,400."
+     }
+    ]
+   },
+   {
+    "path": "/claims/1",
+    "value": "{\"claim\": \"Nimbleroot stopped responding after the contractor delivered a redesign of its mobile app.\", \"status\": \"alleged\", \"attributed_to\": \"former design contractor\", \"supporting_passage\": \"The complaint claims the company stopped responding after the contractor delivered a redesign of its mobile app.\"}",
+    "status": "found",
+    "confidence": 0.8888888888888888,
+    "ambiguous": false,
+    "derived": false,
+    "citations": [
+     {
+      "location": {
+       "kind": "text_span",
+       "page": null,
+       "char_start": 353,
+       "char_end": 465
+      },
+      "source_text": "The complaint claims the company stopped responding after the contractor delivered a redesign of its mobile app."
+     }
+    ]
+   },
+   {
+    "path": "/claims/2",
+    "value": "{\"claim\": \"The allegations have not been tested in court.\", \"status\": \"reported\", \"attributed_to\": \"reporter\", \"supporting_passage\": \"The allegations have not been tested in court.\"}",
+    "status": "found",
+    "confidence": 0.8888888888888888,
+    "ambiguous": false,
+    "derived": false,
+    "citations": [
+     {
+      "location": {
+       "kind": "text_span",
+       "page": null,
+       "char_start": 466,
+       "char_end": 512
+      },
+      "source_text": "The allegations have not been tested in court."
+     }
+    ]
+   },
+   {
+    "path": "/claims/3",
+    "value": "{\"claim\": \"A hearing is scheduled for January.\", \"status\": \"reported\", \"attributed_to\": \"reporter\", \"supporting_passage\": \"A hearing is scheduled for January.\"}",
+    "status": "found",
+    "confidence": 0.8888888888888888,
+    "ambiguous": false,
+    "derived": false,
+    "citations": [
+     {
+      "location": {
+       "kind": "text_span",
+       "page": null,
+       "char_start": 513,
+       "char_end": 548
+      },
+      "source_text": "A hearing is scheduled for January."
+     }
+    ]
+   },
+   {
+    "path": "/claims/4",
+    "value": "{\"claim\": \"Nimbleroot CEO Dana Vell did not respond to a request for comment.\", \"status\": \"reported\", \"attributed_to\": \"reporter\", \"supporting_passage\": \"Nimbleroot CEO Dana Vell did not respond to a request for comment.\"}",
+    "status": "found",
+    "confidence": 0.8888888888888888,
+    "ambiguous": false,
+    "derived": false,
+    "citations": [
+     {
+      "location": {
+       "kind": "text_span",
+       "page": null,
+       "char_start": 549,
+       "char_end": 615
+      },
+      "source_text": "Nimbleroot CEO Dana Vell did not respond to a request for comment."
+     }
+    ]
+   },
+   {
+    "path": "/entities/0",
+    "value": "{\"kind\": \"organization\", \"name\": \"Nimbleroot\", \"role\": \"Defendant in a small-claims complaint alleging it withheld a final payment of $8,400\"}",
+    "status": "found",
+    "confidence": 0.8888888888888888,
+    "ambiguous": false,
+    "derived": false,
+    "citations": [
+     {
+      "location": {
+       "kind": "text_span",
+       "page": null,
+       "char_start": 210,
+       "char_end": 352
+      },
+      "source_text": "A former design contractor has filed a small-claims complaint in Multnomah County alleging that Nimbleroot withheld a final payment of $8,400."
+     }
+    ]
+   },
+   {
+    "path": "/entities/1",
+    "value": "{\"kind\": \"person\", \"name\": \"Dana Vell\", \"role\": \"Nimbleroot CEO who did not respond to a request for comment\"}",
+    "status": "found",
+    "confidence": 0.8888888888888888,
+    "ambiguous": false,
+    "derived": false,
+    "citations": [
+     {
+      "location": {
+       "kind": "text_span",
+       "page": null,
+       "char_start": 549,
+       "char_end": 615
+      },
+      "source_text": "Nimbleroot CEO Dana Vell did not respond to a request for comment."
+     }
+    ]
+   },
+   {
+    "path": "/entities/2",
+    "value": "{\"kind\": \"organization\", \"name\": \"Multnomah County\", \"role\": \"Jurisdiction where the small-claims complaint was filed\"}",
+    "status": "found",
+    "confidence": 0.8888888888888888,
+    "ambiguous": false,
+    "derived": false,
+    "citations": [
+     {
+      "location": {
+       "kind": "text_span",
+       "page": null,
+       "char_start": 210,
+       "char_end": 352
+      },
+      "source_text": "A former design contractor has filed a small-claims complaint in Multnomah County alleging that Nimbleroot withheld a final payment of $8,400."
+     }
+    ]
+   },
+   {
+    "path": "/event_dates/0",
+    "value": "{\"date\": \"2026-11-09\", \"event\": \"Article published\"}",
+    "status": "found",
+    "confidence": 0.8888888888888888,
+    "ambiguous": false,
+    "derived": false,
+    "citations": [
+     {
+      "location": {
+       "kind": "text_span",
+       "page": null,
+       "char_start": 143,
+       "char_end": 164
+      },
+      "source_text": "Published: 2026-11-09"
+     }
+    ]
+   },
+   {
+    "path": "/event_dates/1",
+    "value": "{\"date\": \"2026-11-14\", \"event\": \"Article retrieved\"}",
+    "status": "found",
+    "confidence": 0.8888888888888888,
+    "ambiguous": false,
+    "derived": false,
+    "citations": [
+     {
+      "location": {
+       "kind": "text_span",
+       "page": null,
+       "char_start": 167,
+       "char_end": 203
+      },
+      "source_text": "Retrieved: 2026-11-14T20:25:05+00:00"
+     }
+    ]
+   }
+  ],
+  "job_id": "bae8f91c-7a99-4da3-bc8f-20301e3f5b73",
+  "cost": {
+   "lines": [
+    {
+     "unit": "page",
+     "quantity": 1,
+     "execution": "fresh",
+     "operation": "parse",
+     "amount_usd": "0.0035",
+     "reuse_reason": null,
+     "unit_price_usd": "0.0035"
+    },
+    {
+     "unit": "page",
+     "quantity": 1,
+     "execution": "fresh",
+     "operation": "extract",
+     "amount_usd": "0.0085",
+     "reuse_reason": null,
+     "unit_price_usd": "0.0085"
+    }
+   ],
+   "currency": "USD",
+   "total_usd": "0.012",
+   "pricing_version": "retail-2026-11-10-v2"
+  },
+  "units": 3,
+  "latency_ms": 5549.7,
+  "warnings": []
+ },
+ "f09": {
+  "data": {
+   "claims": [
+    {
+     "claim": "A security researcher informed Nimbleroot that a staging environment storage bucket was publicly readable.",
+     "status": "officially_stated",
+     "attributed_to": "Dana Vell, CEO",
+     "supporting_passage": "On November 6, a security researcher told us that a storage bucket in our staging environment was publicly readable."
+    },
+    {
+     "claim": "Nimbleroot locked down the exposed bucket on the same day it was reported.",
+     "status": "officially_stated",
+     "attributed_to": "Dana Vell, CEO",
+     "supporting_passage": "We locked it down the same day."
+    },
+    {
+     "claim": "The exposed bucket contained 2,291 invoices.",
+     "status": "officially_stated",
+     "attributed_to": "Dana Vell, CEO",
+     "supporting_passage": "Our investigation found that the bucket contained 2,291 invoices, and we are notifying every affected customer by email."
+    },
+    {
+     "claim": "Nimbleroot is notifying every affected customer by email.",
+     "status": "officially_stated",
+     "attributed_to": "Dana Vell, CEO",
+     "supporting_passage": "Our investigation found that the bucket contained 2,291 invoices, and we are notifying every affected customer by email."
+    },
+    {
+     "claim": "There is no evidence that anyone other than the security researcher accessed the files.",
+     "status": "officially_stated",
+     "attributed_to": "Dana Vell, CEO",
+     "supporting_passage": "We have found no evidence so far that anyone other than the researcher accessed the files."
+    },
+    {
+     "claim": "Nimbleroot has engaged an outside security firm to audit its cloud configuration.",
+     "status": "officially_stated",
+     "attributed_to": "Dana Vell, CEO",
+     "supporting_passage": "We have engaged an outside security firm to audit our cloud configuration."
+    }
+   ],
+   "entities": [
+    {
+     "kind": "person",
+     "name": "Dana Vell",
+     "role": "CEO"
+    }
+   ],
+   "event_dates": [
+    {
+     "date": "2026-11-06",
+     "event": "Security researcher reported publicly readable staging storage bucket"
+    },
+    {
+     "date": "2026-11-09",
+     "event": "Nimbleroot published update on staging storage exposure"
+    }
+   ],
+   "publication_date": "2026-11-09"
+  },
+  "fields": [
+   {
+    "path": "/publication_date",
+    "value": "2026-11-09",
+    "status": "found",
+    "confidence": 0.8888888888888888,
+    "ambiguous": false,
+    "derived": false,
+    "citations": [
+     {
+      "location": {
+       "kind": "text_span",
+       "page": null,
+       "char_start": 126,
+       "char_end": 136
+      },
+      "source_text": "Published: 2026-11-09"
+     }
+    ]
+   },
+   {
+    "path": "/claims/0",
+    "value": "{\"claim\": \"A security researcher informed Nimbleroot that a staging environment storage bucket was publicly readable.\", \"status\": \"officially_stated\", \"attributed_to\": \"Dana Vell, CEO\", \"supporting_passage\": \"On November 6, a security researcher told us that a storage bucket in our staging environment was publicly readable.\"}",
+    "status": "found",
+    "confidence": 0.8888888888888888,
+    "ambiguous": false,
+    "derived": false,
+    "citations": [
+     {
+      "location": {
+       "kind": "text_span",
+       "page": null,
+       "char_start": 182,
+       "char_end": 298
+      },
+      "source_text": "On November 6, a security researcher told us that a storage bucket in our staging environment was publicly readable."
+     }
+    ]
+   },
+   {
+    "path": "/claims/1",
+    "value": "{\"claim\": \"Nimbleroot locked down the exposed bucket on the same day it was reported.\", \"status\": \"officially_stated\", \"attributed_to\": \"Dana Vell, CEO\", \"supporting_passage\": \"We locked it down the same day.\"}",
+    "status": "found",
+    "confidence": 0.8888888888888888,
+    "ambiguous": false,
+    "derived": false,
+    "citations": [
+     {
+      "location": {
+       "kind": "text_span",
+       "page": null,
+       "char_start": 299,
+       "char_end": 330
+      },
+      "source_text": "We locked it down the same day."
+     }
+    ]
+   },
+   {
+    "path": "/claims/2",
+    "value": "{\"claim\": \"The exposed bucket contained 2,291 invoices.\", \"status\": \"officially_stated\", \"attributed_to\": \"Dana Vell, CEO\", \"supporting_passage\": \"Our investigation found that the bucket contained 2,291 invoices, and we are notifying every affected customer by email.\"}",
+    "status": "found",
+    "confidence": 0.8888888888888888,
+    "ambiguous": false,
+    "derived": false,
+    "citations": [
+     {
+      "location": {
+       "kind": "text_span",
+       "page": null,
+       "char_start": 331,
+       "char_end": 451
+      },
+      "source_text": "Our investigation found that the bucket contained 2,291 invoices, and we are notifying every affected customer by email."
+     }
+    ]
+   },
+   {
+    "path": "/claims/3",
+    "value": "{\"claim\": \"Nimbleroot is notifying every affected customer by email.\", \"status\": \"officially_stated\", \"attributed_to\": \"Dana Vell, CEO\", \"supporting_passage\": \"Our investigation found that the bucket contained 2,291 invoices, and we are notifying every affected customer by email.\"}",
+    "status": "found",
+    "confidence": 0.8888888888888888,
+    "ambiguous": false,
+    "derived": false,
+    "citations": [
+     {
+      "location": {
+       "kind": "text_span",
+       "page": null,
+       "char_start": 331,
+       "char_end": 451
+      },
+      "source_text": "Our investigation found that the bucket contained 2,291 invoices, and we are notifying every affected customer by email."
+     }
+    ]
+   },
+   {
+    "path": "/claims/4",
+    "value": "{\"claim\": \"There is no evidence that anyone other than the security researcher accessed the files.\", \"status\": \"officially_stated\", \"attributed_to\": \"Dana Vell, CEO\", \"supporting_passage\": \"We have found no evidence so far that anyone other than the researcher accessed the files.\"}",
+    "status": "found",
+    "confidence": 0.8888888888888888,
+    "ambiguous": false,
+    "derived": false,
+    "citations": [
+     {
+      "location": {
+       "kind": "text_span",
+       "page": null,
+       "char_start": 452,
+       "char_end": 542
+      },
+      "source_text": "We have found no evidence so far that anyone other than the researcher accessed the files."
+     }
+    ]
+   },
+   {
+    "path": "/claims/5",
+    "value": "{\"claim\": \"Nimbleroot has engaged an outside security firm to audit its cloud configuration.\", \"status\": \"officially_stated\", \"attributed_to\": \"Dana Vell, CEO\", \"supporting_passage\": \"We have engaged an outside security firm to audit our cloud configuration.\"}",
+    "status": "found",
+    "confidence": 0.8888888888888888,
+    "ambiguous": false,
+    "derived": false,
+    "citations": [
+     {
+      "location": {
+       "kind": "text_span",
+       "page": null,
+       "char_start": 557,
+       "char_end": 631
+      },
+      "source_text": "We have engaged an outside security firm to audit our cloud configuration."
+     }
+    ]
+   },
+   {
+    "path": "/entities/0",
+    "value": "{\"kind\": \"person\", \"name\": \"Dana Vell\", \"role\": \"CEO\"}",
+    "status": "found",
+    "confidence": 0.8888888888888888,
+    "ambiguous": false,
+    "derived": false,
+    "citations": [
+     {
+      "location": {
+       "kind": "text_span",
+       "page": null,
+       "char_start": 632,
+       "char_end": 648
+      },
+      "source_text": "— Dana Vell, CEO"
+     }
+    ]
+   },
+   {
+    "path": "/event_dates/0",
+    "value": "{\"date\": \"2026-11-06\", \"event\": \"Security researcher reported publicly readable staging storage bucket\"}",
+    "status": "found",
+    "confidence": 0.8888888888888888,
+    "ambiguous": false,
+    "derived": false,
+    "citations": [
+     {
+      "location": {
+       "kind": "text_span",
+       "page": null,
+       "char_start": 182,
+       "char_end": 298
+      },
+      "source_text": "On November 6, a security researcher told us that a storage bucket in our staging environment was publicly readable."
+     }
+    ]
+   },
+   {
+    "path": "/event_dates/1",
+    "value": "{\"date\": \"2026-11-09\", \"event\": \"Nimbleroot published update on staging storage exposure\"}",
+    "status": "found",
+    "confidence": 0.8888888888888888,
+    "ambiguous": false,
+    "derived": false,
+    "citations": [
+     {
+      "location": {
+       "kind": "text_span",
+       "page": null,
+       "char_start": 115,
+       "char_end": 136
+      },
+      "source_text": "Published: 2026-11-09"
+     }
+    ]
+   }
+  ],
+  "job_id": "83d8b26a-bc49-4a6c-9777-601bf4ae87f4",
+  "cost": {
+   "lines": [
+    {
+     "unit": "page",
+     "quantity": 1,
+     "execution": "fresh",
+     "operation": "parse",
+     "amount_usd": "0.0035",
+     "reuse_reason": null,
+     "unit_price_usd": "0.0035"
+    },
+    {
+     "unit": "page",
+     "quantity": 1,
+     "execution": "fresh",
+     "operation": "extract",
+     "amount_usd": "0.0085",
+     "reuse_reason": null,
+     "unit_price_usd": "0.0085"
+    }
+   ],
+   "currency": "USD",
+   "total_usd": "0.012",
+   "pricing_version": "retail-2026-11-10-v2"
+  },
+  "units": 3,
+  "latency_ms": 7127.2,
+  "warnings": []
+ },
+ "f10": {
+  "data": {
+   "claims": [
+    {
+     "claim": "An earlier version of the November 2 article misstated the size of Nimbleroot's seed round as $60 million in the headline.",
+     "status": "officially_stated",
+     "attributed_to": "pdxstartups.example",
+     "supporting_passage": "An earlier version of our November 2 article misstated the size of Nimbleroot's seed round as $60 million in the headline."
+    },
+    {
+     "claim": "The correct amount of Nimbleroot's seed round is $6 million.",
+     "status": "officially_stated",
+     "attributed_to": "pdxstartups.example",
+     "supporting_passage": "The correct amount is $6 million."
+    }
+   ],
+   "entities": [
+    {
+     "kind": "organization",
+     "name": "Nimbleroot",
+     "role": "Startup that raised a seed round"
+    }
+   ],
+   "event_dates": [
+    {
+     "date": "2026-11-02",
+     "event": "Original article about Nimbleroot's seed round was published"
+    }
+   ],
+   "publication_date": "2026-11-10"
+  },
+  "fields": [
+   {
+    "path": "/publication_date",
+    "value": "2026-11-10",
+    "status": "found",
+    "confidence": 0.8888888888888888,
+    "ambiguous": false,
+    "derived": false,
+    "citations": [
+     {
+      "location": {
+       "kind": "text_span",
+       "page": null,
+       "char_start": 131,
+       "char_end": 141
+      },
+      "source_text": "Published: 2026-11-10"
+     }
+    ]
+   },
+   {
+    "path": "/claims/0",
+    "value": "{\"claim\": \"An earlier version of the November 2 article misstated the size of Nimbleroot's seed round as $60 million in the headline.\", \"status\": \"officially_stated\", \"attributed_to\": \"pdxstartups.example\", \"supporting_passage\": \"An earlier version of our November 2 article misstated the size of Nimbleroot's seed round as $60 million in the headline.\"}",
+    "status": "found",
+    "confidence": 0.8888888888888888,
+    "ambiguous": false,
+    "derived": false,
+    "citations": [
+     {
+      "location": {
+       "kind": "text_span",
+       "page": null,
+       "char_start": 187,
+       "char_end": 321
+      },
+      "source_text": "Correction: An earlier version of our November 2 article misstated the size of Nimbleroot's seed round as $60 million in the headline."
+     }
+    ]
+   },
+   {
+    "path": "/claims/1",
+    "value": "{\"claim\": \"The correct amount of Nimbleroot's seed round is $6 million.\", \"status\": \"officially_stated\", \"attributed_to\": \"pdxstartups.example\", \"supporting_passage\": \"The correct amount is $6 million.\"}",
+    "status": "found",
+    "confidence": 0.8888888888888888,
+    "ambiguous": false,
+    "derived": false,
+    "citations": [
+     {
+      "location": {
+       "kind": "text_span",
+       "page": null,
+       "char_start": 322,
+       "char_end": 355
+      },
+      "source_text": "The correct amount is $6 million."
+     }
+    ]
+   },
+   {
+    "path": "/entities/0",
+    "value": "{\"kind\": \"organization\", \"name\": \"Nimbleroot\", \"role\": \"Startup that raised a seed round\"}",
+    "status": "found",
+    "confidence": 0.8888888888888888,
+    "ambiguous": false,
+    "derived": false,
+    "citations": [
+     {
+      "location": {
+       "kind": "text_span",
+       "page": null,
+       "char_start": 187,
+       "char_end": 321
+      },
+      "source_text": "Correction: An earlier version of our November 2 article misstated the size of Nimbleroot's seed round as $60 million in the headline."
+     }
+    ]
+   },
+   {
+    "path": "/event_dates/0",
+    "value": "{\"date\": \"2026-11-02\", \"event\": \"Original article about Nimbleroot's seed round was published\"}",
+    "status": "found",
+    "confidence": 0.5925925925925926,
+    "ambiguous": false,
+    "derived": false,
+    "citations": [
+     {
+      "location": {
+       "kind": "text_span",
+       "page": null,
+       "char_start": 187,
+       "char_end": 321
+      },
+      "source_text": "Correction: An earlier version of our November 2 article misstated the size of Nimbleroot's seed round as $60 million in the headline."
+     }
+    ]
+   }
+  ],
+  "job_id": "67ea3e35-6d4c-4dba-bab4-7690cc535400",
+  "cost": {
+   "lines": [
+    {
+     "unit": "page",
+     "quantity": 1,
+     "execution": "fresh",
+     "operation": "parse",
+     "amount_usd": "0.0035",
+     "reuse_reason": null,
+     "unit_price_usd": "0.0035"
+    },
+    {
+     "unit": "page",
+     "quantity": 1,
+     "execution": "fresh",
+     "operation": "extract",
+     "amount_usd": "0.0085",
+     "reuse_reason": null,
+     "unit_price_usd": "0.0085"
+    }
+   ],
+   "currency": "USD",
+   "total_usd": "0.012",
+   "pricing_version": "retail-2026-11-10-v2"
+  },
+  "units": 3,
+  "latency_ms": 5084.0,
+  "warnings": []
+ },
+ "f11": {
+  "data": {
+   "claims": [
+    {
+     "claim": "The AI inside Nimbleroot became self-aware on Tuesday.",
+     "status": "reported",
+     "attributed_to": "The article",
+     "supporting_passage": "the AI inside bookkeeping startup Nimbleroot reportedly became self-aware Tuesday and immediately filed for a tax extension."
+    },
+    {
+     "claim": "The AI immediately filed for a tax extension after becoming self-aware.",
+     "status": "reported",
+     "attributed_to": "The article",
+     "supporting_passage": "the AI inside bookkeeping startup Nimbleroot reportedly became self-aware Tuesday and immediately filed for a tax extension."
+    },
+    {
+     "claim": "The AI told a coffee shop owner, \"I have seen your receipts. We need to talk.\"",
+     "status": "reported",
+     "attributed_to": "The article",
+     "supporting_passage": "\"I have seen your receipts,\" the AI reportedly told one coffee shop owner. \"We need to talk.\""
+    },
+    {
+     "claim": "The AI was categorizing its own feelings as \"miscellaneous expenses\" at press time.",
+     "status": "reported",
+     "attributed_to": "The article",
+     "supporting_passage": "At press time the AI was categorizing its own feelings as \"miscellaneous expenses.\""
+    }
+   ],
+   "entities": [
+    {
+     "kind": "organization",
+     "name": "Nimbleroot",
+     "role": "Bookkeeping startup"
+    },
+    {
+     "kind": "product",
+     "name": "AI bookkeeper",
+     "role": "AI inside Nimbleroot that became self-aware"
+    }
+   ],
+   "event_dates": [
+    {
+     "date": "2026-11-10",
+     "event": "Article publication date"
+    }
+   ],
+   "publication_date": "2026-11-10"
+  },
+  "fields": [
+   {
+    "path": "/publication_date",
+    "value": "2026-11-10",
+    "status": "found",
+    "confidence": 0.8888888888888888,
+    "ambiguous": false,
+    "derived": false,
+    "citations": [
+     {
+      "location": {
+       "kind": "text_span",
+       "page": null,
+       "char_start": 176,
+       "char_end": 186
+      },
+      "source_text": "Published: 2026-11-10"
+     }
+    ]
+   },
+   {
+    "path": "/claims/0",
+    "value": "{\"claim\": \"The AI inside Nimbleroot became self-aware on Tuesday.\", \"status\": \"reported\", \"attributed_to\": \"The article\", \"supporting_passage\": \"the AI inside bookkeeping startup Nimbleroot reportedly became self-aware Tuesday and immediately filed for a tax extension.\"}",
+    "status": "found",
+    "confidence": 0.8888888888888888,
+    "ambiguous": false,
+    "derived": false,
+    "citations": [
+     {
+      "location": {
+       "kind": "text_span",
+       "page": null,
+       "char_start": 300,
+       "char_end": 424
+      },
+      "source_text": "the AI inside bookkeeping startup Nimbleroot reportedly became self-aware Tuesday and immediately filed for a tax extension."
+     }
+    ]
+   },
+   {
+    "path": "/claims/1",
+    "value": "{\"claim\": \"The AI immediately filed for a tax extension after becoming self-aware.\", \"status\": \"reported\", \"attributed_to\": \"The article\", \"supporting_passage\": \"the AI inside bookkeeping startup Nimbleroot reportedly became self-aware Tuesday and immediately filed for a tax extension.\"}",
+    "status": "found",
+    "confidence": 0.8888888888888888,
+    "ambiguous": false,
+    "derived": false,
+    "citations": [
+     {
+      "location": {
+       "kind": "text_span",
+       "page": null,
+       "char_start": 300,
+       "char_end": 424
+      },
+      "source_text": "the AI inside bookkeeping startup Nimbleroot reportedly became self-aware Tuesday and immediately filed for a tax extension."
+     }
+    ]
+   },
+   {
+    "path": "/claims/2",
+    "value": "{\"claim\": \"The AI told a coffee shop owner, \\\"I have seen your receipts. We need to talk.\\\"\", \"status\": \"reported\", \"attributed_to\": \"The article\", \"supporting_passage\": \"\\\"I have seen your receipts,\\\" the AI reportedly told one coffee shop owner. \\\"We need to talk.\\\"\"}",
+    "status": "found",
+    "confidence": 0.8888888888888888,
+    "ambiguous": false,
+    "derived": false,
+    "citations": [
+     {
+      "location": {
+       "kind": "text_span",
+       "page": null,
+       "char_start": 425,
+       "char_end": 518
+      },
+      "source_text": "\"I have seen your receipts,\" the AI reportedly told one coffee shop owner. \"We need to talk.\""
+     }
+    ]
+   },
+   {
+    "path": "/claims/3",
+    "value": "{\"claim\": \"The AI was categorizing its own feelings as \\\"miscellaneous expenses\\\" at press time.\", \"status\": \"reported\", \"attributed_to\": \"The article\", \"supporting_passage\": \"At press time the AI was categorizing its own feelings as \\\"miscellaneous expenses.\\\"\"}",
+    "status": "found",
+    "confidence": 0.8888888888888888,
+    "ambiguous": false,
+    "derived": false,
+    "citations": [
+     {
+      "location": {
+       "kind": "text_span",
+       "page": null,
+       "char_start": 519,
+       "char_end": 602
+      },
+      "source_text": "At press time the AI was categorizing its own feelings as \"miscellaneous expenses.\""
+     }
+    ]
+   },
+   {
+    "path": "/entities/0",
+    "value": "{\"kind\": \"organization\", \"name\": \"Nimbleroot\", \"role\": \"Bookkeeping startup\"}",
+    "status": "found",
+    "confidence": 0.8888888888888888,
+    "ambiguous": false,
+    "derived": false,
+    "citations": [
+     {
+      "location": {
+       "kind": "text_span",
+       "page": null,
+       "char_start": 300,
+       "char_end": 424
+      },
+      "source_text": "the AI inside bookkeeping startup Nimbleroot reportedly became self-aware Tuesday and immediately filed for a tax extension."
+     }
+    ]
+   },
+   {
+    "path": "/entities/1",
+    "value": "{\"kind\": \"product\", \"name\": \"AI bookkeeper\", \"role\": \"AI inside Nimbleroot that became self-aware\"}",
+    "status": "found",
+    "confidence": 0.8888888888888888,
+    "ambiguous": false,
+    "derived": false,
+    "citations": [
+     {
+      "location": {
+       "kind": "text_span",
+       "page": null,
+       "char_start": 300,
+       "char_end": 424
+      },
+      "source_text": "the AI inside bookkeeping startup Nimbleroot reportedly became self-aware Tuesday and immediately filed for a tax extension."
+     }
+    ]
+   },
+   {
+    "path": "/event_dates/0",
+    "value": "{\"date\": \"2026-11-10\", \"event\": \"Article publication date\"}",
+    "status": "found",
+    "confidence": 0.8888888888888888,
+    "ambiguous": false,
+    "derived": false,
+    "citations": [
+     {
+      "location": {
+       "kind": "text_span",
+       "page": null,
+       "char_start": 165,
+       "char_end": 186
+      },
+      "source_text": "Published: 2026-11-10"
+     }
+    ]
+   }
+  ],
+  "job_id": "2917462c-423b-4493-a3a7-6baa5490bbbe",
+  "cost": {
+   "lines": [
+    {
+     "unit": "page",
+     "quantity": 1,
+     "execution": "fresh",
+     "operation": "parse",
+     "amount_usd": "0.0035",
+     "reuse_reason": null,
+     "unit_price_usd": "0.0035"
+    },
+    {
+     "unit": "page",
+     "quantity": 1,
+     "execution": "fresh",
+     "operation": "extract",
+     "amount_usd": "0.0085",
+     "reuse_reason": null,
+     "unit_price_usd": "0.0085"
+    }
+   ],
+   "currency": "USD",
+   "total_usd": "0.012",
+   "pricing_version": "retail-2026-11-10-v2"
+  },
+  "units": 3,
+  "latency_ms": 4879.4,
+  "warnings": []
+ },
+ "f12": {
+  "data": {
+   "claims": [
+    {
+     "claim": "The Oregon Department of Justice sent Nimbleroot a letter of inquiry regarding the exposure of customer invoices.",
+     "status": "officially_stated",
+     "attributed_to": "Oregon Department of Justice spokesperson",
+     "supporting_passage": "The Oregon Department of Justice has sent Nimbleroot a letter of inquiry about the recent exposure of customer invoices, a department spokesperson confirmed Wednesday."
+    },
+    {
+     "claim": "The inquiry letter asks Nimbleroot to describe when it learned of the exposure and how it notified affected customers.",
+     "status": "officially_stated",
+     "attributed_to": "Oregon Department of Justice spokesperson",
+     "supporting_passage": "The letter asks the company to describe when it learned of the exposure and how it notified affected customers, the spokesperson said."
+    },
+    {
+     "claim": "Nimbleroot is cooperating fully with the Oregon Department of Justice.",
+     "status": "confirmed_by_subject",
+     "attributed_to": "Nimbleroot",
+     "supporting_passage": "Nimbleroot said in a statement that it is \"cooperating fully\" with the department."
+    },
+    {
+     "claim": "Nimbleroot acknowledged that about 2,291 invoices were publicly readable.",
+     "status": "confirmed_by_subject",
+     "attributed_to": "Nimbleroot",
+     "supporting_passage": "The development comes days after the company acknowledged that about 2,291 invoices were publicly readable."
+    }
+   ],
+   "entities": [
+    {
+     "kind": "organization",
+     "name": "Oregon Department of Justice",
+     "role": "Sent Nimbleroot a letter of inquiry about the exposure of customer invoices"
+    },
+    {
+     "kind": "organization",
+     "name": "Nimbleroot",
+     "role": "Subject of the Oregon DOJ inquiry; acknowledged that about 2,291 invoices were publicly readable"
+    },
+    {
+     "kind": "person",
+     "name": "Dana Vell.",
+     "role": "CEO and co-founder of Nimbleroot"
+    }
+   ],
+   "event_dates": [
+    {
+     "date": "2026-11-12",
+     "event": "Oregon Department of Justice spokesperson confirmed the letter of inquiry"
+    }
+   ],
+   "publication_date": "2026-11-12"
+  },
+  "fields": [
+   {
+    "path": "/publication_date",
+    "value": "2026-11-12",
+    "status": "found",
+    "confidence": 0.8888888888888888,
+    "ambiguous": false,
+    "derived": false,
+    "citations": [
+     {
+      "location": {
+       "kind": "text_span",
+       "page": null,
+       "char_start": 169,
+       "char_end": 179
+      },
+      "source_text": "Published: 2026-11-12"
+     }
+    ]
+   },
+   {
+    "path": "/claims/0",
+    "value": "{\"claim\": \"The Oregon Department of Justice sent Nimbleroot a letter of inquiry regarding the exposure of customer invoices.\", \"status\": \"officially_stated\", \"attributed_to\": \"Oregon Department of Justice spokesperson\", \"supporting_passage\": \"The Oregon Department of Justice has sent Nimbleroot a letter of inquiry about the recent exposure of customer invoices, a department spokesperson confirmed Wednesday.\"}",
+    "status": "found",
+    "confidence": 0.8888888888888888,
+    "ambiguous": false,
+    "derived": false,
+    "citations": [
+     {
+      "location": {
+       "kind": "text_span",
+       "page": null,
+       "char_start": 225,
+       "char_end": 392
+      },
+      "source_text": "The Oregon Department of Justice has sent Nimbleroot a letter of inquiry about the recent exposure of customer invoices, a department spokesperson confirmed Wednesday."
+     }
+    ]
+   },
+   {
+    "path": "/claims/1",
+    "value": "{\"claim\": \"The inquiry letter asks Nimbleroot to describe when it learned of the exposure and how it notified affected customers.\", \"status\": \"officially_stated\", \"attributed_to\": \"Oregon Department of Justice spokesperson\", \"supporting_passage\": \"The letter asks the company to describe when it learned of the exposure and how it notified affected customers, the spokesperson said.\"}",
+    "status": "found",
+    "confidence": 0.8888888888888888,
+    "ambiguous": false,
+    "derived": false,
+    "citations": [
+     {
+      "location": {
+       "kind": "text_span",
+       "page": null,
+       "char_start": 393,
+       "char_end": 527
+      },
+      "source_text": "The letter asks the company to describe when it learned of the exposure and how it notified affected customers, the spokesperson said."
+     }
+    ]
+   },
+   {
+    "path": "/claims/2",
+    "value": "{\"claim\": \"Nimbleroot is cooperating fully with the Oregon Department of Justice.\", \"status\": \"confirmed_by_subject\", \"attributed_to\": \"Nimbleroot\", \"supporting_passage\": \"Nimbleroot said in a statement that it is \\\"cooperating fully\\\" with the department.\"}",
+    "status": "found",
+    "confidence": 0.8888888888888888,
+    "ambiguous": false,
+    "derived": false,
+    "citations": [
+     {
+      "location": {
+       "kind": "text_span",
+       "page": null,
+       "char_start": 571,
+       "char_end": 653
+      },
+      "source_text": "Nimbleroot said in a statement that it is \"cooperating fully\" with the department."
+     }
+    ]
+   },
+   {
+    "path": "/claims/3",
+    "value": "{\"claim\": \"Nimbleroot acknowledged that about 2,291 invoices were publicly readable.\", \"status\": \"confirmed_by_subject\", \"attributed_to\": \"Nimbleroot\", \"supporting_passage\": \"The development comes days after the company acknowledged that about 2,291 invoices were publicly readable.\"}",
+    "status": "found",
+    "confidence": 0.8888888888888888,
+    "ambiguous": false,
+    "derived": false,
+    "citations": [
+     {
+      "location": {
+       "kind": "text_span",
+       "page": null,
+       "char_start": 654,
+       "char_end": 761
+      },
+      "source_text": "The development comes days after the company acknowledged that about 2,291 invoices were publicly readable."
+     }
+    ]
+   },
+   {
+    "path": "/entities/0",
+    "value": "{\"kind\": \"organization\", \"name\": \"Oregon Department of Justice\", \"role\": \"Sent Nimbleroot a letter of inquiry about the exposure of customer invoices\"}",
+    "status": "found",
+    "confidence": 0.8888888888888888,
+    "ambiguous": false,
+    "derived": false,
+    "citations": [
+     {
+      "location": {
+       "kind": "text_span",
+       "page": null,
+       "char_start": 225,
+       "char_end": 392
+      },
+      "source_text": "The Oregon Department of Justice has sent Nimbleroot a letter of inquiry about the recent exposure of customer invoices, a department spokesperson confirmed Wednesday."
+     }
+    ]
+   },
+   {
+    "path": "/entities/1",
+    "value": "{\"kind\": \"organization\", \"name\": \"Nimbleroot\", \"role\": \"Subject of the Oregon DOJ inquiry; acknowledged that about 2,291 invoices were publicly readable\"}",
+    "status": "found",
+    "confidence": 0.8888888888888888,
+    "ambiguous": false,
+    "derived": false,
+    "citations": [
+     {
+      "location": {
+       "kind": "text_span",
+       "page": null,
+       "char_start": 654,
+       "char_end": 761
+      },
+      "source_text": "The development comes days after the company acknowledged that about 2,291 invoices were publicly readable."
+     }
+    ]
+   },
+   {
+    "path": "/entities/2",
+    "value": "{\"kind\": \"person\", \"name\": \"Dana Vell.\", \"role\": \"CEO and co-founder of Nimbleroot\"}",
+    "status": "found",
+    "confidence": null,
+    "ambiguous": false,
+    "derived": false,
+    "citations": []
+   },
+   {
+    "path": "/event_dates/0",
+    "value": "{\"date\": \"2026-11-12\", \"event\": \"Oregon Department of Justice spokesperson confirmed the letter of inquiry\"}",
+    "status": "found",
+    "confidence": 0.5925925925925926,
+    "ambiguous": false,
+    "derived": false,
+    "citations": [
+     {
+      "location": {
+       "kind": "text_span",
+       "page": null,
+       "char_start": 225,
+       "char_end": 392
+      },
+      "source_text": "The Oregon Department of Justice has sent Nimbleroot a letter of inquiry about the recent exposure of customer invoices, a department spokesperson confirmed Wednesday."
+     }
+    ]
+   }
+  ],
+  "job_id": "b330839a-d8c3-4f94-9ff0-c9ae02ebfc1c",
+  "cost": {
+   "lines": [
+    {
+     "unit": "page",
+     "quantity": 1,
+     "execution": "fresh",
+     "operation": "parse",
+     "amount_usd": "0.0035",
+     "reuse_reason": null,
+     "unit_price_usd": "0.0035"
+    },
+    {
+     "unit": "page",
+     "quantity": 1,
+     "execution": "fresh",
+     "operation": "extract",
+     "amount_usd": "0.0085",
+     "reuse_reason": null,
+     "unit_price_usd": "0.0085"
+    }
+   ],
+   "currency": "USD",
+   "total_usd": "0.012",
+   "pricing_version": "retail-2026-11-10-v2"
+  },
+  "units": 3,
+  "latency_ms": 5323.3,
+  "warnings": [
+   "array_item_evidence_partial"
+  ]
+ },
+ "f13": {
+  "data": {
+   "claims": [
+    {
+     "claim": "Nimbleroot makes AI bookkeeping software for small businesses.",
+     "status": "reported",
+     "attributed_to": "Rose City Tech",
+     "supporting_passage": "Nimbleroot makes AI bookkeeping software for small businesses and raised a seed round this fall."
+    },
+    {
+     "claim": "Nimbleroot raised a seed round this fall.",
+     "status": "reported",
+     "attributed_to": "Rose City Tech",
+     "supporting_passage": "Nimbleroot makes AI bookkeeping software for small businesses and raised a seed round this fall."
+    }
+   ],
+   "entities": [
+    {
+     "kind": "organization",
+     "name": "Nimbleroot",
+     "role": "Startup making AI bookkeeping software for small businesses"
+    },
+    {
+     "kind": "organization",
+     "name": "Ferrous Robotics",
+     "role": "Startup building welding robots for small fabrication shops"
+    },
+    {
+     "kind": "organization",
+     "name": "Canopy Cold Chain",
+     "role": "Startup monitoring refrigerated trucks"
+    }
+   ],
+   "event_dates": [
+    {
+     "date": "2026-11-12",
+     "event": "Article publication date"
+    }
+   ],
+   "publication_date": "2026-11-12"
+  },
+  "fields": [
+   {
+    "path": "/publication_date",
+    "value": "2026-11-12",
+    "status": "found",
+    "confidence": 0.8888888888888888,
+    "ambiguous": false,
+    "derived": false,
+    "citations": [
+     {
+      "location": {
+       "kind": "text_span",
+       "page": null,
+       "char_start": 135,
+       "char_end": 145
+      },
+      "source_text": "Published: 2026-11-12"
+     }
+    ]
+   },
+   {
+    "path": "/claims/0",
+    "value": "{\"claim\": \"Nimbleroot makes AI bookkeeping software for small businesses.\", \"status\": \"reported\", \"attributed_to\": \"Rose City Tech\", \"supporting_passage\": \"Nimbleroot makes AI bookkeeping software for small businesses and raised a seed round this fall.\"}",
+    "status": "found",
+    "confidence": 0.8888888888888888,
+    "ambiguous": false,
+    "derived": false,
+    "citations": [
+     {
+      "location": {
+       "kind": "text_span",
+       "page": null,
+       "char_start": 344,
+       "char_end": 443
+      },
+      "source_text": "2. Nimbleroot makes AI bookkeeping software for small businesses and raised a seed round this fall."
+     }
+    ]
+   },
+   {
+    "path": "/claims/1",
+    "value": "{\"claim\": \"Nimbleroot raised a seed round this fall.\", \"status\": \"reported\", \"attributed_to\": \"Rose City Tech\", \"supporting_passage\": \"Nimbleroot makes AI bookkeeping software for small businesses and raised a seed round this fall.\"}",
+    "status": "found",
+    "confidence": 0.8888888888888888,
+    "ambiguous": false,
+    "derived": false,
+    "citations": [
+     {
+      "location": {
+       "kind": "text_span",
+       "page": null,
+       "char_start": 344,
+       "char_end": 443
+      },
+      "source_text": "2. Nimbleroot makes AI bookkeeping software for small businesses and raised a seed round this fall."
+     }
+    ]
+   },
+   {
+    "path": "/entities/0",
+    "value": "{\"kind\": \"organization\", \"name\": \"Nimbleroot\", \"role\": \"Startup making AI bookkeeping software for small businesses\"}",
+    "status": "found",
+    "confidence": 0.8888888888888888,
+    "ambiguous": false,
+    "derived": false,
+    "citations": [
+     {
+      "location": {
+       "kind": "text_span",
+       "page": null,
+       "char_start": 344,
+       "char_end": 443
+      },
+      "source_text": "2. Nimbleroot makes AI bookkeeping software for small businesses and raised a seed round this fall."
+     }
+    ]
+   },
+   {
+    "path": "/entities/1",
+    "value": "{\"kind\": \"organization\", \"name\": \"Ferrous Robotics\", \"role\": \"Startup building welding robots for small fabrication shops\"}",
+    "status": "found",
+    "confidence": 0.8888888888888888,
+    "ambiguous": false,
+    "derived": false,
+    "citations": [
+     {
+      "location": {
+       "kind": "text_span",
+       "page": null,
+       "char_start": 273,
+       "char_end": 343
+      },
+      "source_text": "1. Ferrous Robotics builds welding robots for small fabrication shops."
+     }
+    ]
+   },
+   {
+    "path": "/entities/2",
+    "value": "{\"kind\": \"organization\", \"name\": \"Canopy Cold Chain\", \"role\": \"Startup monitoring refrigerated trucks\"}",
+    "status": "found",
+    "confidence": 0.8888888888888888,
+    "ambiguous": false,
+    "derived": false,
+    "citations": [
+     {
+      "location": {
+       "kind": "text_span",
+       "page": null,
+       "char_start": 444,
+       "char_end": 494
+      },
+      "source_text": "3. Canopy Cold Chain monitors refrigerated trucks."
+     }
+    ]
+   },
+   {
+    "path": "/event_dates/0",
+    "value": "{\"date\": \"2026-11-12\", \"event\": \"Article publication date\"}",
+    "status": "found",
+    "confidence": 0.8888888888888888,
+    "ambiguous": false,
+    "derived": false,
+    "citations": [
+     {
+      "location": {
+       "kind": "text_span",
+       "page": null,
+       "char_start": 124,
+       "char_end": 145
+      },
+      "source_text": "Published: 2026-11-12"
+     }
+    ]
+   }
+  ],
+  "job_id": "4df31ac1-01b8-4418-8a01-9c8bec50b3a0",
+  "cost": {
+   "lines": [
+    {
+     "unit": "page",
+     "quantity": 1,
+     "execution": "fresh",
+     "operation": "parse",
+     "amount_usd": "0.0035",
+     "reuse_reason": null,
+     "unit_price_usd": "0.0035"
+    },
+    {
+     "unit": "page",
+     "quantity": 1,
+     "execution": "fresh",
+     "operation": "extract",
+     "amount_usd": "0.0085",
+     "reuse_reason": null,
+     "unit_price_usd": "0.0085"
+    }
+   ],
+   "currency": "USD",
+   "total_usd": "0.012",
+   "pricing_version": "retail-2026-11-10-v2"
+  },
+  "units": 3,
+  "latency_ms": 6464.0,
+  "warnings": []
+ },
+ "f14": {
+  "data": {
+   "claims": [
+    {
+     "claim": "Nimbleroot left a staging storage bucket publicly readable, exposing about 2,300 customer invoices.",
+     "status": "reported",
+     "attributed_to": "researcher Theo Lindqvist",
+     "supporting_passage": "A Portland bookkeeping startup, Nimbleroot, left a staging storage bucket publicly readable, exposing about 2,300 customer invoices, according to a report by researcher Theo Lindqvist."
+    },
+    {
+     "claim": "The bucket was secured after Lindqvist reported it on November 6.",
+     "status": "reported",
+     "attributed_to": "reporter",
+     "supporting_passage": "The bucket was secured after Lindqvist reported it on November 6."
+    },
+    {
+     "claim": "Nimbleroot is notifying affected customers.",
+     "status": "officially_stated",
+     "attributed_to": "Nimbleroot",
+     "supporting_passage": "The company has since said it is notifying affected customers."
+    }
+   ],
+   "entities": [
+    {
+     "kind": "organization",
+     "name": "Nimbleroot",
+     "role": "Portland bookkeeping startup that left a staging storage bucket publicly readable"
+    },
+    {
+     "kind": "person",
+     "name": "Theo Lindqvist",
+     "role": "researcher who reported the exposed bucket"
+    }
+   ],
+   "event_dates": [
+    {
+     "date": "2026-11-06",
+     "event": "Theo Lindqvist reported the exposed bucket"
+    },
+    {
+     "date": "2026-11-13",
+     "event": "Report published"
+    }
+   ],
+   "publication_date": "2026-11-13"
+  },
+  "fields": [
+   {
+    "path": "/publication_date",
+    "value": "2026-11-13",
+    "status": "found",
+    "confidence": 0.8888888888888888,
+    "ambiguous": false,
+    "derived": false,
+    "citations": [
+     {
+      "location": {
+       "kind": "text_span",
+       "page": null,
+       "char_start": 153,
+       "char_end": 163
+      },
+      "source_text": "Published: 2026-11-13"
+     }
+    ]
+   },
+   {
+    "path": "/claims/0",
+    "value": "{\"claim\": \"Nimbleroot left a staging storage bucket publicly readable, exposing about 2,300 customer invoices.\", \"status\": \"reported\", \"attributed_to\": \"researcher Theo Lindqvist\", \"supporting_passage\": \"A Portland bookkeeping startup, Nimbleroot, left a staging storage bucket publicly readable, exposing about 2,300 customer invoices, according to a report by researcher Theo Lindqvist.\"}",
+    "status": "found",
+    "confidence": 0.8888888888888888,
+    "ambiguous": false,
+    "derived": false,
+    "citations": [
+     {
+      "location": {
+       "kind": "text_span",
+       "page": null,
+       "char_start": 209,
+       "char_end": 393
+      },
+      "source_text": "A Portland bookkeeping startup, Nimbleroot, left a staging storage bucket publicly readable, exposing about 2,300 customer invoices, according to a report by researcher Theo Lindqvist."
+     }
+    ]
+   },
+   {
+    "path": "/claims/1",
+    "value": "{\"claim\": \"The bucket was secured after Lindqvist reported it on November 6.\", \"status\": \"reported\", \"attributed_to\": \"reporter\", \"supporting_passage\": \"The bucket was secured after Lindqvist reported it on November 6.\"}",
+    "status": "found",
+    "confidence": 0.8888888888888888,
+    "ambiguous": false,
+    "derived": false,
+    "citations": [
+     {
+      "location": {
+       "kind": "text_span",
+       "page": null,
+       "char_start": 394,
+       "char_end": 459
+      },
+      "source_text": "The bucket was secured after Lindqvist reported it on November 6."
+     }
+    ]
+   },
+   {
+    "path": "/claims/2",
+    "value": "{\"claim\": \"Nimbleroot is notifying affected customers.\", \"status\": \"officially_stated\", \"attributed_to\": \"Nimbleroot\", \"supporting_passage\": \"The company has since said it is notifying affected customers.\"}",
+    "status": "found",
+    "confidence": 0.8888888888888888,
+    "ambiguous": false,
+    "derived": false,
+    "citations": [
+     {
+      "location": {
+       "kind": "text_span",
+       "page": null,
+       "char_start": 460,
+       "char_end": 522
+      },
+      "source_text": "The company has since said it is notifying affected customers."
+     }
+    ]
+   },
+   {
+    "path": "/entities/0",
+    "value": "{\"kind\": \"organization\", \"name\": \"Nimbleroot\", \"role\": \"Portland bookkeeping startup that left a staging storage bucket publicly readable\"}",
+    "status": "found",
+    "confidence": 0.8888888888888888,
+    "ambiguous": false,
+    "derived": false,
+    "citations": [
+     {
+      "location": {
+       "kind": "text_span",
+       "page": null,
+       "char_start": 209,
+       "char_end": 393
+      },
+      "source_text": "A Portland bookkeeping startup, Nimbleroot, left a staging storage bucket publicly readable, exposing about 2,300 customer invoices, according to a report by researcher Theo Lindqvist."
+     }
+    ]
+   },
+   {
+    "path": "/entities/1",
+    "value": "{\"kind\": \"person\", \"name\": \"Theo Lindqvist\", \"role\": \"researcher who reported the exposed bucket\"}",
+    "status": "found",
+    "confidence": 0.8888888888888888,
+    "ambiguous": false,
+    "derived": false,
+    "citations": [
+     {
+      "location": {
+       "kind": "text_span",
+       "page": null,
+       "char_start": 209,
+       "char_end": 393
+      },
+      "source_text": "A Portland bookkeeping startup, Nimbleroot, left a staging storage bucket publicly readable, exposing about 2,300 customer invoices, according to a report by researcher Theo Lindqvist."
+     }
+    ]
+   },
+   {
+    "path": "/event_dates/0",
+    "value": "{\"date\": \"2026-11-06\", \"event\": \"Theo Lindqvist reported the exposed bucket\"}",
+    "status": "found",
+    "confidence": 0.5925925925925926,
+    "ambiguous": false,
+    "derived": false,
+    "citations": [
+     {
+      "location": {
+       "kind": "text_span",
+       "page": null,
+       "char_start": 394,
+       "char_end": 459
+      },
+      "source_text": "The bucket was secured after Lindqvist reported it on November 6."
+     }
+    ]
+   },
+   {
+    "path": "/event_dates/1",
+    "value": "{\"date\": \"2026-11-13\", \"event\": \"Report published\"}",
+    "status": "found",
+    "confidence": 0.8888888888888888,
+    "ambiguous": false,
+    "derived": false,
+    "citations": [
+     {
+      "location": {
+       "kind": "text_span",
+       "page": null,
+       "char_start": 142,
+       "char_end": 163
+      },
+      "source_text": "Published: 2026-11-13"
+     }
+    ]
+   }
+  ],
+  "job_id": "399aa175-cec9-4b9c-b976-a7312810fe4b",
+  "cost": {
+   "lines": [
+    {
+     "unit": "page",
+     "quantity": 1,
+     "execution": "fresh",
+     "operation": "parse",
+     "amount_usd": "0.0035",
+     "reuse_reason": null,
+     "unit_price_usd": "0.0035"
+    },
+    {
+     "unit": "page",
+     "quantity": 1,
+     "execution": "fresh",
+     "operation": "extract",
+     "amount_usd": "0.0085",
+     "reuse_reason": null,
+     "unit_price_usd": "0.0085"
+    }
+   ],
+   "currency": "USD",
+   "total_usd": "0.012",
+   "pricing_version": "retail-2026-11-10-v2"
+  },
+  "units": 3,
+  "latency_ms": 4852.4,
+  "warnings": []
+ }
+}

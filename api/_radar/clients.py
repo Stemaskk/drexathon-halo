@@ -35,24 +35,35 @@ def _check(service: str, resp: httpx.Response) -> dict[str, Any]:
 
 
 # ---------------------------------------------------------------- Keenable
+def _keenable(path: str) -> tuple[str, dict[str, str]]:
+    """Keyed endpoint when KEENABLE_API_KEY is set; otherwise Keenable's documented keyless /public endpoint."""
+    key = config.env("KEENABLE_API_KEY")
+    if key:
+        return f"{config.KEENABLE_BASE_URL}{path}", {"X-API-Key": key}
+    return f"{config.KEENABLE_BASE_URL}{path}/public", {"X-Keenable-Title": "Reputation Radar"}
+
+
+def keenable_mode() -> str:
+    return "keyed" if config.env("KEENABLE_API_KEY") else "keyless-public"
+
+
 def keenable_search(query: str, *, published_after: str | None = None, max_results: int = 10,
                     exclude_domains: list[str] | None = None) -> dict[str, Any]:
-    key = config.require("KEENABLE_API_KEY")
+    url, headers = _keenable("/v1/search")
     body: dict[str, Any] = {"query": query, "max_results": max_results, "snippet_max_length": 400}
     if published_after:
         body["published_after"] = published_after
     if exclude_domains:
         body["exclude_domains"] = exclude_domains
     with httpx.Client(timeout=30) as c:
-        r = c.post(f"{config.KEENABLE_BASE_URL}/v1/search", json=body, headers={"X-API-Key": key})
+        r = c.post(url, json=body, headers=headers)
     return _check("keenable.search", r)
 
 
 def keenable_fetch(url: str, *, max_chars: int = 12000) -> dict[str, Any]:
-    key = config.require("KEENABLE_API_KEY")
+    endpoint, headers = _keenable("/v1/fetch")
     with httpx.Client(timeout=45) as c:
-        r = c.get(f"{config.KEENABLE_BASE_URL}/v1/fetch", params={"url": url, "max_chars": max_chars},
-                  headers={"X-API-Key": key})
+        r = c.get(endpoint, params={"url": url, "max_chars": max_chars}, headers=headers)
     return _check("keenable.fetch", r)
 
 
@@ -62,8 +73,8 @@ def _nace_headers() -> dict[str, str]:
 
 
 # ---------------------------------------------------------------- Drex
-def drex_systemone(state: str, questions: dict[str, Any]) -> dict[str, Any]:
-    body = {"model": config.DREX_MODEL, "state": state, "questions": questions}
+def drex_systemone(state: str, questions: dict[str, Any], model: str | None = None) -> dict[str, Any]:
+    body = {"model": model or config.DREX_MODEL, "state": state, "questions": questions}
     t0 = time.perf_counter()
     with httpx.Client(timeout=60) as c:
         r = c.post(f"{config.NACE_BASE_URL}/v1/systemone", json=body, headers=_nace_headers())
@@ -117,7 +128,9 @@ def deepinfra_chat(messages: list[dict[str, str]], *, model: str | None = None, 
                    temperature: float = 0.2, json_mode: bool = False) -> dict[str, Any]:
     key = config.require("DEEPINFRA_API_KEY")
     body: dict[str, Any] = {"model": model or config.DEEPINFRA_MODEL, "messages": messages,
-                            "max_tokens": max_tokens, "temperature": temperature}
+                            "max_tokens": max_tokens, "temperature": temperature,
+                            # Qwen3-family models think by default; disable for short structured answers.
+                            "chat_template_kwargs": {"enable_thinking": False}}
     if json_mode:
         body["response_format"] = {"type": "json_object"}
     t0 = time.perf_counter()

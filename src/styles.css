@@ -68,4 +68,4 @@ blockquote { margin: 0; padding: 10px 12px; border-left: 3px solid var(--accent)
 .md li { margin: 6px 0 6px 18px; } .md p { margin: 8px 0; }
 footer { margin-top: 24px; text-align: center; }
 a { color: var(--accent); word-break: break-all; }
-@media (max-width: 1100px) { .scan { grid-template-columns: 1fr; } .detail, .scan aside.card { position: static; max-height: none; } .grid2 { grid-template-columns: 1fr; } }
+@media (max-width: 1100px) { .scan { grid-template-columns: 1fr; } .scan aside.card { position: static; } .detail { position: fixed; top: 0; right: 0; bottom: 0; width: min(480px, 100%); max-height: none; border-radius: 0; z-index: 10; box-shadow: -8px 0 24px rgba(0,0,0,.25); } .grid2 { grid-template-columns: 1fr; } }

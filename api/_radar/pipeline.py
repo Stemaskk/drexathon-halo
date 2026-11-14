@@ -222,9 +222,9 @@ def apply_policy(d: dict[str, Any]) -> dict[str, Any]:
 
 
 def drex_decide(profile: dict[str, Any], doc: dict[str, Any], facts: dict[str, Any] | None,
-                prior: list[dict[str, Any]]) -> dict[str, Any]:
+                prior: list[dict[str, Any]], model: str | None = None) -> dict[str, Any]:
     state = build_state(profile, doc, facts, prior)
-    resp = clients.drex_systemone(state, drex_questions(profile))
+    resp = clients.drex_systemone(state, drex_questions(profile), model=model)
     d = parse_drex(resp)
     return {"decisions": d, **apply_policy(d), "model": resp.get("model"), "usage": resp.get("usage", {}),
             "latency_ms": resp.get("_latency_ms"), "evaluation_time_ms": resp.get("evaluation_time_ms"),
@@ -245,7 +245,7 @@ def baseline_decide(profile: dict[str, Any], doc: dict[str, Any], facts: dict[st
         "urgency": "integer 0-4 (None, Low, Moderate, High, Critical)",
     }
     messages = [
-        {"role": "system", "content": "You are a reputation-monitoring analyst. Answer strictly as a JSON object with exactly the requested keys. /no_think"},
+        {"role": "system", "content": "You are a reputation-monitoring analyst. Answer strictly as a JSON object with exactly the requested keys."},
         {"role": "user", "content": f"{state}\n\nAnswer these questions as JSON:\n{json.dumps(spec, indent=1)}"},
     ]
     resp = clients.deepinfra_chat(messages, model=model or config.BASELINE_MODEL, max_tokens=400, temperature=0, json_mode=True)
@@ -319,9 +319,9 @@ def write_briefing(profile: dict[str, Any], items: list[dict[str, Any]]) -> dict
     messages = [
         {"role": "system", "content": (
             "You write concise reputation briefings for a busy founder. Use ONLY the decisions and evidence given. "
-            "Never present an allegation as fact: say 'reports allege' or 'according to'. If evidence is missing, say it is unknown. "
+            "Never present an allegation as fact: say 'reports allege' or 'according to'. Do not infer causes or links between items unless the evidence states them. If evidence is missing, say it is unknown. "
             "Return JSON: {\"briefing\": markdown string under 180 words with a 1-line headline then bullets ordered by action, "
-            "\"explanations\": {item_id: one sentence on why it matters to this profile}}. /no_think")},
+            "\"explanations\": {item_id: one sentence on why it matters to this profile}}.")},
         {"role": "user", "content": f"{profile_block(profile)}\n\nTRIAGED ITEMS (decisions by Drex):\n{json.dumps(rows, ensure_ascii=False)}"},
     ]
     resp = clients.deepinfra_chat(messages, max_tokens=1200, temperature=0.2, json_mode=True)

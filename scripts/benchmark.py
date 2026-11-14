@@ -66,7 +66,8 @@ def run(args) -> dict:
 
     systems = []
     if "drex" in args.systems:
-        systems.append(("Drex", config.DREX_MODEL, lambda p, d, f, pr: pipeline.drex_decide(p, d, f, pr)))
+        for dm in args.drex_models.split(","):
+            systems.append((f"Drex ({dm})", dm, lambda p, d, f, pr, dm=dm: pipeline.drex_decide(p, d, f, pr, model=dm)))
     if "baseline" in args.systems:
         bm = args.baseline_model or config.BASELINE_MODEL
         systems.append((f"LLM baseline", bm, lambda p, d, f, pr, bm=bm: pipeline.baseline_decide(p, d, f, pr, model=bm)))
@@ -98,16 +99,20 @@ def run(args) -> dict:
         good = [r for r in rows if r["out"] and not r["error"]]
         n = len(rows)
         acc = {f: sum(1 for r in good if value(r["out"], f) == gold[r["id"]][f]) / n if n else None for f in FIELDS}
-        acc["is_subject"] = sum(1 for r in good if bool(r["out"]["final_action"] != "ignore") == gold[r["id"]]["is_subject"]
-                                or value(r["out"], "is_subject") == gold[r["id"]]["is_subject"]) / n if n else None
         final_ok = sum(1 for r in good if r["out"]["final_action"] == gold[r["id"]]["action"]) / n if n else None
         lat = [r["out"]["latency_ms"] for r in good if r["out"].get("latency_ms") is not None]
         tin = sum((r["out"].get("usage") or {}).get("input_tokens", (r["out"].get("usage") or {}).get("prompt_tokens", 0)) for r in good)
         tout = sum((r["out"].get("usage") or {}).get("output_tokens", (r["out"].get("usage") or {}).get("completion_tokens", 0)) for r in good)
-        if name == "Drex":
+        reported = [(r["out"].get("usage") or {}).get("estimated_cost") for r in good]
+        if name.startswith("Drex"):
             cost = tin / 1e6 * pin_drex if pin_drex is not None else None  # Drex bills input tokens only
+            cost_source = f"assumed ${pin_drex}/1M input tokens (DREX_PRICE_PER_M_INPUT)" if pin_drex is not None else "price not set"
+        elif reported and all(x is not None for x in reported):
+            cost = sum(reported)
+            cost_source = "sum of DeepInfra usage.estimated_cost (provider-reported)"
         else:
             cost = (tin / 1e6 * pin_b + tout / 1e6 * pout_b) if pin_b is not None and pout_b is not None else None
+            cost_source = "assumed env prices" if cost is not None else "price not set"
         fa = {r["id"]: r["out"]["final_action"] for r in good if r["rep"] == 0}
         summaries.append({
             "name": name, "model": model, "n_calls": n, "errors": n - len(good),
@@ -120,7 +125,7 @@ def run(args) -> dict:
             "latency_ms_median": round(statistics.median(lat), 1) if lat else None,
             "latency_ms_mean": round(statistics.mean(lat), 1) if lat else None,
             "input_tokens": tin, "output_tokens": tout, "est_cost_usd": cost,
-            "price_basis": {"drex_per_m_input": pin_drex} if name == "Drex" else {"per_m_input": pin_b, "per_m_output": pout_b},
+            "cost_source": cost_source,
         })
 
     per_article = []
@@ -140,8 +145,8 @@ def run(args) -> dict:
             f"Tiny dataset ({len(arts)} synthetic articles, labels written by the project authors) — results are indicative, not statistically significant.",
             "Both systems receive identical state text (profile, criteria, fixed prior coverage, NDI facts, article text) and the same deterministic post-policy.",
             "Latency is wall-clock from this machine, including network; it varies by region and load.",
-            "Cost estimates use the per-token prices set in env vars at run time (see price_basis); blank prices mean cost was not computed.",
-            f"Baseline model '{summaries[-1]['model'] if summaries else ''}' is the organizer-suggested worker LLM; it is not claimed to be a frontier model.",
+            "Baseline cost is the DeepInfra-reported usage.estimated_cost. Drex cost = measured input tokens x DREX_PRICE_PER_M_INPUT, an ASSUMED rate (Nace docs list $0.12 per 1M Drex Max input tokens; the API returns no per-call cost). See cost_source per system.",
+            f"Baseline model '{next((x['model'] for x in summaries if not x['name'].startswith('Drex')), '')}' is the organizer-suggested worker LLM; it is not claimed to be a frontier model.",
             "Decision-stage only: Keenable retrieval and NDI extraction costs are shared and excluded from these numbers.",
         ],
     }
@@ -157,6 +162,7 @@ if __name__ == "__main__":
     ap = argparse.ArgumentParser()
     ap.add_argument("--systems", default="drex,baseline")
     ap.add_argument("--baseline-model", default=None)
+    ap.add_argument("--drex-models", default="drex-latest,drex-v2.0")
     ap.add_argument("--limit", type=int, default=0)
     ap.add_argument("--repeats", type=int, default=1)
     ap.add_argument("--refresh-ndi", action="store_true")

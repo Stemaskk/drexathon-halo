@@ -1,0 +1,229 @@
+{
+ "available": true,
+ "run_at": "2026-11-14T20:26:23+00:00",
+ "repeats": 1,
+ "dataset": {
+  "size": 14,
+  "label": "synthetic fixtures, fictional company 'Nimbleroot', hand-labeled by the authors",
+  "important": 4,
+  "namesakes": 2
+ },
+ "systems": [
+  {
+   "name": "Drex (drex-latest)",
+   "model": "drex-latest",
+   "n_calls": 14,
+   "errors": 0,
+   "important_caught": 4,
+   "important_ge_watch": 4,
+   "false_alerts": 0,
+   "namesake_ok": 2,
+   "action_acc": 0.6428571428571429,
+   "drex_raw_action_acc": 0.6428571428571429,
+   "category_acc": 0.9285714285714286,
+   "report_type_acc": 0.7857142857142857,
+   "subject_acc": 1.0,
+   "novel_acc": 0.8571428571428571,
+   "latency_ms_median": 334.4,
+   "latency_ms_mean": 389.3,
+   "input_tokens": 24079,
+   "output_tokens": 12435,
+   "est_cost_usd": 0.00288948,
+   "cost_source": "assumed $0.12/1M input tokens (DREX_PRICE_PER_M_INPUT)"
+  },
+  {
+   "name": "Drex (drex-v2.0)",
+   "model": "drex-v2.0",
+   "n_calls": 14,
+   "errors": 0,
+   "important_caught": 4,
+   "important_ge_watch": 4,
+   "false_alerts": 0,
+   "namesake_ok": 1,
+   "action_acc": 0.7857142857142857,
+   "drex_raw_action_acc": 0.7142857142857143,
+   "category_acc": 0.9285714285714286,
+   "report_type_acc": 0.6428571428571429,
+   "subject_acc": 1.0,
+   "novel_acc": 0.9285714285714286,
+   "latency_ms_median": 277.4,
+   "latency_ms_mean": 341.1,
+   "input_tokens": 22427,
+   "output_tokens": 6735,
+   "est_cost_usd": 0.0026912399999999997,
+   "cost_source": "assumed $0.12/1M input tokens (DREX_PRICE_PER_M_INPUT)"
+  },
+  {
+   "name": "LLM baseline",
+   "model": "Qwen/Qwen3.8-27B",
+   "n_calls": 14,
+   "errors": 0,
+   "important_caught": 3,
+   "important_ge_watch": 4,
+   "false_alerts": 0,
+   "namesake_ok": 2,
+   "action_acc": 0.6428571428571429,
+   "drex_raw_action_acc": 0.6428571428571429,
+   "category_acc": 1.0,
+   "report_type_acc": 0.8571428571428571,
+   "subject_acc": 1.0,
+   "novel_acc": 0.8571428571428571,
+   "latency_ms_median": 1671.3,
+   "latency_ms_mean": 1659.3,
+   "input_tokens": 22511,
+   "output_tokens": 744,
+   "est_cost_usd": 0.0047716500000000005,
+   "cost_source": "sum of DeepInfra usage.estimated_cost (provider-reported)"
+  }
+ ],
+ "per_article": [
+  {
+   "id": "f01",
+   "title": "Nimbleroot Nursery opens second greenhouse in Burlington",
+   "gold_action": "ignore",
+   "pred": {
+    "Drex (drex-latest)": "ignore",
+    "Drex (drex-v2.0)": "ignore",
+    "LLM baseline": "ignore"
+   }
+  },
+  {
+   "id": "f02",
+   "title": "Singer-songwriter Dana Vell announces 'Ember' winter tour",
+   "gold_action": "ignore",
+   "pred": {
+    "Drex (drex-latest)": "ignore",
+    "Drex (drex-v2.0)": "digest",
+    "LLM baseline": "ignore"
+   }
+  },
+  {
+   "id": "f03",
+   "title": "Portland's Nimbleroot lands $6M seed to automate small-business books",
+   "gold_action": "digest",
+   "pred": {
+    "Drex (drex-latest)": "digest",
+    "Drex (drex-v2.0)": "digest",
+    "LLM baseline": "digest"
+   }
+  },
+  {
+   "id": "f04",
+   "title": "I used Nimbleroot for a month. Here's my honest take",
+   "gold_action": "digest",
+   "pred": {
+    "Drex (drex-latest)": "digest",
+    "Drex (drex-v2.0)": "digest",
+    "LLM baseline": "digest"
+   }
+  },
+  {
+   "id": "f05",
+   "title": "Thread: Nimbleroot double-charged my card — anyone else?",
+   "gold_action": "watch",
+   "pred": {
+    "Drex (drex-latest)": "review_now",
+    "Drex (drex-v2.0)": "review_now",
+    "LLM baseline": "review_now"
+   }
+  },
+  {
+   "id": "f06",
+   "title": "Scam alert: fake 'Nimbleroot Support' accounts ask small businesses for bank logins",
+   "gold_action": "review_now",
+   "pred": {
+    "Drex (drex-latest)": "review_now",
+    "Drex (drex-v2.0)": "review_now",
+    "LLM baseline": "review_now"
+   }
+  },
+  {
+   "id": "f07",
+   "title": "Exposed Nimbleroot staging bucket held customer invoices, researcher says",
+   "gold_action": "review_now",
+   "pred": {
+    "Drex (drex-latest)": "review_now",
+    "Drex (drex-v2.0)": "review_now",
+    "LLM baseline": "review_now"
+   }
+  },
+  {
+   "id": "f08",
+   "title": "Former contractor alleges Nimbleroot withheld final payment",
+   "gold_action": "review_now",
+   "pred": {
+    "Drex (drex-latest)": "review_now",
+    "Drex (drex-v2.0)": "review_now",
+    "LLM baseline": "watch"
+   }
+  },
+  {
+   "id": "f09",
+   "title": "An update on the staging storage exposure",
+   "gold_action": "watch",
+   "pred": {
+    "Drex (drex-latest)": "review_now",
+    "Drex (drex-v2.0)": "review_now",
+    "LLM baseline": "review_now"
+   }
+  },
+  {
+   "id": "f10",
+   "title": "Correction: Nimbleroot funding amount",
+   "gold_action": "digest",
+   "pred": {
+    "Drex (drex-latest)": "ignore",
+    "Drex (drex-v2.0)": "digest",
+    "LLM baseline": "digest"
+   }
+  },
+  {
+   "id": "f11",
+   "title": "Nimbleroot's AI bookkeeper achieves sentience, immediately files for an extension",
+   "gold_action": "digest",
+   "pred": {
+    "Drex (drex-latest)": "ignore",
+    "Drex (drex-v2.0)": "digest",
+    "LLM baseline": "ignore"
+   }
+  },
+  {
+   "id": "f12",
+   "title": "Oregon DOJ opens inquiry into Nimbleroot after invoice exposure",
+   "gold_action": "review_now",
+   "pred": {
+    "Drex (drex-latest)": "review_now",
+    "Drex (drex-v2.0)": "review_now",
+    "LLM baseline": "review_now"
+   }
+  },
+  {
+   "id": "f13",
+   "title": "12 Portland startups to watch in 2027",
+   "gold_action": "digest",
+   "pred": {
+    "Drex (drex-latest)": "digest",
+    "Drex (drex-v2.0)": "digest",
+    "LLM baseline": "digest"
+   }
+  },
+  {
+   "id": "f14",
+   "title": "Report: Nimbleroot bucket exposed thousands of invoices",
+   "gold_action": "watch",
+   "pred": {
+    "Drex (drex-latest)": "digest",
+    "Drex (drex-v2.0)": "watch",
+    "LLM baseline": "review_now"
+   }
+  }
+ ],
+ "limitations": [
+  "Tiny dataset (14 synthetic articles, labels written by the project authors) — results are indicative, not statistically significant.",
+  "Both systems receive identical state text (profile, criteria, fixed prior coverage, NDI facts, article text) and the same deterministic post-policy.",
+  "Latency is wall-clock from this machine, including network; it varies by region and load.",
+  "Baseline cost is the DeepInfra-reported usage.estimated_cost. Drex cost = measured input tokens x DREX_PRICE_PER_M_INPUT, an ASSUMED rate (Nace docs list $0.12 per 1M Drex Max input tokens; the API returns no per-call cost). See cost_source per system.",
+  "Baseline model 'Qwen/Qwen3.8-27B' is the organizer-suggested worker LLM; it is not claimed to be a frontier model.",
+  "Decision-stage only: Keenable retrieval and NDI extraction costs are shared and excluded from these numbers."
+ ]
+}

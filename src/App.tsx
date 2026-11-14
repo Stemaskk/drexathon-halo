@@ -153,7 +153,7 @@ export default function App() {
           <button key={t} className={t === tab ? "active" : ""} onClick={() => setTab(t)}>
             {t}{t === "Scan" && alerts ? <span className="badge">{alerts}</span> : null}
           </button>))}</nav>
-        <div className={`mode ${mode}`}>{mode === "fixture" ? "FIXTURE MODE · synthetic data" : "LIVE MODE · real web"}</div>
+        <div className={`mode ${mode}`}>{mode === "fixture" ? "FIXTURE MODE · synthetic data" : `LIVE MODE · real web${health?.keenable_mode === "keyless-public" ? " (Keenable keyless)" : ""}`}</div>
       </header>
 
       {health && Object.entries(health.keys).some(([, v]) => !v) && (

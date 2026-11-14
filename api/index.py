@@ -77,7 +77,9 @@ class BriefReq(BaseModel):
 
 @app.get("/api/health")
 def health():
-    return {"keys": config.key_status(), "drex_model": config.DREX_MODEL, "llm_model": config.DEEPINFRA_MODEL,
+    keys = config.key_status()
+    keys.pop("KEENABLE_API_KEY", None)  # optional: keyless /public endpoints are used when unset
+    return {"keys": keys, "keenable_mode": clients.keenable_mode(), "drex_model": config.DREX_MODEL, "llm_model": config.DEEPINFRA_MODEL,
             "baseline_model": config.BASELINE_MODEL}
 
 
