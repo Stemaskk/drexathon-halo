@@ -98,7 +98,28 @@ Keys are read only in `api/_radar/config.py`. They are never sent to the browser
 
 All systems get the **same** state text: the profile, monitoring criteria, a fixed prior-coverage list, the shared NDI extraction and the article text. They also share the same rules layer, so only the decision stage differs. Results go to `api/_radar/data/benchmark_latest.json` (shown in the **Benchmark** tab), and raw responses go to `docs/benchmark_runs/`.
 
-BENCHMARK_RESULTS_PLACEHOLDER
+### Results (run 2026-11-14T20:32Z, 14 synthetic articles × 3 repeats = 42 calls per system)
+
+| Metric | Drex `drex-latest` (→ drex-max-v1.1) | Drex `drex-v2.0` | Qwen baseline `Qwen/Qwen3.8-27B` |
+|---|---|---|---|
+| Important items caught (gold = review now, n=4) | **4/4** | **4/4** | 3/4 (the allegation was sent to *watch*) |
+| Important items escalated to watch or higher | 4/4 | 4/4 | 4/4 |
+| Irrelevant alerts (gold ignore/digest → watch/review) | 0 | 1 (namesake musician, identity uncertain → watch) | 0 |
+| Namesakes correctly ignored (n=2) | 2/2 | 1/2 | 2/2 |
+| Final-action agreement with labels | 64% | 79% | 64% |
+| Category agreement | 93% | 93% | 100% |
+| Report-type agreement | 79% | 64% | 86% |
+| Identity agreement | 100% | 100% | 100% |
+| Novelty agreement | 86% | 93% | 86% |
+| Median latency per article (wall clock) | **326 ms** | **294 ms** | 1,547 ms |
+| Input tokens (42 calls) | 72,237 | 67,281 | 67,533 |
+| Decision-stage cost (42 calls) | ≈ $0.0087 (assumed price) | ≈ $0.0081 (assumed price) | $0.0101 (DeepInfra-reported) |
+
+**What this shows:** on the same inputs and the same rules, Drex made the decisions **about 4.7–5.3× faster** (median). It caught every gold "review now" item, while the Qwen baseline downgraded the legal allegation to "watch". Label agreement is mixed. Qwen did better on category and report type. Both systems over-escalated the billing complaints and the company's own statement (gold: watch). `drex-latest` sent the correction and satire pieces to *ignore* instead of *digest*. Cost per article is about $0.0002 for each system. The Drex figure depends on an **assumed** price, so we do **not** claim a cost win.
+
+**Whole-pipeline cost is dominated by NDI, not decisions.** Measured NDI cost was $0.012 for a 1-page fixture article and $0.036–0.048 per live web article (about 12k chars). That is roughly 100× the decision stage. Keenable keyless calls were free (rate-limited).
+
+Raw responses: `docs/benchmark_runs/2026-11-14T203249+0000.json`.
 
 ## Intern usage
 

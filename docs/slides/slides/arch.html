@@ -1,0 +1,13 @@
+<section id="arch">
+<p class="eyebrow">ARCHITECTURE</p>
+<h2>Each tool does one job</h2>
+<div class="pipe">
+<div class="stage"><p class="tool">KEENABLE</p><h3>Retrieve</h3><p>Identity-aware, date-filtered search; fetch article text. Deduplicated by canonical URL.</p></div>
+<div class="stage"><p class="tool">NDI</p><h3>Extract</h3><p>Markdown upload → JSON schema: entities, claims with status (alleged, stated…), dates, verbatim passages.</p></div>
+<div class="stage drex"><p class="tool">DREX</p><h3>Decide</h3><p>6 typed questions in one call: right subject? category? report type? new? action? urgency? Probabilities kept.</p></div>
+<div class="stage"><p class="tool">OUR RULES</p><h3>Guard</h3><p>Namesake cutoff, uncertain identity → watch, repeat coverage downgraded, verbatim evidence check.</p></div>
+<div class="stage"><p class="tool">DEEPINFRA</p><h3>Explain</h3><p>Qwen3.8-27B writes the briefing from Drex’s decisions and verified evidence only.</p></div>
+</div>
+<p class="small">React + FastAPI, Vercel-ready. Keys stay server-side. API failures are shown, never swapped for mock data. Intern (Drex + Qwen) was used as a coding agent to write and run the pipeline’s unit tests.</p>
+<aside>The split matters: Drex makes the typed judgments, and the LLM only writes prose about decisions that were already made. That keeps the expensive, slow model out of the per-article loop.</aside>
+</section>

@@ -1,0 +1,35 @@
+:root { --dark: #131A2A; --light: #F6F5F1; --alt: #E8EBF1; --accent: #E8612C; --blue: #2F5BEA; --soft: #4A5568; --softdark: #B9C2D3; }
+body { font-family: 'Inter', Arial, sans-serif; color: var(--dark); }
+section { background: var(--light); padding: 128px; display: flex; flex-direction: column; gap: 40px; }
+section.dark { background: var(--dark); color: var(--light); }
+section.alt { background: var(--alt); }
+h1, h2, h3 { font-family: 'Space Grotesk', Arial, sans-serif; }
+h1 { font-size: 120px; font-weight: 700; line-height: 1.0; }
+h2 { font-size: 72px; font-weight: 700; line-height: 1.05; }
+h3 { font-size: 36px; font-weight: 600; line-height: 1.15; }
+.eyebrow { font-size: 28px; font-weight: 600; color: var(--accent); letter-spacing: 2px; }
+.lede { font-size: 40px; line-height: 1.35; color: var(--soft); }
+.dark .lede { color: var(--softdark); }
+.body { font-size: 30px; line-height: 1.4; color: var(--soft); }
+.dark .body { color: var(--softdark); }
+.small { font-size: 24px; line-height: 1.4; color: var(--soft); }
+.dark .small { color: var(--softdark); }
+.row { display: flex; gap: 32px; }
+.card { flex: 1; background: #FBFBF8; border-radius: 20px; padding: 40px; display: flex; flex-direction: column; gap: 16px; border-top: 8px solid var(--blue); }
+.card.hot { border-top-color: var(--accent); }
+.dark .card { background: #1F2840; }
+.big { font-family: 'Space Grotesk', Arial, sans-serif; font-size: 96px; font-weight: 700; line-height: 1; color: var(--accent); }
+.big.blue { color: var(--blue); }
+.dark .big.blue { color: #8FA8FF; }
+.pipe { display: flex; gap: 0; align-items: stretch; }
+.stage { flex: 1; padding: 32px 28px; background: #FBFBF8; border: 2px solid #CBD2DE; display: flex; flex-direction: column; gap: 12px; }
+.stage + .stage { border-left: none; }
+.stage.drex { background: var(--dark); color: var(--light); border-color: var(--dark); }
+.stage .tool { font-size: 24px; font-weight: 600; color: var(--accent); letter-spacing: 1px; }
+.stage.drex .tool { color: #FF9A6B; }
+.stage p { font-size: 26px; line-height: 1.35; }
+.stage.drex p { color: var(--light); }
+.stack { flex: 1; display: flex; flex-direction: column; gap: 20px; }
+.note { font-size: 24px; color: var(--soft); }
+.cards > .card { animation: rise 500ms ease-out both; animation-delay: calc(var(--i) * 120ms); }
+@keyframes rise { from { opacity: 0; transform: translate(0px, 24px); } }
