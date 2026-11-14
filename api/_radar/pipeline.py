@@ -176,9 +176,10 @@ def llm_extract(doc: dict[str, Any], profile: dict[str, Any]) -> dict[str, Any]:
         {"role": "system", "content": "You extract structured facts from an article. Return ONLY a JSON object matching the schema. "
                                       "supporting_passage must be an exact sentence copied verbatim from the article. Mark accusations as 'alleged'."},
         {"role": "user", "content": f"The reader monitors '{profile['name']}' ({profile.get('description', '')}).\n\n"
-                                    f"SCHEMA:\n{json.dumps(NDI_SCHEMA)}\n\nARTICLE:\n{to_markdown(doc)[:9000]}"},
+                                    f"SCHEMA:\n{json.dumps(NDI_SCHEMA)}\n\nKeep it short: at most 4 claims, 6 entities, 3 dates.\n\n"
+                                    f"ARTICLE:\n{to_markdown(doc)[:4500]}"},
     ]
-    resp = clients.deepinfra_chat(messages, max_tokens=1500, temperature=0, json_mode=True)
+    resp = clients.deepinfra_chat(messages, max_tokens=800, temperature=0, json_mode=True)
     text = clients.chat_text(resp)
     m = re.search(r"\{.*\}", text, re.S)
     try:
@@ -217,7 +218,7 @@ def profile_block(profile: dict[str, Any]) -> str:
 
 
 def build_state(profile: dict[str, Any], doc: dict[str, Any], facts: dict[str, Any] | None,
-                prior: list[dict[str, Any]], max_chars: int = 5000) -> str:
+                prior: list[dict[str, Any]], max_chars: int = 3500) -> str:
     prior_txt = "\n".join(f"- [{p.get('published_at') or 'date unknown'}] {p.get('title')}: {p.get('summary', '')}" for p in prior[-12:]) or "- (none)"
     facts_txt = json.dumps(facts, ensure_ascii=False)[:2500] if facts else "(no structured extraction available)"
     return (f"{profile_block(profile)}\n\nPRIOR COVERAGE ALREADY SEEN:\n{prior_txt}\n\n"

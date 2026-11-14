@@ -131,7 +131,7 @@ export default function App() {
 
       cur = 2; setStep(2, { status: "running" });
       let extracted = 0, cachedN = 0, exFallback = 0, deFallback = 0, nace = "";
-      await pool(ok, 3, async (d) => {
+      await pool(ok, 6, async (d) => {
         try {
           const n = await api("extract", { profile: prof, doc: d, mode });
           d.facts = n; d.ndi = { job_id: n.job_id, cached: n.cached, latency_ms: n.latency_ms, cost: n.cost, fallback: !!n.fallback, engine: n.engine };
