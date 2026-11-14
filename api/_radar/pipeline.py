@@ -464,7 +464,7 @@ def write_briefing(profile: dict[str, Any], items: list[dict[str, Any]]) -> dict
     rows.sort(key=lambda r: -ACTION_RANK.get(r["action"], 0))
     if not rows:
         return {"briefing": "No relevant coverage in this scan.", "explanations": {}, "usage": {}, "latency_ms": 0, "model": None,
-                "scorecard": scorecard, "recommendations": {}}
+                "scorecard": scorecard, "recommendations": {}, "overall_summary": ""}
     messages = [
         {"role": "system", "content": (
             "You write concise reputation briefings for a busy founder. Use ONLY the decisions and evidence given. "
@@ -472,7 +472,9 @@ def write_briefing(profile: dict[str, Any], items: list[dict[str, Any]]) -> dict
             "Return JSON: {\"briefing\": markdown string under 180 words with a 1-line headline then bullets ordered by action, "
             "\"explanations\": {item_id: one short sentence on why it matters, ONLY for items with action review_now or watch}, "
             "\"recommendations\": {area: 1-2 sentences of concrete, practical advice for that improvement area, citing what the evidence shows; "
-            "only for areas in the SCORECARD}}.")},
+            "only for areas in the SCORECARD}, "
+            "\"overall_summary\": one paragraph of 5-7 sentences giving the overall picture across ALL scorecard areas: where the subject stands, "
+            "the biggest risks, the clear strengths, and the top 2-3 priorities, in plain language}.")},
         {"role": "user", "content": f"{profile_block(profile)}\n\nTRIAGED ITEMS (decisions by Drex):\n{json.dumps(rows, ensure_ascii=False)}"
                                     f"\n\nSCORECARD (improvement areas and sentiment 0=very negative..4=very positive, from Drex):\n"
                                     f"{json.dumps(scorecard, ensure_ascii=False)}"},
@@ -486,7 +488,7 @@ def write_briefing(profile: dict[str, Any], items: list[dict[str, Any]]) -> dict
         out = {"briefing": text, "explanations": {}}
     recs = {k: v for k, v in (out.get("recommendations") or {}).items() if k in {a["area"] for a in scorecard["areas"]}}
     return {"briefing": out.get("briefing", ""), "explanations": out.get("explanations", {}), "usage": resp.get("usage", {}),
-            "scorecard": scorecard, "recommendations": recs,
+            "scorecard": scorecard, "recommendations": recs, "overall_summary": out.get("overall_summary") or "",
             "latency_ms": resp.get("_latency_ms"), "model": resp.get("model") or config.DEEPINFRA_MODEL}
 
 

@@ -54,6 +54,8 @@ export default function App() {
   const [naceNote, setNaceNote] = useState("");
   const [scorecard, setScorecard] = useState<Scorecard | null>(() => load("rr.scorecard", null));
   const [recs, setRecs] = useState<Record<string, string>>(() => load("rr.recs", {}));
+  const [overall, setOverall] = useState<string>(() => load("rr.overall", ""));
+  useEffect(() => save("rr.overall", overall), [overall]);
   useEffect(() => save("rr.scorecard", scorecard), [scorecard]);
   useEffect(() => save("rr.recs", recs), [recs]);
 
@@ -75,7 +77,7 @@ export default function App() {
   }
 
   function chooseLive(p: Profile) {
-    setNaceNote(""); setProfile(p); setMode("live"); setSeen([]); setPrior([]); setItems([]); setBriefing(""); setScorecard(null); setRecs({}); setSteps([]); setError(null);
+    setNaceNote(""); setProfile(p); setMode("live"); setSeen([]); setPrior([]); setItems([]); setBriefing(""); setScorecard(null); setRecs({}); setOverall(""); setSteps([]); setError(null);
   }
   function setName(name: string) {
     // A typed name starts a fresh live profile; details are optional and filled with sensible defaults.
@@ -107,7 +109,7 @@ export default function App() {
 
   async function runScan() {
     if (mode === "live" && !profile.name.trim()) { setError("Pick or type a company first."); setTab("Profile"); return; }
-    setRunning(true); setError(null); setSelected(null); setBriefing(""); setItems([]); setScorecard(null); setRecs({}); setNaceNote("");
+    setRunning(true); setError(null); setSelected(null); setBriefing(""); setItems([]); setScorecard(null); setRecs({}); setOverall(""); setNaceNote("");
     setSteps([
       { label: mode === "live" ? "Search the web (Keenable), drop duplicates and low-value sources (Drex)" : "Load fixture sources", status: "pending" },
       { label: mode === "live" ? "Fetch every source (Keenable)" : "Load fixture text", status: "pending" },
@@ -194,7 +196,7 @@ export default function App() {
       cur = 4; setStep(4, { status: "running" });
       const b = await api("brief", { profile: prof, items: decided.map(({ text, ...rest }) => rest) });
       for (const d of decided) d.explanation = b.explanations?.[d.id];
-      setBriefing(b.briefing); setItems([...ordered]); setScorecard(b.scorecard ?? null); setRecs(b.recommendations ?? {});
+      setBriefing(b.briefing); setItems([...ordered]); setScorecard(b.scorecard ?? null); setRecs(b.recommendations ?? {}); setOverall(b.overall_summary ?? "");
       setStep(4, { status: "done", detail: b.model ? `${b.model} · ${b.latency_ms ?? "?"} ms` : "skipped — no relevant items to brief" });
 
       if (mode === "live") {
@@ -238,12 +240,13 @@ export default function App() {
           <h2>Who should Project Halo study?</h2>
           <p className="muted">Type a company name and press Enter. Halo fills in the details for you.</p>
           <form className="searchbar" onSubmit={(e) => { e.preventDefault(); submitName(); }}>
-            <input autoFocus value={query} onChange={(e) => setQuery(e.target.value)} placeholder="e.g. Nvidia" />
+            <input autoFocus value={query} onChange={(e) => setQuery(e.target.value)} placeholder="Company Name" />
             <button className="primary" type="submit" disabled={!query.trim() || filling}>{filling ? "Looking up…" : "Look up"}</button>
           </form>
           {profile.name && mode === "live" && <>
             <h3>{profile.name} {filling && <span className="muted small">filling in details…</span>}</h3>
-            <p className="muted small">These details tell the models which {profile.name} you mean. Edit anything that is wrong.</p>
+            <details>
+            <summary>Details Halo filled in (edit if anything is wrong)</summary>
             <label>Description<textarea rows={3} value={profile.description} onChange={(e) => setProfile({ ...profile, description: e.target.value })} /></label>
             <label>Other names and tickers (comma-separated)<input value={profile.aliases.join(", ")} onChange={(e) => setProfile({ ...profile, aliases: e.target.value.split(",").map((s) => s.trim()).filter(Boolean) })} /></label>
             <div className="grid2">
@@ -251,6 +254,7 @@ export default function App() {
               <label>Industry<input value={profile.industry} onChange={(e) => setProfile({ ...profile, industry: e.target.value })} /></label>
             </div>
             <label>What to watch for<textarea rows={2} value={profile.priorities} onChange={(e) => setProfile({ ...profile, priorities: e.target.value })} /></label>
+            </details>
           </>}
           {error && tab === "Profile" && <div className="err">{error}</div>}
           <div className="row">
@@ -316,7 +320,7 @@ export default function App() {
       )}
 
       {tab === "Influencers" && <Influencers profile={profile} scorecard={scorecard} />}
-      {tab === "Feedback" && <Feedback profile={profile.name} scorecard={scorecard} recs={recs} onOpen={(id) => { setSelected(id); setTab("Scan"); }} />}
+      {tab === "Feedback" && <Feedback profile={profile.name} scorecard={scorecard} recs={recs} overall={overall} onOpen={(id) => { setSelected(id); setTab("Scan"); }} />}
       <footer className="muted small">Confidence values are model-estimated probabilities from Drex, not guarantees. Demo data in fixture mode is fictional.</footer>
     </div>
   );
@@ -326,12 +330,14 @@ const STATUS_LABEL: Record<Area["status"], string> = { needs_attention: "Needs a
 const SENT_LABEL = ["very negative", "negative", "neutral", "positive", "very positive"];
 const sentWord = (s: number | null) => (s == null ? "unknown" : SENT_LABEL[Math.max(0, Math.min(4, Math.round(s)))]);
 
-function Feedback({ profile, scorecard, recs, onOpen }: { profile: string; scorecard: Scorecard | null; recs: Record<string, string>; onOpen: (id: string) => void }) {
+function Feedback({ profile, scorecard, recs, overall, onOpen }: { profile: string; scorecard: Scorecard | null; recs: Record<string, string>; overall: string; onOpen: (id: string) => void }) {
   if (!scorecard) return <section className="card narrow"><h2>Improvement feedback</h2><p className="muted">Run a scan to see where {profile || "the subject"} should improve.</p></section>;
   return (
     <section className="card narrow">
       <h2>Improvement feedback — {profile}</h2>
       <p className="small muted">From public coverage: news, reviews, complaints, ads and market news. <b>Drex</b> labels each relevant item with an improvement area and a sentiment score (0 very negative to 4 very positive). <b>DeepInfra</b> writes the advice, using only those decisions and verified evidence. Scores are model estimates.</p>
+      {overall && <div className="master"><h3>Overall summary</h3><p>{overall}</p>
+        <div className="small muted">{scorecard.areas.filter((a) => a.status === "needs_attention").length} area(s) need attention · {scorecard.areas.filter((a) => a.status === "mixed").length} mixed · {scorecard.areas.filter((a) => a.status === "strength").length} strength(s) · {scorecard.areas.reduce((n, a) => n + a.mentions, 0)} sources counted</div></div>}
       {!scorecard.areas.length && <p className="muted">No improvement areas found in this scan.</p>}
       {scorecard.items_without_area > 0 && <p className="small warnline">{scorecard.items_without_area} relevant item(s) have no improvement area, e.g. recorded Drex responses captured before this feature was added. They are not counted here.</p>}
       <div className="areas">{scorecard.areas.map((a) => (

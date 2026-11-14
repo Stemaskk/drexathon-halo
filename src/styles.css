@@ -91,3 +91,4 @@ button.brand { border: 0; background: none; padding: 0; cursor: pointer; color: 
 .searchbar { display: flex; gap: 8px; margin: 12px 0; } .searchbar input { margin-top: 0; font-size: 16px; padding: 10px 12px; }
 .searchbar button { white-space: nowrap; }
 label.inline { display: flex; align-items: center; gap: 8px; margin: 0; } label.inline input { width: 70px; margin: 0; }
+.master { border: 1px solid var(--accent); border-radius: 10px; padding: 14px 16px; margin: 12px 0; background: color-mix(in srgb, var(--accent) 8%, transparent); } .master h3 { margin: 0 0 6px; } .master p { margin: 0 0 8px; line-height: 1.5; }
