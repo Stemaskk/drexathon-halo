@@ -62,7 +62,7 @@ class SearchReq(BaseModel):
     profile: Profile
     mode: str = "live"  # live | fixture
     seen_urls: list[str] = []
-    published_after: str = "30d"
+    published_after: str = "6mo"
     max_results: int = Field(20, ge=1, le=50)
 
 

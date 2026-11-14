@@ -91,8 +91,31 @@ def build_queries(profile: dict[str, Any]) -> list[str]:
 
 
 # ------------------------------------------------------------------ retrieval
-def search(profile: dict[str, Any], *, seen_urls: list[str], published_after: str = "30d",
-           max_results: int = 10) -> dict[str, Any]:
+def _title_key(title: str) -> frozenset[str]:
+    return frozenset(w for w in re.findall(r"[a-z0-9]+", (title or "").lower()) if len(w) > 2)
+
+
+def prefilter(profile: dict[str, Any], cand: dict[str, Any]) -> dict[str, Any]:
+    """Cheap Drex triage on title + snippet, before the expensive fetch and NDI steps."""
+    name = profile["name"]
+    state = (f"{profile_block(profile)}\n\nSEARCH RESULT\nTitle: {cand.get('title')}\nURL: {cand.get('url')}\n"
+             f"Published: {cand.get('published_at') or 'unknown'}\nSnippet: {(cand.get('snippet') or '')[:600]}")
+    qs = {
+        "about": {"type": "noul", "instructions": f"Is this result about the {name} described in the profile (not a namesake)?"},
+        "substantive": {"type": "noul", "instructions": f"Does this result contain substantive information or opinion about {name}?",
+                        "criteria": {"true": "News, a review, complaint, discussion, analysis, announcement or commentary with real content",
+                                     "false": "A navigation, login, profile, directory, job listing, price-quote or ticker page, or a bare listing with no real content"}},
+        "importance": {"type": "score", "instructions": f"How useful is this for judging {name}'s reputation, marketing, product or market standing?",
+                       "criteria": ["Not useful", "Minor", "Useful", "Important"]},
+    }
+    a = clients.drex_systemone(state, qs).get("answers", {})
+    return {"p_about": a.get("about", {}).get("noul"), "p_substantive": a.get("substantive", {}).get("noul"),
+            "importance": a.get("importance", {}).get("score")}
+
+
+def search(profile: dict[str, Any], *, seen_urls: list[str], published_after: str = "6mo",
+           max_results: int = 10, use_filter: bool = True) -> dict[str, Any]:
+    from concurrent.futures import ThreadPoolExecutor
     seen = {canonical_url(u) for u in seen_urls}
     queries = build_queries(profile)
     candidates: dict[str, dict[str, Any]] = {}
@@ -102,26 +125,61 @@ def search(profile: dict[str, Any], *, seen_urls: list[str], published_after: st
     own = urlsplit(profile.get("website") or "").netloc.lower().removeprefix("www.")
     if own:
         exclude.append(own)
-    per_query = [clients.keenable_search(q, published_after=published_after, max_results=max_results,
-                                         exclude_domains=exclude).get("results", []) for q in queries]
+    # Two passes per query: the last 30 days, and the wider window, so recent and older context both get in.
+    windows = ["30d"] if published_after == "30d" else ["30d", published_after]
+    jobs = [(q, w) for w in windows for q in queries]
+    with ThreadPoolExecutor(max_workers=4) as ex:
+        per_query = list(ex.map(lambda j: clients.keenable_search(j[0], published_after=j[1], max_results=max_results,
+                                                                  exclude_domains=exclude).get("results", []), jobs))
     # Interleave results across queries so news, reviews, ads and market coverage all make the batch.
-    merged = [(queries[qi], res[ri]) for ri in range(max((len(r) for r in per_query), default=0))
+    merged = [(jobs[qi][0], res[ri]) for ri in range(max((len(r) for r in per_query), default=0))
               for qi, res in enumerate(per_query) if ri < len(res)]
+    title_keys: list[frozenset[str]] = []
+    near_dup = 0
     for q, r in merged:
-        for r in [r]:
-            raw_count += 1
-            cu = canonical_url(r["url"])
-            if cu in seen:
-                seen_count += 1
+        raw_count += 1
+        cu = canonical_url(r["url"])
+        if cu in seen:
+            seen_count += 1
+            continue
+        if cu in candidates:
+            dup_count += 1
+            continue
+        tk = _title_key(r.get("title", ""))
+        if len(tk) >= 4 and any(len(tk & k) / len(tk | k) >= 0.8 for k in title_keys):
+            near_dup += 1  # same story republished under a near-identical headline
+            continue
+        title_keys.append(tk)
+        candidates[cu] = {"id": doc_id(r["url"]), "url": r["url"], "canonical_url": cu, "title": r.get("title", ""),
+                          "snippet": r.get("snippet", ""), "published_at": r.get("published_at"), "query": q}
+    cands = list(candidates.values())
+    stats = {"raw": raw_count, "duplicates_in_scan": dup_count + near_dup, "near_duplicate_titles": near_dup,
+             "already_seen": seen_count, "unique_new": len(cands), "filtered_out": 0, "filter": "off"}
+    dropped: list[dict[str, Any]] = []
+    if use_filter and cands:
+        def judge(c: dict[str, Any]) -> dict[str, Any] | None:
+            try:
+                return prefilter(profile, c)
+            except Exception:
+                return None  # fail open: keep the source if the filter is unavailable
+        with ThreadPoolExecutor(max_workers=10) as ex:
+            verdicts = list(ex.map(judge, cands))
+        kept = []
+        for c, v in zip(cands, verdicts):
+            if v is None:
+                kept.append(c)
                 continue
-            if cu in candidates:
-                dup_count += 1
-                continue
-            candidates[cu] = {"id": doc_id(r["url"]), "url": r["url"], "canonical_url": cu, "title": r.get("title", ""),
-                              "snippet": r.get("snippet", ""), "published_at": r.get("published_at"), "query": q}
-    return {"queries": queries, "candidates": list(candidates.values()),
-            "stats": {"raw": raw_count, "duplicates_in_scan": dup_count, "already_seen": seen_count,
-                      "unique_new": len(candidates)}}
+            c["prefilter"] = v
+            if (v["p_about"] is not None and v["p_about"] < 0.35) or (v["p_substantive"] is not None and v["p_substantive"] < 0.5):
+                dropped.append({"title": c["title"], "url": c["url"], **v})
+            else:
+                kept.append(c)
+        kept.sort(key=lambda c: -((c.get("prefilter") or {}).get("importance") or 0))
+        failed = sum(v is None for v in verdicts)
+        stats.update({"filtered_out": len(dropped), "unique_new": len(kept),
+                      "filter": "drex" if failed < len(cands) else "unavailable (kept everything)"})
+        cands = kept
+    return {"queries": queries, "windows": windows, "candidates": cands, "dropped": dropped[:200], "stats": stats}
 
 
 def fetch(candidate: dict[str, Any]) -> dict[str, Any]:

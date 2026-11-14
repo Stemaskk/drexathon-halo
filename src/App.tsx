@@ -43,6 +43,7 @@ export default function App() {
   const [running, setRunning] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [health, setHealth] = useState<any>(null);
+  const [windowSel, setWindowSel] = useState("6mo");
   const [batch, setBatch] = useState(0); // 0 = every unique source found
   const [replay, setReplay] = useState<boolean>(() => load("rr.replay", false));
   useEffect(() => save("rr.replay", replay), [replay]);
@@ -90,7 +91,7 @@ export default function App() {
     if (mode === "live" && !profile.name.trim()) { setError("Pick or type a company first."); setTab("Profile"); return; }
     setRunning(true); setError(null); setSelected(null); setBriefing(""); setItems([]); setScorecard(null); setRecs({}); setNaceNote("");
     setSteps([
-      { label: mode === "live" ? "Search the web (Keenable)" : "Load fixture sources", status: "pending" },
+      { label: mode === "live" ? "Search the web (Keenable), drop duplicates and low-value sources (Drex)" : "Load fixture sources", status: "pending" },
       { label: mode === "live" ? "Fetch every source (Keenable)" : "Load fixture text", status: "pending" },
       { label: "Extract facts & passages (NDI)", status: "pending" },
       { label: replaying ? "Decide (Drex — RECORDED responses, replay)" : "Decide relevance, category, novelty, action (Drex)", status: "pending" },
@@ -108,10 +109,10 @@ export default function App() {
         scanPrior = fx.history.map((h: any) => ({ title: h.title, published_at: h.published_at, summary: h.summary }));
       }
       setStep(0, { status: "running" });
-      const s = await api("search", { profile: prof, mode, seen_urls: scanSeen, published_after: "30d", max_results: 20 });
+      const s = await api("search", { profile: prof, mode, seen_urls: scanSeen, published_after: windowSel, max_results: 20 });
       const limit = mode === "fixture" || !batch ? s.candidates.length : batch;
       const picked: Item[] = s.candidates.slice(0, limit);
-      setStep(0, { status: "done", detail: `${s.stats.raw} results → ${s.stats.unique_new} new unique (${s.stats.duplicates_in_scan} dupes, ${s.stats.already_seen} already seen); processing ${picked.length}` });
+      setStep(0, { status: "done", detail: `${s.stats.raw} results → ${s.stats.duplicates_in_scan} duplicates and ${s.stats.filtered_out ?? 0} low-value or off-topic removed${s.stats.filter && s.stats.filter !== "drex" && s.stats.filter !== "off" ? ` (filter ${s.stats.filter})` : ""}, ${s.stats.already_seen} already seen → analyzing ${picked.length}` });
       if (!picked.length) {
         setItems([]);
         setSteps((st) => st.map((x, j) => (j === 0 ? x : { ...x, status: "done", detail: "skipped — no new coverage" })));
@@ -252,6 +253,7 @@ export default function App() {
             </div>
             {mode === "fixture" && <label className="small check"><input type="checkbox" checked={replay} disabled={running} onChange={(e) => setReplay(e.target.checked)} />
               Replay recorded Drex responses<span className="muted"> (real drex-latest output captured 2026-11-14 21:21 UTC; use if the Nace API is down)</span></label>}
+            {mode === "live" && <label className="small">Look back<select value={windowSel} disabled={running} onChange={(e) => setWindowSel(e.target.value)}><option value="30d">30 days</option><option value="90d">3 months</option><option value="6mo">6 months</option><option value="1y">1 year</option><option value="3y">3 years</option></select></label>}
             {mode === "live" && <label className="small">Limit sources (blank = all found)<input type="number" min={1} placeholder="all" value={batch || ""} onChange={(e) => setBatch(Math.max(0, +e.target.value || 0))} /></label>}
             <button className="primary wide" onClick={runScan} disabled={running}>{running ? "Scanning…" : "Scan now"}</button>
             <ol className="steps">{steps.map((s, i) => (

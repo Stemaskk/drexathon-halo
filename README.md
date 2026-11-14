@@ -30,6 +30,12 @@ Built for the **Drexathon (Nace.AI), November 14, 2026**. Decisions that would n
 - DeepInfra writes 1–2 sentences of practical advice per area, using only the scorecard and verified evidence.
 - Limits: there is no live stock-price feed (only news about stocks and investors), and advertising is judged from public coverage of the ads, not from ad-platform data.
 
+### Source selection before analysis
+- Each search runs twice: the last 30 days, and a wider window (default 6 months, selectable up to 3 years), so both recent and older context are covered.
+- Exact duplicates (same canonical URL) and near-duplicate headlines (80%+ shared words) are removed.
+- **Drex pre-filter:** each remaining result is triaged from its title and snippet with three typed questions (about the right subject? substantive content? how useful, 0–3). Namesakes and low-value pages such as tickers, directories and bare listings are dropped before the expensive fetch and NDI steps, and the rest are ranked most useful first. If Drex is unreachable the filter keeps everything.
+- Drex calls back off and retry on 403, 429 and 503 (honoring `retry-after`), and Keenable calls retry on 429.
+
 ### Rules applied after Drex (deterministic, in `pipeline.apply_policy`)
 - P(subject) < 0.35 → **ignore** (namesake or unrelated).
 - 0.35 ≤ P(subject) < 0.65 → flag `identity_uncertain` and never silently ignore it (at least **watch**).

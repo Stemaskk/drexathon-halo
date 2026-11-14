@@ -60,14 +60,22 @@ def keenable_search(query: str, *, published_after: str | None = None, max_resul
     if exclude_domains:
         body["exclude_domains"] = exclude_domains
     with httpx.Client(timeout=30) as c:
-        r = c.post(url, json=body, headers=headers)
+        for wait in (1.2, 2.5, None):  # Keenable allows 10 requests/second per organization
+            r = c.post(url, json=body, headers=headers)
+            if r.status_code != 429 or wait is None:
+                break
+            time.sleep(wait)
     return _check("keenable.search", r)
 
 
 def keenable_fetch(url: str, *, max_chars: int = 12000) -> dict[str, Any]:
     endpoint, headers = _keenable("/v1/fetch")
     with httpx.Client(timeout=45) as c:
-        r = c.get(endpoint, params={"url": url, "max_chars": max_chars}, headers=headers)
+        for wait in (1.2, 2.5, None):
+            r = c.get(endpoint, params={"url": url, "max_chars": max_chars}, headers=headers)
+            if r.status_code != 429 or wait is None:
+                break
+            time.sleep(wait)
     return _check("keenable.fetch", r)
 
 
@@ -81,7 +89,16 @@ def drex_systemone(state: str, questions: dict[str, Any], model: str | None = No
     body = {"model": model or config.DREX_MODEL, "state": state, "questions": questions}
     t0 = time.perf_counter()
     with httpx.Client(timeout=60) as c:
-        r = c.post(f"{config.NACE_BASE_URL}/v1/systemone", json=body, headers=_nace_headers())
+        # Organizer guidance: shared venue IPs can hit a brief 403 checkpoint; back off and retry, honoring retry-after.
+        for wait in (4, 12, None):
+            r = c.post(f"{config.NACE_BASE_URL}/v1/systemone", json=body, headers=_nace_headers())
+            if r.status_code not in (403, 429, 503) or wait is None:
+                break
+            try:
+                wait = min(float(r.headers.get("retry-after", wait)), 20)
+            except ValueError:
+                pass
+            time.sleep(wait)
     data = _check("drex", r)
     data["_latency_ms"] = round((time.perf_counter() - t0) * 1000, 1)
     return data
