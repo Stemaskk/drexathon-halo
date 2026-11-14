@@ -18,7 +18,7 @@ h3 { font-size: 36px; font-weight: 600; line-height: 1.15; }
 .card { flex: 1; background: #FBFBF8; border-radius: 20px; padding: 40px; display: flex; flex-direction: column; gap: 16px; border-top: 8px solid var(--blue); }
 .card.hot { border-top-color: var(--accent); }
 .dark .card { background: #1F2840; }
-.big { font-family: 'Space Grotesk', Arial, sans-serif; font-size: 96px; font-weight: 700; line-height: 1; color: var(--accent); }
+.big { font-family: 'Space Grotesk', Arial, sans-serif; font-size: 76px; font-weight: 700; line-height: 1; color: var(--accent); }
 .big.blue { color: var(--blue); }
 .dark .big.blue { color: #8FA8FF; }
 .pipe { display: flex; gap: 0; align-items: stretch; }
