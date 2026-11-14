@@ -32,7 +32,7 @@ Built for the **Drexathon (Nace.AI), November 14, 2026**. Decisions that would n
 
 ### Influencers tab
 - **Check an influencer:** Keenable finds public pages about a creator, the DeepInfra LLM pulls follower counts out of those pages (each with its source link, never from memory), and Drex returns a content-focus split in percent, an authenticity signal, how clearly the creator is identified and a sponsor-safety score.
-- **Database:** `api/_radar/data/influencers.json` holds 20 creators evaluated this way by `scripts/seed_influencers.py`. Creators you check in the app can be added (stored in the browser).
+- **Database:** `api/_radar/data/influencers.json` holds 177 creators across tech, science, gaming, sports, food, beauty, travel, finance, music, cars, DIY and health, evaluated this way by `scripts/seed_influencers.py`. Creators you check in the app can be added (stored in the browser).
 - **Recommend N creators for a company:** uses the company's scan results (areas needing attention and strengths). Drex scores each creator's fit, then a greedy selection picks the set with the most *new* estimated reach: audience = followers × focus split per platform and topic, and creators in the same platform-and-topic segment are assumed to share 85% of their audience. So two large creators with the same audience add less than one large and one smaller creator with different audiences.
 - **Limits:** real audience-overlap data is not public, so overlap is an assumption. The authenticity signal is a model estimate of risk from public pages, not proof that an account is real or fake.
 
