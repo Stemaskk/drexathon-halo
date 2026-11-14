@@ -79,13 +79,15 @@ def build_queries(profile: dict[str, Any]) -> list[str]:
     context = " ".join(x for x in [profile.get("industry", ""), profile.get("region", "")] if x).strip()
     names = " OR ".join(f'"{n}"' for n in [name, *aliases][:4])
     qs = [f'"{name}" news',
-          f"({names}) {context}".strip(),
           f'"{name}" reviews OR complaints OR "customer experience"',
-          f'"{name}" ad OR advertisement OR campaign OR marketing']
+          f'"{name}" ad OR advertisement OR campaign OR marketing',
+          f'"{name}" reddit OR forum OR community OR discussion',
+          f'"{name}" twitter OR x.com OR tiktok OR youtube OR instagram',
+          f"({names}) {context}".strip()]
     if profile.get("kind", "company") == "company":
-        qs.append(f'"{name}" stock OR shares OR investors OR funding')
-    order = [0, 2, 3, 1, 4]  # news, reviews, ads, general, stock
-    return [qs[i] for i in order if i < len(qs)]
+        qs.append(f'"{name}" stock OR shares OR investors OR analysts OR earnings')
+        qs.append(f'"{name}" product launch OR announcement OR partnership')
+    return qs
 
 
 # ------------------------------------------------------------------ retrieval
@@ -96,7 +98,7 @@ def search(profile: dict[str, Any], *, seen_urls: list[str], published_after: st
     candidates: dict[str, dict[str, Any]] = {}
     raw_count, dup_count, seen_count = 0, 0, 0
     # The subject's own site and profile pages are not third-party coverage.
-    exclude = ["linkedin.com", "facebook.com", "instagram.com"]
+    exclude = ["linkedin.com"]
     own = urlsplit(profile.get("website") or "").netloc.lower().removeprefix("www.")
     if own:
         exclude.append(own)
@@ -410,14 +412,14 @@ def write_briefing(profile: dict[str, Any], items: list[dict[str, Any]]) -> dict
             "You write concise reputation briefings for a busy founder. Use ONLY the decisions and evidence given. "
             "Never present an allegation as fact: say 'reports allege' or 'according to'. Do not infer causes or links between items unless the evidence states them. If evidence is missing, say it is unknown. "
             "Return JSON: {\"briefing\": markdown string under 180 words with a 1-line headline then bullets ordered by action, "
-            "\"explanations\": {item_id: one sentence on why it matters to this profile}, "
+            "\"explanations\": {item_id: one short sentence on why it matters, ONLY for items with action review_now or watch}, "
             "\"recommendations\": {area: 1-2 sentences of concrete, practical advice for that improvement area, citing what the evidence shows; "
             "only for areas in the SCORECARD}}.")},
         {"role": "user", "content": f"{profile_block(profile)}\n\nTRIAGED ITEMS (decisions by Drex):\n{json.dumps(rows, ensure_ascii=False)}"
                                     f"\n\nSCORECARD (improvement areas and sentiment 0=very negative..4=very positive, from Drex):\n"
                                     f"{json.dumps(scorecard, ensure_ascii=False)}"},
     ]
-    resp = clients.deepinfra_chat(messages, max_tokens=1800, temperature=0.2, json_mode=True)
+    resp = clients.deepinfra_chat(messages, max_tokens=6000, temperature=0.2, json_mode=True)
     text = clients.chat_text(resp)
     try:
         m = re.search(r"\{.*\}", text, re.S)

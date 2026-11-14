@@ -43,7 +43,7 @@ export default function App() {
   const [running, setRunning] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [health, setHealth] = useState<any>(null);
-  const [batch, setBatch] = useState(15);
+  const [batch, setBatch] = useState(0); // 0 = every unique source found
   const [replay, setReplay] = useState<boolean>(() => load("rr.replay", false));
   useEffect(() => save("rr.replay", replay), [replay]);
   const replaying = mode === "fixture" && replay;
@@ -90,8 +90,8 @@ export default function App() {
     if (mode === "live" && !profile.name.trim()) { setError("Pick or type a company first."); setTab("Profile"); return; }
     setRunning(true); setError(null); setSelected(null); setBriefing(""); setItems([]); setScorecard(null); setRecs({}); setNaceNote("");
     setSteps([
-      { label: mode === "live" ? "Search the web (Keenable)" : "Load fixture articles", status: "pending" },
-      { label: mode === "live" ? "Fetch article text (Keenable)" : "Load fixture text", status: "pending" },
+      { label: mode === "live" ? "Search the web (Keenable)" : "Load fixture sources", status: "pending" },
+      { label: mode === "live" ? "Fetch every source (Keenable)" : "Load fixture text", status: "pending" },
       { label: "Extract facts & passages (NDI)", status: "pending" },
       { label: replaying ? "Decide (Drex — RECORDED responses, replay)" : "Decide relevance, category, novelty, action (Drex)", status: "pending" },
       { label: "Write briefing (DeepInfra)", status: "pending" },
@@ -108,8 +108,8 @@ export default function App() {
         scanPrior = fx.history.map((h: any) => ({ title: h.title, published_at: h.published_at, summary: h.summary }));
       }
       setStep(0, { status: "running" });
-      const s = await api("search", { profile: prof, mode, seen_urls: scanSeen, published_after: "30d", max_results: 12 });
-      const limit = mode === "fixture" ? s.candidates.length : batch;
+      const s = await api("search", { profile: prof, mode, seen_urls: scanSeen, published_after: "30d", max_results: 20 });
+      const limit = mode === "fixture" || !batch ? s.candidates.length : batch;
       const picked: Item[] = s.candidates.slice(0, limit);
       setStep(0, { status: "done", detail: `${s.stats.raw} results → ${s.stats.unique_new} new unique (${s.stats.duplicates_in_scan} dupes, ${s.stats.already_seen} already seen); processing ${picked.length}` });
       if (!picked.length) {
@@ -121,17 +121,17 @@ export default function App() {
 
       cur = 1; setStep(1, { status: "running" });
       let fetched = 0;
-      const docs: Item[] = await pool(picked, 3, async (c) => {
+      const docs: Item[] = await pool(picked, 10, async (c) => {
         try { const d = await api<Item>("fetch", { candidate: c, mode }); setStep(1, { detail: `${++fetched}/${picked.length}` }); return d; }
         catch (e: any) { return { ...c, error: `fetch failed: ${e.message}` }; }
       });
       const ok = docs.filter((d) => !d.error && (d.text || "").length > 80);
       setStep(1, { status: ok.length ? "done" : "error", detail: `${ok.length}/${docs.length} fetched${docs.length - ok.length ? `, ${docs.length - ok.length} failed or empty` : ""}` });
-      if (!ok.length) throw new Error(docs.find((d) => d.error)?.error || "No article text retrieved.");
+      if (!ok.length) throw new Error(docs.find((d) => d.error)?.error || "No source text retrieved.");
 
       cur = 2; setStep(2, { status: "running" });
       let extracted = 0, cachedN = 0, exFallback = 0, deFallback = 0, nace = "";
-      await pool(ok, 6, async (d) => {
+      await pool(ok, 10, async (d) => {
         try {
           const n = await api("extract", { profile: prof, doc: d, mode });
           d.facts = n; d.ndi = { job_id: n.job_id, cached: n.cached, latency_ms: n.latency_ms, cost: n.cost, fallback: !!n.fallback, engine: n.engine };
@@ -219,7 +219,7 @@ export default function App() {
           <h2>Who should Project Halo study?</h2>
           <p className="muted">Pick a demo company or type any name. That is all you need.</p>
           <div className="presets">
-            <button className={mode === "fixture" ? "chip on" : "chip"} onClick={loadFixtureProfile}>Nimbleroot<span>fictional demo · offline articles</span></button>
+            <button className={mode === "fixture" ? "chip on" : "chip"} onClick={loadFixtureProfile}>Nimbleroot<span>fictional demo · offline sources</span></button>
             {PRESETS.map((x) => (
               <button key={x.name} className={mode === "live" && profile.name === x.name ? "chip on" : "chip"} onClick={() => chooseLive(x)}>{x.name}<span>live web</span></button>))}
           </div>
@@ -252,7 +252,7 @@ export default function App() {
             </div>
             {mode === "fixture" && <label className="small check"><input type="checkbox" checked={replay} disabled={running} onChange={(e) => setReplay(e.target.checked)} />
               Replay recorded Drex responses<span className="muted"> (real drex-latest output captured 2026-11-14 21:21 UTC; use if the Nace API is down)</span></label>}
-            {mode === "live" && <label className="small">Articles to process<input type="number" min={1} max={30} value={batch} onChange={(e) => setBatch(Math.max(1, Math.min(30, +e.target.value || 1)))} /></label>}
+            {mode === "live" && <label className="small">Limit sources (blank = all found)<input type="number" min={1} placeholder="all" value={batch || ""} onChange={(e) => setBatch(Math.max(0, +e.target.value || 0))} /></label>}
             <button className="primary wide" onClick={runScan} disabled={running}>{running ? "Scanning…" : "Scan now"}</button>
             <ol className="steps">{steps.map((s, i) => (
               <li key={i} className={s.status}><span className="ico" />{s.label}{s.detail && <div className="small muted">{s.detail}</div>}</li>))}</ol>

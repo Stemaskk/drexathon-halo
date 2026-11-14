@@ -63,7 +63,7 @@ class SearchReq(BaseModel):
     mode: str = "live"  # live | fixture
     seen_urls: list[str] = []
     published_after: str = "30d"
-    max_results: int = Field(12, ge=1, le=30)
+    max_results: int = Field(20, ge=1, le=50)
 
 
 class FetchReq(BaseModel):
