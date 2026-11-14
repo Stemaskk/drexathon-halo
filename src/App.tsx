@@ -92,7 +92,7 @@ export default function App() {
     if (!name) return;
     const key = name.toLowerCase().replace(/[^a-z0-9]/g, "");
     const known = PRESETS.find((x) => [x.name, ...x.aliases].some((a) => a.toLowerCase().replace(/[^a-z0-9]/g, "") === key));
-    if (known) { chooseLive(known); return; }
+    if (known) { chooseLive(known); setQuery(known.name); return; }
     chooseLive({ ...EMPTY, name, priorities: PRIORITIES });
     setFilling(true);
     try {
@@ -100,6 +100,14 @@ export default function App() {
       setProfile({ name, kind: d.kind || "company", aliases: d.aliases || [], description: d.description || "", website: d.website || "", region: d.region || "", industry: d.industry || "", priorities: PRIORITIES });
     } catch (e: any) { setError(`Could not auto-fill details: ${e.message}. You can fill them in by hand.`); }
     finally { setFilling(false); }
+  }
+
+  async function goScan() {
+    const name = query.trim();
+    if (!name) return;
+    // Same company as before (possibly with edited details): keep it. Otherwise look it up and fill in details.
+    if (!(mode === "live" && profile.name.toLowerCase() === name.toLowerCase())) await submitName();
+    setTab("Scan");
   }
 
   function resetHistory() { setSeen([]); setPrior([]); setItems([]); setBriefing(""); setHistory([]); }
@@ -238,13 +246,11 @@ export default function App() {
       {tab === "Profile" && (
         <section className="card narrow">
           <h2>Who should Project Halo study?</h2>
-          <p className="muted">Type a company name and press Enter. Halo fills in the details for you.</p>
-          <form className="searchbar" onSubmit={(e) => { e.preventDefault(); submitName(); }}>
+          <p className="muted">Type a company name and continue. Halo fills in the details automatically.</p>
+          <form className="searchbar" onSubmit={(e) => { e.preventDefault(); goScan(); }}>
             <input autoFocus value={query} onChange={(e) => setQuery(e.target.value)} placeholder="Company Name" />
-            <button className="primary" type="submit" disabled={!query.trim() || filling}>{filling ? "Looking up…" : "Look up"}</button>
           </form>
-          {profile.name && mode === "live" && <>
-            <h3>{profile.name} {filling && <span className="muted small">filling in details…</span>}</h3>
+          {profile.name && mode === "live" && profile.name.toLowerCase() === query.trim().toLowerCase() && <>
             <details>
             <summary>Details Halo filled in (edit if anything is wrong)</summary>
             <label>Description<textarea rows={3} value={profile.description} onChange={(e) => setProfile({ ...profile, description: e.target.value })} /></label>
@@ -258,7 +264,7 @@ export default function App() {
           </>}
           {error && tab === "Profile" && <div className="err">{error}</div>}
           <div className="row">
-            <button className="primary" onClick={() => { setMode("live"); setTab("Scan"); }} disabled={!profile.name.trim() || filling || mode !== "live"}>Continue to scan</button>
+            <button className="primary" onClick={goScan} disabled={!query.trim() || filling}>{filling ? "Filling in details…" : "Continue to scan"}</button>
             <button className="ghost" onClick={resetHistory}>Reset scan history</button>
           </div>
           <p className="muted small">History: {seen.length} URLs seen · {prior.length} prior stories in context · {history.length} scans stored in this browser.</p>
