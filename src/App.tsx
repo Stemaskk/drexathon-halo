@@ -9,9 +9,9 @@ type ScanRecord = { at: string; mode: Mode; profile: string; stats: any; items: 
 const EMPTY: Profile = { name: "", kind: "company", aliases: [], description: "", website: "", region: "", industry: "", priorities: "" };
 const PRIORITIES = "product quality, customer complaints, advertising and marketing reception, pricing, security or legal issues, investor sentiment";
 const PRESETS: Profile[] = [
-  { name: "Duolingo", kind: "company", aliases: ["Duolingo Inc", "DUOL"], description: "Language-learning app company based in Pittsburgh, known for its owl mascot and social media marketing. Publicly traded (NASDAQ: DUOL).", website: "https://www.duolingo.com", region: "USA", industry: "education technology", priorities: PRIORITIES },
-  { name: "Rivian", kind: "company", aliases: ["Rivian Automotive", "RIVN"], description: "American electric vehicle maker (R1T, R1S, R2 and delivery vans). Publicly traded (NASDAQ: RIVN).", website: "https://rivian.com", region: "USA", industry: "electric vehicles", priorities: PRIORITIES },
-  { name: "Peloton", kind: "company", aliases: ["Peloton Interactive", "PTON"], description: "Connected fitness company selling exercise bikes, treadmills and a subscription workout app. Publicly traded (NASDAQ: PTON).", website: "https://www.onepeloton.com", region: "USA", industry: "fitness technology", priorities: PRIORITIES },
+  { name: "Nvidia", kind: "company", aliases: ["NVIDIA Corporation", "NVDA"], description: "American chip designer based in Santa Clara, California, led by CEO Jensen Huang. Makes GPUs and AI accelerators for data centers, gaming (GeForce) and automotive, plus the CUDA software platform. Publicly traded (NASDAQ: NVDA).", website: "https://www.nvidia.com", region: "USA", industry: "semiconductors and AI computing", priorities: PRIORITIES },
+  { name: "Nace AI", kind: "company", aliases: ["Nace.AI", "Nace", "Drex"], description: "AI startup that builds Drex decision models, NDI document processing (Perception) and the Intern agent harness, and runs the Drexathon hackathon. Not the National Association of Colleges and Employers (NACE) or the corrosion-engineering body NACE International.", website: "https://www.nace.ai", region: "USA", industry: "artificial intelligence", priorities: PRIORITIES },
+  { name: "Adobe", kind: "company", aliases: ["Adobe Inc.", "ADBE"], description: "American software company based in San Jose, California. Makes Creative Cloud (Photoshop, Illustrator, Premiere Pro), Acrobat and PDF tools, Firefly generative AI and Experience Cloud marketing software. Publicly traded (NASDAQ: ADBE).", website: "https://www.adobe.com", region: "USA", industry: "creative and marketing software", priorities: PRIORITIES },
 ];
 const TABS = ["Profile", "Scan", "Feedback", "Briefing", "Benchmark"] as const;
 type Area = { area: string; label: string; mentions: number; negative: number; positive: number; avg_sentiment: number | null;
@@ -223,7 +223,7 @@ export default function App() {
             {PRESETS.map((x) => (
               <button key={x.name} className={mode === "live" && profile.name === x.name ? "chip on" : "chip"} onClick={() => chooseLive(x)}>{x.name}<span>live web</span></button>))}
           </div>
-          <label>Or type a company, person or team<input value={mode === "fixture" ? "" : profile.name} onChange={(e) => setName(e.target.value)} placeholder="e.g. Chipotle" /></label>
+          <label>Or type a company, person or team<input value={mode === "fixture" ? "" : profile.name} onChange={(e) => setName(e.target.value)} placeholder="e.g. Duolingo" /></label>
           <details>
             <summary>Optional details (improves namesake filtering)</summary>
             <label>Description<textarea rows={2} value={profile.description} onChange={(e) => setProfile({ ...profile, description: e.target.value })} /></label>
