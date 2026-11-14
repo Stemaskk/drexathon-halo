@@ -3494,5 +3494,258 @@
   "units": 3,
   "latency_ms": 4852.4,
   "warnings": []
+ },
+ "f15": {
+  "data": {
+   "entities": [
+    {
+     "name": "Nimbleroot",
+     "kind": "organization",
+     "role": "Startup company running the advertising campaign"
+    },
+    {
+     "name": "Dana Vell",
+     "kind": "person",
+     "role": "CEO and co-founder of Nimbleroot"
+    },
+    {
+     "name": "Portland bookkeeper",
+     "kind": "person",
+     "role": "Individual who criticized the ads"
+    },
+    {
+     "name": "Accounting groups",
+     "kind": "organization",
+     "role": "Groups that called the ads insulting and misleading"
+    }
+   ],
+   "claims": [
+    {
+     "claim": "Nimbleroot's advertising campaign uses the slogan 'Fire your accountant'.",
+     "attributed_to": "Reporter",
+     "status": "reported",
+     "supporting_passage": "Nimbleroot's new billboard and social media campaign, built around the slogan \"Fire your accountant,\" has drawn criticism from bookkeepers and some small-business owners."
+    },
+    {
+     "claim": "Accounting groups consider the ads insulting and misleading.",
+     "attributed_to": "Accounting groups",
+     "status": "reported",
+     "supporting_passage": "Several accounting groups called the ads insulting and misleading, noting that Nimbleroot's own terms recommend a professional review at tax time."
+    },
+    {
+     "claim": "Nimbleroot's terms of service recommend a professional review at tax time.",
+     "attributed_to": "Accounting groups",
+     "status": "reported",
+     "supporting_passage": "Several accounting groups called the ads insulting and misleading, noting that Nimbleroot's own terms recommend a professional review at tax time."
+    },
+    {
+     "claim": "The ads are a cheap shot at people who refer customers to such tools.",
+     "attributed_to": "One Portland bookkeeper",
+     "status": "opinion",
+     "supporting_passage": "\"It's a cheap shot at the people who refer customers to tools like this,\" said one Portland bookkeeper."
+    },
+    {
+     "claim": "Nimbleroot did not respond to a request for comment.",
+     "attributed_to": "Reporter",
+     "status": "reported",
+     "supporting_passage": "Nimbleroot did not respond to a request for comment."
+    }
+   ],
+   "event_dates": [],
+   "publication_date": "2026-11-11"
+  },
+  "fields": [],
+  "job_id": null,
+  "cost": {
+   "total_usd": 0.00121725
+  },
+  "latency_ms": 11286.8,
+  "engine": "Qwen/Qwen3.8-27B",
+  "warnings": [],
+  "fallback": true,
+  "fallback_reason": "ndi.upload-grant: HTTP 403: console.nace.ai is behind a Vercel security checkpoint (bot challenge on the provider's side), so API calls are blocked. Not a key or app problem; retry later or tell the organizers."
+ },
+ "f16": {
+  "data": {
+   "entities": [
+    {
+     "name": "Nimbleroot",
+     "kind": "organization",
+     "role": "Seed-stage startup in Portland, Oregon selling AI bookkeeping software to small businesses"
+    },
+    {
+     "name": "Dana Vell",
+     "kind": "person",
+     "role": "CEO and co-founder of Nimbleroot"
+    },
+    {
+     "name": "ledgerlady",
+     "kind": "person",
+     "role": "Forum user who clarified the product's function"
+    },
+    {
+     "name": "brewpub_owner",
+     "kind": "person",
+     "role": "Forum user who reported a misunderstanding about payroll features"
+    }
+   ],
+   "claims": [
+    {
+     "claim": "Nimbleroot is software that sorts transactions, not an accountant service or bank.",
+     "attributed_to": "ledgerlady",
+     "status": "reported",
+     "supporting_passage": "It's software. It sorts your transactions."
+    },
+    {
+     "claim": "Nimbleroot does not file taxes, despite advertising implications.",
+     "attributed_to": "ledgerlady",
+     "status": "reported",
+     "supporting_passage": "It doesn't file taxes, even though the ads kind of imply it."
+    },
+    {
+     "claim": "Nimbleroot does not handle payroll.",
+     "attributed_to": "brewpub_owner",
+     "status": "reported",
+     "supporting_passage": "I signed up thinking it did payroll. It doesn't."
+    },
+    {
+     "claim": "The Nimbleroot website should better explain what features are and are not included.",
+     "attributed_to": "Forum users",
+     "status": "opinion",
+     "supporting_passage": "Several replies said the website should explain what is and is not included."
+    }
+   ],
+   "event_dates": [],
+   "publication_date": "2026-11-12"
+  },
+  "fields": [],
+  "job_id": null,
+  "cost": {
+   "total_usd": 0.0010064999999999998
+  },
+  "latency_ms": 8364.6,
+  "engine": "Qwen/Qwen3.8-27B",
+  "warnings": [],
+  "fallback": true,
+  "fallback_reason": "ndi.upload-grant: HTTP 403: console.nace.ai is behind a Vercel security checkpoint (bot challenge on the provider's side), so API calls are blocked. Not a key or app problem; retry later or tell the organizers."
+ },
+ "f17": {
+  "data": {
+   "entities": [
+    {
+     "name": "Nimbleroot",
+     "kind": "organization",
+     "role": "Seed-stage startup in Portland, Oregon selling AI bookkeeping software to small businesses"
+    },
+    {
+     "name": "Dana Vell",
+     "kind": "person",
+     "role": "CEO and co-founder of Nimbleroot"
+    }
+   ],
+   "claims": [
+    {
+     "claim": "Recent app store reviews of Nimbleroot are mostly positive about its receipt scanning.",
+     "attributed_to": "Reporter",
+     "status": "reported",
+     "supporting_passage": "Recent app store reviews of Nimbleroot are mostly positive about its receipt scanning, which users say is fast and accurate."
+    },
+    {
+     "claim": "Users say the receipt scanning is fast and accurate.",
+     "attributed_to": "Users",
+     "status": "reported",
+     "supporting_passage": "Recent app store reviews of Nimbleroot are mostly positive about its receipt scanning, which users say is fast and accurate."
+    },
+    {
+     "claim": "The receipt scanning categorizes photos quickly.",
+     "attributed_to": "One reviewer",
+     "status": "reported",
+     "supporting_passage": "\"Snap a photo and it's categorized before I put my phone down,\" one reviewer wrote."
+    },
+    {
+     "claim": "Several reviewers mention a slow dashboard on older phones.",
+     "attributed_to": "Several reviewers",
+     "status": "reported",
+     "supporting_passage": "Several reviewers still mention a slow dashboard on older phones."
+    },
+    {
+     "claim": "The app's average rating this month is 4.5 out of 5 across 210 reviews.",
+     "attributed_to": "Reporter",
+     "status": "reported",
+     "supporting_passage": "The app's average rating this month is 4.5 out of 5 across 210 reviews."
+    }
+   ],
+   "event_dates": [],
+   "publication_date": "2026-11-12"
+  },
+  "fields": [],
+  "job_id": null,
+  "cost": {
+   "total_usd": 0.0010353
+  },
+  "latency_ms": 8716.3,
+  "engine": "Qwen/Qwen3.8-27B",
+  "warnings": [],
+  "fallback": true,
+  "fallback_reason": "ndi.upload-grant: HTTP 403: console.nace.ai is behind a Vercel security checkpoint (bot challenge on the provider's side), so API calls are blocked. Not a key or app problem; retry later or tell the organizers."
+ },
+ "f18": {
+  "data": {
+   "entities": [
+    {
+     "name": "Nimbleroot",
+     "kind": "organization",
+     "role": "Portland-based AI bookkeeping startup"
+    },
+    {
+     "name": "Pacific Venture Wire",
+     "kind": "organization",
+     "role": "News source"
+    }
+   ],
+   "claims": [
+    {
+     "claim": "Venture investors have become more cautious about AI bookkeeping startups after a string of data-security incidents.",
+     "attributed_to": "Three investors who spoke to Pacific Venture Wire",
+     "status": "reported",
+     "supporting_passage": "Venture investors have become more cautious about AI bookkeeping startups after a string of data-security incidents in the sector, according to three investors who spoke to Pacific Venture Wire."
+    },
+    {
+     "claim": "Early Series A conversations with Nimbleroot had slowed in recent weeks.",
+     "attributed_to": "Two investors",
+     "status": "reported",
+     "supporting_passage": "Two of them said early Series A conversations with Portland-based Nimbleroot had slowed in recent weeks, citing the company's invoice exposure."
+    },
+    {
+     "claim": "Nimbleroot declined to comment on fundraising.",
+     "attributed_to": "Nimbleroot",
+     "status": "officially_stated",
+     "supporting_passage": "Nimbleroot declined to comment on fundraising."
+    },
+    {
+     "claim": "Nimbleroot raised a $6 million seed round in October.",
+     "attributed_to": "Pacific Venture Wire",
+     "status": "reported",
+     "supporting_passage": "The company raised a $6 million seed round in October."
+    }
+   ],
+   "event_dates": [
+    {
+     "date": "2026-10-01",
+     "event": "Nimbleroot raised a $6 million seed round"
+    }
+   ],
+   "publication_date": "2026-11-13"
+  },
+  "fields": [],
+  "job_id": null,
+  "cost": {
+   "total_usd": 0.0009900750000000002
+  },
+  "latency_ms": 8238.9,
+  "engine": "Qwen/Qwen3.8-27B",
+  "warnings": [],
+  "fallback": true,
+  "fallback_reason": "ndi.upload-grant: HTTP 403: console.nace.ai is behind a Vercel security checkpoint (bot challenge on the provider's side), so API calls are blocked. Not a key or app problem; retry later or tell the organizers."
  }
 }

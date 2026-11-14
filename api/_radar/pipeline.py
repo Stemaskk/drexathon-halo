@@ -78,12 +78,14 @@ def build_queries(profile: dict[str, Any]) -> list[str]:
     aliases = [a.strip() for a in profile.get("aliases", []) if a.strip()]
     context = " ".join(x for x in [profile.get("industry", ""), profile.get("region", "")] if x).strip()
     names = " OR ".join(f'"{n}"' for n in [name, *aliases][:4])
-    qs = [f"({names}) {context}".strip(), f'"{name}" news',
+    qs = [f'"{name}" news',
+          f"({names}) {context}".strip(),
           f'"{name}" reviews OR complaints OR "customer experience"',
           f'"{name}" ad OR advertisement OR campaign OR marketing']
     if profile.get("kind", "company") == "company":
         qs.append(f'"{name}" stock OR shares OR investors OR funding')
-    return qs[:5]
+    order = [0, 2, 3, 1, 4]  # news, reviews, ads, general, stock
+    return [qs[i] for i in order if i < len(qs)]
 
 
 # ------------------------------------------------------------------ retrieval
@@ -93,9 +95,18 @@ def search(profile: dict[str, Any], *, seen_urls: list[str], published_after: st
     queries = build_queries(profile)
     candidates: dict[str, dict[str, Any]] = {}
     raw_count, dup_count, seen_count = 0, 0, 0
-    for q in queries:
-        res = clients.keenable_search(q, published_after=published_after, max_results=max_results)
-        for r in res.get("results", []):
+    # The subject's own site and profile pages are not third-party coverage.
+    exclude = ["linkedin.com", "facebook.com", "instagram.com"]
+    own = urlsplit(profile.get("website") or "").netloc.lower().removeprefix("www.")
+    if own:
+        exclude.append(own)
+    per_query = [clients.keenable_search(q, published_after=published_after, max_results=max_results,
+                                         exclude_domains=exclude).get("results", []) for q in queries]
+    # Interleave results across queries so news, reviews, ads and market coverage all make the batch.
+    merged = [(queries[qi], res[ri]) for ri in range(max((len(r) for r in per_query), default=0))
+              for qi, res in enumerate(per_query) if ri < len(res)]
+    for q, r in merged:
+        for r in [r]:
             raw_count += 1
             cu = canonical_url(r["url"])
             if cu in seen:
@@ -157,6 +168,25 @@ def ndi_extract(doc: dict[str, Any], profile: dict[str, Any]) -> dict[str, Any]:
     return {"data": result.get("data") or {}, "fields": result.get("fields") or [], "job_id": job.get("job_id"),
             "cost": job.get("cost"), "units": result.get("units"), "latency_ms": job.get("_latency_ms"),
             "warnings": result.get("warnings") or []}
+
+
+def llm_extract(doc: dict[str, Any], profile: dict[str, Any]) -> dict[str, Any]:
+    """Fallback for NDI: same schema, filled by the DeepInfra LLM. Passages are still verified verbatim downstream."""
+    messages = [
+        {"role": "system", "content": "You extract structured facts from an article. Return ONLY a JSON object matching the schema. "
+                                      "supporting_passage must be an exact sentence copied verbatim from the article. Mark accusations as 'alleged'."},
+        {"role": "user", "content": f"The reader monitors '{profile['name']}' ({profile.get('description', '')}).\n\n"
+                                    f"SCHEMA:\n{json.dumps(NDI_SCHEMA)}\n\nARTICLE:\n{to_markdown(doc)[:9000]}"},
+    ]
+    resp = clients.deepinfra_chat(messages, max_tokens=1500, temperature=0, json_mode=True)
+    text = clients.chat_text(resp)
+    m = re.search(r"\{.*\}", text, re.S)
+    try:
+        data = json.loads(m.group(0)) if m else {}
+    except json.JSONDecodeError:
+        data = {}
+    return {"data": data, "fields": [], "job_id": None, "cost": {"total_usd": (resp.get("usage") or {}).get("estimated_cost")},
+            "latency_ms": resp.get("_latency_ms"), "engine": resp.get("model") or config.DEEPINFRA_MODEL, "warnings": []}
 
 
 # ------------------------------------------------------------------ Drex decisions

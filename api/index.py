@@ -4,6 +4,7 @@ from __future__ import annotations
 import json
 import os
 import sys
+import time
 from typing import Any
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
@@ -15,6 +16,20 @@ from pydantic import BaseModel, Field  # noqa: E402
 from _radar import clients, config, pipeline  # noqa: E402
 
 app = FastAPI(title="Project Halo API")
+
+# When Nace (Drex/NDI) is unreachable, fall back to the DeepInfra LLM for that step and label the result.
+FALLBACK = (config.env("DECISION_FALLBACK", "1") != "0")
+_NACE_DOWN: dict[str, Any] = {"until": 0.0, "reason": None}
+
+
+def _mark_nace_down(exc: "clients.ApiError") -> str:
+    _NACE_DOWN["until"] = time.time() + 60  # skip Nace for a minute instead of failing every article slowly
+    _NACE_DOWN["reason"] = str(exc)[:300]
+    return _NACE_DOWN["reason"]
+
+
+def _nace_down_reason() -> str | None:
+    return _NACE_DOWN["reason"] if time.time() < _NACE_DOWN["until"] else None
 
 
 def _load(name: str) -> Any:
@@ -80,7 +95,7 @@ class BriefReq(BaseModel):
 def health():
     keys = config.key_status()
     keys.pop("KEENABLE_API_KEY", None)  # optional: keyless /public endpoints are used when unset
-    return {"keys": keys, "keenable_mode": clients.keenable_mode(), "drex_model": config.DREX_MODEL, "llm_model": config.DEEPINFRA_MODEL,
+    return {"keys": keys, "keenable_mode": clients.keenable_mode(), "nace_down": _nace_down_reason(), "fallback_enabled": FALLBACK, "drex_model": config.DREX_MODEL, "llm_model": config.DEEPINFRA_MODEL,
             "baseline_model": config.BASELINE_MODEL}
 
 
@@ -129,22 +144,40 @@ def extract(req: ExtractReq):
         cache = _load("ndi_cache.json") or {}
         if req.doc.get("id") in cache:
             return {**cache[req.doc["id"]], "cached": True}
-    ndi = pipeline.ndi_extract(req.doc, req.profile.model_dump())
-    return {**ndi, "cached": False}
+    profile = req.profile.model_dump()
+    reason = _nace_down_reason()
+    if not reason:
+        try:
+            ndi = pipeline.ndi_extract(req.doc, profile)
+            return {**ndi, "cached": False, "engine": "ndi"}
+        except clients.ApiError as exc:
+            reason = _mark_nace_down(exc)
+            if not FALLBACK:
+                raise
+    out = pipeline.llm_extract(req.doc, profile)
+    return {**out, "cached": False, "fallback": True, "fallback_reason": reason}
 
 
 @app.post("/api/decide")
 def decide(req: DecideReq):
     profile = req.profile.model_dump()
     facts = pipeline.facts_with_fields(req.facts) if req.facts and "data" in req.facts else req.facts
+    evidence = pipeline.pick_evidence(req.doc, facts)
     if req.replay:
         rec = (_load("drex_replay.json") or {}).get(req.doc.get("id"))
-        if not rec:
-            return JSONResponse(status_code=404, content={"error": f"No recorded Drex response for {req.doc.get('id')} (replay is fixture-only)."})
-        return {**rec, "replayed": True, "evidence": pipeline.pick_evidence(req.doc, facts)}
-    out = pipeline.drex_decide(profile, req.doc, pipeline.strip_internal(facts), req.prior)
-    out["evidence"] = pipeline.pick_evidence(req.doc, facts)
-    return out
+        if rec:
+            return {**rec, "replayed": True, "evidence": evidence}
+    reason = _nace_down_reason()
+    if not reason:
+        try:
+            out = pipeline.drex_decide(profile, req.doc, pipeline.strip_internal(facts), req.prior)
+            return {**out, "engine": "drex", "evidence": evidence}
+        except clients.ApiError as exc:
+            reason = _mark_nace_down(exc)
+            if not FALLBACK:
+                raise
+    out = pipeline.baseline_decide(profile, req.doc, pipeline.strip_internal(facts), req.prior, model=config.DEEPINFRA_MODEL)
+    return {**out, "engine": out.get("model"), "fallback": True, "fallback_reason": reason, "evidence": evidence}
 
 
 @app.post("/api/brief")

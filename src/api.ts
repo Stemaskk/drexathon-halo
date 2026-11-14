@@ -15,11 +15,11 @@ export type Decisions = {
 export type Item = {
   id: string; url: string; canonical_url?: string; title: string; outlet?: string; published_at?: string | null;
   retrieved_at?: string; text?: string; source?: "live" | "fixture";
-  facts?: any; ndi?: { job_id?: string; cached?: boolean; latency_ms?: number; cost?: number | null };
+  facts?: any; ndi?: { job_id?: string; cached?: boolean; latency_ms?: number; cost?: any; fallback?: boolean; engine?: string };
   decisions?: Decisions; final_action?: string; flags?: string[];
   evidence?: { passage: string | null; verified: boolean; origin: string | null; note?: string };
   drex?: { model?: string; latency_ms?: number; usage?: any; request_id?: string };
-  explanation?: string; error?: string; replayed?: boolean; recorded_at?: string;
+  explanation?: string; error?: string; replayed?: boolean; recorded_at?: string; fallback?: boolean;
 };
 
 export class ApiFailure extends Error {

@@ -7,6 +7,12 @@ type Prior = { title: string; published_at?: string | null; summary: string; url
 type ScanRecord = { at: string; mode: Mode; profile: string; stats: any; items: Item[]; briefing?: string };
 
 const EMPTY: Profile = { name: "", kind: "company", aliases: [], description: "", website: "", region: "", industry: "", priorities: "" };
+const PRIORITIES = "product quality, customer complaints, advertising and marketing reception, pricing, security or legal issues, investor sentiment";
+const PRESETS: Profile[] = [
+  { name: "Duolingo", kind: "company", aliases: ["Duolingo Inc", "DUOL"], description: "Language-learning app company based in Pittsburgh, known for its owl mascot and social media marketing. Publicly traded (NASDAQ: DUOL).", website: "https://www.duolingo.com", region: "USA", industry: "education technology", priorities: PRIORITIES },
+  { name: "Rivian", kind: "company", aliases: ["Rivian Automotive", "RIVN"], description: "American electric vehicle maker (R1T, R1S, R2 and delivery vans). Publicly traded (NASDAQ: RIVN).", website: "https://rivian.com", region: "USA", industry: "electric vehicles", priorities: PRIORITIES },
+  { name: "Peloton", kind: "company", aliases: ["Peloton Interactive", "PTON"], description: "Connected fitness company selling exercise bikes, treadmills and a subscription workout app. Publicly traded (NASDAQ: PTON).", website: "https://www.onepeloton.com", region: "USA", industry: "fitness technology", priorities: PRIORITIES },
+];
 const TABS = ["Profile", "Scan", "Feedback", "Briefing", "Benchmark"] as const;
 type Area = { area: string; label: string; mentions: number; negative: number; positive: number; avg_sentiment: number | null;
   status: "needs_attention" | "mixed" | "strength"; items: { id: string; title: string; url: string; sentiment: number | null; evidence: string | null }[] };
@@ -41,6 +47,7 @@ export default function App() {
   const [replay, setReplay] = useState<boolean>(() => load("rr.replay", false));
   useEffect(() => save("rr.replay", replay), [replay]);
   const replaying = mode === "fixture" && replay;
+  const [naceNote, setNaceNote] = useState("");
   const [scorecard, setScorecard] = useState<Scorecard | null>(() => load("rr.scorecard", null));
   const [recs, setRecs] = useState<Record<string, string>>(() => load("rr.recs", {}));
   useEffect(() => save("rr.scorecard", scorecard), [scorecard]);
@@ -60,7 +67,18 @@ export default function App() {
     const fx = await api("fixtures");
     setProfile(fx.profile); setMode("fixture");
     setPrior(fx.history.map((h: any) => ({ title: h.title, published_at: h.published_at, summary: h.summary })));
-    setSeen([]); setItems([]); setBriefing("");
+    setSeen([]); setItems([]); setBriefing(""); setScorecard(null); setRecs({}); setSteps([]); setError(null);
+  }
+
+  function chooseLive(p: Profile) {
+    setNaceNote(""); setProfile(p); setMode("live"); setSeen([]); setPrior([]); setItems([]); setBriefing(""); setScorecard(null); setRecs({}); setSteps([]); setError(null);
+  }
+  function setName(name: string) {
+    // A typed name starts a fresh live profile; details are optional and filled with sensible defaults.
+    const known = PRESETS.find((x) => x.name.toLowerCase() === name.trim().toLowerCase());
+    if (known) return chooseLive(known);
+    setProfile({ ...EMPTY, ...profile, name, priorities: profile.priorities || PRIORITIES });
+    if (mode === "fixture") setMode("live");
   }
 
   function resetHistory() { setSeen([]); setPrior([]); setItems([]); setBriefing(""); setHistory([]); }
@@ -69,8 +87,8 @@ export default function App() {
     setSteps((s) => s.map((x, j) => (j === i ? { ...x, ...patch } : x)));
 
   async function runScan() {
-    if (!profile.name.trim()) { setError("Create a profile first."); setTab("Profile"); return; }
-    setRunning(true); setError(null); setSelected(null); setBriefing(""); setItems([]); setScorecard(null); setRecs({});
+    if (mode === "live" && !profile.name.trim()) { setError("Pick or type a company first."); setTab("Profile"); return; }
+    setRunning(true); setError(null); setSelected(null); setBriefing(""); setItems([]); setScorecard(null); setRecs({}); setNaceNote("");
     setSteps([
       { label: mode === "live" ? "Search the web (Keenable)" : "Load fixture articles", status: "pending" },
       { label: mode === "live" ? "Fetch article text (Keenable)" : "Load fixture text", status: "pending" },
@@ -82,14 +100,15 @@ export default function App() {
     try {
       // Fixture mode is a reproducible demo: it always starts from the fixture's own history.
       // Live mode keeps a per-browser history of seen URLs and prior stories.
-      let scanSeen = seen, scanPrior = prior;
+      let scanSeen = seen, scanPrior = prior, prof: Profile = profile;
       if (mode === "fixture") {
         const fx = await api("fixtures");
+        prof = fx.profile; setProfile(fx.profile);
         scanSeen = [];
         scanPrior = fx.history.map((h: any) => ({ title: h.title, published_at: h.published_at, summary: h.summary }));
       }
       setStep(0, { status: "running" });
-      const s = await api("search", { profile, mode, seen_urls: scanSeen, published_after: "30d", max_results: 8 });
+      const s = await api("search", { profile: prof, mode, seen_urls: scanSeen, published_after: "30d", max_results: 8 });
       const limit = mode === "fixture" ? s.candidates.length : batch;
       const picked: Item[] = s.candidates.slice(0, limit);
       setStep(0, { status: "done", detail: `${s.stats.raw} results → ${s.stats.unique_new} new unique (${s.stats.duplicates_in_scan} dupes, ${s.stats.already_seen} already seen); processing ${picked.length}` });
@@ -111,17 +130,18 @@ export default function App() {
       if (!ok.length) throw new Error(docs.find((d) => d.error)?.error || "No article text retrieved.");
 
       cur = 2; setStep(2, { status: "running" });
-      let extracted = 0, cachedN = 0;
+      let extracted = 0, cachedN = 0, exFallback = 0, deFallback = 0, nace = "";
       await pool(ok, 3, async (d) => {
         try {
-          const n = await api("extract", { profile, doc: d, mode });
-          d.facts = n; d.ndi = { job_id: n.job_id, cached: n.cached, latency_ms: n.latency_ms, cost: n.cost };
+          const n = await api("extract", { profile: prof, doc: d, mode });
+          d.facts = n; d.ndi = { job_id: n.job_id, cached: n.cached, latency_ms: n.latency_ms, cost: n.cost, fallback: !!n.fallback, engine: n.engine };
           if (n.cached) cachedN++;
+          if (n.fallback) { exFallback++; nace = n.fallback_reason || nace; }
         } catch (e: any) { d.error = `NDI failed: ${e.message}`; if (e instanceof ApiFailure && e.missingEnv) throw e; }
         setStep(2, { detail: `${++extracted}/${ok.length}` });
       });
       const nOk = ok.filter((d) => d.facts).length;
-      setStep(2, { status: nOk ? "done" : "error", detail: `${nOk}/${ok.length} extracted${cachedN ? ` (${cachedN} from cached NDI output for fixtures)` : ""}` });
+      setStep(2, { status: nOk ? "done" : "error", detail: `${nOk}/${ok.length} extracted${cachedN ? ` (${cachedN} from cached NDI output)` : ""}${exFallback ? ` · ${exFallback} by LLM fallback, NDI unreachable` : ""}` });
 
       cur = 3; setStep(3, { status: "running" });
       const ordered = [...ok].sort((a, b) => (a.published_at || "").localeCompare(b.published_at || ""));
@@ -129,10 +149,11 @@ export default function App() {
       for (let i = 0; i < ordered.length; i++) {
         const d = ordered[i];
         try {
-          const r = await api("decide", { profile, doc: d, facts: d.facts, prior: running, replay: replaying });
+          const r = await api("decide", { profile: prof, doc: d, facts: d.facts, prior: running, replay: replaying });
           Object.assign(d, { decisions: r.decisions, final_action: r.final_action, flags: r.flags, evidence: r.evidence,
-            replayed: !!r.replayed, recorded_at: r.recorded_at,
+            replayed: !!r.replayed, recorded_at: r.recorded_at, fallback: !!r.fallback,
             drex: { model: r.model, latency_ms: r.latency_ms, usage: r.usage, request_id: r.request_id } });
+          if (r.fallback) { deFallback++; nace = r.fallback_reason || nace; }
           if (r.final_action !== "ignore") {
             const claim = d.facts?.data?.claims?.[0]?.claim;
             running.push({ title: d.title, published_at: d.published_at, summary: claim || (d.text || "").slice(0, 160), url: d.url });
@@ -142,7 +163,8 @@ export default function App() {
         setItems([...ordered]);
       }
       const decided = ordered.filter((d) => d.decisions);
-      setStep(3, { status: decided.length ? "done" : "error", detail: `${decided.length}/${ordered.length} decided` });
+      setStep(3, { status: decided.length ? "done" : "error", detail: `${decided.length}/${ordered.length} decided${deFallback ? ` · ${deFallback} by LLM fallback, Drex unreachable` : ""}` });
+      setNaceNote(nace);
       if (!decided.length) {
         const first = ordered.find((d) => d.error)?.error || "Drex returned no decisions.";
         throw new Error(mode === "fixture" && !replay
@@ -151,7 +173,7 @@ export default function App() {
       }
 
       cur = 4; setStep(4, { status: "running" });
-      const b = await api("brief", { profile, items: decided.map(({ text, ...rest }) => rest) });
+      const b = await api("brief", { profile: prof, items: decided.map(({ text, ...rest }) => rest) });
       for (const d of decided) d.explanation = b.explanations?.[d.id];
       setBriefing(b.briefing); setItems([...ordered]); setScorecard(b.scorecard ?? null); setRecs(b.recommendations ?? {});
       setStep(4, { status: "done", detail: b.model ? `${b.model} · ${b.latency_ms ?? "?"} ms` : "skipped — no relevant items to brief" });
@@ -160,7 +182,7 @@ export default function App() {
         setSeen((x) => [...x, ...ordered.map((d) => d.canonical_url || d.url)]);
         setPrior(running);
       }
-      setHistory((h) => [...h, { at: new Date().toISOString(), mode, profile: profile.name, stats: s.stats,
+      setHistory((h) => [...h, { at: new Date().toISOString(), mode, profile: prof.name, stats: s.stats,
         items: ordered.map(({ text, ...rest }) => rest), briefing: b.briefing }]);
     } catch (e: any) {
       const msg = e instanceof ApiFailure && e.missingEnv
@@ -194,24 +216,26 @@ export default function App() {
 
       {tab === "Profile" && (
         <section className="card narrow">
-          <h2>Monitored profile</h2>
-          <p className="muted">Who should Project Halo watch? Identifying context helps separate namesakes.</p>
-          <div className="grid2">
-            <label>Name<input value={profile.name} onChange={(e) => setProfile({ ...profile, name: e.target.value })} placeholder="Acme Robotics" /></label>
-            <label>Type<select value={profile.kind} onChange={(e) => setProfile({ ...profile, kind: e.target.value })}>
-              <option value="company">Company</option><option value="person">Person</option><option value="team">Team / group</option></select></label>
+          <h2>Who should Project Halo study?</h2>
+          <p className="muted">Pick a demo company or type any name. That is all you need.</p>
+          <div className="presets">
+            <button className={mode === "fixture" ? "chip on" : "chip"} onClick={loadFixtureProfile}>Nimbleroot<span>fictional demo · offline articles</span></button>
+            {PRESETS.map((x) => (
+              <button key={x.name} className={mode === "live" && profile.name === x.name ? "chip on" : "chip"} onClick={() => chooseLive(x)}>{x.name}<span>live web</span></button>))}
           </div>
-          <label>Aliases (comma-separated)<input value={profile.aliases.join(", ")} onChange={(e) => setProfile({ ...profile, aliases: e.target.value.split(",").map((s) => s.trim()).filter(Boolean) })} /></label>
-          <label>Description<textarea rows={2} value={profile.description} onChange={(e) => setProfile({ ...profile, description: e.target.value })} /></label>
-          <div className="grid2">
-            <label>Official website<input value={profile.website} onChange={(e) => setProfile({ ...profile, website: e.target.value })} /></label>
-            <label>Region<input value={profile.region} onChange={(e) => setProfile({ ...profile, region: e.target.value })} /></label>
-          </div>
-          <label>Industry<input value={profile.industry} onChange={(e) => setProfile({ ...profile, industry: e.target.value })} /></label>
-          <label>Monitoring priorities<textarea rows={3} value={profile.priorities} onChange={(e) => setProfile({ ...profile, priorities: e.target.value })} placeholder="e.g. security incidents, lawsuits, impersonation; routine reviews → digest" /></label>
+          <label>Or type a company, person or team<input value={mode === "fixture" ? "" : profile.name} onChange={(e) => setName(e.target.value)} placeholder="e.g. Chipotle" /></label>
+          <details>
+            <summary>Optional details (improves namesake filtering)</summary>
+            <label>Description<textarea rows={2} value={profile.description} onChange={(e) => setProfile({ ...profile, description: e.target.value })} /></label>
+            <label>Aliases (comma-separated)<input value={profile.aliases.join(", ")} onChange={(e) => setProfile({ ...profile, aliases: e.target.value.split(",").map((s) => s.trim()).filter(Boolean) })} /></label>
+            <div className="grid2">
+              <label>Official website<input value={profile.website} onChange={(e) => setProfile({ ...profile, website: e.target.value })} /></label>
+              <label>Industry<input value={profile.industry} onChange={(e) => setProfile({ ...profile, industry: e.target.value })} /></label>
+            </div>
+            <label>What to watch for<textarea rows={2} value={profile.priorities} onChange={(e) => setProfile({ ...profile, priorities: e.target.value })} /></label>
+          </details>
           <div className="row">
-            <button className="primary" onClick={() => setTab("Scan")} disabled={!profile.name.trim()}>Save & go to scan</button>
-            <button onClick={loadFixtureProfile}>Load demo profile (fictional “Nimbleroot”)</button>
+            <button className="primary" onClick={() => setTab("Scan")} disabled={!profile.name.trim()}>Continue to scan</button>
             <button className="ghost" onClick={resetHistory}>Reset scan history</button>
           </div>
           <p className="muted small">History: {seen.length} URLs seen · {prior.length} prior stories in context · {history.length} scans stored in this browser.</p>
@@ -233,15 +257,17 @@ export default function App() {
             <ol className="steps">{steps.map((s, i) => (
               <li key={i} className={s.status}><span className="ico" />{s.label}{s.detail && <div className="small muted">{s.detail}</div>}</li>))}</ol>
             {error && <div className="err">{error}</div>}
+            {naceNote && <div className="warn small">Nace (Drex/NDI) was unreachable, so the affected steps used the DeepInfra LLM fallback and are labeled. Reason: {naceNote.slice(0, 160)}</div>}
           </aside>
           <main>
             {!feed.length && <div className="card muted">No results yet. Run a scan.</div>}
             {feed.map((it) => (
-              <article key={it.id} className={`item ${it.final_action || "err"} ${selected === it.id ? "sel" : ""}`} onClick={() => setSelected(it.id)}>
+              <article key={it.id} className={`item ${it.final_action || (it.error ? "err" : "pending")} ${selected === it.id ? "sel" : ""}`} onClick={() => setSelected(it.id)}>
                 <div className="itemhead">
-                  <span className={`act ${it.final_action}`}>{it.final_action ? ACTION_LABEL[it.final_action] : "Error"}</span>
+                  <span className={`act ${it.final_action}`}>{it.final_action ? ACTION_LABEL[it.final_action] : it.error ? "Error" : "Analyzing…"}</span>
                   <span className="src">{it.source === "fixture" ? "fixture" : "live"}</span>
                   {it.replayed && <span className="src rec">recorded Drex</span>}
+                  {it.fallback && <span className="src rec">LLM fallback</span>}
                   <span className="muted small">{it.outlet || hostOf(it.url)} · {date(it.published_at)}</span>
                 </div>
                 <h4>{it.title}</h4>
@@ -321,7 +347,7 @@ function Detail({ item, onClose }: { item: Item; onClose: () => void }) {
         ? <blockquote>“{item.evidence.passage}”<div className="small ok">✓ verified verbatim against stored source text ({item.evidence.origin})</div></blockquote>
         : <p className="muted small">Unknown — {item.evidence?.note || "no evidence extracted"}</p>}
       {d && <>
-        <h4>Drex decisions <span className="muted small">(model-estimated confidence)</span></h4>
+        <h4>{item.fallback ? "Decisions — LLM fallback (Drex unreachable)" : "Drex decisions"} <span className="muted small">{item.fallback ? "(no probabilities from the LLM)" : "(model-estimated confidence)"}</span></h4>
         <table className="dec"><tbody>
           <tr><td>About this subject?</td><td>{d.is_subject.value ? "yes" : "no"}</td><td>P(yes) {pct(d.is_subject.p_yes)}</td></tr>
           <tr><td>Category</td><td>{d.category.value}</td><td>{pct(d.category.confidence)}</td></tr>
@@ -338,7 +364,7 @@ function Detail({ item, onClose }: { item: Item; onClose: () => void }) {
         <p className="small muted">{item.replayed ? `RECORDED Drex response (captured ${item.recorded_at}), not a live call · ` : ""}Drex {item.drex?.model} · {item.drex?.latency_ms} ms · {item.drex?.usage?.input_tokens ?? "?"} input tokens</p>
       </>}
       {item.facts?.data && <>
-        <h4>NDI extraction <span className="muted small">{item.ndi?.cached ? "(cached fixture output)" : `job ${item.ndi?.job_id ?? ""}`}</span></h4>
+        <h4>Extracted facts <span className="muted small">{item.ndi?.fallback ? `(LLM fallback: ${item.ndi?.engine}; NDI unreachable)` : item.ndi?.cached ? "(cached fixture output)" : `job ${item.ndi?.job_id ?? ""}`}</span></h4>
         <ul className="small">{(item.facts.data.claims || []).map((c: any, i: number) => (
           <li key={i}><b>[{c.status || "?"}]</b> {c.claim} <span className="muted">— {c.attributed_to || "unattributed"}</span></li>))}</ul>
         {(item.facts.data.entities || []).length > 0 && <p className="small muted">Entities: {item.facts.data.entities.map((e: any) => e.name).join(", ")}</p>}
