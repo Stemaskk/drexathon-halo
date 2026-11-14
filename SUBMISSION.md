@@ -19,12 +19,12 @@ Deadline: **Saturday, November 14, 2026, 3:00 PM America/Los_Angeles**. Only fin
 - [ ] Push any final commits, then click **Finalize** before 3:00 PM PT
 
 ## If the Nace API is down during the demo
-`console.nace.ai` may return a Vercel security checkpoint (HTTP 403). The app says so explicitly. In Fixture mode, tick **Replay recorded Drex responses**: real responses captured earlier, each item labeled. Live mode needs Nace to be reachable.
+`console.nace.ai` may return a Vercel security checkpoint (HTTP 403). The app says so explicitly. The app then falls back to the DeepInfra LLM automatically and labels those results **LLM FALLBACK**. In Fixture mode you can also tick **Replay recorded Drex responses** (real responses captured earlier, each item labeled).
 
 ## Demo script (about 3 min)
-1. Profile → **Load demo profile (fictional “Nimbleroot”)** → Scan (Fixture mode).
+1. Profile → pick **Nimbleroot** (fictional demo) → Continue to scan → Scan now.
 2. In the feed, point out: the namesakes (nursery, musician) are **Ignored**, the funding repost is marked *repeat coverage* and sent to the digest, the pricey review goes to the **Digest**, and the scam accounts, data exposure and Oregon DOJ inquiry are **Review now**.
 3. Open the staging-bucket item to show the verified passage, Drex's probabilities (labeled model estimates) and the *allegation, not fact* flag.
-4. Show the Briefing tab.
+4. Show the **Feedback** tab (improvement areas with advice), then the Briefing tab.
 5. Show the Benchmark tab: same inputs, Drex vs the Qwen baseline.
-6. Switch to **Live**, set a real profile (e.g. “Nace AI”) and scan 3 articles.
+6. Profile → pick a real company (e.g. **Duolingo**) → Scan now (live web, 6 articles), then open Feedback.

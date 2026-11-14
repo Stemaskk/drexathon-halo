@@ -251,7 +251,7 @@ export default function App() {
               <button className={mode === "live" ? "active" : ""} onClick={() => setMode("live")} disabled={running}>Live</button>
             </div>
             {mode === "fixture" && <label className="small check"><input type="checkbox" checked={replay} disabled={running} onChange={(e) => setReplay(e.target.checked)} />
-              Replay recorded Drex responses<span className="muted"> (real drex-latest output captured 2026-11-14 20:32 UTC; use if the Nace API is down)</span></label>}
+              Replay recorded Drex responses<span className="muted"> (real drex-latest output captured 2026-11-14 21:21 UTC; use if the Nace API is down)</span></label>}
             {mode === "live" && <label className="small">Articles to process<input type="number" min={1} max={10} value={batch} onChange={(e) => setBatch(Math.max(1, Math.min(10, +e.target.value || 1)))} /></label>}
             <button className="primary wide" onClick={runScan} disabled={running}>{running ? "Scanning…" : "Scan now"}</button>
             <ol className="steps">{steps.map((s, i) => (

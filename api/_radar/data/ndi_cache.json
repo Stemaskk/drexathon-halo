@@ -3497,239 +3497,761 @@
  },
  "f15": {
   "data": {
-   "entities": [
-    {
-     "name": "Nimbleroot",
-     "kind": "organization",
-     "role": "Startup company running the advertising campaign"
-    },
-    {
-     "name": "Dana Vell",
-     "kind": "person",
-     "role": "CEO and co-founder of Nimbleroot"
-    },
-    {
-     "name": "Portland bookkeeper",
-     "kind": "person",
-     "role": "Individual who criticized the ads"
-    },
-    {
-     "name": "Accounting groups",
-     "kind": "organization",
-     "role": "Groups that called the ads insulting and misleading"
-    }
-   ],
    "claims": [
     {
-     "claim": "Nimbleroot's advertising campaign uses the slogan 'Fire your accountant'.",
-     "attributed_to": "Reporter",
+     "claim": "Nimbleroot's new billboard and social media campaign, built around the slogan \"Fire your accountant,\" has drawn criticism from bookkeepers and some small-business owners.",
      "status": "reported",
+     "attributed_to": "bookkeepingtoday.example",
      "supporting_passage": "Nimbleroot's new billboard and social media campaign, built around the slogan \"Fire your accountant,\" has drawn criticism from bookkeepers and some small-business owners."
     },
     {
-     "claim": "Accounting groups consider the ads insulting and misleading.",
-     "attributed_to": "Accounting groups",
+     "claim": "Several accounting groups called the ads insulting and misleading, noting that Nimbleroot's own terms recommend a professional review at tax time.",
      "status": "reported",
+     "attributed_to": "Several accounting groups",
      "supporting_passage": "Several accounting groups called the ads insulting and misleading, noting that Nimbleroot's own terms recommend a professional review at tax time."
     },
     {
-     "claim": "Nimbleroot's terms of service recommend a professional review at tax time.",
-     "attributed_to": "Accounting groups",
-     "status": "reported",
-     "supporting_passage": "Several accounting groups called the ads insulting and misleading, noting that Nimbleroot's own terms recommend a professional review at tax time."
-    },
-    {
-     "claim": "The ads are a cheap shot at people who refer customers to such tools.",
-     "attributed_to": "One Portland bookkeeper",
+     "claim": "The ads are a cheap shot at the people who refer customers to tools like this.",
      "status": "opinion",
+     "attributed_to": "one Portland bookkeeper",
      "supporting_passage": "\"It's a cheap shot at the people who refer customers to tools like this,\" said one Portland bookkeeper."
     },
     {
-     "claim": "Nimbleroot did not respond to a request for comment.",
-     "attributed_to": "Reporter",
+     "claim": "Some marketers praised the campaign for getting attention.",
      "status": "reported",
+     "attributed_to": "Some marketers",
+     "supporting_passage": "Some marketers praised the campaign for getting attention."
+    },
+    {
+     "claim": "Nimbleroot did not respond to a request for comment.",
+     "status": "reported",
+     "attributed_to": "bookkeepingtoday.example",
      "supporting_passage": "Nimbleroot did not respond to a request for comment."
     }
    ],
-   "event_dates": [],
+   "entities": [
+    {
+     "kind": "organization",
+     "name": "Nimbleroot",
+     "role": "Startup whose 'Fire your accountant' ads drew backlash"
+    },
+    {
+     "kind": "person",
+     "name": "one Portland bookkeeper",
+     "role": "Critic of the campaign"
+    }
+   ],
+   "event_dates": [
+    {
+     "date": "2026-11-11",
+     "event": "Article published"
+    }
+   ],
    "publication_date": "2026-11-11"
   },
-  "fields": [],
-  "job_id": null,
+  "fields": [
+   {
+    "path": "/publication_date",
+    "value": "2026-11-11",
+    "status": "found",
+    "confidence": 0.8888888888888888,
+    "ambiguous": false,
+    "derived": false,
+    "citations": [
+     {
+      "location": {
+       "kind": "text_span",
+       "page": null,
+       "char_start": 178,
+       "char_end": 188
+      },
+      "source_text": "Published: 2026-11-11"
+     }
+    ]
+   },
+   {
+    "path": "/claims/0",
+    "value": "{\"claim\": \"Nimbleroot's new billboard and social media campaign, built around the slogan \\\"Fire your accountant,\\\" has drawn criticism from bookkeepers and some small-business owners.\", \"status\": \"reported\", \"attributed_to\": \"bookkeepingtoday.example\", \"supporting_passage\": \"Nimbleroot's new billboard and social media campaign, built around the slogan \\\"Fire your accountant,\\\" has drawn criticism from bookkeepers and some small-business owners.\"}",
+    "status": "found",
+    "confidence": 0.8888888888888888,
+    "ambiguous": false,
+    "derived": false,
+    "citations": [
+     {
+      "location": {
+       "kind": "text_span",
+       "page": null,
+       "char_start": 234,
+       "char_end": 404
+      },
+      "source_text": "Nimbleroot's new billboard and social media campaign, built around the slogan \"Fire your accountant,\" has drawn criticism from bookkeepers and some small-business owners."
+     }
+    ]
+   },
+   {
+    "path": "/claims/1",
+    "value": "{\"claim\": \"Several accounting groups called the ads insulting and misleading, noting that Nimbleroot's own terms recommend a professional review at tax time.\", \"status\": \"reported\", \"attributed_to\": \"Several accounting groups\", \"supporting_passage\": \"Several accounting groups called the ads insulting and misleading, noting that Nimbleroot's own terms recommend a professional review at tax time.\"}",
+    "status": "found",
+    "confidence": 0.8888888888888888,
+    "ambiguous": false,
+    "derived": false,
+    "citations": [
+     {
+      "location": {
+       "kind": "text_span",
+       "page": null,
+       "char_start": 405,
+       "char_end": 551
+      },
+      "source_text": "Several accounting groups called the ads insulting and misleading, noting that Nimbleroot's own terms recommend a professional review at tax time."
+     }
+    ]
+   },
+   {
+    "path": "/claims/2",
+    "value": "{\"claim\": \"The ads are a cheap shot at the people who refer customers to tools like this.\", \"status\": \"opinion\", \"attributed_to\": \"one Portland bookkeeper\", \"supporting_passage\": \"\\\"It's a cheap shot at the people who refer customers to tools like this,\\\" said one Portland bookkeeper.\"}",
+    "status": "found",
+    "confidence": 0.8888888888888888,
+    "ambiguous": false,
+    "derived": false,
+    "citations": [
+     {
+      "location": {
+       "kind": "text_span",
+       "page": null,
+       "char_start": 552,
+       "char_end": 655
+      },
+      "source_text": "\"It's a cheap shot at the people who refer customers to tools like this,\" said one Portland bookkeeper."
+     }
+    ]
+   },
+   {
+    "path": "/claims/3",
+    "value": "{\"claim\": \"Some marketers praised the campaign for getting attention.\", \"status\": \"reported\", \"attributed_to\": \"Some marketers\", \"supporting_passage\": \"Some marketers praised the campaign for getting attention.\"}",
+    "status": "found",
+    "confidence": 0.8888888888888888,
+    "ambiguous": false,
+    "derived": false,
+    "citations": [
+     {
+      "location": {
+       "kind": "text_span",
+       "page": null,
+       "char_start": 656,
+       "char_end": 714
+      },
+      "source_text": "Some marketers praised the campaign for getting attention."
+     }
+    ]
+   },
+   {
+    "path": "/claims/4",
+    "value": "{\"claim\": \"Nimbleroot did not respond to a request for comment.\", \"status\": \"reported\", \"attributed_to\": \"bookkeepingtoday.example\", \"supporting_passage\": \"Nimbleroot did not respond to a request for comment.\"}",
+    "status": "found",
+    "confidence": 0.8888888888888888,
+    "ambiguous": false,
+    "derived": false,
+    "citations": [
+     {
+      "location": {
+       "kind": "text_span",
+       "page": null,
+       "char_start": 715,
+       "char_end": 767
+      },
+      "source_text": "Nimbleroot did not respond to a request for comment."
+     }
+    ]
+   },
+   {
+    "path": "/entities/0",
+    "value": "{\"kind\": \"organization\", \"name\": \"Nimbleroot\", \"role\": \"Startup whose 'Fire your accountant' ads drew backlash\"}",
+    "status": "found",
+    "confidence": 0.8888888888888888,
+    "ambiguous": false,
+    "derived": false,
+    "citations": [
+     {
+      "location": {
+       "kind": "text_span",
+       "page": null,
+       "char_start": 234,
+       "char_end": 404
+      },
+      "source_text": "Nimbleroot's new billboard and social media campaign, built around the slogan \"Fire your accountant,\" has drawn criticism from bookkeepers and some small-business owners."
+     }
+    ]
+   },
+   {
+    "path": "/entities/1",
+    "value": "{\"kind\": \"person\", \"name\": \"one Portland bookkeeper\", \"role\": \"Critic of the campaign\"}",
+    "status": "found",
+    "confidence": 0.8888888888888888,
+    "ambiguous": false,
+    "derived": false,
+    "citations": [
+     {
+      "location": {
+       "kind": "text_span",
+       "page": null,
+       "char_start": 552,
+       "char_end": 655
+      },
+      "source_text": "\"It's a cheap shot at the people who refer customers to tools like this,\" said one Portland bookkeeper."
+     }
+    ]
+   },
+   {
+    "path": "/event_dates/0",
+    "value": "{\"date\": \"2026-11-11\", \"event\": \"Article published\"}",
+    "status": "found",
+    "confidence": 0.8888888888888888,
+    "ambiguous": false,
+    "derived": false,
+    "citations": [
+     {
+      "location": {
+       "kind": "text_span",
+       "page": null,
+       "char_start": 167,
+       "char_end": 188
+      },
+      "source_text": "Published: 2026-11-11"
+     }
+    ]
+   }
+  ],
+  "job_id": "b6cda705-fdf7-41c4-add9-075c8bf395b7",
   "cost": {
-   "total_usd": 0.00121725
+   "lines": [
+    {
+     "unit": "page",
+     "quantity": 1,
+     "execution": "fresh",
+     "operation": "parse",
+     "amount_usd": "0.0035",
+     "reuse_reason": null,
+     "unit_price_usd": "0.0035"
+    },
+    {
+     "unit": "page",
+     "quantity": 1,
+     "execution": "fresh",
+     "operation": "extract",
+     "amount_usd": "0.0085",
+     "reuse_reason": null,
+     "unit_price_usd": "0.0085"
+    }
+   ],
+   "currency": "USD",
+   "total_usd": "0.012",
+   "pricing_version": "retail-2026-11-10-v2"
   },
-  "latency_ms": 11286.8,
-  "engine": "Qwen/Qwen3.8-27B",
-  "warnings": [],
-  "fallback": true,
-  "fallback_reason": "ndi.upload-grant: HTTP 403: console.nace.ai is behind a Vercel security checkpoint (bot challenge on the provider's side), so API calls are blocked. Not a key or app problem; retry later or tell the organizers."
+  "units": 3,
+  "latency_ms": 7019.3,
+  "warnings": []
  },
  "f16": {
   "data": {
-   "entities": [
-    {
-     "name": "Nimbleroot",
-     "kind": "organization",
-     "role": "Seed-stage startup in Portland, Oregon selling AI bookkeeping software to small businesses"
-    },
-    {
-     "name": "Dana Vell",
-     "kind": "person",
-     "role": "CEO and co-founder of Nimbleroot"
-    },
-    {
-     "name": "ledgerlady",
-     "kind": "person",
-     "role": "Forum user who clarified the product's function"
-    },
-    {
-     "name": "brewpub_owner",
-     "kind": "person",
-     "role": "Forum user who reported a misunderstanding about payroll features"
-    }
-   ],
    "claims": [
     {
-     "claim": "Nimbleroot is software that sorts transactions, not an accountant service or bank.",
-     "attributed_to": "ledgerlady",
+     "claim": "Nimbleroot is bookkeeping software that sorts transactions.",
      "status": "reported",
+     "attributed_to": "ledgerlady",
      "supporting_passage": "It's software. It sorts your transactions."
     },
     {
-     "claim": "Nimbleroot does not file taxes, despite advertising implications.",
-     "attributed_to": "ledgerlady",
+     "claim": "Nimbleroot does not file taxes, despite ads implying it does.",
      "status": "reported",
+     "attributed_to": "ledgerlady",
      "supporting_passage": "It doesn't file taxes, even though the ads kind of imply it."
     },
     {
      "claim": "Nimbleroot does not handle payroll.",
-     "attributed_to": "brewpub_owner",
      "status": "reported",
+     "attributed_to": "brewpub_owner",
      "supporting_passage": "I signed up thinking it did payroll. It doesn't."
     },
     {
-     "claim": "The Nimbleroot website should better explain what features are and are not included.",
-     "attributed_to": "Forum users",
+     "claim": "Nimbleroot's website should explain what is and is not included.",
      "status": "opinion",
+     "attributed_to": "Several replies",
      "supporting_passage": "Several replies said the website should explain what is and is not included."
     }
    ],
-   "event_dates": [],
+   "entities": [
+    {
+     "kind": "organization",
+     "name": "Nimbleroot",
+     "role": "Company selling AI bookkeeping software"
+    },
+    {
+     "kind": "person",
+     "name": "ledgerlady",
+     "role": "Forum user describing Nimbleroot's features"
+    },
+    {
+     "kind": "person",
+     "name": "brewpub_owner",
+     "role": "Forum user who signed up for Nimbleroot"
+    }
+   ],
+   "event_dates": [
+    {
+     "date": "2026-11-12",
+     "event": "Thread published"
+    }
+   ],
    "publication_date": "2026-11-12"
   },
-  "fields": [],
-  "job_id": null,
+  "fields": [
+   {
+    "path": "/publication_date",
+    "value": "2026-11-12",
+    "status": "found",
+    "confidence": 0.8888888888888888,
+    "ambiguous": false,
+    "derived": false,
+    "citations": [
+     {
+      "location": {
+       "kind": "text_span",
+       "page": null,
+       "char_start": 142,
+       "char_end": 152
+      },
+      "source_text": "Published: 2026-11-12"
+     }
+    ]
+   },
+   {
+    "path": "/claims/0",
+    "value": "{\"claim\": \"Nimbleroot is bookkeeping software that sorts transactions.\", \"status\": \"reported\", \"attributed_to\": \"ledgerlady\", \"supporting_passage\": \"It's software. It sorts your transactions.\"}",
+    "status": "found",
+    "confidence": 0.8888888888888888,
+    "ambiguous": false,
+    "derived": false,
+    "citations": [
+     {
+      "location": {
+       "kind": "text_span",
+       "page": null,
+       "char_start": 370,
+       "char_end": 501
+      },
+      "source_text": "Reply from user ledgerlady: It's software. It sorts your transactions. It doesn't file taxes, even though the ads kind of imply it."
+     }
+    ]
+   },
+   {
+    "path": "/claims/1",
+    "value": "{\"claim\": \"Nimbleroot does not file taxes, despite ads implying it does.\", \"status\": \"reported\", \"attributed_to\": \"ledgerlady\", \"supporting_passage\": \"It doesn't file taxes, even though the ads kind of imply it.\"}",
+    "status": "found",
+    "confidence": 0.8888888888888888,
+    "ambiguous": false,
+    "derived": false,
+    "citations": [
+     {
+      "location": {
+       "kind": "text_span",
+       "page": null,
+       "char_start": 370,
+       "char_end": 501
+      },
+      "source_text": "Reply from user ledgerlady: It's software. It sorts your transactions. It doesn't file taxes, even though the ads kind of imply it."
+     }
+    ]
+   },
+   {
+    "path": "/claims/2",
+    "value": "{\"claim\": \"Nimbleroot does not handle payroll.\", \"status\": \"reported\", \"attributed_to\": \"brewpub_owner\", \"supporting_passage\": \"I signed up thinking it did payroll. It doesn't.\"}",
+    "status": "found",
+    "confidence": 0.8888888888888888,
+    "ambiguous": false,
+    "derived": false,
+    "citations": [
+     {
+      "location": {
+       "kind": "text_span",
+       "page": null,
+       "char_start": 502,
+       "char_end": 581
+      },
+      "source_text": "Reply from user brewpub_owner: I signed up thinking it did payroll. It doesn't."
+     }
+    ]
+   },
+   {
+    "path": "/claims/3",
+    "value": "{\"claim\": \"Nimbleroot's website should explain what is and is not included.\", \"status\": \"opinion\", \"attributed_to\": \"Several replies\", \"supporting_passage\": \"Several replies said the website should explain what is and is not included.\"}",
+    "status": "found",
+    "confidence": 0.8888888888888888,
+    "ambiguous": false,
+    "derived": false,
+    "citations": [
+     {
+      "location": {
+       "kind": "text_span",
+       "page": null,
+       "char_start": 582,
+       "char_end": 658
+      },
+      "source_text": "Several replies said the website should explain what is and is not included."
+     }
+    ]
+   },
+   {
+    "path": "/entities/0",
+    "value": "{\"kind\": \"organization\", \"name\": \"Nimbleroot\", \"role\": \"Company selling AI bookkeeping software\"}",
+    "status": "found",
+    "confidence": 0.8888888888888888,
+    "ambiguous": false,
+    "derived": false,
+    "citations": [
+     {
+      "location": {
+       "kind": "text_span",
+       "page": null,
+       "char_start": 198,
+       "char_end": 369
+      },
+      "source_text": "Original post: Saw a Nimbleroot ad that says \"autopilot for your books.\" Is it bookkeeping software, an accountant service, or a bank? Their homepage didn't make it clear."
+     }
+    ]
+   },
+   {
+    "path": "/entities/1",
+    "value": "{\"kind\": \"person\", \"name\": \"ledgerlady\", \"role\": \"Forum user describing Nimbleroot's features\"}",
+    "status": "found",
+    "confidence": 0.8888888888888888,
+    "ambiguous": false,
+    "derived": false,
+    "citations": [
+     {
+      "location": {
+       "kind": "text_span",
+       "page": null,
+       "char_start": 370,
+       "char_end": 501
+      },
+      "source_text": "Reply from user ledgerlady: It's software. It sorts your transactions. It doesn't file taxes, even though the ads kind of imply it."
+     }
+    ]
+   },
+   {
+    "path": "/entities/2",
+    "value": "{\"kind\": \"person\", \"name\": \"brewpub_owner\", \"role\": \"Forum user who signed up for Nimbleroot\"}",
+    "status": "found",
+    "confidence": 0.8888888888888888,
+    "ambiguous": false,
+    "derived": false,
+    "citations": [
+     {
+      "location": {
+       "kind": "text_span",
+       "page": null,
+       "char_start": 502,
+       "char_end": 581
+      },
+      "source_text": "Reply from user brewpub_owner: I signed up thinking it did payroll. It doesn't."
+     }
+    ]
+   },
+   {
+    "path": "/event_dates/0",
+    "value": "{\"date\": \"2026-11-12\", \"event\": \"Thread published\"}",
+    "status": "found",
+    "confidence": 0.8888888888888888,
+    "ambiguous": false,
+    "derived": false,
+    "citations": [
+     {
+      "location": {
+       "kind": "text_span",
+       "page": null,
+       "char_start": 131,
+       "char_end": 152
+      },
+      "source_text": "Published: 2026-11-12"
+     }
+    ]
+   }
+  ],
+  "job_id": "9ee30e18-f066-4d71-a8ac-8ef8ae931d40",
   "cost": {
-   "total_usd": 0.0010064999999999998
+   "lines": [
+    {
+     "unit": "page",
+     "quantity": 1,
+     "execution": "fresh",
+     "operation": "parse",
+     "amount_usd": "0.0035",
+     "reuse_reason": null,
+     "unit_price_usd": "0.0035"
+    },
+    {
+     "unit": "page",
+     "quantity": 1,
+     "execution": "fresh",
+     "operation": "extract",
+     "amount_usd": "0.0085",
+     "reuse_reason": null,
+     "unit_price_usd": "0.0085"
+    }
+   ],
+   "currency": "USD",
+   "total_usd": "0.012",
+   "pricing_version": "retail-2026-11-10-v2"
   },
-  "latency_ms": 8364.6,
-  "engine": "Qwen/Qwen3.8-27B",
-  "warnings": [],
-  "fallback": true,
-  "fallback_reason": "ndi.upload-grant: HTTP 403: console.nace.ai is behind a Vercel security checkpoint (bot challenge on the provider's side), so API calls are blocked. Not a key or app problem; retry later or tell the organizers."
+  "units": 3,
+  "latency_ms": 5328.1,
+  "warnings": []
  },
  "f17": {
   "data": {
-   "entities": [
-    {
-     "name": "Nimbleroot",
-     "kind": "organization",
-     "role": "Seed-stage startup in Portland, Oregon selling AI bookkeeping software to small businesses"
-    },
-    {
-     "name": "Dana Vell",
-     "kind": "person",
-     "role": "CEO and co-founder of Nimbleroot"
-    }
-   ],
    "claims": [
     {
-     "claim": "Recent app store reviews of Nimbleroot are mostly positive about its receipt scanning.",
-     "attributed_to": "Reporter",
+     "claim": "Recent app store reviews of Nimbleroot are mostly positive about its receipt scanning, which users say is fast and accurate.",
      "status": "reported",
+     "attributed_to": "appreviewroundup.example",
      "supporting_passage": "Recent app store reviews of Nimbleroot are mostly positive about its receipt scanning, which users say is fast and accurate."
-    },
-    {
-     "claim": "Users say the receipt scanning is fast and accurate.",
-     "attributed_to": "Users",
-     "status": "reported",
-     "supporting_passage": "Recent app store reviews of Nimbleroot are mostly positive about its receipt scanning, which users say is fast and accurate."
-    },
-    {
-     "claim": "The receipt scanning categorizes photos quickly.",
-     "attributed_to": "One reviewer",
-     "status": "reported",
-     "supporting_passage": "\"Snap a photo and it's categorized before I put my phone down,\" one reviewer wrote."
-    },
-    {
-     "claim": "Several reviewers mention a slow dashboard on older phones.",
-     "attributed_to": "Several reviewers",
-     "status": "reported",
-     "supporting_passage": "Several reviewers still mention a slow dashboard on older phones."
     },
     {
      "claim": "The app's average rating this month is 4.5 out of 5 across 210 reviews.",
-     "attributed_to": "Reporter",
      "status": "reported",
+     "attributed_to": "appreviewroundup.example",
      "supporting_passage": "The app's average rating this month is 4.5 out of 5 across 210 reviews."
+    },
+    {
+     "claim": "Several reviewers mention a slow dashboard on older phones.",
+     "status": "reported",
+     "attributed_to": "appreviewroundup.example",
+     "supporting_passage": "Several reviewers still mention a slow dashboard on older phones."
     }
    ],
-   "event_dates": [],
+   "entities": [
+    {
+     "kind": "organization",
+     "name": "Nimbleroot",
+     "role": "Seed-stage startup in Portland, Oregon selling AI bookkeeping software to small businesses"
+    },
+    {
+     "kind": "person",
+     "name": "Dana Vell.",
+     "role": "CEO and co-founder of Nimbleroot"
+    }
+   ],
+   "event_dates": [
+    {
+     "date": "2026-11-12",
+     "event": "Article publication date"
+    }
+   ],
    "publication_date": "2026-11-12"
   },
-  "fields": [],
-  "job_id": null,
+  "fields": [
+   {
+    "path": "/publication_date",
+    "value": "2026-11-12",
+    "status": "found",
+    "confidence": 0.8888888888888888,
+    "ambiguous": false,
+    "derived": false,
+    "citations": [
+     {
+      "location": {
+       "kind": "text_span",
+       "page": null,
+       "char_start": 156,
+       "char_end": 166
+      },
+      "source_text": "Published: 2026-11-12"
+     }
+    ]
+   },
+   {
+    "path": "/claims/0",
+    "value": "{\"claim\": \"Recent app store reviews of Nimbleroot are mostly positive about its receipt scanning, which users say is fast and accurate.\", \"status\": \"reported\", \"attributed_to\": \"appreviewroundup.example\", \"supporting_passage\": \"Recent app store reviews of Nimbleroot are mostly positive about its receipt scanning, which users say is fast and accurate.\"}",
+    "status": "found",
+    "confidence": 0.8888888888888888,
+    "ambiguous": false,
+    "derived": false,
+    "citations": [
+     {
+      "location": {
+       "kind": "text_span",
+       "page": null,
+       "char_start": 212,
+       "char_end": 336
+      },
+      "source_text": "Recent app store reviews of Nimbleroot are mostly positive about its receipt scanning, which users say is fast and accurate."
+     }
+    ]
+   },
+   {
+    "path": "/claims/1",
+    "value": "{\"claim\": \"The app's average rating this month is 4.5 out of 5 across 210 reviews.\", \"status\": \"reported\", \"attributed_to\": \"appreviewroundup.example\", \"supporting_passage\": \"The app's average rating this month is 4.5 out of 5 across 210 reviews.\"}",
+    "status": "found",
+    "confidence": 0.8888888888888888,
+    "ambiguous": false,
+    "derived": false,
+    "citations": [
+     {
+      "location": {
+       "kind": "text_span",
+       "page": null,
+       "char_start": 487,
+       "char_end": 558
+      },
+      "source_text": "The app's average rating this month is 4.5 out of 5 across 210 reviews."
+     }
+    ]
+   },
+   {
+    "path": "/claims/2",
+    "value": "{\"claim\": \"Several reviewers mention a slow dashboard on older phones.\", \"status\": \"reported\", \"attributed_to\": \"appreviewroundup.example\", \"supporting_passage\": \"Several reviewers still mention a slow dashboard on older phones.\"}",
+    "status": "found",
+    "confidence": 0.8888888888888888,
+    "ambiguous": false,
+    "derived": false,
+    "citations": [
+     {
+      "location": {
+       "kind": "text_span",
+       "page": null,
+       "char_start": 421,
+       "char_end": 486
+      },
+      "source_text": "Several reviewers still mention a slow dashboard on older phones."
+     }
+    ]
+   },
+   {
+    "path": "/entities/0",
+    "value": "{\"kind\": \"organization\", \"name\": \"Nimbleroot\", \"role\": \"Seed-stage startup in Portland, Oregon selling AI bookkeeping software to small businesses\"}",
+    "status": "found",
+    "confidence": 0.5925925925925926,
+    "ambiguous": false,
+    "derived": false,
+    "citations": [
+     {
+      "location": {
+       "kind": "text_span",
+       "page": null,
+       "char_start": 212,
+       "char_end": 336
+      },
+      "source_text": "Recent app store reviews of Nimbleroot are mostly positive about its receipt scanning, which users say is fast and accurate."
+     }
+    ]
+   },
+   {
+    "path": "/entities/1",
+    "value": "{\"kind\": \"person\", \"name\": \"Dana Vell.\", \"role\": \"CEO and co-founder of Nimbleroot\"}",
+    "status": "found",
+    "confidence": null,
+    "ambiguous": false,
+    "derived": false,
+    "citations": []
+   },
+   {
+    "path": "/event_dates/0",
+    "value": "{\"date\": \"2026-11-12\", \"event\": \"Article publication date\"}",
+    "status": "found",
+    "confidence": 0.8888888888888888,
+    "ambiguous": false,
+    "derived": false,
+    "citations": [
+     {
+      "location": {
+       "kind": "text_span",
+       "page": null,
+       "char_start": 145,
+       "char_end": 166
+      },
+      "source_text": "Published: 2026-11-12"
+     }
+    ]
+   }
+  ],
+  "job_id": "3e2b4658-6067-490a-93f0-6f7e8868a4b3",
   "cost": {
-   "total_usd": 0.0010353
+   "lines": [
+    {
+     "unit": "page",
+     "quantity": 1,
+     "execution": "fresh",
+     "operation": "parse",
+     "amount_usd": "0.0035",
+     "reuse_reason": null,
+     "unit_price_usd": "0.0035"
+    },
+    {
+     "unit": "page",
+     "quantity": 1,
+     "execution": "fresh",
+     "operation": "extract",
+     "amount_usd": "0.0085",
+     "reuse_reason": null,
+     "unit_price_usd": "0.0085"
+    }
+   ],
+   "currency": "USD",
+   "total_usd": "0.012",
+   "pricing_version": "retail-2026-11-10-v2"
   },
-  "latency_ms": 8716.3,
-  "engine": "Qwen/Qwen3.8-27B",
-  "warnings": [],
-  "fallback": true,
-  "fallback_reason": "ndi.upload-grant: HTTP 403: console.nace.ai is behind a Vercel security checkpoint (bot challenge on the provider's side), so API calls are blocked. Not a key or app problem; retry later or tell the organizers."
+  "units": 3,
+  "latency_ms": 5021.6,
+  "warnings": [
+   "array_item_evidence_partial"
+  ]
  },
  "f18": {
   "data": {
-   "entities": [
-    {
-     "name": "Nimbleroot",
-     "kind": "organization",
-     "role": "Portland-based AI bookkeeping startup"
-    },
-    {
-     "name": "Pacific Venture Wire",
-     "kind": "organization",
-     "role": "News source"
-    }
-   ],
    "claims": [
     {
-     "claim": "Venture investors have become more cautious about AI bookkeeping startups after a string of data-security incidents.",
-     "attributed_to": "Three investors who spoke to Pacific Venture Wire",
+     "claim": "Venture investors have become more cautious about AI bookkeeping startups after a string of data-security incidents in the sector.",
      "status": "reported",
+     "attributed_to": "three investors who spoke to Pacific Venture Wire",
      "supporting_passage": "Venture investors have become more cautious about AI bookkeeping startups after a string of data-security incidents in the sector, according to three investors who spoke to Pacific Venture Wire."
     },
     {
      "claim": "Early Series A conversations with Nimbleroot had slowed in recent weeks.",
-     "attributed_to": "Two investors",
      "status": "reported",
+     "attributed_to": "two investors",
      "supporting_passage": "Two of them said early Series A conversations with Portland-based Nimbleroot had slowed in recent weeks, citing the company's invoice exposure."
     },
     {
      "claim": "Nimbleroot declined to comment on fundraising.",
-     "attributed_to": "Nimbleroot",
      "status": "officially_stated",
+     "attributed_to": "Nimbleroot",
      "supporting_passage": "Nimbleroot declined to comment on fundraising."
     },
     {
      "claim": "Nimbleroot raised a $6 million seed round in October.",
-     "attributed_to": "Pacific Venture Wire",
      "status": "reported",
+     "attributed_to": "Pacific Venture Wire",
      "supporting_passage": "The company raised a $6 million seed round in October."
     }
    ],
+   "entities": [
+    {
+     "kind": "organization",
+     "name": "Nimbleroot",
+     "role": "Portland-based AI bookkeeping startup whose Series A talks reportedly slowed"
+    },
+    {
+     "kind": "organization",
+     "name": "Pacific Venture Wire",
+     "role": "Source publication"
+    }
+   ],
    "event_dates": [
+    {
+     "date": "2026-11-13",
+     "event": "Article published"
+    },
     {
      "date": "2026-10-01",
      "event": "Nimbleroot raised a $6 million seed round"
@@ -3737,15 +4259,207 @@
    ],
    "publication_date": "2026-11-13"
   },
-  "fields": [],
-  "job_id": null,
+  "fields": [
+   {
+    "path": "/publication_date",
+    "value": "2026-11-13",
+    "status": "found",
+    "confidence": 0.8888888888888888,
+    "ambiguous": false,
+    "derived": false,
+    "citations": [
+     {
+      "location": {
+       "kind": "text_span",
+       "page": null,
+       "char_start": 182,
+       "char_end": 192
+      },
+      "source_text": "Published: 2026-11-13"
+     }
+    ]
+   },
+   {
+    "path": "/claims/0",
+    "value": "{\"claim\": \"Venture investors have become more cautious about AI bookkeeping startups after a string of data-security incidents in the sector.\", \"status\": \"reported\", \"attributed_to\": \"three investors who spoke to Pacific Venture Wire\", \"supporting_passage\": \"Venture investors have become more cautious about AI bookkeeping startups after a string of data-security incidents in the sector, according to three investors who spoke to Pacific Venture Wire.\"}",
+    "status": "found",
+    "confidence": 0.8888888888888888,
+    "ambiguous": false,
+    "derived": false,
+    "citations": [
+     {
+      "location": {
+       "kind": "text_span",
+       "page": null,
+       "char_start": 238,
+       "char_end": 432
+      },
+      "source_text": "Venture investors have become more cautious about AI bookkeeping startups after a string of data-security incidents in the sector, according to three investors who spoke to Pacific Venture Wire."
+     }
+    ]
+   },
+   {
+    "path": "/claims/1",
+    "value": "{\"claim\": \"Early Series A conversations with Nimbleroot had slowed in recent weeks.\", \"status\": \"reported\", \"attributed_to\": \"two investors\", \"supporting_passage\": \"Two of them said early Series A conversations with Portland-based Nimbleroot had slowed in recent weeks, citing the company's invoice exposure.\"}",
+    "status": "found",
+    "confidence": 0.8888888888888888,
+    "ambiguous": false,
+    "derived": false,
+    "citations": [
+     {
+      "location": {
+       "kind": "text_span",
+       "page": null,
+       "char_start": 433,
+       "char_end": 576
+      },
+      "source_text": "Two of them said early Series A conversations with Portland-based Nimbleroot had slowed in recent weeks, citing the company's invoice exposure."
+     }
+    ]
+   },
+   {
+    "path": "/claims/2",
+    "value": "{\"claim\": \"Nimbleroot declined to comment on fundraising.\", \"status\": \"officially_stated\", \"attributed_to\": \"Nimbleroot\", \"supporting_passage\": \"Nimbleroot declined to comment on fundraising.\"}",
+    "status": "found",
+    "confidence": 0.8888888888888888,
+    "ambiguous": false,
+    "derived": false,
+    "citations": [
+     {
+      "location": {
+       "kind": "text_span",
+       "page": null,
+       "char_start": 577,
+       "char_end": 623
+      },
+      "source_text": "Nimbleroot declined to comment on fundraising."
+     }
+    ]
+   },
+   {
+    "path": "/claims/3",
+    "value": "{\"claim\": \"Nimbleroot raised a $6 million seed round in October.\", \"status\": \"reported\", \"attributed_to\": \"Pacific Venture Wire\", \"supporting_passage\": \"The company raised a $6 million seed round in October.\"}",
+    "status": "found",
+    "confidence": 0.8888888888888888,
+    "ambiguous": false,
+    "derived": false,
+    "citations": [
+     {
+      "location": {
+       "kind": "text_span",
+       "page": null,
+       "char_start": 624,
+       "char_end": 678
+      },
+      "source_text": "The company raised a $6 million seed round in October."
+     }
+    ]
+   },
+   {
+    "path": "/entities/0",
+    "value": "{\"kind\": \"organization\", \"name\": \"Nimbleroot\", \"role\": \"Portland-based AI bookkeeping startup whose Series A talks reportedly slowed\"}",
+    "status": "found",
+    "confidence": 0.8888888888888888,
+    "ambiguous": false,
+    "derived": false,
+    "citations": [
+     {
+      "location": {
+       "kind": "text_span",
+       "page": null,
+       "char_start": 433,
+       "char_end": 576
+      },
+      "source_text": "Two of them said early Series A conversations with Portland-based Nimbleroot had slowed in recent weeks, citing the company's invoice exposure."
+     }
+    ]
+   },
+   {
+    "path": "/entities/1",
+    "value": "{\"kind\": \"organization\", \"name\": \"Pacific Venture Wire\", \"role\": \"Source publication\"}",
+    "status": "found",
+    "confidence": 0.8888888888888888,
+    "ambiguous": false,
+    "derived": false,
+    "citations": [
+     {
+      "location": {
+       "kind": "text_span",
+       "page": null,
+       "char_start": 238,
+       "char_end": 432
+      },
+      "source_text": "Venture investors have become more cautious about AI bookkeeping startups after a string of data-security incidents in the sector, according to three investors who spoke to Pacific Venture Wire."
+     }
+    ]
+   },
+   {
+    "path": "/event_dates/0",
+    "value": "{\"date\": \"2026-11-13\", \"event\": \"Article published\"}",
+    "status": "found",
+    "confidence": 0.8888888888888888,
+    "ambiguous": false,
+    "derived": false,
+    "citations": [
+     {
+      "location": {
+       "kind": "text_span",
+       "page": null,
+       "char_start": 171,
+       "char_end": 192
+      },
+      "source_text": "Published: 2026-11-13"
+     }
+    ]
+   },
+   {
+    "path": "/event_dates/1",
+    "value": "{\"date\": \"2026-10-01\", \"event\": \"Nimbleroot raised a $6 million seed round\"}",
+    "status": "found",
+    "confidence": 0.5925925925925926,
+    "ambiguous": false,
+    "derived": false,
+    "citations": [
+     {
+      "location": {
+       "kind": "text_span",
+       "page": null,
+       "char_start": 624,
+       "char_end": 678
+      },
+      "source_text": "The company raised a $6 million seed round in October."
+     }
+    ]
+   }
+  ],
+  "job_id": "126bab9b-a5b6-4127-ad3b-0b4bd2161df3",
   "cost": {
-   "total_usd": 0.0009900750000000002
+   "lines": [
+    {
+     "unit": "page",
+     "quantity": 1,
+     "execution": "fresh",
+     "operation": "parse",
+     "amount_usd": "0.0035",
+     "reuse_reason": null,
+     "unit_price_usd": "0.0035"
+    },
+    {
+     "unit": "page",
+     "quantity": 1,
+     "execution": "fresh",
+     "operation": "extract",
+     "amount_usd": "0.0085",
+     "reuse_reason": null,
+     "unit_price_usd": "0.0085"
+    }
+   ],
+   "currency": "USD",
+   "total_usd": "0.012",
+   "pricing_version": "retail-2026-11-10-v2"
   },
-  "latency_ms": 8238.9,
-  "engine": "Qwen/Qwen3.8-27B",
-  "warnings": [],
-  "fallback": true,
-  "fallback_reason": "ndi.upload-grant: HTTP 403: console.nace.ai is behind a Vercel security checkpoint (bot challenge on the provider's side), so API calls are blocked. Not a key or app problem; retry later or tell the organizers."
+  "units": 3,
+  "latency_ms": 6016.6,
+  "warnings": []
  }
 }

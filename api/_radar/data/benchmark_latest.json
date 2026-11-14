@@ -1,9 +1,9 @@
 {
  "available": true,
- "run_at": "2026-11-14T20:32:49+00:00",
+ "run_at": "2026-11-14T21:21:44+00:00",
  "repeats": 3,
  "dataset": {
-  "size": 14,
+  "size": 18,
   "label": "synthetic fixtures, fictional company 'Nimbleroot', hand-labeled by the authors",
   "important": 4,
   "namesakes": 2
@@ -12,67 +12,70 @@
   {
    "name": "Drex (drex-latest)",
    "model": "drex-latest",
-   "n_calls": 42,
+   "n_calls": 54,
    "errors": 0,
    "important_caught": 4,
    "important_ge_watch": 4,
    "false_alerts": 0,
    "namesake_ok": 2,
-   "action_acc": 0.6428571428571429,
-   "drex_raw_action_acc": 0.6428571428571429,
-   "category_acc": 0.9285714285714286,
-   "report_type_acc": 0.7857142857142857,
+   "action_acc": 0.6111111111111112,
+   "drex_raw_action_acc": 0.6111111111111112,
+   "category_acc": 0.7777777777777778,
+   "report_type_acc": 0.7777777777777778,
+   "improvement_area_acc": 0.8888888888888888,
    "subject_acc": 1.0,
-   "novel_acc": 0.8571428571428571,
-   "latency_ms_median": 326.0,
-   "latency_ms_mean": 344.0,
-   "input_tokens": 72237,
-   "output_tokens": 37305,
-   "est_cost_usd": 0.00866844,
+   "novel_acc": 0.8888888888888888,
+   "latency_ms_median": 378.2,
+   "latency_ms_mean": 390.4,
+   "input_tokens": 109854,
+   "output_tokens": 73354,
+   "est_cost_usd": 0.013182479999999998,
    "cost_source": "assumed $0.12/1M input tokens (DREX_PRICE_PER_M_INPUT)"
   },
   {
    "name": "Drex (drex-v2.0)",
    "model": "drex-v2.0",
-   "n_calls": 42,
+   "n_calls": 54,
    "errors": 0,
    "important_caught": 4,
    "important_ge_watch": 4,
    "false_alerts": 1,
    "namesake_ok": 1,
-   "action_acc": 0.7857142857142857,
-   "drex_raw_action_acc": 0.7142857142857143,
-   "category_acc": 0.9285714285714286,
-   "report_type_acc": 0.6428571428571429,
+   "action_acc": 0.7222222222222222,
+   "drex_raw_action_acc": 0.6666666666666666,
+   "category_acc": 0.8888888888888888,
+   "report_type_acc": 0.5555555555555556,
+   "improvement_area_acc": 0.8333333333333334,
    "subject_acc": 1.0,
-   "novel_acc": 0.9285714285714286,
-   "latency_ms_median": 293.9,
-   "latency_ms_mean": 299.5,
-   "input_tokens": 67281,
-   "output_tokens": 20205,
-   "est_cost_usd": 0.00807372,
+   "novel_acc": 0.9444444444444444,
+   "latency_ms_median": 340.4,
+   "latency_ms_mean": 482.4,
+   "input_tokens": 101862,
+   "output_tokens": 39675,
+   "est_cost_usd": 0.012223439999999999,
    "cost_source": "assumed $0.12/1M input tokens (DREX_PRICE_PER_M_INPUT)"
   },
   {
    "name": "LLM baseline",
    "model": "Qwen/Qwen3.8-27B",
-   "n_calls": 42,
+   "n_calls": 54,
    "errors": 0,
    "important_caught": 3,
    "important_ge_watch": 4,
    "false_alerts": 0,
    "namesake_ok": 2,
-   "action_acc": 0.6428571428571429,
-   "drex_raw_action_acc": 0.6428571428571429,
-   "category_acc": 1.0,
-   "report_type_acc": 0.8571428571428571,
-   "subject_acc": 1.0,
-   "novel_acc": 0.8571428571428571,
-   "latency_ms_median": 1546.6,
-   "latency_ms_mean": 1648.2,
-   "input_tokens": 67533,
-   "output_tokens": 2232,
-   "est_cost_usd": 0.010081350000000001,
+   "action_acc": 0.6481481481481481,
+   "drex_raw_action_acc": 0.6481481481481481,
+   "category_acc": 0.9259259259259259,
+   "report_type_acc": 0.7592592592592593,
+   "improvement_area_acc": 0.8148148148148148,
+   "subject_acc": 0.9814814814814815,
+   "novel_acc": 0.8703703703703703,
+   "latency_ms_median": 2537.6,
+   "latency_ms_mean": 3330.4,
+   "input_tokens": 103860,
+   "output_tokens": 3824,
+   "est_cost_usd": 0.014811000000000001,
    "cost_source": "sum of DeepInfra usage.estimated_cost (provider-reported)"
   }
  ],
@@ -188,6 +191,16 @@
    }
   },
   {
+   "id": "f15",
+   "title": "Nimbleroot's 'Fire your accountant' ads draw backlash from bookkeepers",
+   "gold_action": "watch",
+   "pred": {
+    "Drex (drex-latest)": "digest",
+    "Drex (drex-v2.0)": "digest",
+    "LLM baseline": "digest"
+   }
+  },
+  {
    "id": "f12",
    "title": "Oregon DOJ opens inquiry into Nimbleroot after invoice exposure",
    "gold_action": "review_now",
@@ -208,6 +221,26 @@
    }
   },
   {
+   "id": "f16",
+   "title": "Thread: What does Nimbleroot actually do?",
+   "gold_action": "digest",
+   "pred": {
+    "Drex (drex-latest)": "digest",
+    "Drex (drex-v2.0)": "digest",
+    "LLM baseline": "digest"
+   }
+  },
+  {
+   "id": "f17",
+   "title": "Users praise Nimbleroot's receipt scanning in latest app reviews",
+   "gold_action": "digest",
+   "pred": {
+    "Drex (drex-latest)": "digest",
+    "Drex (drex-v2.0)": "digest",
+    "LLM baseline": "digest"
+   }
+  },
+  {
    "id": "f14",
    "title": "Report: Nimbleroot bucket exposed thousands of invoices",
    "gold_action": "watch",
@@ -216,10 +249,20 @@
     "Drex (drex-v2.0)": "watch",
     "LLM baseline": "review_now"
    }
+  },
+  {
+   "id": "f18",
+   "title": "Investors cool on AI bookkeeping startups; Nimbleroot's Series A talks reportedly slow",
+   "gold_action": "watch",
+   "pred": {
+    "Drex (drex-latest)": "digest",
+    "Drex (drex-v2.0)": "review_now",
+    "LLM baseline": "watch"
+   }
   }
  ],
  "limitations": [
-  "Tiny dataset (14 synthetic articles, labels written by the project authors) — results are indicative, not statistically significant.",
+  "Tiny dataset (18 synthetic articles, labels written by the project authors) — results are indicative, not statistically significant.",
   "Both systems receive identical state text (profile, criteria, fixed prior coverage, NDI facts, article text) and the same deterministic post-policy.",
   "Latency is wall-clock from this machine, including network; it varies by region and load.",
   "Baseline cost is the DeepInfra-reported usage.estimated_cost. Drex cost = measured input tokens x DREX_PRICE_PER_M_INPUT, an ASSUMED rate (Nace docs list $0.12 per 1M Drex Max input tokens; the API returns no per-call cost). See cost_source per system.",
