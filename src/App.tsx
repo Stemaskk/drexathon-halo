@@ -13,7 +13,7 @@ const PRESETS: Profile[] = [
   { name: "Nace AI", kind: "company", aliases: ["Nace.AI", "Nace", "Drex"], description: "AI startup that builds Drex decision models, NDI document processing (Perception) and the Intern agent harness, and runs the Drexathon hackathon. Not the National Association of Colleges and Employers (NACE) or the corrosion-engineering body NACE International.", website: "https://www.nace.ai", region: "USA", industry: "artificial intelligence", priorities: PRIORITIES },
   { name: "Adobe", kind: "company", aliases: ["Adobe Inc.", "ADBE"], description: "American software company based in San Jose, California. Makes Creative Cloud (Photoshop, Illustrator, Premiere Pro), Acrobat and PDF tools, Firefly generative AI and Experience Cloud marketing software. Publicly traded (NASDAQ: ADBE).", website: "https://www.adobe.com", region: "USA", industry: "creative and marketing software", priorities: PRIORITIES },
 ];
-const TABS = ["Scan", "Feedback", "Briefing", "Influencers"] as const;
+const TABS = ["Scan", "Feedback", "Influencers"] as const;
 type Tab = (typeof TABS)[number] | "Profile";
 type Area = { area: string; label: string; mentions: number; negative: number; positive: number; avg_sentiment: number | null;
   status: "needs_attention" | "mixed" | "strength"; items: { id: string; title: string; url: string; sentiment: number | null; evidence: string | null }[] };
@@ -235,7 +235,6 @@ export default function App() {
           <button key={t} className={t === tab ? "active" : ""} onClick={() => setTab(t)}>
             {t}{t === "Scan" && alerts ? <span className="badge">{alerts}</span> : null}
           </button>))}</nav>
-        <div className={`mode ${mode}`}>{mode === "fixture" ? "FIXTURE MODE · synthetic data" : `LIVE MODE · real web${health?.keenable_mode === "keyless-public" ? " (Keenable keyless)" : ""}`}</div>
       </header>
 
       {health && Object.entries(health.keys).some(([, v]) => !v) && (
@@ -313,16 +312,6 @@ export default function App() {
           </main>
           {sel && <Detail item={sel} onClose={() => setSelected(null)} />}
         </div>
-      )}
-
-      {tab === "Briefing" && (
-        <section className="card narrow">
-          <h2>Briefing — {profile.name || "no profile"}</h2>
-          <p className="muted small">Written by {health?.llm_model ?? "DeepInfra LLM"} from Drex decisions and verified evidence. Allegations are reported as claims, not facts.</p>
-          {briefing ? <Markdown text={briefing} /> : <p className="muted">Run a scan to generate a briefing.</p>}
-          {history.length > 0 && <><h3>Scan history</h3><ul className="small">{[...history].reverse().map((h, i) => (
-            <li key={i}>{h.at.slice(0, 16).replace("T", " ")} · {h.mode} · {h.profile} · {h.items.length} items · {h.items.filter((x) => x.final_action === "review_now").length} review-now</li>))}</ul></>}
-        </section>
       )}
 
       {tab === "Influencers" && <Influencers profile={profile} scorecard={scorecard} />}

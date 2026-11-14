@@ -25,7 +25,15 @@ AREAS = {
     "creative_design": "Design, photography, video editing, art and creative software",
     "business_finance": "Business, startups, investing, markets and marketing",
     "education_science": "Science, education and explainers",
-    "lifestyle_entertainment": "Lifestyle, entertainment, vlogs, comedy and general interest",
+    "sports_fitness": "Sports, athletes, fitness, workouts and outdoor activity",
+    "food_cooking": "Food, cooking, recipes, restaurants and drink",
+    "beauty_fashion": "Beauty, makeup, skincare, fashion and style",
+    "travel": "Travel, places, adventure and culture",
+    "music": "Music, instruments, production and performance",
+    "autos": "Cars, motorcycles and automotive reviews",
+    "diy_home": "DIY, making, engineering builds, home and garden",
+    "health_wellness": "Health, medicine, mental health and wellness",
+    "lifestyle_entertainment": "Lifestyle, entertainment, vlogs, comedy, challenges and general interest",
 }
 SAME_SEGMENT_OVERLAP = 0.85  # assumption: creators on the same platform and topic share most of their audience
 
