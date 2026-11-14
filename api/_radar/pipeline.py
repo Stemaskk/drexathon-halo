@@ -209,7 +209,7 @@ def apply_policy(d: dict[str, Any]) -> dict[str, Any]:
         flags.append("namesake_or_unrelated")
     elif p_subj is not None and p_subj < 0.65:
         flags.append("identity_uncertain")
-        if action == "ignore":
+        if ACTION_RANK.get(action, 0) < ACTION_RANK["watch"]:
             action = "watch"
     if d["is_novel"]["value"] is False and action == "review_now":
         action = "watch"

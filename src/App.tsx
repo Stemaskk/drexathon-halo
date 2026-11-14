@@ -318,8 +318,9 @@ function Benchmark() {
     ["Median latency / article", "lat", (s) => `${s.latency_ms_median} ms`],
     ["Mean latency / article", "latm", (s) => `${s.latency_ms_mean} ms`],
     ["Input tokens (total)", "tin", (s) => `${s.input_tokens}`],
-    ["Output tokens (total)", "tout", (s) => `${s.output_tokens}`],
+    ["Output tokens (total; not billed for Drex)", "tout", (s) => `${s.output_tokens}`],
     ["Est. decision-stage cost", "cost", (s) => s.est_cost_usd == null ? "price not set" : `$${s.est_cost_usd.toFixed(5)}`],
+    ["Cost basis", "cbasis", (s) => s.cost_source ?? "—"],
     ["Errors / parse failures", "err", (s) => `${s.errors}`],
   ];
   return (

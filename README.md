@@ -59,7 +59,7 @@ Requirements: Python 3.10+ and Node 18+.
 
 ```bash
 cp .env.example .env        # then fill in keys locally; never commit .env
-python -m venv .venv && .venv/bin/pip install -r requirements.txt uvicorn
+python -m venv .venv && .venv/bin/pip install -r requirements.txt uvicorn pytest
 npm install
 ```
 
@@ -102,7 +102,23 @@ BENCHMARK_RESULTS_PLACEHOLDER
 
 ## Intern usage
 
-INTERN_PLACEHOLDER
+We used **Intern** (`intern-agent`, installed with `uv tool install`) as a headless coding agent with the organizer setup: System 1 `drex-latest`, System 2 `deepinfra/Qwen/Qwen3.8-27B`.
+
+**Task given** (bounded, no network): write pytest unit tests for the pure helpers in `api/_radar/pipeline.py` (`canonical_url`, `validate_passage`, `pick_evidence`, `apply_policy`, `_as_bool`), run them, and fix any genuine bug in `pipeline.py` that the tests reveal.
+
+```bash
+intern -p --json --no-session --max-turns 40 --cwd . \
+  --system1 drex-latest --system2 deepinfra/Qwen/Qwen3.8-27B "<task above>"
+```
+
+**What Intern contributed (verified by us):**
+- `tests/test_pipeline.py` with **37 tests**: URL canonicalization (tracking params, `www.`/`m.`, trailing slashes), verbatim-passage validation (curly quotes, whitespace), evidence selection and fallback, every rule in `apply_policy`, and boolean parsing. Running `.venv/bin/python -m pytest -q tests` gives `37 passed`.
+- **A real bug fix** in `apply_policy`. When identity was uncertain (0.35 ≤ P(subject) < 0.65), only `ignore` was raised to `watch`. A Drex action of `digest` slipped through, which broke the "at least watch" rule. Intern replaced `if action == "ignore"` with a rank comparison (`ACTION_RANK.get(action, 0) < ACTION_RANK["watch"]`). The benchmark below was run after this fix.
+- Run stats: 9 turns, 10 tool calls (read, bash, write, edit), 19 Drex supervision decisions inside Intern (8 supervise, 8 wrap-up, 3 guard), about 6 minutes.
+
+Sanitized record: [`docs/intern/run1.transcript.md`](docs/intern/run1.transcript.md) and [`docs/intern/run1.events.jsonl`](docs/intern/run1.events.jsonl). Token-level reasoning is dropped, and keys and local paths are redacted by `scripts/sanitize_intern_log.py`.
+
+Intern's internal Drex supervision is separate from the product. Radar's reputation decisions are explicit `/v1/systemone` calls made by our backend.
 
 ## Limitations and next steps
 - The benchmark dataset is tiny and synthetic, and the labels were written by the authors. Treat the results as directional.
