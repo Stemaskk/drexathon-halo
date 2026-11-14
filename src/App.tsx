@@ -60,7 +60,7 @@ export default function App() {
 
   async function runScan() {
     if (!profile.name.trim()) { setError("Create a profile first."); setTab("Profile"); return; }
-    setRunning(true); setError(null); setSelected(null); setBriefing("");
+    setRunning(true); setError(null); setSelected(null); setBriefing(""); setItems([]);
     setSteps([
       { label: mode === "live" ? "Search the web (Keenable)" : "Load fixture articles", status: "pending" },
       { label: mode === "live" ? "Fetch article text (Keenable)" : "Load fixture text", status: "pending" },
@@ -70,12 +70,25 @@ export default function App() {
     ]);
     let cur = 0;
     try {
+      // Fixture mode is a reproducible demo: it always starts from the fixture's own history.
+      // Live mode keeps a per-browser history of seen URLs and prior stories.
+      let scanSeen = seen, scanPrior = prior;
+      if (mode === "fixture") {
+        const fx = await api("fixtures");
+        scanSeen = [];
+        scanPrior = fx.history.map((h: any) => ({ title: h.title, published_at: h.published_at, summary: h.summary }));
+      }
       setStep(0, { status: "running" });
-      const s = await api("search", { profile, mode, seen_urls: seen, published_after: "30d", max_results: 8 });
+      const s = await api("search", { profile, mode, seen_urls: scanSeen, published_after: "30d", max_results: 8 });
       const limit = mode === "fixture" ? s.candidates.length : batch;
       const picked: Item[] = s.candidates.slice(0, limit);
       setStep(0, { status: "done", detail: `${s.stats.raw} results → ${s.stats.unique_new} new unique (${s.stats.duplicates_in_scan} dupes, ${s.stats.already_seen} already seen); processing ${picked.length}` });
-      if (!picked.length) { setStep(1, { status: "done", detail: "nothing new" }); setRunning(false); return; }
+      if (!picked.length) {
+        setItems([]);
+        setSteps((st) => st.map((x, j) => (j === 0 ? x : { ...x, status: "done", detail: "skipped — no new coverage" })));
+        setError("No new coverage since your last live scan. Every result was already seen. Use “Reset scan history” on the Profile tab to rescan everything.");
+        return;
+      }
 
       cur = 1; setStep(1, { status: "running" });
       let fetched = 0;
@@ -102,7 +115,7 @@ export default function App() {
 
       cur = 3; setStep(3, { status: "running" });
       const ordered = [...ok].sort((a, b) => (a.published_at || "").localeCompare(b.published_at || ""));
-      const running: Prior[] = [...prior];
+      const running: Prior[] = [...scanPrior];
       for (let i = 0; i < ordered.length; i++) {
         const d = ordered[i];
         try {
@@ -125,10 +138,12 @@ export default function App() {
       const b = await api("brief", { profile, items: decided.map(({ text, ...rest }) => rest) });
       for (const d of decided) d.explanation = b.explanations?.[d.id];
       setBriefing(b.briefing); setItems([...ordered]);
-      setStep(4, { status: "done", detail: `${b.model ?? ""} · ${b.latency_ms ?? "?"} ms` });
+      setStep(4, { status: "done", detail: b.model ? `${b.model} · ${b.latency_ms ?? "?"} ms` : "skipped — no relevant items to brief" });
 
-      setSeen((x) => [...x, ...ordered.map((d) => d.canonical_url || d.url)]);
-      setPrior(running);
+      if (mode === "live") {
+        setSeen((x) => [...x, ...ordered.map((d) => d.canonical_url || d.url)]);
+        setPrior(running);
+      }
       setHistory((h) => [...h, { at: new Date().toISOString(), mode, profile: profile.name, stats: s.stats,
         items: ordered.map(({ text, ...rest }) => rest), briefing: b.briefing }]);
     } catch (e: any) {
