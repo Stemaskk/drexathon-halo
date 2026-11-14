@@ -4,18 +4,18 @@
 <div class="row">
 <div class="stack">
 <h3>Limits</h3>
-<p class="body">18 synthetic articles, labeled by us: directional, not significant.</p>
-<p class="body">Drex per-call cost isn’t returned by the API, so its cost uses an assumed $0.12 per 1M input tokens.</p>
-<p class="body">The baseline is the organizer-suggested Qwen3.8-27B, not claimed as a frontier model.</p>
+<p class="body">The offline demo set is 18 synthetic articles about a fictional company.</p>
+<p class="body">Advice is written by an LLM from the evidence, so it needs a human read before acting on it.</p>
+<p class="body">No live stock-price or ad-platform data: only public coverage of them.</p>
 <p class="body">NDI is the slowest stage (~7–14 s per article).</p>
 </div>
 <div class="stack">
 <h3>Next</h3>
 <p class="body">Run a cheap Drex identity check before NDI so namesakes never get extracted.</p>
 <p class="body">Scheduled scans with email and Slack alerts.</p>
-<p class="body">A larger, independently labeled evaluation set, including real coverage.</p>
+<p class="body">Measure Drex against a frontier LLM on speed, cost and accuracy.</p>
 <p class="body">Profile and policy documents uploaded through NDI.</p>
 </div>
 </div>
-<aside>Be upfront: the numbers are from a small hand-labeled set. The architecture point stands either way. Typed decisions go to a small decision model, and the LLM only writes prose.</aside>
+<aside>The architecture point: typed decisions go to a small decision model, and the LLM only writes prose from those decisions and verified evidence.</aside>
 </section>
