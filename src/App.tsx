@@ -179,7 +179,7 @@ export default function App() {
   return (
     <div className="app">
       <header>
-        <div className="brand"><span className="dot" />Halo</div>
+        <div className="brand"><span className="dot" />Project Halo</div>
         <nav>{TABS.map((t) => (
           <button key={t} className={t === tab ? "active" : ""} onClick={() => setTab(t)}>
             {t}{t === "Scan" && alerts ? <span className="badge">{alerts}</span> : null}
@@ -195,7 +195,7 @@ export default function App() {
       {tab === "Profile" && (
         <section className="card narrow">
           <h2>Monitored profile</h2>
-          <p className="muted">Who should Halo watch? Identifying context helps separate namesakes.</p>
+          <p className="muted">Who should Project Halo watch? Identifying context helps separate namesakes.</p>
           <div className="grid2">
             <label>Name<input value={profile.name} onChange={(e) => setProfile({ ...profile, name: e.target.value })} placeholder="Acme Robotics" /></label>
             <label>Type<select value={profile.kind} onChange={(e) => setProfile({ ...profile, kind: e.target.value })}>

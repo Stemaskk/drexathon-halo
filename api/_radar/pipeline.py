@@ -1,4 +1,4 @@
-"""Halo pipeline: retrieval -> NDI extraction -> Drex decisions -> DeepInfra briefing."""
+"""Project Halo pipeline: retrieval -> NDI extraction -> Drex decisions -> DeepInfra briefing."""
 from __future__ import annotations
 
 import hashlib

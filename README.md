@@ -1,8 +1,8 @@
-# Halo
+# Project Halo
 
 **Public-reputation monitoring and improvement feedback for teams without a PR or marketing department.** Built for early-stage startups, public-facing founders, emerging creators and anyone starting to get public attention.
 
-Halo reads what is publicly said about you: news coverage, customer reviews and complaints, how your product is advertised and received, and stock or investor news. It answers two questions:
+Project Halo reads what is publicly said about you: news coverage, customer reviews and complaints, how your product is advertised and received, and stock or investor news. It answers two questions:
 1. **What needs attention now?** Halo filters out namesakes and repeat stories, separates routine criticism from real developments, and triages each item (ignore, digest, watch, review now) with a verified source passage.
 2. **Where should you improve?** Each relevant item is tagged with an improvement area (marketing and messaging, advertising, product quality, customer support, pricing and value, trust and safety, financial and market) and a sentiment score. Halo combines these into a **Feedback scorecard** with concrete, evidence-based recommendations.
 

@@ -14,7 +14,7 @@ from pydantic import BaseModel, Field  # noqa: E402
 
 from _radar import clients, config, pipeline  # noqa: E402
 
-app = FastAPI(title="Halo API")
+app = FastAPI(title="Project Halo API")
 
 
 def _load(name: str) -> Any:
