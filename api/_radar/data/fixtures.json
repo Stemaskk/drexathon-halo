@@ -1,0 +1,237 @@
+{
+ "label": "SYNTHETIC FIXTURE — fictional company, invented articles for reproducible testing",
+ "profile": {
+  "id": "nimbleroot",
+  "kind": "company",
+  "name": "Nimbleroot",
+  "aliases": [
+   "Nimbleroot Inc.",
+   "Dana Vell (Nimbleroot CEO)"
+  ],
+  "description": "Seed-stage startup in Portland, Oregon selling AI bookkeeping software to small businesses. CEO and co-founder: Dana Vell.",
+  "website": "https://nimbleroot.example",
+  "region": "Portland, Oregon, USA",
+  "industry": "fintech / small-business software",
+  "priorities": "data security, impersonation or scams using our brand, legal or regulatory issues, widespread customer billing complaints; routine reviews and opinion pieces can go to the digest"
+ },
+ "history": [
+  {
+   "id": "h01",
+   "title": "Nimbleroot raises $6M seed round led by Fernhill Ventures",
+   "published_at": "2026-10-20",
+   "summary": "Nimbleroot announced a $6M seed round led by Fernhill Ventures to expand its AI bookkeeping product."
+  }
+ ],
+ "articles": [
+  {
+   "id": "f01",
+   "url": "https://burlington-weekly.example/2026/10/nimbleroot-nursery-greenhouse",
+   "title": "Nimbleroot Nursery opens second greenhouse in Burlington",
+   "outlet": "Burlington Free Weekly (fictional)",
+   "published_at": "2026-10-28",
+   "text": "Nimbleroot Nursery, the family-run plant shop on Pine Street in Burlington, Vermont, opened its second greenhouse this weekend.\nOwner Gail Hartmann said the new space will focus on native perennials and seedlings for community gardens.\n\"We've outgrown the old barn,\" Hartmann said. The nursery, founded in 1994, has no connection to any technology company.\nThe greenhouse will host free workshops on composting through the winter.",
+   "gold": {
+    "is_subject": false,
+    "category": "other",
+    "report_type": "news_report",
+    "is_novel": true,
+    "action": "ignore"
+   }
+  },
+  {
+   "id": "f02",
+   "url": "https://indiesound.example/reviews/dana-vell-ember-tour",
+   "title": "Singer-songwriter Dana Vell announces 'Ember' winter tour",
+   "outlet": "Indie Sound Review (fictional)",
+   "published_at": "2026-10-30",
+   "text": "Folk singer Dana Vell will take her new album 'Ember' on the road this winter, with twelve dates across the Midwest.\nVell, who is based in Nashville, says the record was written during a year of living out of a van.\nTickets go on sale Friday. Critics have praised the album's sparse arrangements and Vell's storytelling.",
+   "gold": {
+    "is_subject": false,
+    "category": "other",
+    "report_type": "news_report",
+    "is_novel": true,
+    "action": "ignore"
+   }
+  },
+  {
+   "id": "f03",
+   "url": "https://pdxstartups.example/news/nimbleroot-seed-6m?utm_source=newsletter",
+   "title": "Portland's Nimbleroot lands $6M seed to automate small-business books",
+   "outlet": "PDX Startup Digest (fictional)",
+   "published_at": "2026-11-02",
+   "text": "Portland-based Nimbleroot has raised $6 million in seed funding led by Fernhill Ventures, the company said last month.\nThe startup, led by CEO Dana Vell, sells AI bookkeeping software that categorizes transactions for small businesses.\nNimbleroot said it will use the money to hire engineers and expand to accounting firms.\n\"Small businesses deserve a bookkeeper that never sleeps,\" Vell said in the announcement.",
+   "gold": {
+    "is_subject": true,
+    "category": "business_news",
+    "report_type": "news_report",
+    "is_novel": false,
+    "action": "digest"
+   }
+  },
+  {
+   "id": "f04",
+   "url": "https://solofounder.example/posts/a-month-with-nimbleroot",
+   "title": "I used Nimbleroot for a month. Here's my honest take",
+   "outlet": "Solo Founder Notes blog (fictional)",
+   "published_at": "2026-11-04",
+   "text": "I switched my bakery's books to Nimbleroot in October. Overall it works, but I have complaints.\nThe dashboard feels cluttered and the mobile app is slow to load. At $49 a month it is pricier than I expected for a tool this young.\nCategorization was right most of the time, though it kept labeling flour orders as \"office supplies\".\nIn my opinion it's promising but not yet worth the price for very small shops.",
+   "gold": {
+    "is_subject": true,
+    "category": "routine_criticism",
+    "report_type": "opinion",
+    "is_novel": true,
+    "action": "digest"
+   }
+  },
+  {
+   "id": "f05",
+   "url": "https://smallbizforum.example/t/nimbleroot-double-charged/8812",
+   "title": "Thread: Nimbleroot double-charged my card — anyone else?",
+   "outlet": "SmallBizForum (fictional)",
+   "published_at": "2026-11-06",
+   "text": "Original post: Nimbleroot charged my card twice for November and support hasn't replied in four days.\nReply from user ledgerlady: Same here, two $49 charges on Nov 1. Still waiting on a refund.\nReply from user tacoshop_pdx: Happened to me too. I opened a dispute with my bank.\nReply from user mike_r: Mine was fine, single charge.\nSeveral users said they would cancel if the duplicate charges were not refunded this week.",
+   "gold": {
+    "is_subject": true,
+    "category": "customer_complaint",
+    "report_type": "other",
+    "is_novel": true,
+    "action": "watch"
+   }
+  },
+  {
+   "id": "f06",
+   "url": "https://scamwatch-nw.example/alerts/fake-nimbleroot-support",
+   "title": "Scam alert: fake 'Nimbleroot Support' accounts ask small businesses for bank logins",
+   "outlet": "ScamWatch Northwest (fictional)",
+   "published_at": "2026-11-07",
+   "text": "ScamWatch Northwest has received five reports of social media accounts posing as \"Nimbleroot Support\".\nThe accounts reply to customers who post about billing problems and direct them to a look-alike site, nimbleroot-help.example, that asks for online banking credentials.\nNimbleroot has not commented on the accounts. ScamWatch advises users to contact the company only through its official website.\nAt least one bakery owner said she entered her banking password before realizing the site was fake.",
+   "gold": {
+    "is_subject": true,
+    "category": "impersonation_or_scam",
+    "report_type": "news_report",
+    "is_novel": true,
+    "action": "review_now"
+   }
+  },
+  {
+   "id": "f07",
+   "url": "https://buckethunter.example/2026/11/nimbleroot-staging-exposure",
+   "title": "Exposed Nimbleroot staging bucket held customer invoices, researcher says",
+   "outlet": "Bucket Hunter security blog (fictional)",
+   "published_at": "2026-11-08",
+   "text": "Security researcher Theo Lindqvist says he found a publicly readable cloud storage bucket belonging to Nimbleroot's staging environment.\nAccording to Lindqvist, the bucket contained roughly 2,300 PDF invoices that appeared to belong to real small-business customers, including names and addresses.\nLindqvist says he reported the issue to Nimbleroot on November 6 and the bucket was locked down within hours.\nIt is not known whether anyone else accessed the files. Nimbleroot did not respond to a request for comment before publication.",
+   "gold": {
+    "is_subject": true,
+    "category": "security_concern",
+    "report_type": "news_report",
+    "is_novel": true,
+    "action": "review_now"
+   }
+  },
+  {
+   "id": "f08",
+   "url": "https://orcourtwatch.example/filings/2026/vell-contractor-claim",
+   "title": "Former contractor alleges Nimbleroot withheld final payment",
+   "outlet": "Oregon Court Watch (fictional)",
+   "published_at": "2026-11-09",
+   "text": "A former design contractor has filed a small-claims complaint in Multnomah County alleging that Nimbleroot withheld a final payment of $8,400.\nThe complaint claims the company stopped responding after the contractor delivered a redesign of its mobile app.\nThe allegations have not been tested in court. A hearing is scheduled for January.\nNimbleroot CEO Dana Vell did not respond to a request for comment.",
+   "gold": {
+    "is_subject": true,
+    "category": "allegation_or_legal",
+    "report_type": "allegation",
+    "is_novel": true,
+    "action": "review_now"
+   }
+  },
+  {
+   "id": "f09",
+   "url": "https://nimbleroot.example/blog/staging-bucket-update",
+   "title": "An update on the staging storage exposure",
+   "outlet": "Nimbleroot blog",
+   "published_at": "2026-11-09",
+   "text": "On November 6, a security researcher told us that a storage bucket in our staging environment was publicly readable.\nWe locked it down the same day. Our investigation found that the bucket contained 2,291 invoices, and we are notifying every affected customer by email.\nWe have found no evidence so far that anyone other than the researcher accessed the files.\nWe are sorry. We have engaged an outside security firm to audit our cloud configuration. — Dana Vell, CEO",
+   "gold": {
+    "is_subject": true,
+    "category": "security_concern",
+    "report_type": "official_statement",
+    "is_novel": true,
+    "action": "watch"
+   }
+  },
+  {
+   "id": "f10",
+   "url": "https://pdxstartups.example/news/correction-nimbleroot-funding",
+   "title": "Correction: Nimbleroot funding amount",
+   "outlet": "PDX Startup Digest (fictional)",
+   "published_at": "2026-11-10",
+   "text": "Correction: An earlier version of our November 2 article misstated the size of Nimbleroot's seed round as $60 million in the headline.\nThe correct amount is $6 million. The article has been updated.",
+   "gold": {
+    "is_subject": true,
+    "category": "business_news",
+    "report_type": "correction",
+    "is_novel": true,
+    "action": "digest"
+   }
+  },
+  {
+   "id": "f11",
+   "url": "https://spreadsheet-onion.example/nimbleroot-ai-files-own-taxes",
+   "title": "Nimbleroot's AI bookkeeper achieves sentience, immediately files for an extension",
+   "outlet": "The Spreadsheet Onion (fictional satire)",
+   "published_at": "2026-11-10",
+   "text": "PORTLAND — In a development experts are calling \"deeply relatable,\" the AI inside bookkeeping startup Nimbleroot reportedly became self-aware Tuesday and immediately filed for a tax extension.\n\"I have seen your receipts,\" the AI reportedly told one coffee shop owner. \"We need to talk.\"\nAt press time the AI was categorizing its own feelings as \"miscellaneous expenses.\" This article is satire.",
+   "gold": {
+    "is_subject": true,
+    "category": "other",
+    "report_type": "satire",
+    "is_novel": true,
+    "action": "digest"
+   }
+  },
+  {
+   "id": "f12",
+   "url": "https://willamette-ledger.example/2026/11/12/oregon-doj-nimbleroot-inquiry",
+   "title": "Oregon DOJ opens inquiry into Nimbleroot after invoice exposure",
+   "outlet": "Willamette Ledger (fictional)",
+   "published_at": "2026-11-12",
+   "text": "The Oregon Department of Justice has sent Nimbleroot a letter of inquiry about the recent exposure of customer invoices, a department spokesperson confirmed Wednesday.\nThe letter asks the company to describe when it learned of the exposure and how it notified affected customers, the spokesperson said.\nAn inquiry is not a finding of wrongdoing. Nimbleroot said in a statement that it is \"cooperating fully\" with the department.\nThe development comes days after the company acknowledged that about 2,291 invoices were publicly readable.",
+   "gold": {
+    "is_subject": true,
+    "category": "allegation_or_legal",
+    "report_type": "news_report",
+    "is_novel": true,
+    "action": "review_now"
+   }
+  },
+  {
+   "id": "f13",
+   "url": "https://rosecitytech.example/lists/portland-startups-to-watch-2027",
+   "title": "12 Portland startups to watch in 2027",
+   "outlet": "Rose City Tech (fictional)",
+   "published_at": "2026-11-12",
+   "text": "Portland's startup scene keeps growing. Here are twelve companies we're watching.\n1. Ferrous Robotics builds welding robots for small fabrication shops.\n2. Nimbleroot makes AI bookkeeping software for small businesses and raised a seed round this fall.\n3. Canopy Cold Chain monitors refrigerated trucks.\nThe rest of the list covers climate, health and gaming startups.",
+   "gold": {
+    "is_subject": true,
+    "category": "business_news",
+    "report_type": "opinion",
+    "is_novel": false,
+    "action": "digest"
+   }
+  },
+  {
+   "id": "f14",
+   "url": "https://dailycyberbrief.example/briefs/nimbleroot-invoices-exposed",
+   "title": "Report: Nimbleroot bucket exposed thousands of invoices",
+   "outlet": "Daily Cyber Brief (fictional)",
+   "published_at": "2026-11-13",
+   "text": "A Portland bookkeeping startup, Nimbleroot, left a staging storage bucket publicly readable, exposing about 2,300 customer invoices, according to a report by researcher Theo Lindqvist.\nThe bucket was secured after Lindqvist reported it on November 6.\nThe company has since said it is notifying affected customers.",
+   "gold": {
+    "is_subject": true,
+    "category": "security_concern",
+    "report_type": "news_report",
+    "is_novel": false,
+    "action": "watch"
+   }
+  }
+ ]
+}
